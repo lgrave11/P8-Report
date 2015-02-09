@@ -1,3 +1,9 @@
 Accelerometer/Gravity/Gyroscope/Gyroscope_Uncalibrated/Linear_acceleration/Step_counter/Step_detector
 http://developer.android.com/about/versions/android-4.4.html#UserInput
 http://developer.android.com/guide/topics/sensors/sensors_motion.html
+
+Amplitude
+http://developer.android.com/about/versions/android-4.4.html#UserInput
+
+Keylogger
+http://developer.android.com/about/versions/android-4.4.html#UserInput
