@@ -1,0 +1,40 @@
+Møde med Ivan Aaen og Morten Aagaard d. 06-02-2015
+==================================================
+
+Give gruppernes perspektiver til projekt, så vil Ivan give de større rammer.
+
+Min gruppe: Modul baseret, så forskellige ting kunne indikerer sindstilstand eller stress. Begyndt at se på nogle algoritmer til det, og hvordan man på en eller anden måde kan vise en historik.
+
+Anden gruppe: Så mange platforme som muligt f.eks. med en cross compiler. De har også tænkt på logging af SMS, hvor man er, om man er ude at gå. Måske har Morten nogle idéer til det fra en psykiatrisk vinkel. Hvis man havde noget ude fra vedr. en skala(f.eks 1-5 eller 0-100%). 
+
+Hvad er interessant? Data visuelisering, machine learning, forudsening af sindstilstand. F.eks sentiment analysis på SMS indhold. 
+
+Vi havde også tænkt på test data, og hvordan vi skal få fat i det. 
+
+Hvordan skal man vide om brugeren er stresset/ikke stresset? Er det bare at spørge brugeren?
+
+Ivan: I første omgang skal man nok bare se på indikatorer og ikke bekymre sig om personen rent faktisk er stresset eller ej.
+
+Ivan: Udskiftning af komponenter, hvilke indikatorer er det man ser på. Hvis begge grupper havde en fælles platform, og to projekter som så så på en mere specialiseret område. Det med cross-compiling er nok ikke så vigtigt. Hvis man har et koncept på systemet kan man senere porte det til andre platforme(e.g hvis man har Android, kan man porte til iOS).
+
+Ivan: Man kan starte med noget psykisk eller somatisk(fysisk sygdom). F.eks hvis man ryster kan det være hvis man er stresset eller også kan det være fordi man har parkinsons. Hvordan skelner man mellem de to forskellige domæner(Bayesisk net?). 
+      Man kan også se på det objektive og subjektive(Hvor man spørger brugeren hvordan han har det og så kan dataen bruges til at bakke op om det). Ved det objektive kan man se på GPS, accelerometer, tastatur(tager det lang tid at skrive en sætning, skifter han mening, hvad er frekvensen af SMS'er (manidepressive vil svinge meget)), konkordat(Hyppige ord, se på om ordvalg skifter).
+      Generelt/Specifikt. Generelt: Platformen skal være meget åben. Validering(Hvordan ved man at de resultater er gode). Verificering(Hvordan verificerer man at det er den rigtige person som bruger telefonen lige nu. Bevægelse kan bruges til at bekræfte identitet). Privacy(Hvem skal have adgang til hvad, og hvilke data skal vi bruge). Specifikt: Komponenter. Sensorer. Analyse af data. Patient/Læge(Kan være at nogen data skal være private til patienten og andre data skal kunne deles med lægen). Patient-aggregering(Kan vi se på flere patienter som har samme sygdom og finde mønstre). Nudging. 
+      
+Harddisken, 30/1-2015, de usynlige assistenter. 
+
+Morten: Vil gerne kunne give de ting videre. De dyreste sygdomme har adfærdskomponenter som kan ændre på forløbet(Have et struktureret liv, motionere, være social), forskere har ingen interesse i det. I psykiatrien skal der være en mening i galskaben. Det er vigtigt at give værktøjer til patienter. Det vigtige er at sætte det i brug. Vil give nogle dogme regler. Man skal ikke lave 1 års planer, man skal lave et system som kan bruges gennem flere år og forhåbentligt fungerer. Dataen skal være meningsfyldte for de individuelle brugere. Båndbrædden er meget smal for individuelle brugere. QuantifiedSelf.com. Når man laver personlighedsudvikling skal det være sammen med andre. Business Intelligence(f.eks Tableau). d3 kan bruges til data visualisering. Vis dataen på en eller anden måde der giver mening. Brugeren skal kunne udvælge hvad der er relevant. Explorative data analysis(Find mønstre i data). Kombinering af data er en god idé, så aggregrering af data giver et indtryk af hvordan brugeren har det. Patienter har nogle gange en meget subjektiv virkelighed og skal kunne undersøge det selv. 
+
+Ivan: Vedr. samarbejde skal man nok snakke med domæne eksperter f.eks Morten eller læger. Valg af platform: Man skal nok vælge noget der går i bredden eller i dybden(Vores valg). 
+
+1. Platform
+    Vælg en stærk platform, som har en åbn API som giver adgang til data. Ikke interessant at se på flere platforme.
+2. Dykke ned i en sygdom/syndrom, f.eks se på manidepressive og hvordan de opfører sig. Her kan man få nogle eksperter ind som Morten eller en psykiater/psykologer som ved noget om de forskellige sygdomme/syndromer og hvordan personer som har det opfører sig. Manidepressive skal holde sig meget konsistente i deres opførsel så de ikke falder i en eller anden gryft.
+3. Iteration, f.eks Scrum. Dumt ikke at gøre det sådan fordi man bliver jo klogere på det som tiden går.
+
+Det er vigtigt at projekterne bliver begrænset.
+God idé at snakke med eksperter, men være forbedret hjemmefra(F.eks ACM papers).
+Brugere med angst anfald kunne også være interessant.
+Udstyr er begrænset. Hvis i skal have noget som Jawbone kan det godt gøres. Jo lavere pris udstyr har jo større chance for at de bliver integreret(Synes Morten), bedst mulig data skal man se på(Synes Ivan).
+
+Man skal se på trends for hvilken retning de går i.
