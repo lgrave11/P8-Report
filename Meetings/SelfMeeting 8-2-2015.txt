@@ -1,0 +1,37 @@
+Platform
+	-HTML5 (Hvis muligt)
+	
+Funktionalitet
+	- Finde sindstilstand
+	- Muligvis vise om en person er stresset
+	
+Hvad skal logges?
+	- Beskeder der sendes (sentiment analysis)
+	- Modtaget sms
+	- sms længde (selv sendt)
+	- Antal samtaler, længde, hvem der ringer
+	- Tonelege i samtaler(voice analysis)
+	- bevælgelse (accelerometer)
+	- GPS, bevægelse mønster
+	- Pulsmålere
+	
+Selve App'en
+	- Moduler man gerne vil bruge (nemt)
+	- Faktor for moduler (0-10 værdier alt efter hvor vigtigt det er)
+	- Indstilling af parameter (overvejelser), pas på det ikke bliver for komplex
+	- Representation af data (grafer, tal, score(bette for alle moduler, stort for det hele), søjlediagram, stressmåler, kalender der viser hvor stresset man har været)
+	- Muligvis have en anden app der kan logge data'en
+	- Det skal være nemt at tilføje andre scorings funktioner i programming (gerne med 1 linje)
+	
+Arbejdsgang
+	- Mødetid 8:15
+	- Slutter 16:00 udentager fredag 14:00
+	
+Ambitionsniveau
+	- Gå efter 12, sørge for at vide hvorfor man gør som man gør.
+	- Dokumenter teori løbende
+	- Husk at dukumentere hvornår vi ændre retning, hvis der bliver ændret retning
+	- Tænke på alternativer til hvad man kunne have gjort i stedet for.
+	- Pas på med at skrive hele rapporten i de sidste 2 uger.
+	- Sørge for at dokumentere når man er færdig med at lave et bestemt del af programmet
+	- Sørg for Cross-validation
