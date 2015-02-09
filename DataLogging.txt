@@ -2,11 +2,11 @@ Accelerometer/Gravity/Gyroscope/Gyroscope_Uncalibrated/Linear_acceleration/Step_
 http://developer.android.com/about/versions/android-4.4.html#UserInput
 http://developer.android.com/guide/topics/sensors/sensors_motion.html
 
+Amplitude
+http://developer.android.com/about/versions/android-4.4.html#UserInput
 
-
-
-
-
+Keylogger
+http://developer.android.com/about/versions/android-4.4.html#UserInput
 
 Telephone log: http://developer.android.com/reference/android/provider/CallLog.Calls.html
 SMS messages text: http://stackoverflow.com/questions/848728/how-can-i-read-sms-messages-from-the-inbox-programmatically-in-android
