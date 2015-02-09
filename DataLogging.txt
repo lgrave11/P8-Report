@@ -6,7 +6,7 @@ Amplitude
 http://developer.android.com/about/versions/android-4.4.html#UserInput
 
 Keylogger
-http://developer.android.com/about/versions/android-4.4.html#UserInput
+http://stackoverflow.com/questions/14011633/build-a-simple-keylogger-android-application-accessibility-research-for-virtual
 
 Telephone log: http://developer.android.com/reference/android/provider/CallLog.Calls.html
 SMS messages text: http://stackoverflow.com/questions/848728/how-can-i-read-sms-messages-from-the-inbox-programmatically-in-android
