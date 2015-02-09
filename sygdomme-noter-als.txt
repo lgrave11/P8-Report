@@ -1,0 +1,41 @@
+Sygdomme noter:
+
+Depression:
+	Kan lede til selvmord!
+	stressbelastninger hyppigt forud for depression
+		-that is stress monitoring kan være forebyggende.
+	søvnbesvær - jawbone måler
+	
+	For at følgende symptomer skal tælle med skal de være der næsten hver dag i mindst 14 dage:
+		Mindst to af følgende:
+			følelse af nedtrykthed - sentiment?
+			markant nedsat lyst/interesser - ??
+			reduceret energi, svær træthed  - se på om man begynder at bevæge sig mindre.
+		Mindst to af følgende også:
+			Nedsat selvtillid eller selvfølelse - ??
+			Selvbebebrejdelser, svær skyldfølelse - ??
+			Tanker om død eller selvmord - ??
+			Tanke og koncentratiosbesvær
+			Svær indre uro eller modsat: hæmning
+			Søvnforstyrrelser - jawbone
+			Betydningsfulde ændringer i vægt eller appetit
+			
+	Forebyggelse:
+		Registrer Stress
+		
+Maniodepression:
+	depressionsperiode:
+		hæmmet i mimik og tale        -sms
+		tanker kredser ofte om døden	-sms
+	maniperiode:
+		Opstemthed, agression, irritabilitet
+		Øget energi og aktivitet - accelerometer
+		Taletrang - sms
+			stemmen er kraftigere end vanligt og talen er hurtig - voice analysis(Tror dette kunne være smart)
+		Nedsat søvnbehov
+		Uhæmmet ukritisk adfærd, impulsivitet - GPS
+		
+Parkinson
+	Langsomme træge bevægelser
+	Rysten - accelerometer
+	Muskelstivhed
