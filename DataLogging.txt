@@ -18,7 +18,10 @@ Motion Event: http://developer.android.com/reference/android/view/MotionEvent.ht
 Always-on recording api: https://developer.android.com/reference/com/google/android/gms/fitness/RecordingApi.html
 History api: https://developer.android.com/reference/com/google/android/gms/fitness/HistoryApi.html
 
-
+Data visualization:
+http://androidplot.com/
+https://github.com/processing/processing-android/wiki
+http://d3js.org/ brug i et WebView?
 
 Machine learning:
 - Danish stemmer: https://www.drupal.org/project/danishstemmer
