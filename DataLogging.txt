@@ -21,7 +21,7 @@ History api: https://developer.android.com/reference/com/google/android/gms/fitn
 Data visualization:
 http://androidplot.com/
 https://github.com/processing/processing-android/wiki
-http://d3js.org/ brug i et WebView? dgg
+http://d3js.org/ brug i et WebView?
 
 Machine learning:
 - Danish stemmer: https://www.drupal.org/project/danishstemmer
