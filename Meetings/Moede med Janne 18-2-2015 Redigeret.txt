@@ -1,0 +1,99 @@
+Møde med Psykolog Janne 18-2-2015
+
+1) Præsentation af hvad patienter med affektive lidelser er hvordan man arbejder med dem, og hvad der er at leve med affektive lidelser
+
+Morten: Medicin behandling er under debat, der er nogen som synes at det overhovedet ikke fungerer og at det kan faktisk være negativt pga bivirkninger. Der er lægemangel. Der er stor spænding på afdelingen. En patient der er interessant er en patient som er under medicinsk behandling og er højt fungerende men på samme tid er meget skeptisk over for sin behandling, men der ingen rigtig nogen måde at bedømme hvordan det går i daglig dagen og her kunne det være dejligt at kunne have indikatorer på hvordan folk har de istedet for bare at spørge dem. 
+
+Janne: Janne Rasmussen og er psykolog, og har været på psykiatrien i 10 år. Brandevej har et ambulatorie for patienter med psykose, og der er også senge afsnit. Hun sidder på ambulatorie og forsøger at diagnosere patienter. Hun er igang med en efteruddannelse for at blive specialpsykolog. Hun er primært involveret med affektive patienter, som unipolar eller bipolare depressioner. Hun har også set på f.eks. patienter med angst, OCD osv. men har specialiseret sig på affektiver patienter. Hun vil gerne snakke om affektive ting og hvordan de kan hjælpes med vores forslag. Hun har været involveret i unipolare og bipolare lidelser i 5 år. 
+
+Morten: Vi mener at affektive passer meget godt til det der arbejdes på i dette projekt. 
+
+Søren: Ja vi studerer software på AAU. Hvor vores projekt dette semester omhandler afhjælpelse af sindslidelser ved at se på trends, f.eks døgnrytme.
+
+Janne: Affektive lidelser er tilbagevendende. Det kan være svært at holde en hverdag, f.eks. at man bliver i sengen i lang tid. For at blive diagnoseret skal man opleve symptomer over 2 uger. Mange har oplevet flere tilbagefald. Det jeres projekt så kunne bruges til at se på er at måske at kunne se på om man måske er at se på advarsels signaler for tilbagefald for bipolare og unipolare depressioner. Et signal er søvn. Det skal være noget som giver mening for patienterne. Søvn: Man sover enten rigtig meget, eller man sover næsten overhovedet ikke og at det kan være svært at falde i søvn. Og at man vågner meget gennem nattens løb. For bipolare i de maniske perioder sover man for lidt, og det er der man skal tage det med ro. 
+
+Janne: Bipolare, man skal have mindst en manisk eller hypomanisk periode i sit liv. Symptomer er at man er meget begejstret, irritabel, højt energiniveau, har mange gode idéer, svær at afbryde. Man kan komme miste situationsfornemmelsen, og at det kan være svært at holde styr på sin hverdag, det kan være svært at afslutte projekt osv. Her skal man skelne mellem personlighed og selve denne lidelse. Det man ser oftest er at der er mange depressions perioder og ikke særlig mange maniske perioder, man kan også se det modsatte men der sker ikke særlig tit. Det med at skifte mellem depression og mani sker ikke særlig tit. Perioderne kan variere i længde, men ved mani skal det være mere end 4 dage og ved depression skal det være en uge eller mere. 
+
+<Maniperiode tegnede af Janne.png>
+
+Morten: Et af emnerne er øget stemningsleje. Er det noget man kan se?
+
+Janne: Ja, men i normale perioder ser man det også. Der er snakkepres, og man forsøger at 'snappe' ord op fra andre. Man kan måske høre flere ord som et advarsels signal, men det med at øget stemnings fase måske ikke. Det giver mening at se på en 'neutral periode' og hvordan de snakker i de perioder i forhold til maniske periode.
+
+Bruno: Man kan se på en normal adfærd, og se på om man kan finde en adfærdsændring. Det er måske en god idé at tage flere idéer og sætte dem sammen.
+
+Janne: Måske kunne man se på hvor meget de skriver, hvem de skriver til osv. 
+
+Janne: Vi forsøger med de bipolare patienter at arbejde med et skema, hvor gennem flere samtaler forsøger at spore søvn, aktivitetsniveau, tanker om sig selv osv. De fleste nedtrykte patienter, snakker ikke så meget, er ikke særlig aktive osv. Mens dem som er løftet snakker meget og er meget aktive. Søvn er en sladrehank, da hvis man kan se en ændring på det er det godt. Hvis man kan se at patienterne måske begynder at blive op længere, eller sover længere vil det være dejligt.
+
+Morten: Kan du beskrive et behandlings forløb.
+
+Janne: Når de bliver indlagt skal de indpasse sig i afdelingens struktur, dette er meget vigtigt at hjælpe patienterne hvilket er f.eks. at gå til morgensamling, gå til læge, gå ture men det er meget indskrænket da patienter ikke kan overkomme meget. Man skal holde øje med selvmords tanker, når man bliver udskrevet er det der man har størst chance for at begå selvmord. Efter dette kommer man over på ambulatoriet, hvor man holder kontakt med patienten og man hører tit at de har svært ved at komme igang igen, de har også tanker om hvad de skal sige til andre da de ved ikke hvad andre synes om at de har været indlagt. Efter dette vil man snakke med psykolog/psykiateren og man forsøger at snakke om risici og hvordan man skal identificere dem, og at man skal forbygge osv da tilbagefald sker meget ofte. De har frygt for at deres indlæggelse/lidelse kan påvirke deres arbejde. De gælder også for hvordan de skal fortælle andre om deres situation. Hvis familie kommer med og fortæller om ændringer i opførsel vil være godt at have. Ændring i situation kan presse folk, og dette er også vigtigt, f.eks. tab i  familien, fødselsdage, arbejdsfrygt, flytninger, økonomi, juletid.
+
+Janne: Havde en lærer som patient, hvor arbejde pressede hende ind i depression og næsten ikke andet. Andre folk oplever depression når de har tab i familien, hvis de bliver fyret, trængt økonomi, partners arbejdsløshed. Bipolar: Havde en patient som oplevede ofte mani ved juletid, da der var meget mere stimuli. Her kan man se på stimuli kontrol.
+
+Bruno: Hamilton skala, kan du snakke om det?
+
+Janne: Tror ikke man kan bruge den på telefon. Man kan måske lave en app til den, men vil noget være begrænset hvad den kunne bruges til da man skal have en speciallæge for at kunne administrere det ordentligt. Det er et 'spørgeskema' der består af 17-18 spørgsmål, f.eks. hvor meget man er optaget af sin krop, aktivitet, energi, nedtrykthed eller fysisk/psykisk angst med mere. Så ligger man de point sammen, og hvis man har et specifikt antal point så er man enten ikke deprimeret, let, medium eller svært deprimeret. Kan være svær at omsætte det til noget andet. Den tager cirka 15-20 minutte at udføre, men kan være svær at udføre pga patientens sindstilling.
+
+Bruno: Vi havde den idé hvor man havde et barometer for at vise hvor man ligger henne, f.eks at vise patienten at man ligger på en skala og hvis man f.eks. løber en tur kan man komme i en bedre situation.
+
+Janne: Patienter med kognitive problemer, med at huske, koncentrere sig skal man ofte bruge huske kort. Det der kunne være rigtig dejligt ville være at få dem op af sengen, da det med at få dem op er rigtig vigtigt. En 'rise and shine' app.
+
+Morten: Overvågning kan bruges til at motivere folk, f.eks. at hvis patienten ved at man bliver overvåget kan man ændre sine vaner.
+
+Janne: Motivering istedet for overvågning er nok mere vigtigt.
+
+Janne: Man skal sørge for at patienter kommer op om morgenen, for ofte kommer de først op sent. Nogle gange kræver det en sygeplejerske at få dem op.
+
+Janne: Lystbetonede aktiviteter, idéen er at man gør ting der plejede at gøre en glad hvis man ikke har lyst til noget. Man ser på advarsels signaler og giver forslag fra en liste af ting som de burde gøre. Man ser ofte kvinder som gør pligt-opgaver, altså opgaver de gør for andre og ikke ting for sig selv. Her er det vigtigt at få dem til at gøre ting for sig selv istedet for. Det kunne være f.eks. være at lytte til musik, gå en tur, dyrke let gymnastik, eller andre aktiviteter. Vil gerne have have 'popups' som giver forslag til aktiviteter, så der er en eller anden slags motivation. 
+
+Janne: Eksempel: Stemningsregistrering, hvor man henover en måned sætter krydser i et skema over hvor deprimeret nu er. Det er svært at få dem til at faktisk gøre det, men det med at finde mønstre i f.eks. weekend eller om søndage(hvilket er en risiko dag). Så kunne man bruge det til at minde dem om at de har haft gode dage, da det kan være svært at se at man har haft det godt før i tiden. Dette kunne nok kombineres med sensorer. 
+
+Janne: Det betyder utrolig meget at patienterne har haft meget gode dage. (<-> lyder lidt modsigende) Det er vigtigt at ikke kigge tilbage på dårlige dage, og at undgå ruminationer som er meget destruktive for fremskridt.
+
+Janne: Unge mænd vil nok være mere tilbøjelige til at bruge en telefon end middelaldrende kvinder, da de nok ikke har overskud til at lære at bruge det.
+
+Janne: Fordelen ved det affektive område, de er meget autoritets tro og er pligtoverfyldende. Mens ved psykose området, vil de ikke overvåget, de vil ikke fortælles hvad de skal gøre da det skal de nok bestemme. 
+
+Morten: Hvad giver tilføring af mere viden, f.eks. om stemningsleje, hvilken rolle har det i et behandlings beløb. 
+
+Janne: Psykologen vil gerne have mere indflydelse over patienterne og sikre sig at patienten faktisk gør det de bliver fortalt at de skal gøre. Her kunne huskekort, eller popups hjælpe. En 'behandling' kunne f.eks. være at få patienten til at gøre et eller andet som de har lyst til(Se på kunst, dyrke yoga, tage en cykeltur). De skal minimere tidspunkter hvor de kan komme igang med at ruminere. De skal gøre ting som ikke kræver så meget kognitivt. 
+
+Janne: Pårørende er vigtigt, men de kan have dysfunktionelle forhold med patienten, så man skal forsøge at få en samarbejde med dem da de skal aktivt sabotere deres behandling. 
+
+Kalibrering, er bekræftelse af hvad programmet siger. 
+
+2) Vi kører bare igennem slides, og så kommer Janne med kommentarer på hvad der måske kan bruges.
+
+    Idé 1) Tage et billed af patient og analysere humøret på patienten, og det skal ske automatisk. Anden idé var at tage en videosekvens, af pupilreaktion. 
+        Pupilreaktionen kan være et tegn på virkelig mange ting. Det kan være svært da man ikke ved hvad der gør pupilreaktionen. Ansigtsmimik(Humør) er nok mere interessant. Idéen her er man måske kunne måle humør på en måde. Man kunne risikere at det blev forstærkende, e.g man ser på billedet og synes at man ser dårlig ud og så bliver man mere deprimeret. Det er en god overvejelse at der skal være automatiseret da ellers kan patienter "snyde", men ved ikke rigtig mere om det. Kan også være personligt grænseoverskridende, specielt for kvinder. Her skal man tage hensyn til dem der ikke vil have det, men på samme tid måske tilbyde det som et værktøj til dem som kan håndtere det.
+    Idé 2) Accelerometer, angiver en retning, kan kombineres med gyroskop. Kan give indtryk på gangart, og på aktivitetsniveau. 
+        Er mest tydligt ved svært deprimerende at de er meget hæmmet. Det kan næsten kun bruges når unipolare patienter er indlagt. Ved mani kan det nok mere bruges til at detektere at en patient er ved at komme i mani. Det med gangart kan godt være at det bliver for specifikt. Aktivitetsniveau og døgnrytme er nok mere lovende. (Kommer også senere). Hvis der er flere ting der spiller ind i éet barometer, vil det nok ikke være 'farligt' at opsummere det i et enkelt barometer. Man kan måske kamuflere negativ data, men det skal nok være i et tæt samarbejde med professionelle. Det ville være smart at have 'popups' med forslag til aktiviteter hvis der er mange negative dage. Det vil være farligt at give forstærkende udsagn, som ikke vil lægges ind i denne slags app(forhåbentligt). Med hensyn til visualisering(Se på QuantifiedSelf og MinPlan.dk), historisk udvikling gennem histogrammer, og vise dem data på en måde som er gennemskuelig. Man skal nok ikke fraholde vigtig information fra patienten pga etiske grunde. Patienten skal forstå hvorfor applikationen siger det den siger, de skal kunne se alt deres data men man skal tænke over hvordan dataen vises så de ikke er alt for negative da vi skal helst undgå at folk begår selvmord pga forstærkninger fra applikationen.
+    Idé 3) Lokation fra GPS. Se hvor meget patienten bevæger sig, eller hvor de opholder sig mest(Nøglelokationer). Så kan man nok se om der er ændringer. 
+        Man kan nok være bekymret at den ikke siger så meget, da mange af patienterne er enten bare derhjemme, et værested eller på arbejde. Patienter har somregel ikke særlig store cirkler. Ved bipolare patienter vil de være mere omkringfarende når de er i mani, så her kan det nok hjælpe. Man skal nok se på 'normal' niveauet, og så se på ændring og tilpasse det til patienten og hvad der er typisk. Morten synes at man kan måle hvor mange WiFi forbindelser folk kommer forbi, og bruge det til at måle hvor meget man nu bevæger sig, da det nok er meget billigt. Der er nok nogen det kan sige noget om, men alene er det nok ikke nok. Man kan muligvis se om patienten er i bedring ved at se på deres mønstre og gør at behandleren kan se om de gør det de bliver bedt om.
+    Idé 4) Lyd.
+        Taler hurtigt, flere jokes, er småsyngende, og opsnappende. Stemme leje og stemningsleje(siger noget om humør) er forskellige. Det er mere hvad folk siger, og hvordan de siger det. Det er nok lidt for specifikt. Der ligger meget i det.
+    Idé 5) Lys. Idéen er om man opholder sig i mørke eller i lys. Det vil nok være et problem at identicere om mobilen ligger i lommen. Man kan f.eks. bare måle det når tager mobilen frem og tænder den. 
+        Man kan segmentere patienter folk på hvordan de bruger telefonen. F.eks. Janne 'slukker' telefonen når hun kommer på arbejde og tænder den når hun er færdig. Det vil være fantastisk ved patienter med kognitive problemer, at give påmindelser. Psykotiske paranoider, ruller gardiner for da de ikke vil have at nogen kigger ind. Sollys hjælper lidt mod depression. Ens mobil er nærmest ens bedste ven, og er en social aktør. 
+    Idé 6) Opkaldsoversigt, se på hvor meget man snakket, hvor lang tid ens opkald varer, hvor mange opkald misser man osv.
+        Det vil være brugbart for dem der har bipolare lidelser, måske ikke ved unipolare depressioner da de ikke er særlig sociale i deres habituelle situation alligevel. Man kunne måske se på hvem de snakker med.
+    Idé 7) Hvilke applikationer de bruger, f.eks se på om de bruger Facebook eller andre sociale apps. 
+        Den skal nok bruges aggregerende. Man kan nok se på trends, og forholde det til normal brug e.g er der en ændring i telefon brug i en lang periode. Man kunne også se på om patientens brug af telefonen ændrer sig.
+        Janne ved ikke om det kan bruges til noget. Morten mener ikke det kan bruges.
+    Idé 8) Pulsmåler, som skal måles eksternt ved f.eks. en JawBone eller et smartwatch. Idéen er nok at man er meget aktiv.
+        Man skal nok finde en måde at skelne mellem stress og motion. Mange af patienterne har somatiske(fysiske) problemer som stress eller højt blodtryk, så det er vigtigt at finde en måde at skelne mellem dem. Mener godt det kan bruges. Det med at man bliver sporet ved en activity tracker som en JawBone gør at patienter ved at de er i behandling, og dette kan gøre at de følger deres behandling bedre.
+    Idé 9) Estimere søvnlængde ved at måle når skærmen tændes. E.g man slukker telefonen når man går i seng og tænder den når man står op. 
+        Janne kan godt lide det med søvnmønstre eller søvnlængde. Man skal dog være opmærksom på at en patient falder i søvn igen efter alarmen bliver slukket. Søvnmønstret kan være meget afvigende hvis patienten ikke kigger på klokken.
+    Idé 10) Galvanisk hud respons(altså sved). Det kan måle om man er stresset, søvnlængde. De fleste af den slags armbånd er primært ment til motion og søvn.
+        Kan man skelne mellem urolig søvn, og at man faktisk er stået op.
+        Kan være interessant. 
+        Janne kan godt lide det med at man kan se hvordan ens søvnmønstre er.
+    Idé 11) Tastatur, nok ikke mulig medmindre man laver sit eget tastur.
+        Noget usikker.
+    Idé 12) Tekstanalyse. 
+        Ups hun er smuttet nu... Men nok en god idé at se på indhold baseret på det hun har sagt tidligere. 
+        
+        
+Shortlist: Døgnrytme. Notifikationer som kommer med forslag(mere interaktivt). 
+        
