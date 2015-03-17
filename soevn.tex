@@ -47,7 +47,7 @@ http://cmuchimps.org/uploads/publication/paper/139/toss_n_turn_smartphone_as_sle
 
 For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
 Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelige på smartphonen i forvejen.
-Disse værende accelerometer, mikrofon(max amplitude), læys sensor, proximity sensor, kørende processer, batteri stadie, og skærmvisningstilstand.
+Disse værende accelerometer, mikrofon(max amplitude), lys sensor, proximity sensor, kørende processer, batteri stadie, og skærmvisningstilstand.
 Ud fra disse sensor kilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de åbne en præcision med søvnlængde ME på under 1 time.
 Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvnkvalitet estimering er på 83.97 \%. Hvilket gør det til en oplagt mulighed at arbejde med.
 Deres algoritme fungere så ved at foretage en række feature extractions, og så bruge teknikker såsom low-pass filter, naive bayes classifier og decision trees til at opnå den nøjagtighed.
@@ -58,5 +58,30 @@ Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere
 
 Det kunne dog være rart med en søvnestimeringsteknik der ikke kræver en træningsperiode og beskrives herefter.
 
+\subsection{Best Effort Sleep Model}
+http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6563918&tag=1
 
+Best Effort Sleep (BES) Model bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone. Der bruges i total seks forskellige målinger.
+\begin{description}[style=nextline]
+\item[Lys]
+I de fleste tilfælde vurderes det at der er mørkt i det rum hvor man sover. Dog kan der her være visse uregelmæssigheder fx. kan folk der lider af en depression godt leve i mørke hele dagen, og nogle folk kan også godt finde på at sove med lyset tændt. Det er lyset er tændt er dog kun et mindre irritationsmoment.
+\item[Varighed af telefonens låste perioder]
+Mens en person sover vil han ikke låse sin telefon op, og den vil normalt låse selv efter en lille periode, dermed ved man også at hvis en telefon bliver låst op, så er personen vågen.
+\item[Telefonens opladnings perioder]
+Mange folk sætter deres telefon til opladning mens de sover, derfor kan opladnings perioder give en indikation af søvn, det er dog ikke garanteret at dette er tilfældet.
+\item[Telefon slukket]
+Nogle folk slukker deres telefon mens de sover for ikke at blive forstyrret, derfor kan man se på længde af disse perioder for at vurdere søvn. Det viste sig dog ud fra test at ingen af testpersoner gjorde dette, hvilket måske kunne grundes i baggrunden for testpersonerne. 
+\item[Bevægelse]
+Når man sover ligger ens telefon sandsynligvis stille, hvorimod bevægelse indikerer man er vågen.
+\item[Lyd]
+I de fleste tilfælde er det stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller  lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra.
+\end{description}
+
+Grunden til der er så mange forskellige datakilder er at de hver for sig ikke siger ret meget, men kombineret giver de et ganske udmærket billede af om folk sover.
+
+Fordelen ved denne tilgang til problemet er at den ikke kræver nogen form for interaktion med brugeren og at den er klar til at bliver taget i brug med det samme.
+
+BES har dog det problem i forhold til fx wearable solutions, at den har en relativt høj unøjagtighed på +- 40 minutter. 
+Dette er en del i forhold til andre fremgangsmåder, men der bliver man så nød til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
+ 
 %HUSK AT HAVE EN TABEL MED sammenligninger
