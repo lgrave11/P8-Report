@@ -1,0 +1,62 @@
+\section{Søvn}
+Forskning viser at søvn har en væsentlig indflydelse på ens tilstand, dette gælder i høj grad bipolare patienter KILDE: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3321357/
+
+Det viser sig at en regelmæssig søvn-vågen cyclos er særdeles vigtig for bipolare patienter.
+Eksempelvis kan mangel på søvn medføre større risiko for at gå ind i en mani eller depressionsperiode. http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3321357/
+
+Derudover er ændring i søvnmængde et tydeligt tegn på en mani eller depressions periode, jævnfør tidligere sektion.
+Hvis man er i en mani periode sover man væsentligt mindre end for den habituelle periode http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3321357/ .
+Modsat for depression vil man typisk sove væsentligt længere end for det habituelle niveau.
+
+Grundet dette anses søvn for en vigtig indikator på om man begynder at befinde sig i en mani/depressions periode og bør derfor undersøges nærmere til at determinere sådanne perioder.
+
+\section{Søvn Estimerings Metoder}
+KILDER TIL DETTE SENERE
+
+Da søvn er en meget vigtig faktor til estimering af sygdomme og livskvalitet er der lagt en stor mængde forskning i dette område.
+Dette giver udsalg i en lang række af søvnestimeringsmetoder, hvor nogle af de fremtædende muligheder nævnes og vurderes i forhold til fokus for projektet her.
+
+\subsection{Polysomnography}
+Den måske mest akkurate søvnestimeringsprocedure er polysomnography, der er en procedure der kombinere et electroencephalogram med målinger af muskel toning og øjenbevægelse.
+Dog kræver denne teknik større mængde af special udstyr og erfarne teknikere til at montere udstyret på en patient, hvilket gør denne metode upraktisk i en almen patients soveværelse.
+'
+\subsection{ActiGraphy}
+Imidlertid findes der andre metoder der er nemmere at benytte.
+Eksempler på sådanne søvnestimeringsmetoder er actigraphy, der er akkurat selvom det kun benytter sig af acclerometere påmonteret ens arm.
+En sådan teknik kan estimere metrikker såsom timer sovet, søvn virkningsgrad, og antal af søvnafbrydelser.
+Kendte eksempler på sådanne apparater findes ved eksempelvis FitBit og JawBone.
+Disse koster omkring 100\$ (regn om til dkk), men kræver at man skal have armbåndet på når man sover.
+
+Kravet om at udstyr som FitBit og JawBone skal være monteret på ens arm finder vi ikke som en tilstrækkelig hæmning for at afvise brugen af sådanne teknikker.
+Af samme grund står muligheden åben for at bruge sådant udstyr i fremtiden, hvis man er interesseret i mere akkurat søvnestimering end efterfølgende nævnte estimerings metoder.
+Derudover er platformen opbygget til at være yderst fleksibelt angående hvilke moduler kan benyttes, så skulle man i fremtiden ønske at udvikle et modul der virker med FitBit/JawBone er dette muligt, men udskydes på pågældende tidspunkt grundet ressourcemangel i form af arbejdstid og det fornødne udstyr tilrådigt.
+Der findes lignede løsninger der kun benytter sig af ens smartphone, men hvor man pålægger patienten at placere sin smartphone under hovedpuden.
+Men ligesom FitBit/JawBone løsningen kræver det at man stiller ansvaret til patienten om at placere smartphonen i sengen, ligesom med armbåndene er det på ens arm.
+
+\subsection{Søvn Dagbog}
+Der findes en lang række spørgeskemaer, hvor patienten får ansvaret for at udfylde sådanne skemaer, hvor man på den måde kan følge en patients søvnrytme.
+Sådanne metoder er ikke vores fokusemne, men er en mulighed med den fleksible platform der er udviklet, hvor en sådan dagbog er et modul.
+Dog er det værd at tage med i betragtning, når man skal lære en ny model, hvilket http://cmuchimps.org/uploads/publication/paper/139/toss_n_turn_smartphone_as_sleep_and_sleep_quality_detector.pdf
+hvor man bruger dagbogen som "ground truth" til at lære ens model.
+
+Med resourcerne for dette projekt er dette dog ikke valgt som primær fokus, da vi ønsker en metode der kan estimere søvn med mindst mulig bruger intervention, og hvor vi søger grundlaget for vurderingen som værende vha. sensorer fremfor en subjektiv vurdering man alligevel har mulighed for i forvejen.
+Idéen om en "objektiv dagbog" er dermed i tanken her også, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
+
+\subsection{Toss 'N' Turn}
+http://cmuchimps.org/uploads/publication/paper/139/toss_n_turn_smartphone_as_sleep_and_sleep_quality_detector.pdf
+
+For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
+Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelige på smartphonen i forvejen.
+Disse værende accelerometer, mikrofon(max amplitude), læys sensor, proximity sensor, kørende processer, batteri stadie, og skærmvisningstilstand.
+Ud fra disse sensor kilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de åbne en præcision med søvnlængde ME på under 1 time.
+Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvnkvalitet estimering er på 83.97 \%. Hvilket gør det til en oplagt mulighed at arbejde med.
+Deres algoritme fungere så ved at foretage en række feature extractions, og så bruge teknikker såsom low-pass filter, naive bayes classifier og decision trees til at opnå den nøjagtighed.
+
+En ulempe ved denne teknik er at den kræver en oplæringsperiode på minimum 3 dage for at få en lovende præcision, men er antaget at være et acceptabelt kompromis, da estimeringen så ville kunne fungere relativt præcist efterfølgende.
+
+Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere smartphonen i sengen, og kræver derfor minimal bruger intervention, da mange folk alligevel bruger deres smartphone som vækkeur.
+
+Det kunne dog være rart med en søvnestimeringsteknik der ikke kræver en træningsperiode og beskrives herefter.
+
+
+%HUSK AT HAVE EN TABEL MED sammenligninger
