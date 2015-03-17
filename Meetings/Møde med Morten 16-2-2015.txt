@@ -1,0 +1,61 @@
+Møde med Morten 16-2-2015 kl 15:00 til 16:13
+
+1) Status
+Vi er begyndt at læse om de forskellige sygdomme og lavet en brochure, i denne uge(uge 8) er vi begyndt at se på teknologi og hvordan det skal hænge sammen. Depression og bipolar ser ud til at være interessante givent emnet. Vi har fået udstyrs accept, så vi får et smartwatch og en JawBone. Mortens datter synes at JawBone ikke vil komme ud om en måned alligevel. Det er en god idé at have en backup som kan måle sved. Det er et muligt problem at man ikke kan få rå data ud, men Morten's datter tror godt man kan, men man kan få bearbejdet data ud. Det ser ud til at man kan få rå data ud af smartwatch da det er Android Wear. Open source er godt og det er overalt, men open data er et problem da firmaer vil eje de data og sælge dem. 
+
+Morten har svaret på en helt masse mails. Modtaget et dokument vedrørende mobil logning, det er skrevet på en måde så det rammer personer som Janne og hendes kollegaer meget godt. Det er interessant at høre Janne, ikke os eller Morten da hun er domæne ekspert og ved noget om hvad der kan bruges til noget af den data vi kan få adgang til. Psykiatri professoren er også meget god, men han har ikke svaret endnu.
+
+Det er et semester hvor der er plads til kreativitet.
+
+2) Dogme regler
+Morten: i 3 betyder ideografisk at man skal se på individet. Der er nogen som kan knap læse et diagram, og andre som kan alt som en person der ikke er psykisk syg kan. Autisme diagnoser har en meget stor spændevidde, hvor der kan være lavt fungerende som ikke har de resourcer til at bruge den her slags værktøjer eller højt fungerende som kan gøre alt. Det skal være tilpasset den enkelte bruger. 
+Ivan: Samarbejdet mellem grupperne vil nok ligge i en fælles platform. Der tages nok udgangs punkt i at folk kan bruge de værktøjer der nu er tilgængelige.
+Morten: Det er lettere for nogle brugere at de bare observeres som kan danne et billed af dem, hvilket nok er mere etisk. 
+Ivan: To strategier, en platform hvor ting kan hægtes på og mere specifikt nogle sygdomme som kan undersøges. Spørg psykologen hvilke sygdomme er meget åbne for denne slags analyse. 
+
+3) Udstyr
+Dækket i 1.
+
+4) Brochure + Regneark idéer
+Første kommentar: Janne skal snakke. Der er 23 former for overvågning, nogle af etisk uproblematiske og andre problematiske. Grund idéen er at patienten selv skal have værktøjer til at håndtere sin egen situation, og at få dem til at forstå at det er deres egen ansvar. Patient empowerment er meget vigtigt i psykiatrien(og i resten af sygevæsenet). Så hvad der skal f.eks. gøres er at patienten bliver informeret om app'en fra sin psykolog/psykiater, og at dataen bliver krypteret og kopieret til et sikkert sted hvor de kan føle sig sikkert om det. 
+Anden kommentar: Patienter skal behandles ligemeget hvilken platform de nu har. Android er meget mere åben end f.eks. iPhone iforhold til hvad der er adgang til, en service er åbenbart forbudt på iPhone da Apple har tankegangen at brugeren skal være i kontrol. Morten's løsning er at sende en notifikation fra serveren til mobilen. En af Morten's kollegaer(?) sendte en artikel vedrørende valg af platform og der er det det samme indtryk at man kan ikke rigtig bruge iPhone til det pga mangel på autonomi.  
+
+Regneark: Nogle idéer er upraktiske. 
+Morten: Den vigtigste idé er nok at se på døgnrytme. Når du ikke er i en normal psykisk situation kan man ende i en døgnrytme som er stressende. Hvis man bruger et armbånd kan det være dyrt og mere præcis, men hvis man bruger telefon kan det lægges fra en men på samme tid vil det være billigere. Man kan bruge flere sensorer og vælge den data som giver mest mening. 
+At læse data meget tit kan være batteridrænende, så det skal også overvejes. 
+
+
+5) Møde onsdag
+    - Forventninger af os
+    - Forventninger af Janne
+Gruppe: Vi har forberedt en præsentation af hvert emne men vil snakke mindst muligt. 
+Morten: Janne skal snakke først. Brochuren er god og passer til target audience. 
+Ivan: Lav en longliste af målinger, lav en shortlist af interessante syndromer. 
+
+Ivan: Han vil gerne have longlist og shortlist, af sensordata, syndromer og diagnoser.
+Morten: Ja, det er en af produkterne af projekt, vil gerne have den på et tidspunkt.
+
+Gruppens egne ord: Vi vil gerne have sammenhængen mellem de sensorer vi har, og prøve at skabe en forbindelse mellem syndromer/diagnoser og hvordan det skal gøres. 
+
+Man kan se på interventioner og på trends, trends er at se på hvor de er på vej hen og holde øje med hvordan de opfører sig og hvordan det går da tilbagefald er noget som sker meget ofte. Trends er nok mest vigtigt, interventioner er meget bundet til trends. Interventioner er at patienten forsøger at lave en ændring og ser hvordan det går med den ændringer(Man har en periode før for at få en baseline og en periode efter for at finde ud hvordan det gik) og så har man en ny baseline bagefter. 
+Morten synes at adfærds ændringer fungerer bedre end medicin, baseret på CureTogether.
+
+Møde er i møde lokalet på første sal. 
+
+6) Evt.
+Stemme analyse projekt for at diagnosere psykiske lidelser som schizofreni.
+
+Morten: Indsamling af data er fint, men dataen skal være forståeligt og være pædagogisk og skal kunne indgå i en behandling. Det interessante er nok at data er indsamlet i en virkelig situation. Giver eksempel på data præsentation, hvor man kan se progression fra dårligt til godt. Andet eksempel: De spørger hvor godt de har det og hvordan deres energiniveau er, hvilket så er sat op på en graf som behandleren kan se på og få et indtryk af gode og dårlige dage, er åben og kvalitativt og kvantitativt hvor man kan vælge hvad man vil se, fejl: Hvis serveren går ned kan man ikke se det, det er vigtigt at vise hvis patienten har haft det så dårligt at de ikke engang vil snakke om hvordan de har det. 
+
+Man skal overveje om man vil arbejde på kvantitativt(Fra patienten selv) eller kvalitativt(Fra sensorerne). Der er adgang til hvordan patienten har det, men der er næsten ikke data til hvordan patienten rent faktisk opfører sig hvilket sensorer kan bruges til. 
+
+De tegner en firkant med kognition, følelse, adfærd og krop. Hvor følelser er kvantitativ data som allerede er tilgængelig(måske også kognition).
+Ivan: Vi kan få sensor data til kognition, adfærd og krop hvilket kan supplere til følelser.  
+Morten: Man kan måle primært på adfærd og krop. 
+
+Ivan: Se lige lidt mere på udstyr og vær sikker på at det er det rigtige som bliver købt. Telefonerne er OK, smartwatch og jawbone er han lidt mere usikker på.
+
+Morten: I får ikke adgang til patienter, da det kan tage meget længe. Det tættese på patienter man kan komme, er gruppesamtaler på ambulatoriet hvor man kan fremlægge de 12 idéer og så høres hvad der kan gøres med dem. 
+Ivan: Man kan få adgang til folk som er blevet hjemsendt af en arbejdspsykolog pga stress. Man kan nok få adgang til medarbejdere på univesitetet som er stressramte, hvor man f.eks. kan få adgang til døgnrytme(søvn) og deres aktivitetsniveau som kan være unormale. 
+
+Morten: Meget af data er støjet, men man kan tage data fra flere forskellige kilder som kan opklare fejlkilder og gøre dataen mere brugbar. 

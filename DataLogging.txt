@@ -14,6 +14,7 @@ General sensors: http://developer.android.com/guide/topics/sensors/sensors_overv
 Sensor: http://developer.android.com/reference/android/hardware/Sensor.html
 Sensor manager: http://developer.android.com/reference/android/hardware/SensorManager.html
 Motion Event: http://developer.android.com/reference/android/view/MotionEvent.html
+Environment sensors: http://developer.android.com/guide/topics/sensors/sensors_environment.html
 
 Always-on recording api: https://developer.android.com/reference/com/google/android/gms/fitness/RecordingApi.html
 History api: https://developer.android.com/reference/com/google/android/gms/fitness/HistoryApi.html

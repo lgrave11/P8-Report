@@ -1,0 +1,33 @@
+\input{Preamble.tex}
+\usepackage[disable]{todonotes}					% Todo Notes
+\usepackage[draft]{fixme}
+
+\begin{document}
+	\include{Frontpage}
+	\clearpage
+	\newpage\null\thispagestyle{empty}
+	\include{Titlesheet}
+	\addtocounter{page}{4}
+	\input{Foreword.tex}
+	\newpage\null\thispagestyle{empty}\newpage
+	\label{startoftoc}
+	\begin{KeepFromToc}
+		\tableofcontents
+		\newpage\null\thispagestyle{empty}\newpage
+		%\newpage\null\thispagestyle{empty}\newpage
+		\todototoc
+		\listoftodos
+	\end{KeepFromToc}
+	\label{endoftoc}
+	
+	\chapter{Analyse}
+	\input{Src/MoedeMedJanne.tex}
+
+	\bibliography{Bibliography}
+	
+	\label{lastpagewithoutappendix}
+
+	\appendix
+	\cleardoublepage
+	\phantomsection
+\end{document}

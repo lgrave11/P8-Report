@@ -1,0 +1,38 @@
+Brochure har rigtig mange gode idéer. 
+
+Udstyr: Kan godt skaffe penge til den slags udstyr hvis vi kan komme med et udslag til hvad det vil komme til at koste. JawBone/Smartwatch er gode måde at få data fra patienten, specielt da mange ligger sin telefon fra sig når de kommer hjem. Microsoft Smartwatch er en mulighed, da den måler hudkondukdans. Find den bedste model(DEN BEDSTE != DEN DYRESTE), den der har flest muligt sensorer, den bedste API.
+
+Morten's mail: Bivirknings skala er nyttig baggrunds viden(Altså ting der kan måles på). 
+
+Dogme regler: OK at bryde dogme reglerne(Som der blev gjort med dogmeregle bevægelsen i 90erne).
+2) Der skal være så lidt bøvl som muligt.
+3) Man skal ikke dømme brugerne, bare repræsentere det hvad der er. 
+4) Er fint.
+5) Data visualisering er nok Morten's interesse, Ivan er mere interesseret i data og ikke det øverste lag.
+6) Se 2.
+7) ...
+8) Morten vil have at man skal kunne rense data, men vi regner nok bare med at dataen er god nok og så kan man blive skuffet på baggrund af dårlig data.
+9) ...
+10) Systemet skal ikke bare give et resultat, men skal kunne give grunden til det resultat.
+
+Etisk problem men interessant: Man kan få patienten til at give samtykke. Der er iris skanning på Samsung Android telefoner, hvad hvis man påkræver at for at kunne bruge telefonen(logge ind) siger man at den skal skanne ens øje og hvad hvis istedet for denne skanning tager man en video og tjekker hvordan personen har det på samme tid. 
+Læger har brugt pupil reaktion for at diagnosere hjerneproblemer(F.eks. at finde ud af om personen er hjernedød), men kan godt være der er noget interessant i psykiatri.
+
+Møde: Ivan vil gerne med til formøde med Morten, men kan ikke komme til det aktuelle møde på onsdag. Burde være det første skridt i en længere interaktion.
+
+Udstyr: Lav en gaffel, send til Ulla og sig at vi også prøver at få udstyr en anden vej og en til Ivan og han vil prøve at komme frem til noget. 
+
+Modul idé: Det lyder fornuftigt. Ivan havde to grupper på 7 semester, det ene gruppe lavede et GPS skydespil prøvede at lave det sådan at man kunne skifte 'våben' ud, han kunne godt lide den tilgang. Den anden gruppe arbejdede med et energi sparespil, og en af udfordringer var at hvad hvis man nu fik et nyt stykke udstyr og de kiggede på XML beskrivelser på de tilgængelige komponenter. Et tredje billed, logitech fjernbetjening kaldet Harmony som skal erstatte fjernbetjeninger - Når man køber det kan man gå ind på hjemmesiden, og siger hvilke komponenter du har og det sendes over til fjernbetjeningen. Så konfigurerer du også hvordan ting skal kunne styres. Det er en god idé at overveje/researche designet/arkitekturen grundigt og hvordan det skal gøres ordentligt - Det er nok en god idé ikke at genopfinde den dybe tallerken.
+
+Ivan vil meget gerne med ud og snakke med kontakt personerne, så der kan findes nogen troværdige som kan bygge på. 
+
+
+Der mødes nok en gang om ugen. Vi stikker bare hovedet ind og siger hvornår vi gerne vi vil have et møde(Dog hvis han ikke kan fanges er email nok en god idé).
+
+Platformen udvikles nok samlet og så kan der bygges videre på det. Dog kan det også opdeles så grupperne ser på dele af platformen. Noget af rapporten skal nok deles, f.eks litteratur. 
+
+Android virker som den mest tilgængelig og åbne platform, og alle er interesseret i at arbejde på det. Det har nogle begrænsninger, så som at vi ikke kan få adgang til indtastnings data uden root access til telefonen eller erstatning af tastaturet - Det kunne også gøres med et system som kører online og bare sender alt som indtastes så det kan analyseres på. Det med dagbog bruges som et psykiatrisk værktøj, og det er nok det Morten er interesseret i mens Ivan er mere interesseret i hvordan de har det når de sidder og skriver den dagbog. 
+
+Måske kan man tjekke når SMS appen er åben, hvor lang tid tastaturet er åbent og hvor lang SMS teksten er og så tjekke hvor lang tid det tog at skrive SMSen. Dog er der nogle fejlkilder her, da brugeren kan ligge telefonen fra sig. En meditativ dagbog uden distraheringer som vi kan kontrollere og logge ordentligt er en god idé at have, så kan vi også få noget objektivt data ind. 
+
+Næste gang: Torsdag d. 19 kl 9.
