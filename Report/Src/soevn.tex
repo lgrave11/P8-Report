@@ -60,23 +60,35 @@ Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere
 Det kunne dog være rart med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode og beskrives herefter.
 
 \subsection{Best Effort Sleep Model}
-http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6563918&tag=1
- 
-Best Effort Sleep (BES) Model bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone. Der bruges i total seks forskellige målinger.
+http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6563918&tag=1 
+
+Best Effort Sleep (BES) Model bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde.
+Disse målbare datakilder anskaffes på uden at brugeren behøver ændre sin søvn adfærd, som det fx er tilfældet på mange andre tilsvarende løsninger som fx Jawbone eller FitBit der kræver at et ekstern device benyttes mens man sover.
+Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde.
+Om denne unøjagtighed er acceptabel skal vurderes ud fra hvad informationen skal bruges til og hvilke kriterier der er til dataen.
+Ud over dette kan BES ikke bruges til at estimere kvaliteten af ens søvn.
+Med kvaliteten menes hvor mange gange man har været vågen i løbet af natten, til dette kræves involvering af brugeren, enten af de bruger en wearable eller at de interagerer med systemet i en form.
+
+I vores tilfælde vil denne fremgangsmåde fungere godt som en backup solution til en af de brugerinvolverende fremgangsmåder, da det største problem ved disse er at de bliver ubrugelige hvis brugeren ikke bruger dem rigtigt.
+I de tilfælde hvor BES og en bruger involverende løsning begge er tilstede, kan BES bruges til at validere dataen fra den brugerinvolverende løsning. 
+
+Der bruges i total seks forskellige målinger.
+Grunden til det store antal målinger er, at det er nødvendigt med flere forskellige input kilder, da ingen af dem er i direkte kontakt med brugeren.
 \begin{description}[style=nextline]
 \item[Lys]
 I de fleste tilfælde vurderes det at der er mørkt i det rum hvor man sover. Dog kan der her være visse uregelmæssigheder fx. kan folk der lider af en depression godt leve i mørke hele dagen, og nogle folk kan også godt finde på at sove med lyset tændt. Det er lyset er tændt er dog kun et mindre irritationsmoment.
-\item[Varighed af telefonens låste perioder]
+\item[Lås]
 Mens en person sover vil han ikke låse sin telefon op, og den vil normalt låse selv efter en lille periode, dermed ved man også at hvis en telefon bliver låst op, så er personen vågen.
-\item[Telefonens opladnings perioder]
+\item[Opladning]
 Mange folk sætter deres telefon til opladning mens de sover, derfor kan opladnings perioder give en indikation af søvn, det er dog ikke garanteret at dette er tilfældet.
-\item[Telefon slukket]
+\item[Slukket]
 Nogle folk slukker deres telefon mens de sover for ikke at blive forstyrret, derfor kan man se på længde af disse perioder for at vurdere søvn. Det viste sig dog ud fra test at ingen af testpersoner gjorde dette, hvilket måske kunne grundes i baggrunden for testpersonerne. 
 \item[Bevægelse]
 Når man sover ligger ens telefon sandsynligvis stille, hvorimod bevægelse indikerer man er vågen.
 \item[Lyd]
 I de fleste tilfælde er det stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller  lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra.
 \end{description}
+
 
 Grunden til der er så mange forskellige datakilder er at de hver for sig ikke siger ret meget, men kombineret giver de et ganske udmærket billede af om folk sover.
 
@@ -86,7 +98,23 @@ BES har dog det problem i forhold til fx wearable solutions, at den har en relat
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man så nød til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
  
 
-\subsection{Opsummerings Tabel}
+Ud fra de eksperimenter der blev udført af (SOURCE), nåede de frem til en relevans af de forskellige datakilder.
+
+\begin{tabular}{|c|c|}
+\hline Datakilde & Koefficient
+\hline Lys & 0.0415 \\ 
+\hline Lås & 0.0512 \\ 
+\hline Slukket & 0.0000 \\ 
+\hline Opladning & 0.0469 \\ 
+\hline Bevægelse & 0.5445 \\ 
+\hline Lyd & 0.3484 \\ 
+\hline 
+\end{tabular} 
+
+Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen.
+Hvis præcisionen var meget vigtig ville man have en lille lærings periode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde. 
+\subsection{Opsumerings Tabel}
+
 %tabellen skal rettes seriøst til, især quality delen skal være mere sammenlignelig
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline  & Polysomnography & ActiGraphy & Søvn Dagbog & Toss 'N' Turn & Best Effort Sleep \\ 
