@@ -22,7 +22,11 @@
 	
 	\chapter{Introduktion}
 	\chapter{Analyse}
-	\input{Src/soevnKontext}	\input{Src/soevn.tex}
+<<<<<<< HEAD
+	\input{Src/soevnKontext}
+=======
+>>>>>>> ab85539374d149390bae6601f007149210608b09
+	\input{Src/soevn.tex}
 	
 	
 	\chapter{Diskussion}
