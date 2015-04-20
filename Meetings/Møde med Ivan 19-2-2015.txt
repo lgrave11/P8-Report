@@ -1,0 +1,44 @@
+Møde med Ivan d. 19-2-2015 kl 11:00
+
+Agenda
+
+1) Status
+    Vi er begyndt at skrive fælles rapport, sygdomme, sensorer, eksisterende systemer, mødet med janne osv. Vi vil gerne blive færdig med det i den her uge. Efter det vil vi begynde med første sprint.
+
+    Hvad gør vi får at ende op med en rapport for hver delgruppe? Der er ingen særlige kriterier for hvor meget man må dele mellem rapporter. 
+
+    Det bliver sikkert ikke sådan et projekt hvor vi har en kunde hvor vi bliver fortalt hvad vi skal lave, men at vi skal se det på fra et innovations perspektiv. Vi skal være fælles om at lave platform. Så det bliver det arbejdet komponenterne der bliver adskilt. F.eks. den ene gruppe kan se på f.eks manidepressive og den anden gruppe kan se på f.eks stress ramte. Man skal ende med to forskellige produkter for hver gruppe, så er det nok ikke interessant hvordan de bliver lavet.
+
+2) Møde med Janne
+    På Mandag er vi nok færdig med at skrive rapport om mødet, Ivan kan læse det på onsdag. Hun ville gerne have intervention features, hvor den kan forslå aktiviteter og spørg hvordan de har det. Hun var også meget interesseret i søvn og om det kunne spores. Der er en applikation til iPhone som kan tracke søvn baseret på bevægelse hvor telefonen ligger under en pude. Denne slags app fanger dog ikke rastløshed, der skal nok være noget specialiseret hardware til det og det er træls at de stykker hardware der er er meget lukket. Man nok bare bruge telefonen, og så bare regne med at patienten er velmotiveret. 
+    
+    Psykiateren fredag d. 20-2-2015 vil nok have nogle interessante kommentarer om forskellen mellem de somatiske og psykiske. 
+    
+    Ivan vil gerne have at behandleren får en indikation om hvordan det går med patienten.
+    Janne's største problem var at få patienter til at følge behandlings planen.
+    
+    Man skal tænke sig om at forslå aktiviteter da man ikke kan forudse hvad patienter vil gøre, da f.eks. hvis en patient glemmer sin telefon og går en tur uden den og kommer hjem og telefonen foreslår at han skal gå en tur. 
+    
+    Data være tilgængelig til behandler vil være en god idé.
+    
+    Måske bedre at se på stress ramte istedet for manidepressive, da der kan man næsten ikke gøre det værre.   
+4) Fælles rapport, hvor meget?
+[...]
+5) Evt
+
+
+Morten:
+Har snakket med en sygeplejerske som holder gruppe seanser, og man kunne godt tænke sig at et par stykker kommer ind og præsenterer projektet. Der skal være noget at vise, og det skal være foreståeligt for patienterne. Overvej tilbuddet.
+
+Møde imorgen:
+    Det er kl 11:00 til 12:00 imorgen, IKKE kl 10:00. Han hedder Jørgen Aagaard, han er begavet og har rigtig meget viden. Det er godt at sige at emnet er fra data til symptomer, og sige noget om hvad sammenhængen nu er. Han er meget interesseret i døgnrytme, hvilket Janne også var interesseret i og det samme med den sygeplejerske Morten snakkede med. 
+    Det er en innovations process for psykiatrien. Det er værdifuldt for dem at have data som ikke kommer fra introspektion af patienten.
+    
+    Det er måske godt at spørge om lavt hængede frugter, som har stor værdi. Der skal være en eller anden prioritering af målinger. Han skal være klar over at det er første skridt. 
+    
+    Han er meget sympatisk, og i skal bare lytte til ham. Det ville være dejligt at vide lidt mere om objektive data og hvad det kan bruges til, da Janne var for det meste interesseret i at bruge de værktøjer hun har nu men at gøre dem digital.
+    
+Man skal passe på ikke at tage behandlings ansvar, men give data som kan understøtte behandlingen, da det kan være et etisk problem at fortælle dem hvad de skal gøre bare baseret på data. Man skal holde sig fra interventioner. 
+    
+Man skal undgå etiske problemer. 
+    
