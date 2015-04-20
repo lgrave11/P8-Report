@@ -8,7 +8,7 @@ For hver måling ses der på om den overskrider denne grænse.
 Hvis der er nok målinger der overskrider en selvdefineret grænse, vurderes personen til at være vågen i det fire minutters vindue, ellers vurderes personen til at sove.
 Den selvdefinerede grænse er i artiklen sat til 40 \%, hvilket vil sige at for perioder hvor brugeren vurderes til at sove, er der under 40 \% af målinger der overskrider grænsen.
 
-Selvom artiklen har pseudo-kode til deres algoritme, er der stadig mange detaljer der mangler, blandt disse er hvordan man får dataen fra accelerometer data til data der beskriver graden af bevægelse.
+Selvom artiklen har pseudo-kode til deres algoritme, er der stadig mange detaljer der mangler, blandt disse er hvordan man går fra accelerometer data til data der beskriver graden af bevægelse.
 Til at finde graden af bevægelse vælger vi at se på forskellen i acceleration på den nuværende måling og den forrige.
 Dette kunne dog give nogle problemer med spikes i målingerne, så deres effekt forsøges begrænset ved brug af et moving average.
 Hvad angår grænsen for hvornår en person er vågen vælger vi at holde os til den 40 \% grænse som de brugte i artiklen, da det virker som et fornuftigt punkt.
@@ -21,3 +21,9 @@ Da vores data er i tre dimensioner, vælger vi at sige at vi kun skal have udsla
 
 Efter testing kan vi dog konkludere at denne tilgangsmåde har det problem, at den, eftersom den kun bruger accelerometer data, kommer med falske positiver i løbet af dagen, hvis telefonen i en periode har ligget stille, enten fordi brugeren har siddet stille, eller fordi brugeren ikke har haft sin telefon på sig.
 Dette problem kunne dog nok løses ved at involvere data fra andre sensorer, som også kunne bruges til at indikere om en person sover eller ej. 
+
+Under udviklingen af platformen Psylog (ref til psylog rapport), nåede vi frem til den konklusion at datamængder ville være et problem, derfor blev data komprimeret på en sådan at der kun bliver gemt ændringer.
+Denne komprimering gør det vanskeligt at nå frem til en god statistisk metode, da denne har brug for at alle de ens målinger også er tilstede for at kunne lave statistiske beregninger på dem.
+For at håndtere den manglende data blev det forsøgt at genskabe den manglende data, men dette gav ikke noget fornuftigt resultat.
+
+Grundet den manglende præcision i denne tilgang og problemet med den komprimerede data, vælges det ikke at fortsætte udviklingen på den statistiske tilgang, da denne ikke er på samme niveau som den anden mulighed (ref her til Als Unobtrusive metode).
