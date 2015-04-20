@@ -1,0 +1,87 @@
+% Her er en liste over navnene på de forskellige styles
+% C#: csharp
+% F#: fsharp
+
+% 
+% Listings kan refereres vha. \cref{}
+\crefname{listing}{code example}{code example}
+\Crefname{listing}{Code example}{code examples}
+% 
+
+%Algoritmer i cref
+\crefname{algocf}{algorithm}{algorithm}
+\Crefname{algocf}{Algorithm}{Algorithms}
+%Algoritmelinjer i cref
+\crefalias{AlgoLine}{line}%
+
+\makeatletter
+\let\cref@old@stepcounter\stepcounter
+\def\stepcounter#1{%
+  \cref@old@stepcounter{#1}%
+  \cref@constructprefix{#1}{\cref@result}%
+  \@ifundefined{cref@#1@alias}%
+    {\def\@tempa{#1}}%
+    {\def\@tempa{\csname cref@#1@alias\endcsname}}%
+  \protected@edef\cref@currentlabel{%
+    [\@tempa][\arabic{#1}][\cref@result]%
+    \csname p@#1\endcsname\csname the#1\endcsname}}
+\makeatother
+%
+
+% Angivelse af navn på listings
+\renewcommand\lstlistingname{Code example}
+\renewcommand\lstlistlistingname{Code example}
+
+\lstdefinestyle{standard}
+{
+	frame=shadowbox,
+	framesep=5pt,
+	rulecolor=\color{blue!40!black},
+	rulesepcolor=\color{white!93!black},
+	numbers=left,
+	basicstyle=\ttfamily,
+	numberstyle=\tiny,
+	numberfirstline=true,
+	%numberblanklines=false,
+	stepnumber=1,
+	numbersep=9pt,	
+	captionpos=b,
+	escapeinside={(*}{*)},
+	breaklines=true,
+	tabsize=4,
+	language=c
+}
+
+\lstset{style=standard}
+
+\lstdefinestyle{c}
+{
+	style=standard
+}
+
+\lstdefinestyle{csmall}
+{
+	style=c
+}
+
+\lstdefinestyle{csharp}
+{
+	style=standard,
+	language=[Sharp]C
+}
+\lstdefinestyle{csharpsmall}
+{
+	style=csharp
+}
+\lstdefinestyle{fsharp}
+{
+	language=[Sharp]F,
+	frame=lr,
+	rulecolor=\color{blue!80!black}
+}
+\lstdefinestyle{fsharpsmall}
+{
+	style=fsharp,
+	basicstyle=\ttfamily\footnotesize
+}
+

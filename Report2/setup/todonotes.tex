@@ -1,0 +1,29 @@
+\newcommand{\namedtodo}[5]
+{
+  \ifthenelse{\equal{#1}{}}
+  {
+    \todo[backgroundcolor=#4,caption=
+    {\textbf{#3: } #2}
+    ,inline]
+    {\color{#5}\textbf{#3: }#2}
+  }
+  {
+    \todo[backgroundcolor=#4,caption=
+    {\textbf{#3: } #1}
+    ,inline]
+    {\color{#5}\textbf{#3: }#2}
+  }
+}
+\newcommand{\mikkel}[2][]{\namedtodo{#1}{#2}{Mikkel}{blue!80}{white}}
+\newcommand{\stefan}[2][]{\namedtodo{#1}{#2}{Stefan M}{orange}{black}}
+\newcommand{\mikael}[2][]{\namedtodo{#1}{#2}{Mikael}{green}{black}}
+\newcommand{\bruno}[2][]{\namedtodo{#1}{#2}{Bruno}{black!10!red!90}{white}}
+\newcommand{\lasse}[2][]{\namedtodo{#1}{#2}{Lasse}{black!10!yellow!90}{black}}
+\newcommand{\als}[2][]{\namedtodo{#1}{#2}{Als}{purple!90!orange}{white}}
+\newcommand{\winde}[2][]{\namedtodo{#1}{#2}{Winde}{black}{white}}
+\newcommand{\ivan}[2][]{\namedtodo{#1}{#2}{Ivan}{red}{black}}
+
+
+  \makeatletter \renewcommand \listoftodos{\section*{List of Todos} \@starttoc{tdo}}
+  \renewcommand\l@todo[2]
+    {\par\noindent \textit{#2}, \parbox{10cm}{#1}\par} \makeatother

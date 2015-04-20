@@ -1,0 +1,39 @@
+% Definitions
+
+% Superscript and subscript
+\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+
+% Degrees
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\dg}{\degree}
+
+\newcommand{\quoter}[1]%
+{
+  \par
+  \vspace{1.5em}
+  \addtolength{\leftskip}{1.5cm}
+  \addtolength{\rightskip}{1.5cm}
+  \textit{#1}
+  \addtolength{\leftskip}{-1.5cm}
+  \addtolength{\rightskip}{-1.5cm}
+  \vspace{1.5em}
+  \par
+}
+
+
+\newcommand{\sensor}[3]
+{
+	\section{#1}
+	#2
+	
+	#3
+}
+
+\newcommand{\analyse}[2]
+{
+\subsection{#1}
+#2
+}
+
+
