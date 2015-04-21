@@ -36,7 +36,7 @@ Icon
 .Spotlight-V100
 .Trashes
 
-Report/Main.pdf
+Report/master.pdf
 
 
 # LaTeX
@@ -62,6 +62,8 @@ Report/Main.pdf
 *.mtc
 *.mtc1
 *.out
+*.tdo
+*.thm
 *.synctex.gz
 *.bib~
 *.fdb_latexmk
