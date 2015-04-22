@@ -72,7 +72,7 @@ I BES bruges der seks forskellige målinger til at estimere søvn.
 Grunden til det store antal målinger er, at det er nødvendigt med flere forskellige input kilder, da ingen af dem er i direkte kontakt med brugeren og at de hver for sig ikke siger særlig meget men i kombination giver en udmærket estimering om brugeren sover.
 \begin{description}[style=nextline]
 \item[Lys]
-I de fleste tilfælde vurderes det at der er mørkt i det rum hvor man sover. Dog kan der her være visse uregelmæssigheder fx. kan folk der lider af en depression godt leve i mørke hele dagen, og nogle folk kan også godt finde på at sove med lyset tændt. Det er lyset er tændt er dog kun et mindre irritationsmoment.
+I de fleste tilfælde vurderes det at der er mørkt i det rum hvor man sover. Dog kan der her være visse uregelmæssigheder fx. kan folk der lider af en depression godt leve i mørke hele dagen, og nogle folk kan også godt finde på at sove med lyset tændt. Det at lyset er tændt er dog kun et mindre irritationsmoment.
 \item[Lås]
 Mens en person sover vil han ikke låse sin telefon op, og den vil normalt låse selv efter en lille periode, dermed ved man også at hvis en telefon bliver låst op, så er personen vågen.
 \item[Opladning]
@@ -82,7 +82,7 @@ Nogle folk slukker deres telefon mens de sover for ikke at blive forstyrret, der
 \item[Bevægelse]
 Når man sover ligger ens telefon sandsynligvis stille, hvorimod bevægelse indikerer man er vågen.
 \item[Lyd]
-I de fleste tilfælde er det stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra.
+I de fleste tilfælde er der stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra ved at ignorer lyd der er for lav.
 \end{description}
  
 Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtning af de forskellige datakilder, se \cref{tab:vaegtninger}.
@@ -104,13 +104,15 @@ Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \
 \end{table}
 
 Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen.
-Hvis præcisionen var meget vigtig ville man have en lille lærings periode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde. 
-Hvis man vælger at tage lærings perioden, vil det give en analyse der er bedre tilpasset individet, frem for den generelle løsning det vil være at bruge de koefficienter præsenteret i tabellen ovenover.
+Hvis præcisionen er meget vigtig vil man have en lærings periode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde.
+Endvidere vil analysen også bedre kunne tilpasses til individet, frem for at bruge koefficienterne i \cref{tab:vaegtninger} der vil gøre analysen mere general.
+Hvis man vælger at bruge en lærings perioden, vil det give en analyse der er bedre tilpasset individet, frem for den generelle løsning det vil være at bruge de koefficienter præsenteret i tabellen ovenover.
 
-Fordelen ved denne tilgang til problemet er at den ikke kræver nogen form for interaktion med brugeren, udover at den ligger tæt på hvor personen sover da hvis telefonen ligger i stuen vil det ikke sige særlig meget hvis brugeren er i soveværelset, og at den er klar til at blive taget i brug med det samme.
-
-BES har dog det problem i forhold til fx wearables løsninger, at den har en relativt høj unøjagtighed på $\pm$40 minutter. 
-Dette er en del i forhold til andre fremgangsmåder, men der bliver man nød til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
+Fordelen ved BES er at den ikke kræver nogen form for interaktion med brugeren, udover at ens smartphone skal ligger tæt på hvor man sover.
+Derudover er en fordel også at denne model er klar til at blive taget i brug med det samme.
+En ulempe er dog hvis man ligger sin smartphone i stuen vil det ikke sige særlig meget omkring ens søvn.
+Endvidere har BES en ulempe i forhold til fx wearables løsninger, hvilket at den har en relativ høj unøjagtighed hvilket er på $\pm$40 minutter. 
+Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
 
 \subsection{Opsummering af Metoder}
 For at give et overblik over de forskellige metoder og teknikker opsummeres de i \cref{tab:opsummeringMetoder}.
