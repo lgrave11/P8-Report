@@ -1,5 +1,5 @@
 \section{Statistisk Metode-baseret}\label{sec:statMet}
-Den første metode vi forsøger at implementere er en statistisk baseret tilgang, som står forklaret i (ref til https://repository.iiitd.edu.in/jspui/handle/123456789/197).
+Den første metode vi forsøger at implementere er en statistisk baseret tilgang, som står forklaret i \citet{gautam2014smartphone}.
 I artiklen forsøger man at estimere søvn ud fra tre forskellige metoder.
 Vi bruger den anden af disse metoder, der er en statistisk baseret tilgang til databehandlingen.
 Denne fremgangsmåde ser på dataen i vinduer af fire minutter.
@@ -10,7 +10,7 @@ Den selvdefinerede grænse er i artiklen sat til 40 \%, hvilket vil sige at for 
 
 Selvom artiklen har pseudo-kode til deres algoritme, er der stadig mange detaljer der mangler, blandt disse er hvordan man går fra accelerometer data til data der beskriver graden af bevægelse.
 Til at finde graden af bevægelse vælger vi at se på forskellen i acceleration på den nuværende måling og den forrige.
-Dette kunne dog give nogle problemer med spikes i målingerne, så deres effekt forsøges begrænset ved brug af et moving average.
+Dette kunne dog give nogle problemer med spikes i målingerne, så deres effekt forsøges begrænset ved brug af et exponential moving average.
 Hvad angår grænsen for hvornår en person er vågen vælger vi at holde os til den 40 \% grænse som de brugte i artiklen, da det virker som et fornuftigt punkt.
 Dog har vi ikke noget egentligt argument for hvorfor lige 40 \% er et godt tal, men vi kan gå ud fra at forfatterne af artiklen har en grund til det, som de ikke valgte at tage med i artiklen.
 
