@@ -86,8 +86,10 @@ Når man sover ligger ens telefon sandsynligvis stille, hvorimod bevægelse indi
 I de fleste tilfælde er det stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller  lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra.
 \end{description}
  
-Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtning af de forskellige datakilder.
+Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtning af de forskellige datakilder, se \cref{tab:vaegtninger}.
 
+\begin{table}[h]
+\centering
 \begin{tabular}{|c|c|}
 \hline Datakilde & Koefficient\\
 \hline Lys & 0.0415 \\ 
@@ -97,7 +99,11 @@ Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \
 \hline Bevægelse & 0.5445 \\ 
 \hline Lyd & 0.3484 \\ 
 \hline 
-\end{tabular} 
+\end{tabular}
+\caption{De forskellige vægtninger for hver af målingerne.}
+\label{tab:vaegtninger}
+\end{table}
+
 
 Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen.
 Hvis præcisionen var meget vigtig ville man have en lille lærings periode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde. 
@@ -105,7 +111,7 @@ Hvis man vælger at tage lærings perioden, vil det give en analyse der er bedre
 
 Fordelen ved denne tilgang til problemet er at den ikke kræver nogen form for interaktion med brugeren, udover at den ligger tæt på hvor personen sover da hvis telefonen ligger i stuen vil det ikke sige særlig meget hvis brugeren er i soveværelset, og at den er klar til at blive taget i brug med det samme.
 
-BES har dog det problem i forhold til fx wearable solutions, at den har en relativt høj unøjagtighed på +- 40 minutter. 
+BES har dog det problem i forhold til fx wearable solutions, at den har en relativt høj unøjagtighed på $\pm$40 minutter. 
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man så nød til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
 
 \subsection{Opsummering af Metoder}
