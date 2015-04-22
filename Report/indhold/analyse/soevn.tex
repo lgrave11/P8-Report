@@ -1,12 +1,13 @@
 \section{Søvn Analyse}
 Forskning viser at søvn har en væsentlig indflydelse på ens tilstand, dette gælder i høj grad bipolare patienter \citep{CPSP:CPSP1164}.
+Vi har også hørt gentagne gange fra psykologer, psykiatere og patienter at det er et meget fremtædent symptom for både unipolar og bipolar depression. REF.
 
 Det viser sig at en regelmæssig søvn-vågen cykel er særdeles vigtig for bipolare patienter.
 Eksempelvis kan mangel på søvn medføre større risiko for at gå ind i en mani- eller depressions-periode \citep{CPSP:CPSP1164}.
 
 Derudover er ændring i søvnmængde et tydeligt tegn på en mani- eller depressions-periode, jævnfør tidligere sektion REFERER TIL DEN.
 Hvis man er i en maniperiode sover man væsentligt mindre end for den habituelle periode \citep{CPSP:CPSP1164}.
-Modsat for depression vil man typisk sove væsentligt længere end for den habituelle periode.
+Modsat for depression vil man typisk sove væsentligt længere end for den habituelle periode, men vi har også hørt fra patienter at de også kan have problemer med at sove.
 
 Grundet dette anses søvn for en vigtig indikator på om man begynder at befinde sig i en mani- eller depressions-periode og bør derfor undersøges nærmere til at determinere sådanne perioder.
 
@@ -17,19 +18,17 @@ Da søvn er en meget vigtig faktor til estimering af sygdomme og livskvalitet er
 Dette giver udsalg i en lang række af søvnestimeringsmetoder, hvor nogle af de mest fremtrædende muligheder nævnes og vurderes i forhold til fokus for dette projekt.
 
 \subsection{Polysomnografi}
-KILDE TIL DETTE PLOX
-
-Den måske mest akkurate søvnestimerings metode er polysomnografi, der er en metode der kombinere et elektroencefalogram med målinger af muskel spænding og øjenbevægelse.
+Den måske mest akkurate søvnestimerings metode er polysomnografi, der er en metode der kombinere et elektroencefalogram med målinger af muskel spænding og øjenbevægelse \citep{misc:polysomnografi} \citep{misc:polysomnography}.
 Dog kræver denne metode en større mængde af special udstyr og erfarne teknikere til at montere udstyret på en patient, hvilket gør denne metode upraktisk i en almen patients soveværelse.
 
 \subsection{AktiGrafi}
 Imidlertid findes der andre metoder der er nemmere at benytte.
-Eksempler på sådanne søvnestimerings metoder er aktigrafi, der er akkurat selvom det kun benytter sig af accelerometre påmonteret ens arm.
+Et eksempel på sådan en søvnestimerings metode er aktigrafi, der er akkurat selvom det kun benytter sig af accelerometre påmonteret ens arm.
 En sådan teknik kan estimere metrikker såsom timer sovet, søvn virkningsgrad, og antal af søvnafbrydelser.
 Kendte eksempler på sådanne apparater findes ved eksempelvis FitBit og JawBone \citep{misc:fitbitSleepTracking} \citep{misc:jawBoneSleepTracking}.
-Prisen på disse kan svinge fra 500 kroner til 2000 kroner baseret på hvilket produkt man køber, men kræver at armbåndet er påmonteret når man sover.
+Prisen på disse kan svinge fra 500 kroner til 2000 kroner baseret på hvilket produkt man køber, og påkræver at armbåndet er påmonteret når man sover.
 
-Kravet om at udstyr som FitBit og JawBone skal være monteret på ens arm finder vi ikke som en tilstrækkelig hæmning for at afvise brugen af sådanne teknikker.
+Kravet om at udstyr som FitBit og JawBone skal være monteret på ens arm finder vi ikke som en tilstrækkelig hæmning for at afvise brugen af sådan en teknik.
 Af samme grund står muligheden åben for at bruge sådant udstyr i fremtiden, hvis man er interesseret i mere akkurat søvn estimering end efterfølgende nævnte estimerings metoder.
 Derudover er platformen opbygget til at være yderst fleksibelt angående hvilke moduler kan benyttes, så skulle man i fremtiden ønske at udvikle et modul der virker med FitBit/JawBone er dette muligt, men udskydes på pågældende tidspunkt grundet ressourcemangel i form af arbejdstid og det fornødne udstyr tilrådigt.
 Der findes lignende løsninger der kun benytter sig af ens smartphone, men hvor man pålægger patienten at placere sin smartphone under hovedpuden.
@@ -40,38 +39,38 @@ Der findes en lang række spørgeskemaer, hvor patienten får ansvaret for at ud
 Sådanne metoder er ikke vores fokus emne, men er en mulighed med den fleksible platform der er udviklet, hvor en sådan dagbog er et modul.
 Dog er det værd at tage med i betragtning, når man skal lære en ny model, hvilket \cite{Min:2014:TNT:2556288.2557220} angiver, hvor man bruger dagbogen som "ground truth" til at træne ens model.
 
-Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da vi ønsker en metode der kan estimere søvn med mindst mulig bruger intervention, og hvor vi søger grundlaget for vurderingen som værende v.h.a. sensorer fremfor en subjektiv vurdering man alligevel har mulighed for i forvejen.
-Idéen om en "objektiv dagbog" er dermed i tanken her også, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
+Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da vi ønsker en metode der kan estimere søvn med mindst mulig bruger intervention, og hvor grundlaget for vurdering skal være ved hjælp af sensorer fremfor en subjektiv vurdering man alligevel har mulighed for i forvejen.
+Idéen om en "objektiv dagbog" er dermed også i tankerne her, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
 
 \subsection{Toss 'N' Turn}
 Følgende fremgangsmåde er præsenteret i \cite{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forskningsresultaterne præsenteret deri.
 
 For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
 Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på smartphonen i forvejen.
-Disse værende accelerometer, mikrofon(max amplitude), lys sensor, proximity sensor, kørende processer, batteri stadie, og skærmvisningstilstand.
+Disse værende accelerometer, mikrofon(maks amplitude), lys sensor, proximity sensor, kørende processer, batteri stadie, og skærmvisningstilstand.
 Ud fra disse sensor kilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde ME på under 1 time.
-Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvnkvalitet estimering er på 83.97 \%. Hvilket gør det til en oplagt mulighed at arbejde med.
-Deres algoritme fungere så ved at foretage en række feature extractions, og så bruge teknikker såsom low-pass filter, naive bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
+Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvn estimering er på 83.97 \%. Hvilket gør det til en oplagt mulighed at arbejde med.
+Deres algoritme fungere så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom low-pass filter, Naive Bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
 
 En ulempe ved denne teknik er at den kræver en oplæringsperiode på minimum 3 dage for at få en lovende præcision, men er antaget at være et acceptabelt kompromis, da estimeringen så ville kunne fungere relativt præcist efterfølgende.
 
 Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere smartphonen i sengen, og kræver derfor minimal bruger intervention, da mange folk alligevel bruger deres smartphone som vækkeur.
 
-Det ville være godt med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode og beskrives herefter.
+Det ville være dog være bedre med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode.
 
 \subsection{Best Effort Sleep Model}\label{sec:BES}
 Best Effort Sleep (BES) Model \citep{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde.
-Disse målbare datakilder anskaffes på uden at brugeren behøver ændre sin søvn adfærd, som det f.eks. er tilfældet på mange andre tilsvarende løsninger som fx Jawbone eller FitBit der kræver at en wearable benyttes mens man sover.
+Disse målbare datakilder anskaffes på en måde så brugeren ikke behøver ændre sin søvn adfærd, som det fx er tilfældet på andre tilsvarende løsninger som fx JawBone eller FitBit der kræver at en wearable benyttes mens man sover.
 Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde.
 Om denne unøjagtighed er acceptabel skal vurderes ud fra hvad informationen skal bruges til og hvilke kriterier der er til data.
 Ud over dette kan BES ikke bruges til at estimere kvaliteten af ens søvn.
 Med kvaliteten menes hvor mange gange man har været vågen i løbet af natten, til dette kræves involvering af brugeren, enten af de bruger en wearable eller at de interagerer med systemet i en form.
 
 I vores tilfælde vil denne fremgangsmåde fungere godt som en backup solution til en af de brugerinvolverende fremgangsmåder, da det største problem ved disse er at de bliver ubrugelige hvis brugeren ikke bruger dem rigtigt.
-I de tilfælde hvor BES og en bruger involverende løsning begge er tilstede, kan BES bruges til at validere dataen fra den brugerinvolverende løsning. 
+I de tilfælde hvor BES og en bruger involverende løsning begge er tilstede, kan BES bruges til at validere data fra den brugerinvolverende løsning. 
 
-Der bruges i total seks forskellige målinger.
-Grunden til det store antal målinger er, at det er nødvendigt med flere forskellige input kilder, da ingen af dem er i direkte kontakt med brugeren.
+I BES bruges der seks forskellige målinger til at estimere søvn.
+Grunden til det store antal målinger er, at det er nødvendigt med flere forskellige input kilder, da ingen af dem er i direkte kontakt med brugeren og at de hver for sig ikke siger særlig meget men i kombination giver en udmærket estimering om brugeren sover.
 \begin{description}[style=nextline]
 \item[Lys]
 I de fleste tilfælde vurderes det at der er mørkt i det rum hvor man sover. Dog kan der her være visse uregelmæssigheder fx. kan folk der lider af en depression godt leve i mørke hele dagen, og nogle folk kan også godt finde på at sove med lyset tændt. Det er lyset er tændt er dog kun et mindre irritationsmoment.
@@ -86,16 +85,8 @@ Når man sover ligger ens telefon sandsynligvis stille, hvorimod bevægelse indi
 \item[Lyd]
 I de fleste tilfælde er det stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller  lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra.
 \end{description}
-
-Grunden til der er så mange forskellige datakilder er at de hver for sig ikke siger ret meget, men kombineret giver de et ganske udmærket billede af om folk sover.
-
-Fordelen ved denne tilgang til problemet er at den ikke kræver nogen form for interaktion med brugeren og at den er klar til at bliver taget i brug med det samme.
-
-BES har dog det problem i forhold til fx wearable solutions, at den har en relativt høj unøjagtighed på +- 40 minutter. 
-Dette er en del i forhold til andre fremgangsmåder, men der bliver man så nød til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
  
-Ud fra de eksperimenter der blev udført af \citet{6563918}, nåede de frem til en vægtning af de forskellige datakilder.
-
+Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtning af de forskellige datakilder.
 
 \begin{tabular}{|c|c|}
 \hline Datakilde & Koefficient\\
@@ -108,34 +99,42 @@ Ud fra de eksperimenter der blev udført af \citet{6563918}, nåede de frem til 
 \hline 
 \end{tabular} 
 
-
 Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen.
 Hvis præcisionen var meget vigtig ville man have en lille lærings periode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde. 
 Hvis man vælger at tage lærings perioden, vil det give en analyse der er bedre tilpasset individet, frem for den generelle løsning det vil være at bruge de koefficienter præsenteret i tabellen ovenover.
 
+Fordelen ved denne tilgang til problemet er at den ikke kræver nogen form for interaktion med brugeren, udover at den ligger tæt på hvor personen sover da hvis telefonen ligger i stuen vil det ikke sige særlig meget hvis brugeren er i soveværelset, og at den er klar til at blive taget i brug med det samme.
+
+BES har dog det problem i forhold til fx wearable solutions, at den har en relativt høj unøjagtighed på +- 40 minutter. 
+Dette er en del i forhold til andre fremgangsmåder, men der bliver man så nød til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
+
 \subsection{Opsummering af Metoder}
+For at give et overblik over de forskellige metoder og teknikker opsummeres de i \cref{tab:opsummeringMetoder}.
 
 %tabellen skal rettes seriøst til, især quality delen skal være mere sammenlignelig
-\begin{tabular}{|c|c|c|c|c|c|}
-	\hline                     & Polysomnography         & ActiGraphy                          & Søvn Dagbog          & Toss 'N' Turn                        & Best Effort Sleep \\ 
-	\hline Quality             & State of the art        & Overraskende akkurat                & Subjektivt           & 84\%                                 & 40 ME \\ 
-	\hline Behøver eksperter   & Ja                      & Nej                                 & Nej                  & Nej                                  & Nej \\ 
-	\hline Udstyr              & Specialiseret udstyr    & JawBone/FitBit                      & Nej                  & Blot smartphone                      & Blot smartphone \\ 
-	\hline Bruger intervention & I laboratorie           & Monter udstyr / læg under hovedpude & Indtast alle entries & Oplæringsperiode, derefter begrænset & Begrænset \\ 
-	\hline Metrikker           & REM søvn, Meget præcist & Let/Dyb søvn                        & Subjektivt           & Længde og vækningsperioder           & Længde og vækningsperioder \\ 
-	\hline 
+\begin{table}[h]
+\begin{tabular}{|p{1.5cm}|p{2cm}|p{3cm}|p{2cm}|p{3cm}|p{2cm}|}
+\hline                    	& Poly somnografi      		& ActiGrafi                           & Søvn Dagbog          & Toss 'N' Turn                        & Best Effort Sleep \\ 
+\hline Kvalitet           	& State of the art			& Overraskende akkurat                & Subjektivt           & 84\%   		& 40 ME \\ 
+\hline Behøver eksperter   	& Ja						& Nej                                 & Nej                  & Nej    		& Nej \\ 
+\hline Udstyr              	& Specialiseret udstyr		& JawBone/FitBit                      & Nej                  & Smartphone   & Smartphone \\ 
+\hline Bruger intervention 	& I laboratorie	& Monter udstyr / læg under hovedpude & Manuel registrering  & Oplæringsperiode, derefter begrænset & Begrænset \\ 
+\hline Metrikker           	& REM søvn, Meget præcist	& Let/Dyb søvn                        & Subjektivt           & Længde og vækningsperioder & Længde og vækningsperioder \\ 
+\hline 
 \end{tabular}
-
+\caption{Opsummering af de forskellige metoder til søvnestimering.}
+\label{tab:opsummeringMetoder}
+\end{table}
 
 \subsection{Søvnanalyse i PsyLog}
-Da søvnmønstre er en god indikator på en persons helbred, og i mange tilfælde også på den psykiske tilstand, er det meget relevant for det hjælpeværktøj der er under udvikling til personer med uni- og bipolar lidelse.
+Da søvnmønstre er en god indikator på en persons helbred, og i mange tilfælde også på den psykiske tilstand, er det meget relevant for det hjælpeværktøj der er under udvikling til personer med uni- og bipolar depression.
 I dette projekt er der et ønske om at selve dataindsamlingen kræver så lidt som muligt af brugeren, hvor det foretrukne er at brugeren bruger sin telefon og agerer i sin hverdag som de plejer.
 
 Netop fordi vi gerne vil have så lidt krav til brugeropførsel som muligt vil vi kraftigt foretrække en metode som ikke kræver noget af brugeren, hvilket kan være Best Effort Sleep (BES) Model eller noget lignende. 
 Dog har vi det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker de forskellige datakilder så det vil være noget vi selv skal forsøge at genskabe.
 Dog ved vi ud fra denne artikel at det er muligt at gøre, hvilket betyder at det er en reel mulighed.
 Der er også det problem, at denne fremgangsmåde kun kan beregne søvnlængden og ikke søvn kvalitet, som mange også mener er ganske relevant da et af de beskrivende kriterier for et depressions stadie er at ens søvn er ustabil eller af dårlig kvalitet.
-Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alle kriterier, hvilket vil sige at vi burde udforske andre mulighed for søvnestimering, dog kunne BES godt beholdes som en måde at validere dataen fra de andre dele, da deres data ikke er brugbar hvis brugeren ikke laver det nødvendige forberedelsesarbejde.
+Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alle kriterier, hvilket vil sige at vi burde udforske andre mulighed for søvnestimering, dog kunne BES godt beholdes som en måde at validere data fra de andre dele, da deres data ikke er brugbar hvis brugeren ikke laver det nødvendige forberedelsesarbejde.
 
 Dermed skal vi over i en lidt mere brugerkrævende fremgangsmåde.
 Her er der nogle hvor brugeren skal ligge sin telefon i sengen eller under hovedpuden, hvilket menes at kræve ganske lidt af brugeren og kan igen bare udføres gennem telefonen.
@@ -154,5 +153,3 @@ Wearables giver selvfølgelig også adgang til andre former for målings data de
 Grundet mangler i tilgængeligheden af information om både den statistisk baserede algoritme og BES, vælges det at arbejde videre med begge former for analyse.
 BES vælges at forsøge implementeret selvom den ikke kan give en vurdering af søvn kvaliteten, da det er vores overbevisning at det er vigtigere at kende søvn længden eller søvn mængden, end det er ikke at have den information.
 En anden fordel ved BES er også at den kan køres selvom patient ikke gør noget ekstra eller hvis patient ikke har lyst til at gøre noget ekstra, hvilket godt kunne være tilfældet under en depression.
-
-
