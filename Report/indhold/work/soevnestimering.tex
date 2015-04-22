@@ -62,7 +62,7 @@ Derudover vil $t-t_0$ så svare til længden af stilstand eksempelvis målt i ti
 Spørgsmålet går så på hvorledes $s(t-t_0)$ skal defineres.
 Det skal være en funktion der repræsenterer hvor sikker man er på søvn ud fra længden af stilstand eksempelvis målt i timer.
 En sådan funktion bør være lært ud fra ens empiri, så man kunne løse opgaven som et regressionsproblem.
-Dette er et område der kan arbejdes videre med for at få en en mere akkurat søvnestimeringsmetode og opfordres til at gøre med mere tid.
+Dette er et område der kan arbejdes videre med for at få en mere akkurat søvnestimeringsmetode og opfordres til at gøre med mere tid.
 
 Dog for at få et udgangspunkt til diskussion af sådanne funktioner er der tre funktioner plottet i \cref{fig:trefunc}.
 \begin{figure}[h]
@@ -77,9 +77,8 @@ Alle tre funktioner har til fælles at de er monotont voksende, hvilket passer m
 Den lineære funktion bygger på antagelsen at sandsynligheden for at man sover er kongruent med stilstands længden, hvilket vi ikke ønsker da vi så tillægger for stor vægt til korte stilstandsperioder.
 Af samme grund forkastes den konkave funktion også.
 
-Til sidst har vi den logistiske funktion, der er en funktion der tit bruges indenfor maskinintelligens \textbf{ref her}.
-Den logistiske funktion beskriver fint hvordan at ved længere stilstandsperioden er der en forøget hældning i funktionen indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver megen ekstra sandsynlighed for søvn men stadig lidt, dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
-I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, det kan være man har glemt mobilen hjemme mens man er på tur over en weekend, men hvis vi har som forudsætning for at systemet fungerer at man har mobilen i nærheden regnes den logistiske funktion som et godt redskab til et søvnestimat.\textbf{skal skrives bedre nok}
+Til sidst har vi den logistiske funktion der fint beskriver hvordan at ved længere stilstandsperioden er der en forøget hældning i funktionen indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver megen ekstra sandsynlighed for søvn men stadig lidt, dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
+I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, det kan være man har glemt mobilen hjemme mens man er på tur over en weekend, men hvis forudsætningen for at systemet fungerer er at man har mobilen i nærheden regnes den logistiske funktion som et godt redskab til et søvnestimat.
 
 Definitionen af $s(t-t_0)$ hvor vi kalder $t-t_0$ for $t_{span}$ er dermed følgende:
 \begin{equation}
@@ -99,7 +98,7 @@ Til sidst er der at orientere om hvordan vi afgør om der er stilstand, og derme
 \subsection{Kombinering af modeller}
 Det er tiltænkt at hver sensor kan have en tilknyttet søvnestimeringsmodel, hvilket i vores tilfælde er en søvnestimeringsmodel for accelerometer og mikrofon data.
 Imidlertid kan det være en fordel at have en samlet model der kombinerer resultaterne fundet for de enkelte modeller.
-En simpel metode at gøre dette på er v.h.a. et vægtet gennemsnit, hvilket er metode som \textbf{ref til unobtrusive sleep detection der også gør brug af dette} også benytter.
+En simpel metode at gøre dette på er v.h.a. et vægtet gennemsnit, hvilket er metode som \citet{6563918} også benytter.
 Det vægtede gennemsnit kan udregnes på følgende måde:
 \begin{equation}
 	P_{kombineret}(t,t_0) = \sum_{i=1}^{n}{w_iP_i(t,t_0)}
@@ -112,5 +111,5 @@ Det vægtede gennemsnit kan udregnes på følgende måde:
 \end{itemize}
 Dette er dog en forsimplet version af vores vægtede gennemsnit, i realiteten er der ikke data på samme tid eller i samme mængder for de enkelte søvnestimeringsmoduler.
 Af samme grund ved mangel på en estimering til en given tid for et givent modul tages den seneste tid før denne.
-Man kan forestille sig en lynlås hvor der skiftes skiftes mellem takkerne fra hver del, ligesom det gøres med estimeringerne for hvert modul.\textbf{SKAL HAVE EN BEDRE BESKRIVELSE}
+Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del, ligesom det gøres med estimeringerne for hvert modul.\als{SKAL HAVE EN BEDRE BESKRIVELSE}
 
