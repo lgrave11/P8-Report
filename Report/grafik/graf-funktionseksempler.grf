@@ -1,0 +1,51 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Do not change this file from other programs.
+[Graph]
+Version = 4.4.2.543
+MinVersion = 2.5
+OS = Windows NT 6.2 
+
+[Axes]
+xMin = -1
+xMax = 8
+xTickUnit = 0.5
+xGridUnit = 0.5
+xLabel = t-t0  i timer
+yMin = -0.1
+yMax = 1
+yTickUnit = 0.1
+yGridUnit = 0.1
+yLabel = s(t-t0)
+AxesColor = clBlue
+GridColor = 0x00FF9999
+ShowLegend = 1
+Radian = 1
+LegendPlacement = 0
+LegendPos = 0.491935483870968,0.960315670800451
+
+[Func1]
+FuncType = 0
+y = 0.125x
+Color = clRed
+Size = 3
+
+[Func2]
+FuncType = 0
+y = 1/(1+e^(-1*(x-4)))
+Color = clGreen
+Size = 3
+
+[Func3]
+FuncType = 0
+y = -1/(e^(x/(4/ln(2))))+1
+Color = clBlue
+Size = 3
+
+[Data]
+TextLabelCount = 0
+FuncCount = 3
+PointSeriesCount = 0
+ShadeCount = 0
+RelationCount = 0
+OleObjectCount = 0
+
