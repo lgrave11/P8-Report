@@ -41,18 +41,19 @@ Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da
 Idéen om en "objektiv dagbog" er dermed også i tankerne her, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
 
 \subsection{Toss 'N' Turn}
-Følgende fremgangsmåde er præsenteret i \cite{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forskningsresultaterne præsenteret deri.
+Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forskningsresultaterne præsenteret deri.
 
 For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
 Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på smartphonen i forvejen.
-Disse værende accelerometer, mikrofon(maks amplitude), lys sensor, proximity sensor, kørende processer, batteri stadie, og skærmvisningstilstand.
-Ud fra disse sensor kilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde ME på under 1 time.
+Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteri stadie, og skærmvisningstilstand.
+Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde ME på under 1 time.
 Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvn estimering er på 83.97 \%. Hvilket gør det til en oplagt mulighed at arbejde med.
-Deres algoritme fungere så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom low-pass filter, Naive Bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
+Deres algoritme fungere så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
 
 En ulempe ved denne teknik er at den kræver en oplæringsperiode på minimum 3 dage for at få en lovende præcision, men er antaget at være et acceptabelt kompromis, da estimeringen så ville kunne fungere relativt præcist efterfølgende.
 
-Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere smartphonen i sengen, og kræver derfor minimal bruger intervention, da mange folk alligevel bruger deres smartphone som vækkeur.
+Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere sin smartphon i sengen, og kræver derfor minimal bruger intervention, da mange folk alligevel bruger deres smartphone som vækkeur.
+\winde{kilde her?}
 
 Det ville dog være bedre med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode.
 
