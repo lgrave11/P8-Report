@@ -21,7 +21,7 @@ Ses der på accelerometer data i \cref{fig:accplot} indikerer det tydeligt når 
 Dette skyldes at i sensorens natur er den god til at registrere bevægelse, da accelerationer er nødvendige for at ændringer i hastighed kan finde sted.
 Der kan ses at antagelsen om at når man går med sin telefon i lommen er man vågen svarer fint til accelerations plottet.
 Dog kan man ved stilstand ikke vide sig sikker på om det er forbi man sover, eller blot fordi man har lagt sin mobil fra sig.
-Ved stilstand i en længere periode kan det forsøges at estimere sansynligheden for at denne stilstand er grundet at man sover, men derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
+Ved stilstand i en længere periode kan det forsøges at estimere sandsynligheden for at denne stilstand er grundet at man sover, men derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
 Et eksempel på en sådan kilde er mikrofonen vi kan bruge til at måle maksamplitude, således at man ikke indsamler personfølsomme oplysninger.
 
 \begin{figure}[h]
@@ -95,3 +95,22 @@ hvor,
 Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata.
 
 Til sidst er der at orientere om hvordan vi afgør om der er stilstand, og dermed angiver en ny værdi for $t_0$, dette gøres i øjeblikket med en simpel metode der ser på de sidste 5 målinger og ser at afstanden mellem den observerede måling og de sidste fem målinger ikke overstiger et givet grænseværdi der estimeres ud fra træningsdataene, men i fremtiden bør der overvejes alternativer.
+
+\subsection{Kombinering af modeller}
+Det er tiltænkt at hver sensor kan have en tilknyttet søvnestimeringsmodel, hvilket i vores tilfælde er en søvnestimeringsmodel for accelerometer og mikrofon data.
+Imidlertid kan det være en fordel at have en samlet model der kombinerer resultaterne fundet for de enkelte modeller.
+En simpel metode at gøre dette på er v.h.a. et vægtet gennemsnit, hvilket er metode som \textbf{ref til unobtrusive sleep detection der også gør brug af dette} også benytter.
+Det vægtede gennemsnit kan udregnes på følgende måde:
+\begin{equation}
+	P_{kombineret}(t,t_0) = \sum_{i=1}^{n}{w_iP_i(t,t_0)}
+\end{equation}
+, hvor
+\begin{itemize}
+	\item[$P_{kombineret}(t,t_0)$] er den kombinerede sandsynlighed for søvn ved stilstand fra tiden $t_0$ til $t$.
+	\item[$w_i$] er vægten som $P_i(t,t_0)$ skal tillægges.
+	\item[$P_i(t,t_0)$] er sandsynligheden for søvn ved stilstand fra tiden $t_0$ til $t$ for sandlynlighedsmodellen $i$.
+\end{itemize}
+Dette er dog en forsimplet version af vores vægtede gennemsnit, i realiteten er der ikke data på samme tid eller i samme mængder for de enkelte søvnestimeringsmoduler.
+Af samme grund ved mangel på en estimering til en given tid for et givent modul tages den seneste tid før denne.
+Man kan forestille sig en lynlås hvor der skiftes skiftes mellem takkerne fra hver del, ligesom det gøres med estimeringerne for hvert modul.\textbf{SKAL HAVE EN BEDRE BESKRIVELSE}
+
