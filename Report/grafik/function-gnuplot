@@ -172,5 +172,5 @@ ARG0 = ""
 GPFUN_f = "f(x) = 0.125*x"
 GPFUN_g = "g(x) = 1/(1+exp(-1*(x-4)))"
 GPFUN_h = "h(x) = -1/(exp(x/(4/log(2))))+1"
-plot f(x) title "Linear" lt rgb "red" lw 3, g(x) title "Logistic" lt rgb "green" lw 3, h(x) title "Concave" lt rgb "blue" lw 3
+plot f(x) title "Lineær" lt rgb "red" lw 3, g(x) title "Logistisk" lt rgb "green" lw 3, h(x) title "Konkav" lt rgb "blue" lw 3
 #    EOF
