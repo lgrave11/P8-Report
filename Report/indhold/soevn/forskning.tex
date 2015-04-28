@@ -112,3 +112,11 @@ En ulempe er dog hvis man ligger sin smartphone i stuen vil det ikke sige særli
 Endvidere har BES en ulempe i forhold til fx wearables løsninger, hvilket at den har en relativ høj unøjagtighed hvilket er på $\pm$40 minutter. 
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
 
+\subsection{Statistisk Baseret Tilgang}\label{sec:statbased}
+Den statisk baserede tilgang bliver præsenteret som en lille del af \citet{misc:statbased}.
+Denne metode bygger på at telefonen ligger i patientens seng og er så ud fra de bevægelser der sker i stand til at bestemme om personen sover eller ej.
+Metoden ser på målingerne i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
+Til at nå frem til dette ser metoden på intensiteten af bevægelser for hver måling og sammenligner dette med et beregnet threshold.
+Threshold beregnes som median plus standard deviation delt med to.
+Hvis en selv defineret procent af målingerne overstiger det beregnede threshold, vurderes patienten til at være vågen, ellers estimeres det at patienten sover.
+
