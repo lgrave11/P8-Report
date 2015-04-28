@@ -44,10 +44,13 @@ Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220},
 
 For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
 Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på smartphonen i forvejen.
-Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteri stadie, og skærmvisningstilstand.
-Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde ME på under 1 time.
-Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvn estimering er på 83.97 \%. Hvilket gør det til en oplagt mulighed at arbejde med.
+Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteri stadie (opladning/ikke opladning), og skærmvisningstilstand.
+Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
+Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvn estimering er på 83.97 \%.
+Hvilket gør det til en oplagt mulighed at arbejde med.
 Deres algoritme fungere så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
+Hvis vi antager at den procent nøjagtighed de har på 84 \% er for en patient der sover 8 timer, vil dette betyde at søvnen estimeres med +- 76 minutter, hvilket er ganske meget når vi skal bestemme om en person sover for meget eller for lidt.
+76 minutter i den forkerte retning kan sagtens resultere i at en person der sover for lidt bliver vurderet til at sove tilstrækkeligt og vice versa
 
 En ulempe ved denne teknik er at den kræver en oplæringsperiode på minimum 3 dage for at få en lovende præcision, men er antaget at være et acceptabelt kompromis, da estimeringen så ville kunne fungere relativt præcist efterfølgende.
 
@@ -112,4 +115,12 @@ Derudover er en fordel også at denne model er klar til at blive taget i brug me
 En ulempe er dog hvis man ligger sin smartphone i stuen vil det ikke sige særlig meget omkring ens søvn.
 Endvidere har BES en ulempe i forhold til fx wearables løsninger, hvilket at den har en relativ høj unøjagtighed hvilket er på $\pm$40 minutter. 
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
+
+\subsection{Statistisk Baseret Tilgang}\label{sec:statbased}
+Den statisk baserede tilgang bliver præsenteret som en lille del af \citet{misc:statbased}.
+Denne metode bygger på at telefonen ligger i patientens seng og er så ud fra de bevægelser der sker i stand til at bestemme om personen sover eller ej.
+Metoden ser på målingerne i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
+Til at nå frem til dette ser metoden på intensiteten af bevægelser for hver måling og sammenligner dette med et beregnet threshold.
+Threshold beregnes som median plus standard deviation delt med to.
+Hvis en selv defineret procent af målingerne overstiger det beregnede threshold, vurderes patienten til at være vågen, ellers estimeres det at patienten sover.
 
