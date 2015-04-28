@@ -1,6 +1,5 @@
-\section{Søvn Analyse}
 Forskning viser at søvn har en væsentlig indflydelse på ens tilstand, dette gælder i høj grad bipolare patienter \citep{CPSP:CPSP1164}.
-Vi har også hørt gentagne gange fra psykologer, psykiatere og patienter at det er et meget fremtædent symptom for både unipolar og bipolar depression. REF.
+Endvidere, har vi også hørt gentagne gange fra psykologer, psykiatere og patienter at det er et meget fremtædent symptom for både unipolar og bipolar depression. REF.
 
 Det viser sig at en regelmæssig søvn-vågen cykel er særdeles vigtig for bipolare patienter.
 Eksempelvis kan mangel på søvn medføre større risiko for at gå ind i en mani- eller depressions-periode \citep{CPSP:CPSP1164}.
@@ -11,7 +10,6 @@ Modsat for depression vil man typisk sove væsentligt længere end for den habit
 
 Grundet dette anses søvn for en vigtig indikator på om man begynder at befinde sig i en mani- eller depressions-periode og bør derfor undersøges nærmere til at determinere sådanne perioder.
 
-\section{Søvn Estimerings Metoder}
 Da søvn er en meget vigtig faktor til estimering af sygdomme og livskvalitet er der lagt en stor mængde forskning i dette område.
 Dette giver udslag i en lang række af søvnestimeringsmetoder, hvor nogle af de mest fremtrædende muligheder nævnes og vurderes i forhold til fokus for dette projekt.
 
@@ -114,50 +112,3 @@ En ulempe er dog hvis man ligger sin smartphone i stuen vil det ikke sige særli
 Endvidere har BES en ulempe i forhold til fx wearables løsninger, hvilket at den har en relativ høj unøjagtighed hvilket er på $\pm$40 minutter. 
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
 
-\subsection{Opsummering af Metoder}
-For at give et overblik over de forskellige metoder og teknikker opsummeres de i \cref{tab:opsummeringMetoder}.
-
-%tabellen skal rettes seriøst til, især quality delen skal være mere sammenlignelig
-\begin{table}[h]
-\begin{tabular}{|p{1.5cm}|p{2cm}|p{3cm}|p{2cm}|p{3cm}|p{2cm}|}
-\hline                    	& Poly somnografi      		& ActiGrafi                           & Søvn Dagbog          & Toss 'N' Turn                        & Best Effort Sleep \\ 
-\hline Kvalitet           	& State of the art			& akkurat                & Subjektivt           & 84\%   		& 40 ME \\ 
-\hline Behøver eksperter   	& Ja						& Nej                                 & Nej                  & Nej    		& Nej \\ 
-\hline Udstyr              	& Specialiseret udstyr		& JawBone/FitBit                      & Ingen                  & Smartphone   & Smartphone \\ 
-\hline Bruger intervention 	& I laboratorie	& Monter udstyr / læg under hovedpude & Manuel registrering  & Oplæringsperiode, derefter begrænset & Begrænset \\ 
-\hline Metrikker           	& REM søvn, Meget præcist	& Let/Dyb søvn                        & Subjektivt           & Længde og vækningsperioder & Længde og vækningsperioder \\ 
-\hline 
-\end{tabular}
-\caption{Opsummering af de forskellige metoder til søvnestimering.}
-\label{tab:opsummeringMetoder}
-\end{table}
-\als{Vi skal have lavet om på formateringen på denne tabel}
-\winde{Skal også forklares i tekst, samt skrive hvad for nogle man burde overveje at bruge}
-
-\subsection{Søvnanalyse i PsyLog}
-Da søvnmønstre er en god indikator på en persons helbred, og i mange tilfælde også på den psykiske tilstand, er det meget relevant for det hjælpeværktøj der er under udvikling til personer med uni- og bipolar depression.
-I dette projekt er der et ønske om at selve dataindsamlingen kræver så lidt som muligt af brugeren, hvor det foretrukne er at brugeren bruger sin telefon og agerer i sin hverdag som de plejer.
-
-Netop fordi vi gerne vil have så lidt krav til brugeropførsel som muligt vil vi kraftigt foretrække en metode som ikke kræver noget af brugeren, hvilket kan være Best Effort Sleep (BES) Model eller noget lignende. 
-Dog har vi det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker de forskellige datakilder så det vil være noget vi selv skal forsøge at genskabe.
-Dog ved vi ud fra denne artikel at det er muligt at gøre, hvilket betyder at det er en reel mulighed.
-Der er også det problem, at denne fremgangsmåde kun kan beregne søvnlængden og ikke søvn kvalitet, som mange også mener er ganske relevant da et af de beskrivende kriterier for et depressions stadie er at ens søvn er ustabil eller af dårlig kvalitet.
-Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alle kriterier, hvilket vil sige at vi burde udforske andre mulighed for søvnestimering, dog kan BES godt beholdes som en måde at validere data fra de andre dele, da deres data ikke er brugbar hvis brugeren ikke laver det nødvendige forberedelsesarbejde.
-
-Dermed skal vi over i en lidt mere brugerkrævende fremgangsmåde.
-Her er der nogle hvor brugeren skal ligge sin telefon i sengen eller under hovedpuden, hvilket menes at kræve ganske lidt af brugeren og kan igen bare udføres gennem telefonen.
-I disse fremgangsmåder analyseres de bevægelser telefonen registrerer i sengen til at bestemme hvornår personen sover og kan også bruges til at bestemme de forskellige stadier af søvn ud fra viden om hvordan man bevæger sig i de forskellige faser.
-For denne fremgangsmåde har vi formået at finde pseudokode til en offentligt tilgængelig algoritme, så det at implementere en udgave af det der kan lave nogenlunde præcise analyser er en mulighed, implementationen af dette diskuteres i \cref{sec:statMet}.
-Denne algoritme bruger en statistisk baseret tilgang til at nå frem til om en bruger sover.
-Det at telefonen nu ligger i sengen og dermed bevæger sig, gør at den tidligere nævnte BES fremgangsmåde ikke giver særligt gode resultater, da den er kraftigt baseret på analyse af bevægelses data.
-
-Et alternativ til at ligge sin telefon i sengen er brug af wearables, det vil sige måle enheder som brugeren skal have på mens de sover der så måler fra forskellige sensorer, som f.eks. accelerometer og temperatur.
-En del wearables behandler også deres data selv, så det eneste der kræves for at få dem som en del af vores system er en integration af dem som datakilde.
-Disse kræver at brugeren anskaffer sig ekstra udstyr for få den optimale behandling, så hvis det er noget der står for egen regning vil det muligvis give problemer.
-Dette er dog et mindre problem da sådan en enhed sandsynligvis vil blive givet til brugeren som en del af deres behandling, da prisen på det nok er væsentligt lavere end den hospitals indlæggelse som det forhåbentlig kan bruges til at undgå. 
-En anden fordel ved wearables er, at det vil tillade at bruge BES som validering da telefonen nu sandsynligvis ligger stille ved siden af sengen.
-Wearables giver selvfølgelig også adgang til andre former for målings data der kunne være brugbart for andre former for analyse, men der er en risiko for at det vil resultere i irritation for brugeren, da det at f.eks. gå med et armbånd hele tiden godt kunne gå hen at blive irriterende.
-
-Grundet mangler i tilgængeligheden af information om både den statistisk baserede algoritme og BES, vælges det at arbejde videre med begge former for analyse.
-BES vælges at forsøge implementeret selvom den ikke kan give en vurdering af søvn kvaliteten, da det er vores overbevisning at det er vigtigere at kende søvn længden eller søvn mængden, end det er ikke at have den information.
-En anden fordel ved BES er også at den kan køres selvom patienten ikke gør noget ekstra eller hvis patient ikke har lyst til at gøre noget ekstra, hvilket godt kunne være tilfældet under en depression.
