@@ -1,9 +1,7 @@
-\section{Søvn Estimerings Model}
-Med de valgte sensorer der bruges til søvnestimeringen fastlagt, grundet erfaringer fra andre kilder \textbf{REF HER}, består arbejdet i at konstruere en meningsfuld søvn estimerings model.
-
-I \cref{sec:BES} nævnes en række features der udtrækkes fra deres sensor data i \citet{6563918}, men for at kunne gøre dette bør der ses på data fra sensorerne.
-Dette resulterer i en bedre opfattelse af hvordan man kan bruge lyd og accelerationsdata, hvorefter en metode til at udtrække features fra disse data foreslås.
-Til sidst resulterer dette i en samlet model der vægter features samlet fra lyd- og accelerations-data.
+Som et prof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover.
+Metoden der vil blive taget udgangspunkt i er den metode som er beskrevet i \cref{sec:BES}.
+Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og accelerometer er de sensorer der tages udgangspunkt i.
+Disse to data typer vil blive kombineret til at denne en enkelt model der vurderer om man sover.
 
 \subsection{Sensor Data}
 Hovedideen bag brugen af accelerations og amplitude data kan ses i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
@@ -15,7 +13,7 @@ Dette resulterede i de plots der kan ses i \cref{fig:accplot} og \cref{fig:amplp
 	\centering
 	%\includegraphics[scale=0.5]{acc-placeholder}
 	\includegraphics[scale=0.75]{acceleration-plot}
-	\caption{Accelerationsplot, hvor der blev sovet fra 22:00 til 07:00 næste dag.}\label{fig:accplot}
+	\caption{Accelerationsplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.}\label{fig:accplot}
 \end{figure}
 
 Ses der på accelerometer data i \cref{fig:accplot} indikerer det tydeligt når telefonen har været i bevægelse.
@@ -29,7 +27,7 @@ Et eksempel på en sådan kilde er mikrofonen vi kan bruge til at måle maksampl
 	\centering
 	%\includegraphics[scale=0.5]{ampl-placeholder}
 	\includegraphics[scale=0.75]{amplitude-plot}
-	\caption{Amplitudeplot, hvor der blev sovet fra 22:00 til 07:00 næste dag.}\label{fig:amplplot}
+	\caption{Amplitudeplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.}\label{fig:amplplot}
 \end{figure}
 
 Idéen bag at bruge maksamplituden er at man larmer væsentligt mere når man er vågen end når man sover.
