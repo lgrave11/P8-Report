@@ -38,7 +38,7 @@ Dog er det værd at tage med i betragtning, når man skal lære en ny model, hvi
 Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da vi ønsker en metode der kan estimere søvn med mindst mulig bruger intervention, og hvor grundlaget for vurdering skal være ved hjælp af sensorer fremfor en subjektiv vurdering man alligevel har mulighed for i forvejen.
 Idéen om en "objektiv dagbog" er dermed også i tankerne her, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
 
-\subsection{Toss 'N' Turn}
+\subsection{Toss 'N' Turn}\label{sec:tossNturn}
 Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forskningsresultaterne præsenteret deri.
 
 For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
@@ -59,9 +59,9 @@ Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere
 Det ville dog være bedre med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode.
 
 \subsection{Best Effort Sleep Model}\label{sec:BES}
-Best Effort Sleep (BES) Model \citep{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde.
+Best Effort Sleep (BES) Model \citet{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde.
 Disse målbare datakilder anskaffes på en måde så brugeren ikke behøver ændre sin søvn adfærd, som det fx er tilfældet på andre tilsvarende løsninger som fx JawBone eller FitBit der kræver at en wearable benyttes mens man sover.
-Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde.
+Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, da der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde, hvilket for en person der sover 8 timer svarer til 92 \% nøjagtighed.
 Om denne unøjagtighed er acceptabel skal vurderes ud fra hvad informationen skal bruges til og hvilke kriterier der er til data.
 Ud over dette kan BES ikke bruges til at estimere kvaliteten af ens søvn.
 Med kvaliteten menes hvor mange gange man har været vågen i løbet af natten, til dette kræves involvering af brugeren, enten af de bruger en wearable eller at de interagerer med systemet.
@@ -71,22 +71,8 @@ I de tilfælde hvor BES og en bruger involverende løsning begge er tilstede, ka
 
 I BES bruges der seks forskellige målinger til at estimere søvn.
 Grunden til det store antal målinger er, at det er nødvendigt med flere forskellige input kilder, da ingen af dem er i direkte kontakt med brugeren og at de hver for sig ikke siger særlig meget men i kombination giver en udmærket estimering om brugeren sover.
-\begin{description}[style=nextline]
-\item[Lys]
-I de fleste tilfælde vurderes det at der er mørkt i det rum hvor man sover. Dog kan der her være visse uregelmæssigheder fx. kan folk der lider af en depression godt leve i mørke hele dagen, og nogle folk kan også godt finde på at sove med lyset tændt. Det at lyset er tændt er dog kun et mindre irritationsmoment.
-\item[Lås]
-Mens en person sover vil han ikke låse sin telefon op, og den vil normalt låse selv efter en lille periode, dermed ved man også at hvis en telefon bliver låst op, så er personen vågen.
-\item[Opladning]
-Mange folk sætter deres telefon til opladning mens de sover, derfor kan opladnings perioder give en indikation af søvn, det er dog ikke garanteret at dette er tilfældet.
-\item[Slukket]
-Nogle folk slukker deres telefon mens de sover for ikke at blive forstyrret, derfor kan man se på længde af disse perioder for at vurdere søvn. Det viste sig dog ud fra test at ingen af testpersonerne gjorde dette. 
-\item[Bevægelse]
-Når man sover ligger ens telefon sandsynligvis stille, hvorimod bevægelse indikerer man er vågen.
-\item[Lyd]
-I de fleste tilfælde er der stille når folk sover, bortset fra diverse former for baggrundsstøj, fx snorken, hosten eller lyden af et bilhorn udenfor. Selvom disse er forstyrrende kan de filtreres fra ved at ignorer lyd der er for lav.
-\end{description}
- 
-Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtning af de forskellige datakilder, se \cref{tab:vaegtninger}.
+Kilderne der bruges er meget tilsvarende dem der bruges i Toss 'N' Turn beskrevet i \cref{sec:tossNturn}, hvor der her bruges lys, lyd, bevægelse (accelerometer), skærmlås, batteri status og om den er slukket.
+Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtninger der kan ses i \cref{tab:vaegtninger}.
 
 \begin{table}[h]
 \centering
@@ -100,7 +86,7 @@ Disse målinger skal vægtes forskelligt, og ud fra eksperimenterne udført af \
 \hline Lyd & 0.3484 \\ 
 \hline 
 \end{tabular}
-\caption{De forskellige vægtninger for hver af målingerne.}
+\caption{De forskellige vægtninger for hver datakilde.}
 \label{tab:vaegtninger}
 \end{table}
 
@@ -110,7 +96,7 @@ Endvidere vil analysen også bedre kunne tilpasses til individet, frem for at br
 Hvis man vælger at bruge en lærings perioden, vil det give en analyse der er bedre tilpasset individet, frem for den generelle løsning det vil være at bruge de koefficienter præsenteret i tabellen ovenover.
 
 Fordelen ved BES er at den ikke kræver nogen form for interaktion med brugeren, udover at ens smartphone skal ligger tæt på hvor man sover.
-Derudover er en fordel også at denne model er klar til at blive taget i brug med det samme.
+Derudover er en fordel også at denne model er klar til at blive taget i brug med det samme hvis vi vælger at holde os til de koefficienter der blev præsenteret ovenover.
 En ulempe er dog hvis man ligger sin smartphone i stuen vil det ikke sige særlig meget omkring ens søvn.
 Endvidere har BES en ulempe i forhold til fx wearables løsninger, hvilket at den har en relativ høj unøjagtighed hvilket er på $\pm$40 minutter. 
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
