@@ -112,4 +112,21 @@ Det vægtede gennemsnit kan udregnes på følgende måde:
 Dette er dog en forsimplet version af vores vægtede gennemsnit, i realiteten er der ikke data på samme tid eller i samme mængder for de enkelte søvnestimeringsmoduler.
 Af samme grund ved mangel på en estimering til en given tid for et givent modul tages den seneste tid før denne.
 Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del, ligesom det gøres med estimeringerne for hvert modul.\als{SKAL HAVE EN BEDRE BESKRIVELSE}
+For at illustrere dette bruges der et eksempel.
 
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline Tid & Sandsynlighed for model A & Sandsynlighed for model B \\ 
+\hline 02:30:00 & 	0.6    & ~ \\ 
+\hline 02:30:01 & 	~ 	   & 0.3 \\ 
+\hline 02:30:02 & 	0.61   & ~ \\ 
+\hline 02:30:03 & 	0.61   & ~ \\ 
+\hline 02:30:04 & 	~      & 0.31 \\ 
+\hline 
+\end{tabular} 
+\caption{En tabel der illustrere hvor data kan se ud.}
+\label{tab:combiModelsExample}
+\end{table}
+
+I \cref{tab:combiModelsExample} kan man se data på to forskellige modeller som illustrere sandsynligheden for et tidspunkt at brugeren sover.
+Så kombinering af data fungerer på den måde at ...
