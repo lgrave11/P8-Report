@@ -9,11 +9,11 @@ Som en ekstra note til denne tabel er præcisionen baseret ud fra en antaget sø
 \begin{table}[h]
 \begin{tabular}{|p{1.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.5cm}|}
 \hline & Poly somnografi & ActiGrafi & Søvn Dagbog & Toss 'N' Turn & Best Effort Sleep  & Statistisk baseret\\ 
-\hline Præcision & N/A & 95 \% + & Subjektivt & 84\% & 85 \% & 68 \%\\ 
+\hline Præcision & N/A & 95 \% + & Subjektivt & 84\% kvalitet, 92 \% længde & 92 \% & 68 \%\\ 
 \hline Behøver eksperter & Ja & Nej & Nej & Nej & Nej & Nej \\ 
 \hline Udstyr & Specialiseret udstyr & JawBone / FitBit & Ingen & Smartphone & Smartphone & Smart-phone \\ 
 \hline Bruger intervention	& I laboratorie og meget udstyr på patient	& Monter udstyr / læg under hovedpude & Manuel registrering  & Oplæring-speriode, derefter begrænset & Begrænset & Læg telefon i seng \\ 
-\hline Metrikker & REM søvn, Meget præcist	& Let/Dyb søvn & Subjektivt & Længde og vækningsperioder & Længde og vækningsperioder & Længde \\ 
+\hline Metrikker & REM søvn, Meget præcist	& Let/Dyb søvn & Subjektivt & Længde, vækningsperioder og søvn kvalitet & Længde og vækningsperioder & Længde \\ 
 \hline 
 \end{tabular}
 \caption{Opsummering af de forskellige metoder til søvnestimering.}
@@ -21,9 +21,21 @@ Som en ekstra note til denne tabel er præcisionen baseret ud fra en antaget sø
 \end{table}
 \als{Vi skal have lavet om på formateringen på denne tabel}
 \winde{Skal også forklares i tekst, samt skrive hvad for nogle man burde overveje at bruge}
+Som det kan ses ud fra \cref{tab:opsummeringMetoder}, så har de forskellige metoder varierende styrker og svagheder, dog Toss 'N' Turn's søvn længde estimering og Best Effort Sleep sådan set even.
+I den proces det er at beslutte hvilke at gå videre med, er det første punkt at se på hvilke af metoderne vi har mulighed for at lave med det udstyr vi har og konkrete resourcer vi har til rådighed.
+Da polysomnografi kræver en ekspert og store mængder specialiseret udstyr, er denne ikke fornuftig at se videre på.
+ActiGraf kræver en wearable som dataindsamlings modul, hvilket vi ikke har, så derfor kigges der ikke videre på den, men hvis sådanne wearables var til rådighed, ville denne metode sandsynligvis give meget gode resultater.
+
+En søvndagbog kunne godt være passende, dog er der det problem at det er subjektivt så patienten kan komme til at give ukorrekt information, hvilket vil virke forstyrrende for et program der skal finde trends.
+Derudover er der en risiko for at patienterne ikke udfylder deres søvn dagbog hvis de er i en depressions eller mani periode.
+
+Dette efterlader os med tre tilbageværende metoder, Toss 'N' Turn, Best Effort Sleep (BES) og statistisk baseret tilgang.
+Af disse har BES og Toss 'N' Turn bedst præcision, hvor BES kan køre stort set uden at involvere brugeren, hvorimod Toss 'N' Turn har brug for en oplærings periode efter hvilket punkt brugeren ikke skal involveres.
+Den statistisk baserede metoder kræver en lille smule involvering af brugeren hele tiden, så på det punkt er det en god middelvej, men den har væsentlig lavere nøjagtighed end de to andre.
 
 \subsection{Søvnanalyse i PsyLog}
 \winde{Ikke sikker på at det her skal med her}
+\lars{Enig med Winde i at det nok ikke skal være her, hvis det skal, så nævn Toss 'N' Turn og skriv en del om sikkert}
 Da søvnmønstre er en god indikator på en persons helbred \lars{skal source til}, og i mange tilfælde også på den psykiske tilstand, er det meget relevant for det hjælpeværktøj der er under udvikling til personer med uni- og bipolar depression.
 I dette projekt er der et ønske om at selve dataindsamlingen kræver så lidt som muligt af brugeren, hvor det foretrukne er at brugeren bruger sin telefon og agerer i sin hverdag som de plejer.
 
