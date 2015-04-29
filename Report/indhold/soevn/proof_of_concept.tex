@@ -117,17 +117,19 @@ Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del,
 
 For at illustrere dette bruges der et eksempel.
 
+\newcommand{\nv}{Ingen estimering}
+
 \begin{table}
 \begin{tabular}{|c|c|c|}
 \hline Tid & Sandsynlighed for model A & Sandsynlighed for model B \\ 
-\hline 02:30:00 & 	0.6    & ~ \\ 
-\hline 02:30:01 & 	~ 	   & 0.3 \\ 
-\hline 02:30:02 & 	0.61   & ~ \\ 
-\hline 02:30:03 & 	0.61   & ~ \\ 
-\hline 02:30:04 & 	~      & 0.31 \\ 
+\hline 02:30:00 & 	0.6     & \nv \\ 
+\hline 02:30:01 & 	\nv     & 0.3 \\ 
+\hline 02:30:02 & 	0.61    & \nv \\ 
+\hline 02:30:03 & 	0.61    & \nv \\ 
+\hline 02:30:04 & 	\nv     & 0.31 \\ 
 \hline 
 \end{tabular} 
-\caption{En tabel der illustrere hvor data kan se ud.}
+\caption{En tabel der illustrere hvordan estimeringer kan se ud.}
 \label{tab:combiModelsExample}
 \end{table}
 
@@ -137,7 +139,7 @@ Måden data kombineres på vises ved hjælp af dataen i tabellen.
 Det starter på den måde at der er to gennemløbere for A og B. 
 Disse to gennemløbere starter på første element i A og B. 
 I eksemplet vil gennemløberen for A starte ved 02:30:00 med værdien 0.6 og for B vil den starte ved 02:30:01 med værdien 0.3.
-Værdierne bruges så til at lave en kombinering ved hjælp af vægtninger for det to modeller. I eksemplet vil dette så betyde $\text{VægtningA} * 0.6 + \text{VægtningB} * 0.3$.
+Værdierne bruges så til at lave en kombinering ved hjælp af vægtninger for det to modeller. I eksemplet vil dette så betyde at kombinering vil se sådan her ud: $$\text{VægtningA} * 0.6 + \text{VægtningB} * 0.3$$
 Herefter ses der på tidspunktet, for at bestemme hvilken gennemløber der skal køres frem til det næste element og hvordan kombineringen skal gemmes.
 Hvis A's tidspunkt er mindst, gemmes kombinering med A's tidspunkt og A køres frem, hvis B's tidspunkt er mindst gemmes kombinering med B's tidspunkt og B køres frem, ellers køres begge frem da det betyder at de to tidspunkter er ens.
 I eksemplet vil dette betyde at A køres frem til 02:30:02 med værdien 0.61, her kombineres værdierne 0.61 og 0.3 og under B's tidspunkt da den i dette tilfælde er mindst.
