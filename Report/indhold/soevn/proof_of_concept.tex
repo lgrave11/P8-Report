@@ -1,10 +1,10 @@
-Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover.
-Metoden der vil blive taget udgangspunkt i er den metode som er beskrevet i \cref{sec:BES}.
-Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og accelerometer er de sensorer der tages udgangspunkt i.
-Disse to data typer vil blive kombineret til at denne en enkelt model der vurderer om man sover.
+Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover eller ej.
+Metoden der tages udgangspunkt i er den metode som er beskrevet i \cref{sec:BES}, Best Effort Sleep Model men andre metoder kunne også have været brugt.
+Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og acceleration er de datatyper der tages udgangspunkt i.
+Disse to data typer kombineres til en enkelt model der vurderer om man sover.
 
 \subsection{Sensor Data}
-Hovedideen bag brugen af accelerations og amplitude data kan ses i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
+Hovedideen bag brugen af acceleration og amplitude data kan ses i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
 
 For at have en bedre indsigt i hvordan vi kan bruge accelerations og amplitude data blev disse plottet over en dag inklusiv søvn, hvor man holdt log for hvornår der blev sovet.
 Dette resulterede i de plots der kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
