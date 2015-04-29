@@ -1,18 +1,24 @@
 \ivan{evt noget om $\Delta$søvn ved udvikling af sygdomme. $\rightarrow\Delta$søvn som indikator (y), $\rightarrow\Delta$søvn som kilde til udvikling af sygdom (?).}
 Forskning viser at søvn har en væsentlig indflydelse på ens tilstand, dette gælder i høj grad bipolare patienter \citep{CPSP:CPSP1164}.
-Endvidere, har vi også hørt gentagne gange fra psykologer, psykiatere og patienter at det er et meget fremtædent symptom for både unipolar og bipolar depression. REF.
+Endvidere, har vi også hørt gentagne gange fra psykologer, psykiatere og patienter at det er et meget fremtrædent problem for personer der har enten uni- eller bipolar depression \citep[Kapitel 2, Sektion 3,4,5]{misc:faellesrapp}.
 
 Det viser sig at en regelmæssig søvn-vågen cykel er særdeles vigtig for bipolare patienter.
 Eksempelvis kan mangel på søvn medføre større risiko for at gå ind i en mani- eller depressions-periode \citep{CPSP:CPSP1164}.
 
 Derudover er ændring i søvnmængde et tydeligt tegn på en mani- eller depressions-periode, jævnfør tidligere sektion REFERER TIL DEN.
 Hvis man er i en maniperiode sover man væsentligt mindre end for den habituelle periode \citep{CPSP:CPSP1164}.
-Modsat for depression vil man typisk sove væsentligt længere end for den habituelle periode, men vi har også hørt fra patienter at de også kan have problemer med at sove.
+Modsat for depression vil man typisk sove væsentligt længere end for den habituelle periode, men vi har også hørt fra patienter at de også kan have problemer med at sove \citep[Kapitel 2, Sektion 5]{misc:faellesrapp}.
 
 Grundet dette anses søvn for en vigtig indikator på om man begynder at befinde sig i en mani- eller depressions-periode og bør derfor undersøges nærmere til at determinere sådanne perioder.
 
 Da søvn er en meget vigtig faktor til estimering af sygdomme og livskvalitet er der lagt en stor mængde forskning i dette område.
-Dette giver udslag i en lang række af søvnestimeringsmetoder, hvor nogle af de mest fremtrædende muligheder nævnes og vurderes i forhold til fokus for dette projekt.
+Dette giver udslag i en lang række af søvn estimerings metoder, hvor nogle af de mest fremtrædende muligheder nævnes og vurderes i forhold til følgende kriterier:
+\begin{itemize}
+\item Metoden skal gerne undgå forstyrrende ekstra udstyr.
+\item Metoden skal gerne kunne bruges af brugere i deres eget soveværelse.
+\item Metoden skal gerne undgå bruger intervention og måle søvn autonomt.
+\item Metoden skal gerne være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel.
+\end{itemize}
 
 \subsection{Polysomnografi}
 Den måske mest akkurate søvnestimerings metode er polysomnografi, der er en metode der kombinerer et elektroencefalogram med målinger af muskel spænding og øjenbevægelse \citep{misc:polysomnografi,misc:polysomnography}.
@@ -29,7 +35,7 @@ Kravet om at udstyr som FitBit og JawBone skal være monteret på ens arm finder
 Af samme grund står muligheden åben for at bruge sådant udstyr i fremtiden, hvis man er interesseret i mere akkurat søvn estimering end efterfølgende nævnte estimerings metoder.
 Derudover er platformen opbygget til at være yderst fleksibelt angående hvilke moduler kan benyttes, så skulle man i fremtiden ønske at udvikle et modul der virker med FitBit/JawBone er dette muligt, men udskydes på pågældende tidspunkt grundet ressourcemangel i form af arbejdstid og det fornødne udstyr tilrådigt.
 Der findes lignende løsninger der kun benytter sig af ens smartphone, men hvor man pålægger patienten at placere sin smartphone under hovedpuden.
-Men ligesom FitBit/JawBone løsningen kræver det at man overdrager ansvaret til patienten om at placere smartphonen i sengen, ligesom med armbåndene skal monteres på ens arm.
+Men ligesom FitBit/JawBone løsningen kræver det at man overdrager ansvaret til patienten om at placere sin smartphone i sengen, ligesom med armbåndene skal monteres på ens arm.
 
 \subsection{Søvn Dagbog}
 Der findes en lang række spørgeskemaer, hvor patienten får ansvaret for at udfylde sådanne skemaer, hvor man på den måde kan følge en patients søvnrytme.
@@ -40,9 +46,9 @@ Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da
 Idéen om en "objektiv dagbog" er dermed også i tankerne her, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
 
 \subsection{Toss 'N' Turn}\label{sec:tossNturn}
-Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forskningsresultaterne præsenteret deri.
+Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forsknings resultaterne derfra.
 
-For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone lokaliseret i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
+For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
 Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på smartphonen i forvejen.
 Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteri stadie (opladning/ikke opladning), og skærmvisningstilstand.
 Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
@@ -54,8 +60,7 @@ Hvis vi antager at den procent nøjagtighed de har på 84 \% er for en patient d
 
 En ulempe ved denne teknik er at den kræver en oplæringsperiode på minimum 3 dage for at få en lovende præcision, men er antaget at være et acceptabelt kompromis, da estimeringen så ville kunne fungere relativt præcist efterfølgende.
 
-Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere sin smartphon i sengen, og kræver derfor minimal bruger intervention, da mange folk alligevel bruger deres smartphone som vækkeur.
-\winde{kilde her?}
+Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere sin smartphone i sengen, og kræver derfor minimal bruger intervention, da mange folk alligevel bruger deres smartphone som vækkeur \citep{misc:phoneAlarmClock}.
 
 Det ville dog være bedre med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode.
 
@@ -106,7 +111,6 @@ Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt ti
 Den statisk baserede tilgang bliver præsenteret som en lille del af \citet{misc:statbased}.
 Denne metode bygger på at telefonen ligger i patientens seng og er så ud fra de bevægelser der sker i stand til at bestemme om personen sover eller ej.
 Metoden ser på målingerne i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
-Til at nå frem til dette ser metoden på intensiteten af bevægelser for hver måling og sammenligner dette med et beregnet threshold.
-Threshold beregnes som median plus standard deviation delt med to.
-Hvis en selv defineret procent af målingerne overstiger det beregnede threshold, vurderes patienten til at være vågen, ellers estimeres det at patienten sover.
-
+Til at nå frem til dette ser metoden på intensiteten af bevægelser for hver måling og sammenligner dette med et beregnet tærskelværdi.
+Tærskelværdien beregnes som median plus standard deviation delt med to.
+Hvis en selv defineret procent af målingerne overstiger det beregnede tærskelværdi, vurderes patienten til at være vågen, ellers estimeres det at patienten sover.
