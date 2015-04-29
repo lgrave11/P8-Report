@@ -1,13 +1,13 @@
 Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover eller ej.
-Metoden der tages udgangspunkt i er den metode som er beskrevet i \cref{sec:BES}, Best Effort Sleep Model men andre metoder kunne også have været brugt.
+Metoden der tages udgangspunkt i er den metode som er beskrevet i \cref{sec:BES} altså Best Effort Sleep, men andre metoder kunne også have været brugt.
 Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og acceleration er de datatyper der tages udgangspunkt i.
 Disse to data typer kombineres til en enkelt model der vurderer om man sover.
 
 \subsection{Sensor Data}
-Hovedideen bag brugen af acceleration og amplitude data kan ses i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
+Hoved ideen bag brugen af acceleration og amplitude data kan ses i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
 
 For at have en bedre indsigt i hvordan vi kan bruge accelerations og amplitude data blev disse plottet over en dag inklusiv søvn, hvor man holdt log for hvornår der blev sovet.
-Dette resulterede i de plots der kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
+Dette resulterede i \cref{fig:accplot} og \cref{fig:amplplot}.
 
 \begin{figure}[h]
 	\centering
@@ -16,7 +16,7 @@ Dette resulterede i de plots der kan ses i \cref{fig:accplot} og \cref{fig:amplp
 	\caption{Accelerationsplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.}\label{fig:accplot}
 \end{figure}
 
-Ses der på accelerometer data i \cref{fig:accplot} indikerer det tydeligt når telefonen har været i bevægelse.
+Ses der på accelerometer data i \cref{fig:accplot} indikerer det tydeligt når telefonen har været i bevægelse og når telefonen ikke har været i bevægelse.
 Dette skyldes at i sensorens natur er den god til at registrere bevægelse, da accelerationer er nødvendige for at ændringer i hastighed kan finde sted.
 Der kan ses at antagelsen om at når man går med sin telefon i lommen er man vågen svarer fint til accelerations plottet.
 Dog kan man ved stilstand ikke vide sig sikker på om det er forbi man sover, eller blot fordi man har lagt sin mobil fra sig.
@@ -33,9 +33,10 @@ Et eksempel på en sådan kilde er mikrofonen vi kan bruge til at måle maksampl
 Idéen bag at bruge maksamplituden er at man larmer væsentligt mere når man er vågen end når man sover.
 Dette passer fint med de loggede data plottet i \cref{fig:amplplot}.
 Dog har denne antagelse også begrænsninger.
-Eksempelvis kan det være at man er en stille person eller snorker meget.
-Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kunne finde et mønster når man snorker, og muligvis begiver sig hen i støjende områder når man er vågen. Derudover er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder og er noget der bør trænes til det enkelte individ for at opnå en model der passer til det enkelte individs personlighed.
-Hvordan dette gøres bør overvejes, men som en start kan nogle fastsatte vægte bruges.
+Eksempelvis kan det være at man er en stille person eller snorker meget eller også kunne personen bo i et meget larmende område.
+Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kunne finde et mønster når man snorker, og muligvis begiver sig hen i mere støjende områder når man er vågen. 
+Derudover er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder og er noget der bør trænes til det enkelte individ for at opnå en model der passer til det enkelte individs personlighed.
+Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of concept kan man som en start bruge fastsatte statiske vægte.
 
 \subsection{Søvnestimerings model}
 Ud fra observeret data etablerer vi nogle antagelser som vi går ud fra holder til fremtidigt data også.
@@ -73,7 +74,7 @@ Dog for at få et udgangspunkt til diskussion af sådanne funktioner er der tre 
 
 \cref{fig:trefunc} viser tre forslag til funktioner for $s(t-t_0)$.
 Disse er den røde lineære funktion, den blå konkave funktion og den grønne logistiske funktion.
-Alle tre funktioner har til fælles at de er monotont voksende, hvilket passer med vores antagelse af jo længere der har været stilstand jo større sandsynlighed for at man sover.
+Alle tre funktioner har til fælles at de er voksende, hvilket passer med vores antagelse af jo længere der har været stilstand jo større sandsynlighed for at man sover.
 Den lineære funktion bygger på antagelsen at sandsynligheden for at man sover er kongruent med stilstands længden, hvilket vi ikke ønsker da vi så tillægger for stor vægt til korte stilstandsperioder.
 Af samme grund forkastes den konkave funktion også.
 
@@ -91,14 +92,14 @@ hvor,
 	\item[$L$] er kurvens maksimums værdi, hvilket for os eksempelvis kan være $1$ for 100\% sandsynlighed for søvn.
 \end{itemize}
 
-Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata.
+Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata. Det er måske også en god idé at ændre på stejlheden for kurven, altså k, baseret på hvilken kilde af data man bruger som f.eks. accelerometer eller lyd.
 
-Til sidst er der at orientere om hvordan vi afgør om der er stilstand, og dermed angiver en ny værdi for $t_0$, dette gøres i øjeblikket med en simpel metode der ser på de sidste 5 målinger og ser at afstanden mellem den observerede måling og de sidste fem målinger ikke overstiger et givet grænseværdi der estimeres ud fra træningsdataene, men i fremtiden bør der overvejes alternativer.
+Til sidst er det at orientere om hvordan vi afgør om der er stilstand, og dermed angiver en ny værdi for $t_0$, dette gøres i øjeblikket med en simpel metode der ser på de sidste 5 målinger og ser at afstanden mellem den observerede måling og de sidste fem målinger ikke overstiger et givet grænseværdi der estimeres ud fra træningsdataene, men i fremtiden bør der overvejes alternativer.
 
 \subsection{Kombinering af modeller}
-Det er tiltænkt at hver sensor kan have en tilknyttet søvnestimeringsmodel, hvilket i vores tilfælde er en søvnestimeringsmodel for accelerometer og mikrofon data.
+Det er tiltænkt at hver sensor kan have en tilknyttet søvn estimerings model, hvilket i vores tilfælde er en søvn estimerings model for accelerometret og lyd fra mikrofonen.
 Imidlertid kan det være en fordel at have en samlet model der kombinerer resultaterne fundet for de enkelte modeller.
-En simpel metode at gøre dette på er v.h.a. et vægtet gennemsnit, hvilket er metode som \citet{6563918} også benytter.
+En simpel metode at gøre dette på er ved hjælp af et vægtet gennemsnit, hvilket er en metode som \citet{6563918} også benytter.
 Det vægtede gennemsnit kan udregnes på følgende måde:
 \begin{equation}
 	P_{kombineret}(t,t_0) = \sum_{i=1}^{n}{w_iP_i(t,t_0)}
@@ -109,8 +110,9 @@ Det vægtede gennemsnit kan udregnes på følgende måde:
 	\item[$w_i$] er vægten som $P_i(t,t_0)$ skal tillægges, denne vægt over alle sandsynlighedsmodeller summerer op til 1.0.
 	\item[$P_i(t,t_0)$] er sandsynligheden for søvn ved stilstand fra tiden $t_0$ til $t$ for sandsynlighedsmodellen $i$.
 \end{itemize}
-Dette er dog en forsimplet version af vores vægtede gennemsnit, i realiteten er der ikke data på samme tid eller i samme mængder for de enkelte søvnestimeringsmoduler.
-Af samme grund ved mangel på en estimering til en given tid for et givent modul tages den seneste tid før denne.
+
+Dette er dog en forsimplet version af det vægtede gennemsnit der bruges, i realiteten er der ikke data optaget på samme tid af de forskellige modeller og heller ikke data i samme mængder for de enkelte søvn estimerings moduler.
+På grund af dette hvis der er en mangel på en estimering til en given tid for et søvn estimerings modul, tages den forrige værdi til kombinering.
 Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del, ligesom det gøres med estimeringerne for hvert modul.
 
 For at illustrere dette bruges der et eksempel.
