@@ -129,5 +129,14 @@ For at illustrere dette bruges der et eksempel.
 \label{tab:combiModelsExample}
 \end{table}
 
-I \cref{tab:combiModelsExample} kan man se data på to forskellige modeller som illustrere sandsynligheden for et tidspunkt at brugeren sover.
-Så kombinering af data fungerer på den måde at ...	
+I \cref{tab:combiModelsExample} kan man se data på to forskellige modeller som illustrerer sandsynligheden for et tidspunkt at brugeren sover.
+
+Måden data kombineres på vises ved hjælp af dataen i tabellen.
+Det starter på den måde at der er to gennemløbere for A og B. 
+Disse to gennemløbere starter på første element i A og B. 
+I eksemplet vil gennemløberen for A starte ved 02:30:00 med værdien 0.6 og for B vil den starte ved 02:30:01 med værdien 0.3.
+Værdierne bruges så til at lave en kombinering ved hjælp af vægtninger for det to modeller. I eksemplet vil dette så betyde $\text{VægtningA} * 0.6 + \text{VægtningB} * 0.3$.
+Herefter ses der på tidspunktet, for at bestemme hvilken gennemløber der skal køres frem til det næste element og hvordan kombineringen skal gemmes.
+Hvis A's tidspunkt er mindst, gemmes kombinering med A's tidspunkt og A køres frem, hvis B's tidspunkt er mindst gemmes kombinering med B's tidspunkt og B køres frem, ellers køres begge frem da det betyder at de to tidspunkter er ens.
+I eksemplet vil dette betyde at A køres frem til 02:30:02 med værdien 0.61, her kombineres værdierne 0.61 og 0.3 og under B's tidspunkt da den i dette tilfælde er mindst.
+Dette forsætter indtil der ikke er mere data tilbage.
