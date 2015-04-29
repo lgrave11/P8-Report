@@ -4,7 +4,7 @@ import matplotlib.dates
 from matplotlib.dates import YearLocator, MonthLocator, DateFormatter
 
 def main():
-    f = open(r"C:\Users\Mink\Desktop\asd.txt", "r").readlines()
+    f = open(r"acceleration-data.txt", "r").readlines()
     lst = [(datetime.datetime.strptime(x.split("\t")[0].strip(), "%Y-%m-%d %H:%M:%S.%f"), x.split("\t")[1]) for x in f]
     lst2 = zip(*lst)
     format = matplotlib.dates.DateFormatter('%H:%M')
@@ -16,11 +16,13 @@ def main():
     fig, ax = plt.subplots()
     ax.plot_date(dates, lst2[1], 'o-', color="red", markerfacecolor='red', markeredgecolor='red', markersize=2, label="Acceleration X", rasterized=True)
     plt.legend(["Acceleration X"])
+    plt.ylabel(r'$m/s^{2}$', rotation="horizontal")
+    plt.xlabel('Tidspunkt', rotation="horizontal")
     ax.xaxis.set_major_formatter(format)
     ax.autoscale_view()
     ax.grid(True)
     fig.autofmt_xdate()
-    plt.savefig(r"C:\Users\Mink\Desktop\asd.pdf", dpi=400)
+    plt.savefig(r"acceleration-plot.pdf", dpi=400)
 
 if __name__ == '__main__':
     main()
