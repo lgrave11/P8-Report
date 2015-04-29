@@ -18,12 +18,19 @@ Ud over dette er der også fundet indikationer på at søvnmangel svækker immun
 
 Da søvn er en meget vigtig faktor til estimering af sygdomme og livskvalitet er der lagt en stor mængde forskning i dette område.
 Dette giver udslag i en lang række af søvn estimerings metoder, hvor nogle af de mest fremtrædende muligheder nævnes og vurderes.
+For at have en ordentlig grundlag for at diskutere datakilder er de benyttede metrikker dog først beskrevet.
 
-\subsection{Polysomnografi}
+\subsection{Metrikker}
+\input{indhold/soevn/metrikker}
+
+\subsection{Metoder}
+Med et fælles grundlag for dataindsamling metrikker følger hermed en beskrivelse af en række søvnestimeringsmetoder.
+
+\subsubsection{Polysomnografi}
 Den måske mest akkurate søvnestimerings metode er polysomnografi, der er en metode der kombinerer et elektroencefalogram med målinger af muskel spænding og øjenbevægelse \citep{misc:polysomnografi,misc:polysomnography}.
 Dog kræver denne metode en større mængde af special udstyr og erfarne teknikere til at montere udstyret på en patient, hvilket gør denne metode upraktisk i en almen patients soveværelse.
 
-\subsection{AktiGrafi}
+\subsubsection{AktiGrafi}
 Imidlertid findes der andre metoder der er nemmere at benytte.
 Et eksempel på sådan en søvnestimerings metode er aktigrafi, der er akkurat selvom det kun benytter sig af accelerometre påmonteret ens arm.
 En sådan teknik kan estimere metrikker såsom timer sovet, søvn virkningsgrad, og antal af søvnafbrydelser.
@@ -36,7 +43,7 @@ Derudover er platformen opbygget til at være yderst fleksibelt angående hvilke
 Der findes lignende løsninger der kun benytter sig af ens smartphone, men hvor man pålægger patienten at placere sin smartphone under hovedpuden.
 Men ligesom FitBit/JawBone løsningen kræver det at man overdrager ansvaret til patienten om at placere sin smartphone i sengen, ligesom med armbåndene skal monteres på ens arm.
 
-\subsection{Søvn Dagbog}
+\subsubsection{Søvn Dagbog}
 Der findes en lang række spørgeskemaer, hvor patienten får ansvaret for at udfylde sådanne skemaer, hvor man på den måde kan følge en patients søvnrytme.
 Sådanne metoder er ikke vores fokus emne, men er en mulighed med den fleksible platform der er udviklet, hvor en sådan dagbog er et modul.
 Dog er det værd at tage med i betragtning, når man skal lære en ny model, hvilket \cite{Min:2014:TNT:2556288.2557220} angiver, hvor man bruger dagbogen som "ground truth" til at træne ens model.
@@ -44,7 +51,7 @@ Dog er det værd at tage med i betragtning, når man skal lære en ny model, hvi
 Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da vi ønsker en metode der kan estimere søvn med mindst mulig bruger intervention, og hvor grundlaget for vurdering skal være ved hjælp af sensorer fremfor en subjektiv vurdering man alligevel har mulighed for i forvejen.
 Idéen om en "objektiv dagbog" er dermed også i tankerne her, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
 
-\subsection{Toss 'N' Turn}\label{sec:tossNturn}
+\subsubsection{Toss 'N' Turn}\label{sec:tossNturn}
 Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forsknings resultaterne derfra.
 
 For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone i sit soveværelse for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og sovelængde.
@@ -63,7 +70,7 @@ Derudover er det en klar fordel ved denne teknik at man ikke behøver at placere
 
 Det ville dog være bedre med en søvnestimeringsteknik der ikke nødvendigvis kræver en træningsperiode.
 
-\subsection{Best Effort Sleep Model}\label{sec:BES}
+\subsubsection{Best Effort Sleep Model}\label{sec:BES}
 Best Effort Sleep (BES) Model \citet{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde, meget lig Toss 'N' Turn's koncept.
 Disse målbare datakilder anskaffes på en måde så brugeren ikke behøver ændre sin søvn adfærd, som det fx er tilfældet på andre tilsvarende løsninger som fx JawBone eller FitBit der kræver at en wearable benyttes mens man sover.
 Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, da der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde, hvilket for en person der sover 8 timer svarer til 92 \% nøjagtighed.
@@ -106,7 +113,7 @@ En ulempe er dog hvis man ligger sin smartphone i stuen vil det ikke sige særli
 Endvidere har BES en ulempe i forhold til fx wearables løsninger, hvilket at den har en relativ høj unøjagtighed hvilket er på $\pm$40 minutter. 
 Dette er en del i forhold til andre fremgangsmåder, men der bliver man nødt til at vurdere om det er acceptabelt når man tager i betragtning at brugeren ikke skal ændre sin adfærd for at bruge det og at der, i modsætning til de fleste andre fremgangsmåder, ikke kommer til at være aftener hvor målingerne ikke kan bruges fordi brugeren fx glemte at fortælle systemet at han gik i seng.
 
-\subsection{Statistisk Baseret Tilgang}\label{sec:statbased}
+\subsubsection{Statistisk Baseret Tilgang}\label{sec:statbased}
 Den statisk baserede tilgang bliver præsenteret som en lille del af \citet{misc:statbased}.
 Denne metode bygger på at telefonen ligger i patientens seng og er så ud fra de bevægelser der sker i stand til at bestemme om personen sover eller ej.
 Metoden ser på målingerne i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
