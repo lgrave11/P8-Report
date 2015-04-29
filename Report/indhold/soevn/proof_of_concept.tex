@@ -18,7 +18,7 @@ Dette resulterede i \cref{fig:accplot} og \cref{fig:amplplot}.
 
 
 Ses der på accelerometer data i \cref{fig:accplot} indikerer det tydeligt når telefonen har været i bevægelse og når telefonen ikke har været i bevægelse.
-Dette skyldes at i sensorens natur er den god til at registrere bevægelse, da acceleration er ændring i hastighed.
+Dette skyldes at accelerometret er god til at registrere bevægelse, da acceleration er ændring i hastighed.
 Det viser sig at plottet fint indikerer når man er vågen, hvilket er forårsaget af at testpersonen har gået med sin telefon i lommen.
 Dog kan man ved stilstand ikke vide sig sikker på om det er fordi man sover, eller blot fordi man har lagt sin mobil fra sig.
 
@@ -56,13 +56,14 @@ min(s(t-t_0),1) & \text{ellers}
 \end{equation}
 hvor,
 \begin{itemize}
+	\item[$P(t,t_0)$] Sandsynligheden for at man sover mellem $t$ og $t_0$. 
 	\item[$t$] Tiden for observeret data.
 	\item[$t_0$] Sidste tid med bevægelse/lyd.
 \end{itemize}
 Hvis vi formulerer problemet på denne måde er det et spørgsmål om at ændre $t_0$ når der observeres et væsentligt udsving i ens data, der indikerer man er vågen.
 Derudover vil $t-t_0$ så svare til længden af stilstand eksempelvis målt i timer.
 
-Spørgsmålet går så på hvorledes $s(t-t_0)$ skal defineres.
+Spørgsmålet går så på hvorledes funktionen $s(t-t_0)$ skal defineres.
 Det skal være en funktion der repræsenterer hvor sikker man er på søvn ud fra længden af stilstand eksempelvis målt i timer.
 En sådan funktion bør være lært ud fra ens empiri, så man kunne løse opgaven som et regressionsproblem.
 Dette er et område der kan arbejdes videre med for at få en mere akkurat søvnestimeringsmetode og opfordres til at gøre med mere tid.
