@@ -1,32 +1,36 @@
 \subsection{Snorken}\label{section:snorken}
-Snorken er et åbenlyst problem når man skal opdage søvn ved hjælp af sensorer, idet at en af de primære sensorer der bruges til at bestemme om personen sover er lyd amplitude.
-Hvis denne lyd amplitude gentagne gange optager snorken vil sandsynlighedens udregningen for denne sensor falde hver eneste gang snorken bliver optaget, og dette er helt klart et problem som skal arbejdes videre på.
+Snorken er et åbenlyst problem når man skal opdage søvn ved hjælp af sensorer, idet at en af de primære sensorer der bruges til at bestemme om en person sover er lyd.
+Hvis lyden gentagne gange optager snorken vil sandsynlighedens udregningen for denne sensor falde hver eneste gang snorken bliver optaget, og dette er helt klart et problem som skal arbejdes videre på.
 
 Dette problem kan ses på \cref{fig:snorke-vs-ikkesnorken} hvor vi sammenligner personer som vi ved snorker mod en som ikke snorker.
 
 \begin{figure}
-\begin{minipage}{0.49\textwidth}
+\begin{subfigure}{0.49\textwidth}
 \includegraphics[width=1\textwidth,trim = 1cm 1cm 1cm 1cm,clip]{amplitude-plot-snorken}
-\end{minipage}
-\begin{minipage}{0.49\textwidth}
+\caption{Person der snorker}
+\label{fig:person-snorker}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
 \includegraphics[width=1\textwidth,trim = 1cm 1cm 1cm 1cm,clip]{amplitude-plot}
-\end{minipage}
-\caption{Personer vi ved ikke snorker}
+\caption{Person der ikke snorker}
+\label{fig:person-ikke-snorker}
+\end{subfigure}
+\caption{Personer vi ved snorker og person vi ved ikke snorker}
 \label{fig:snorke-vs-ikkesnorken}
 \end{figure}
 
-Hvis man ser på grafen med snorken, til venstre, kan man klart se at amplituden er meget mere uregulær i søvn perioden i forhold til grafen til højre. 
+Hvis man ser på grafen med snorken, \cref{fig:person-snorker}, kan man klart se at amplituden er meget mere uregulær i søvn perioden i forhold til grafen \cref{fig:person-ikke-snorker}. 
 En simpel løsning på hvordan man kunne ignorere snorken i sandsynligheds estimeringen ville være at sætte amplitude threshold op på et højere niveau, hvilket baseret på graferne kunne f.eks. være 5000. 
 Threshold værdien er den amplitude hvor den betrages som ligegyldig idet at den ikke er høj nok, og kan derfor ses som et 0 når sandsynligheden udregnes. 
-Men dette vil skulle være baseret på hvor højt personen snorker og skal derfor være dynamisk og derfor kan det være at denne løsning ikke er optimal, derfor ses der på forskellige metoder fra akademiske kilder på at opdage søvn.
+Men dette skal være baseret på hvor højt personen snorker og skal derfor være dynamisk, hvilket kan gøre at denne løsning ikke er optimal, på grund af dette ses der på forskellige metoder fra akademiske kilder på at opdage søvn.
 
-Udfra følgende artikler dannes der et grundlag for hvordan snorken registreres \citep{Dafna2013} og \citep{Calabrese20111101}.
+Ud fra følgende artikler dannes der et grundlag for hvordan snorken registreres \citet{Dafna2013} og \citet{Calabrese20111101}.
 
-I \citep{Dafna2013} brugte forskere et system til at inddele snorken og andre akustiske hændelse gennem et søvnforløb ved brug af lyd data der blev optaget med en mikrofon ved en polysomnigrafisk undersøgelse. 
+\citet{Dafna2013} gør brug af et system til at inddele snorken og andre akustiske hændelse gennem et søvnforløb ved brug af lyd data der blev optaget med en mikrofon ved en polysomnigrafisk undersøgelse. 
 De endte med et meget præcist system der kunne adskille snorken og andre akustiske hændelser med ~98\% nøjagtighed.
 Denne kunne tilpasses ind i vores system på den måde at hvis snorken kan opdages og filtreres fra har den ikke nogen indflydelse på sandsynligheds beregningen af søvn. 
 De bruger lyd data og ikke bare amplituden, så det vil være nødvendigt at undersøge om systemet også kunne fungere ved bare amplituden.
 
-I \citep{Calabrese20111101} forslår forskere et system der skal bruges til diagnosticering af søvnapnø ved hjælp af optaget lyd data baseret på analyser af disse, men de implementerede kun en prototype af systemet og havde ikke evalueret systemet ordentligt. 
+\citet{Calabrese20111101} forslår et system der skal bruges til diagnosticering af søvnapnø ved hjælp af optaget lyd data baseret på analyser af disse, men de implementerede kun en prototype af systemet og havde ikke evalueret systemet ordentligt. 
 Idéen her er at man bruger analyser såsom 'Fast Fourier Transform' og 'Power Spectrum' til at finde tidspunkter hvor personen har snorket baseret på optaget lyd. 
-Denne metode igen vil kræve at man ser på om denne metode kan bruges bare til amplitude eller om det nuværende system skal ændres til også at optage lyd.
+Denne metode igen vil kræve at man ser på om denne metode kan bruges bare til amplitude eller om det nuværende system skal ændres til også at optage lyd. \winde{Den her sætning er MEGET underlig, bør skrives om.}
