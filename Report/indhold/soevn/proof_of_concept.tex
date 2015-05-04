@@ -122,7 +122,8 @@ For at illustrere dette bruges der et eksempel.
 
 \newcommand{\nv}{Ingen estimering}
 
-\begin{table}
+\begin{table}[h]
+\centering
 \begin{tabular}{|c|c|c|}
 \hline Tid & Sandsynlighed for model A & Sandsynlighed for model B \\ 
 \hline 02:30:00 & 	0.6     & \nv \\ 
@@ -174,7 +175,7 @@ Dvs. at registerere intervaller hvor \textit{prob} er monotont voksende og hver 
 For at forkaste for små intervaller valgtes det at forkaste intervaller kortere end 10 minutter og intervaller hvor sandsynligheden for søvn i slutningen af intervallet er under 10\%.
 Dette kan være en fin løsning under antagelse af at man  er komplet rolig når man sover, og har da også vist gode resultater med nogle tests med personer med en meget rolig søvn. Eksempelvis med det viste data i  \cref{tab:noaggsoevndata} ville dette blive aggregeret til en række som set i \cref{tab:aggdat}.
 
-\begin{table}
+\begin{table}[h]
 	\centering
 \begin{tabular}{|c|c|c|c|}
 	\hline {\_}id & startdate & enddate & prob \\ 
