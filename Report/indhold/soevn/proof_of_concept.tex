@@ -99,7 +99,7 @@ Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% si
 
 Til sidst er det at orientere om hvordan vi afgør om der er stilstand, og dermed angiver en ny værdi for $t_0$, dette gøres i øjeblikket med en simpel metode der ser på de sidste 5 målinger og ser at afstanden mellem den observerede måling og de sidste fem målinger ikke overstiger et givet grænseværdi der estimeres ud fra træningsdataene, men i fremtiden bør der overvejes alternativer.
 
-\subsection{Kombinering af modeller}
+\subsection{Kombinering af modeller}\label{subsec:kombimodeller}
 Det er tiltænkt at hver sensor kan have en tilknyttet søvn estimerings model, hvilket i vores tilfælde er en søvn estimerings model for accelerometret og lyd fra mikrofonen.
 Imidlertid kan det være en fordel at have en samlet model der kombinerer resultaterne fundet for de enkelte modeller.
 En simpel metode at gøre dette på er ved hjælp af et vægtet gennemsnit, hvilket er en metode som \citet{6563918} også benytter.
@@ -148,4 +148,50 @@ Hvis A's tidspunkt er mindst, gemmes kombinering med A's tidspunkt og A køres f
 I eksemplet vil dette betyde at A køres frem til 02:30:02 med værdien 0.61, her kombineres værdierne 0.61 og 0.3 og under B's tidspunkt da den i dette tilfælde er mindst.
 Dette forsætter indtil der ikke er mere data tilbage.
 
-\subsection{Aggregering}
+\subsection{Aggregering}\label{subsec:soevnaggre}
+Som demonsteret giver søvnestimeringsmetoden, der er vist som proof of concept, en estimering til en lang række tidspunkter.
+Men for at give et ekstra redskab til at få et overblik over disse estimeringer kan der med fordel som proof of concept laves en aggregering af søvn estimerings data.
+
+For at få et bedre indblik i formen for data der skal aggregeres gives et eksempel i \cref{tab:noaggsoevndata}.
+\begin{table}[h]
+	\centering
+\begin{tabular}{|c|c|c|}
+	\hline {\_}id & prob & time \\ 
+	\hline 203754 & 0.0504 & 2015-04-26 01:41:42.446 \\ 
+	\hline 203755 & 0.0504 & 2015-04-25 01:41:43.375 \\ 
+	\hline ... & ... & ... \\ 
+	\hline 218777 & 0.918512105941772 & 2015-04-26 05:52:36.204 \\ 
+	\hline 218778 & 0.918542623519897 & 2015-04-26 05:52:37.203 \\ 
+	\hline 218779 & 0.0 & 2015-04-26 05:52:38.163 \\ 
+	\hline 
+\end{tabular}
+\caption{Eksempel på søvn estimerings data der ikke er aggregeret.}\label{tab:noaggsoevndata}
+\end{table}
+Ved at se på data som i \cref{tab:noaggsoevndata} fremstår det hvordan at fra {\_}id 194596 til {\_}id 218778 er sandlynligheden for søvn, prob, monotont voksende.
+Idéen derudfra er så at registerere sådanne monotoniforhold og aggregere dataene med hensyn til det.
+Dvs. at registerere intervaller hvor \textit{prob} er monotont voksende og hver af sådanne intervaller med tilpas stor sandlynlighed og tidslængde logge dette i den tilgængelige database fra PsyLog.
+
+For at forkaste for små intervaller valgtes det at forkaste intervaller kortere end 10 minutter og intervaller hvor sandsynligheden for søvn i slutningen af intervallet er under 10\%.
+Dette kan være en fin løsning under antagelse af at man  er komplet rolig når man sover, og har da også vist gode resultater med nogle tests med personer med en meget rolig søvn. Eksempelvis med det viste data i  \cref{tab:noaggsoevndata} ville dette blive aggregeret til en række som set i \cref{tab:aggdat}.
+
+\begin{table}
+	\centering
+\begin{tabular}{|c|c|c|c|}
+	\hline {\_}id & startdate & enddate & prob \\ 
+	\hline 1 & 2015-04-26 01:41:42.446 &  05:52:37.203 & 0.919 \\ 
+	\hline 
+\end{tabular} 
+\caption{Aggregering af data fra \cref{tab:noaggsoevndata}.}\label{tab:aggdat}
+\end{table}
+
+Vi har dog også fundet tilfælde hvor en sådan simpel aggregering ikke er akkurat, eksempelvis ved snorken fejler denne aggregering\als{ref til diskussion om snorken. Plus find kilder på aggregering og diskuter disse - ellers kommer denne sektion til at fremstå for naivt.}.
+Et alternativ kunne være at tage arealet af søvn estimeringsdata, og bruge arealet som estimat til hvor meget man har sovet per dag, dette har ulempen at det ikke ville oplyse om selve søvnperioderne men blot mængde af søvn per dag, derudover vil den stadig blive påvirket af snorken og andre støjfaktorer.
+Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kunne det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggegere søvn data på mere akkurat vis, forslag til dette kan læses i \cref{section:snorken}.
+
+
+% Giv eksempel på ikke aggregeret data.
+% Forklar forslag/løsning til aggregering af data.
+% Vis resultat derfor
+% Diskuter problemer? (e.g. snorken) evt. referer til snorken diskussion
+
+
