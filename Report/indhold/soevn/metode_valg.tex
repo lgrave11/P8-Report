@@ -1,11 +1,21 @@
 For at kunne tage et valg omkring hvilket metoder der skal vælges gives et overblik over de metoder der er beskrevet i forskning. Derudover vurderes metoderne udfra følgende kriterier:
 \als{Kriterierne hives op af hatten, begrund valg.}
-\begin{itemize}
-\item Metoden skal gerne undgå forstyrrende ekstra udstyr.
-\item Metoden skal gerne kunne bruges af brugere i deres eget soveværelse.
-\item Metoden skal gerne undgå bruger intervention og måle søvn autonomt.
-\item Metoden skal gerne være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel.
-\end{itemize}
+\begin{description}[style=nextline]
+\item[Undgå bruger intervention og måle søvn uden at forstyrre]
+Dette ses som det helt centrale kriterie for vores løsning.
+Grunden til dette er at vi er interesseret i at registrere søvn for personer der kan risikere at have en meget uforudsigelig søvn. Det kan være at patienten falder spontant i søvn på sofaen midt om dagen, og hvis personen som krav for at kunne monitorere søvn skal starte søvn modulet ville en sådan spontan søvn ikke blive registreret.
+Derudover blev der til fokusgruppe interviewet \citep[Kapitel 1, Sektion 5]{misc:faellesrapp} lagt stor vægt på at hvis en person er på vej imod en depression ville enhver form for ekstra arbejde være en byrde man ville springe over.
+Et system der kræver manuel aktivering for hver søvn periode ville derfor ikke være tilstrækkelig i sådanne scenarier, og er hvorfor et ikke forstyrrende system vægtes så højt.
+
+\item[Kunne bruges af brugere i deres eget hjem]
+Applikationen er tiltænkt som en personlig hjælper, hvor en patient kan holde øje med deres egen situation især i det habbituelle niveau for at holde øje med tegn på forværring.
+Af denne grund er det centralt at systemet skal kunne bruges i eget hjem, og ikke være påkrævet hospitalsapparatur.
+Dette hænger også sammen med at man ved det habituelle niveau ikke er indlagt, men at man går hjemme, og løsningen er tiltænkt som en forebyggende applikation, hvorfor patienter i det habituelle niveau er i fokus.
+
+\item[Være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel]
+For at man skal kunne stole på vores system er det nødvendigt at det har en tilstrækkelig form for præcision, således at man ikke kommer med for mange forkerte estimater da man risikerer at patienten så ville undlade at bruge systemet. 
+Derudover hvis systemet er for upræcist har det ingen formål, da idéen er at det skal kunne monitorere søvnen i højere grad end hvad patienten selv har opfanget.
+\end{description}
 
 \subsection{Opsummering af Metoder}
 For at give et overblik over de forskellige metoder og teknikker opsummeres de i \cref{tab:opsummeringMetoder}.
@@ -42,9 +52,9 @@ Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep 
 \begin{table}
 \begin{tabular}{|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline ~ 						& Ingen ekstra udstyr 	& Brug i soveværelse 	& Undgår bruger intervention & Er præcis	& (Måler søvnforstyrrelser) \\ 
-\hline Toss 'N' Turn 		  	& \checkmark 			& \checkmark 			& \crossmark		 & \checkmark 	        & \checkmark \\ 
-\hline Best Effort Sleep 		& \checkmark 			& \checkmark 			& \checkmark 		 & \checkmark 			& \crossmark \\ 
-\hline Statistisk baseret 		& \checkmark 			& \checkmark 			& \crossmark		 & \crossmark		 	& \crossmark \\ 
+\hline Toss 'N' Turn 		  	& \checkmark 			& \checkmark 			& 		 			 & \checkmark 	        & \checkmark \\ 
+\hline Best Effort Sleep 		& \checkmark 			& \checkmark 			& \checkmark 		 & \checkmark 			&  \\ 
+\hline Statistisk baseret 		& \checkmark 			& \checkmark 			& 		 			 & 		 				&  \\ 
 \hline 
 \end{tabular}
 \caption{Hvordan de 3 forskellige metoder overholder kriterierne.}
