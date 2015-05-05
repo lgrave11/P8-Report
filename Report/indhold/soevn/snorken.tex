@@ -15,22 +15,25 @@ Dette problem kan ses på \cref{fig:snorke-vs-ikkesnorken} hvor vi sammenligner 
 \caption{Person der ikke snorker}
 \label{fig:person-ikke-snorker}
 \end{subfigure}
-\caption{Personer vi ved snorker og person vi ved ikke snorker}
+\caption{Person vi ved snorker og person vi ved ikke snorker}
 \label{fig:snorke-vs-ikkesnorken}
 \end{figure}
 
-Hvis man ser på grafen med snorken, \cref{fig:person-snorker}, kan man klart se at amplituden er meget mere uregulær i søvn perioden i forhold til grafen \cref{fig:person-ikke-snorker}. 
+Hvis man ser på grafen med snorken, \cref{fig:person-snorker}, kan man klart se at amplituden er mere uregulær i søvn perioden i forhold til grafen i \cref{fig:person-ikke-snorker}. 
 En simpel løsning på hvordan man kunne ignorere snorken i sandsynligheds estimeringen ville være at sætte amplitude threshold op på et højere niveau, hvilket baseret på graferne kunne f.eks. være 5000. 
 Threshold værdien er den amplitude hvor den betrages som ligegyldig idet at den ikke er høj nok, og kan derfor ses som et 0 når sandsynligheden udregnes. 
-Men dette skal være baseret på hvor højt personen snorker og skal derfor være dynamisk, hvilket kan gøre at denne løsning ikke er optimal, på grund af dette ses der på forskellige metoder fra akademiske kilder på at opdage søvn.
+Men dette skal være baseret på hvor højt personen snorker og skal derfor være dynamisk, hvilket kan gøre at denne løsning ikke er optimal. Derudover kan man ikke garantere at der ikke findes personer der snorker lige så højt som når de snakker.
+Andre metoder på at registrere søvn er derfor undersøgt.
 
-Ud fra følgende artikler dannes der et grundlag for hvordan snorken registreres \citet{Dafna2013} og \citet{Calabrese20111101}.
+Ud fra artiklerne \citet{Dafna2013} og \citet{Calabrese20111101} dannes der et grundlag for hvordan snorken registreres.
 
-\citet{Dafna2013} gør brug af et system til at inddele snorken og andre akustiske hændelse gennem et søvnforløb ved brug af lyd data der blev optaget med en mikrofon ved en polysomnigrafisk undersøgelse. 
+\citet{Dafna2013} gør brug af et system til at inddele snorken og andre akustiske hændelser gennem et søvnforløb ved brug af lyd data der blev optaget med en mikrofon ved en polysomnigrafisk undersøgelse. 
 De endte med et meget præcist system der kunne adskille snorken og andre akustiske hændelser med ~98\% nøjagtighed.
 Denne kunne tilpasses ind i vores system på den måde at hvis snorken kan opdages og filtreres fra har den ikke nogen indflydelse på sandsynligheds beregningen af søvn. 
 De bruger lyd data og ikke bare amplituden, så det vil være nødvendigt at undersøge om systemet også kunne fungere ved bare amplituden.
 
 \citet{Calabrese20111101} forslår et system der skal bruges til diagnosticering af søvnapnø ved hjælp af optaget lyd data baseret på analyser af disse, men de implementerede kun en prototype af systemet og havde ikke evalueret systemet ordentligt. 
 Idéen her er at man bruger analyser såsom 'Fast Fourier Transform' og 'Power Spectrum' til at finde tidspunkter hvor personen har snorket baseret på optaget lyd. 
-Denne metode igen vil kræve at man ser på om denne metode kan bruges bare til amplitude eller om det nuværende system skal ændres til også at optage lyd. \winde{Den her sætning er MEGET underlig, bør skrives om.}
+Denne metode sår tvivl ved løsningen om blot at indsamle max amplitude, da om nødvendigt skal lydindsamlingen ændres til et sliding window.
+Dvs. hvor vi samler det rå lyddata fra mikrofonen, men sletter lyddate efter foretaget analyse, således at privatlivs kriteriet stadig opfyldes.
+Dette er en mulighed et modul kan benytte sig af, og bør udforskes med videre arbejde.
