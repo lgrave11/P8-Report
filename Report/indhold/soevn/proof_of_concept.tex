@@ -110,7 +110,7 @@ Det vægtede gennemsnit kan udregnes på følgende måde:
 , hvor
 \begin{itemize}
 	\item[$P_{kombineret}(t,t_0)$] er den kombinerede sandsynlighed for søvn ved stilstand fra tiden $t_0$ til $t$.
-	\item[$w_i$] er vægten som $P_i(t,t_0)$ skal tillægges, denne vægt over alle sandsynlighedsmodeller summerer op til 1.0.
+	\item[$w_i$] er vægten som $P_i(t,t_0)$ skal tillægges, denne vægt over alle sandsynlighedsmodeller summerer op til 1.0. Denne idé af vægtning er baseret på \citet{6563918}.
 	\item[$P_i(t,t_0)$] er sandsynligheden for søvn ved stilstand fra tiden $t_0$ til $t$ for sandsynlighedsmodellen $i$.
 \end{itemize}
 
@@ -151,7 +151,7 @@ Dette forsætter indtil der ikke er mere data tilbage.
 
 \subsection{Aggregering}\label{subsec:soevnaggre}
 Som demonsteret giver søvnestimeringsmetoden, der er vist som proof of concept, en estimering til en lang række tidspunkter.
-Men for at give et ekstra redskab til at få et overblik over disse estimeringer kan der med fordel som proof of concept laves en aggregering af søvn estimerings data.
+Men for at give et ekstra redskab til at danne et overblik over disse estimeringer, kan der med fordel som proof of concept laves en aggregering af søvn estimerings data.
 
 For at få et bedre indblik i formen for data der skal aggregeres gives et eksempel i \cref{tab:noaggsoevndata}.
 \begin{table}[h]
@@ -166,27 +166,29 @@ For at få et bedre indblik i formen for data der skal aggregeres gives et eksem
 	\hline 218779 & 0.0 & 2015-04-26 05:52:38.163 \\ 
 	\hline 
 \end{tabular}
-\caption{Eksempel på søvn estimerings data der ikke er aggregeret.}\label{tab:noaggsoevndata}
+\caption{Eksempel på søvn estimeringsdata der ikke er aggregeret.}\label{tab:noaggsoevndata}
 \end{table}
-Ved at se på data som i \cref{tab:noaggsoevndata} fremstår det hvordan at fra {\_}id 194596 til {\_}id 218778 er sandlynligheden for søvn, prob, monotont voksende.
-Idéen derudfra er så at registerere sådanne monotoniforhold og aggregere dataene med hensyn til det.
-Dvs. at registerere intervaller hvor \textit{prob} er monotont voksende og hver af sådanne intervaller med tilpas stor sandlynlighed og tidslængde logge dette i den tilgængelige database fra PsyLog.
+Ved at se på data som i \cref{tab:noaggsoevndata} fremstår det hvordan at fra {\_}id 194596 til {\_}id 218778 er sandsynligheden for søvn, der ses i \textit{prob} kolonnen, monotont voksende.
+Idéen derudfra er så at registrere sådanne monotoniforhold og aggregere data med hensyn til det.
+Dvs. at registrere intervaller hvor \textit{prob} er monotont voksende og hver af sådanne intervaller med tilpas stor sandsynlighed og tidslængde logge dette i den tilgængelige database fra PsyLog.
 
-For at forkaste for små intervaller valgtes det at forkaste intervaller kortere end 10 minutter og intervaller hvor sandsynligheden for søvn i slutningen af intervallet er under 10\%.
-Dette kan være en fin løsning under antagelse af at man  er komplet rolig når man sover, og har da også vist gode resultater med nogle tests med personer med en meget rolig søvn. Eksempelvis med det viste data i  \cref{tab:noaggsoevndata} ville dette blive aggregeret til en række som set i \cref{tab:aggdat}.
+For at forkaste små intervaller valgtes det at intervaller kortere end 10 minutter og intervaller hvor sandsynligheden for søvn i slutningen af intervallet er under 10\% bliver forkastet.
+Dette kan være en fin løsning under antagelse af at man er rolig når man sover, og har da også vist gode resultater med nogle tests af personer med en meget rolig søvn. 
+Eksempelvis med det viste data i \cref{tab:noaggsoevndata} ville dette blive aggregeret til en række som set i \cref{tab:aggdat}.
 
 \begin{table}[h]
 	\centering
 \begin{tabular}{|c|c|c|c|}
 	\hline {\_}id & startdate & enddate & prob \\ 
-	\hline 1 & 2015-04-26 01:41:42.446 &  05:52:37.203 & 0.919 \\ 
+	\hline 1 & 2015-04-26 01:41:42.446 &  2015-04-26 05:52:37.203 & 0.919 \\ 
 	\hline 
 \end{tabular} 
 \caption{Aggregering af data fra \cref{tab:noaggsoevndata}.}\label{tab:aggdat}
 \end{table}
 
-Vi har dog også fundet tilfælde hvor en sådan simpel aggregering ikke er akkurat, eksempelvis ved snorken fejler denne aggregering\als{ref til diskussion om snorken. Plus find kilder på aggregering og diskuter disse - ellers kommer denne sektion til at fremstå for naivt.}.
-Et alternativ kunne være at tage arealet af søvn estimeringsdata, og bruge arealet som estimat til hvor meget man har sovet per dag, dette har ulempen at det ikke ville oplyse om selve søvnperioderne men blot mængde af søvn per dag, derudover vil den stadig blive påvirket af snorken og andre støjfaktorer.
+Vi har dog også fundet tilfælde hvor en aggregering ikke er akkurat, eksempelvis ved snorken fejler denne aggregering.\als{ref til diskussion om snorken. Plus find kilder på aggregering og diskuter disse - ellers kommer denne sektion til at fremstå for naivt.}
+Et alternativ kunne være at tage arealet af søvn estimeringsdata, og bruge arealet som estimat til hvor meget man har sovet per dag.
+Dette har ulempen at det ikke ville oplyse om selve søvnperioderne men blot mængde af søvn per dag, derudover vil den stadig blive påvirket af snorken og andre støjfaktorer.
 Et integrale kunne evt. også bruges på den allerede aggregerede data til at et estimat om søvnlængde som modsvar til potentielt fragmenterede søvnestimeringsperioder.\als{Kan godt være dette er for vagt formuleret.}
 Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kunne det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggegere søvn data på mere akkurat vis, forslag til dette kan læses i \cref{section:snorken}.
 

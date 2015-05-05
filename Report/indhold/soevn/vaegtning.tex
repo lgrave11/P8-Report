@@ -1,10 +1,10 @@
 \subsection{Sensor Vægtning}
-Som nævnt i \cref{subsec:kombimodeller} vægtes bevægelse om amplitude ud fra faste værdier baseret på data fra \citet{6563918}, hvilket gøres selvom de i kilden siger deres vægtninger er baseret på læring fra deres eksperimenter.
+Som nævnt i \cref{subsec:kombimodeller} vægtes de forskellige sensorer baseret på vægtninger i \citet{6563918}, hvilket gøres idet at kilden siger deres vægtninger er baseret på læring fra deres eksperimenter, dog med ændringer idet vi bruger færre sensor kilder.
 Dette blev valgt af simplificerende årsager både for udviklere og brugere, da disse faste værdier gør at en lærings periode ikke er nødvendig, og at systemet derfor kan bruges direkte.
-At vægtningen er statisk gør også system til en mere generel løsning, hvilket indenfor psykiatrien kan være problematisk, da alle individer anses som værende forskellige.
+At vægtningen er statisk gør også systemet til en mere generel løsning, hvilket indenfor psykiatrien kan være problematisk, da alle individer anses som værende forskellige.
 
 Hvis vi ville have vores sensor vægtning og dermed vores søvnestimering til at være mere tilpasset individet, ville det være nødvendigt at tilføje en lærings periode med data der kan anses for værende sandhed.
-Baseret på disse sandheder ville det så være muligt at lave en model til at finde den bedste vægtning af datakilder.
+Baseret på dette ville det så være muligt at lave en model til at finde den bedste vægtning af datakilder.
 Den bedste vægtning værende den hvor nøjagtigheden af vurderingerne er så høj som muligt.
 
 En model implementering ville også kræve længere testperioder end dem vi har brugt.
