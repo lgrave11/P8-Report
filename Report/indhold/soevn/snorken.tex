@@ -25,7 +25,7 @@ Threshold værdien er den amplitude hvor den betrages som ligegyldig idet at den
 Men dette skal være baseret på hvor højt personen snorker og skal derfor være dynamisk, hvilket kan gøre at denne løsning ikke er optimal. Derudover kan man ikke garantere at der ikke findes personer der snorker lige så højt som når de snakker.
 Andre metoder på at registrere søvn er derfor undersøgt.
 
-Ud fra artiklerne \citet{Dafna2013} og \citet{Calabrese20111101} dannes der et grundlag for hvordan snorken registreres.
+Ud fra artiklerne \citet{Dafna2013}, \citet{Calabrese20111101} og \citet{7051338} dannes der et grundlag for hvordan snorken kan registreres.
 
 \citet{Dafna2013} gør brug af et system til at inddele snorken og andre akustiske hændelser gennem et søvnforløb ved brug af lyd data der blev optaget med en mikrofon ved en polysomnigrafisk undersøgelse. 
 De endte med et meget præcist system der kunne adskille snorken og andre akustiske hændelser med ~98\% nøjagtighed.
@@ -37,3 +37,13 @@ Idéen her er at man bruger analyser såsom 'Fast Fourier Transform' og 'Power S
 Denne metode sår tvivl ved løsningen om blot at indsamle max amplitude, da om nødvendigt skal lydindsamlingen ændres til et sliding window.
 Dvs. hvor vi samler det rå lyddata fra mikrofonen, men sletter lyddate efter foretaget analyse, således at privatlivs kriteriet stadig opfyldes.
 Dette er en mulighed et modul kan benytte sig af, og bør udforskes med videre arbejde.
+
+\citet{7051338} udvikler et system der kan registrere snorker ud fra lydoptagelser.
+Denne metode bruger maskine læring til at udvikle en model til at beskrive hvornår folk de sover.
+Den metode de har udviklet bruger en \textit{K}-Nearest Neighbour classifier.
+Denne metode kræver ligesom den forrige at vi optager lyd i stedet for bare at se på amplituden.
+I modsætning til \citet{Calabrese20111101}, fokuserer \citet{7051338} på det at registrere snorken som dens primære mål, hvilket også kvalificerer denne metode som en oplagt kandidat til videre udforskning.
+
+Hvis man vælger at arbejde videre med en af disse metoder til at detektere snorken, har det også andre anvendelsesmuligheder end at fjerne støj fra vores estimering.
+Hvis en af metoderne registrerer at man snorker, kan man sige at det uden tvivl betyder at en person sover, og så kan den procentvurdering der ellers havde været på det tidspunkt bliver overskrevet med 100 \%.
+Dette er en meget relevant ting at bruge snorke registrering til, da det vil forbedre nøjagtigheden meget, i stedet for bare at fjerne støj.
