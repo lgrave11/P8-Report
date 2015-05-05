@@ -120,13 +120,13 @@ set rrange [ * : * ] noreverse nowriteback
 set trange [ * : * ] noreverse nowriteback
 set urange [ * : * ] noreverse nowriteback
 set vrange [ * : * ] noreverse nowriteback
-set xlabel "t-t0 i timer" 
+set xlabel "Timer" 
 set xlabel  font "" textcolor lt -1 norotate
 set x2label "" 
 set x2label  font "" textcolor lt -1 norotate
 set xrange [ 0.00000 : 8.00000 ] noreverse nowriteback
 set x2range [ * : * ] noreverse nowriteback
-set ylabel "s(t-t0)" 
+set ylabel "Sandsynlighed" 
 set ylabel  font "" textcolor lt -1 rotate by -270
 set y2label "" 
 set y2label  font "" textcolor lt -1 rotate by -270
