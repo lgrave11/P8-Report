@@ -4,14 +4,14 @@ Hvis lyden gentagne gange optager snorken vil sandsynlighedens udregningen for d
 
 Dette problem kan ses på \cref{fig:snorke-vs-ikkesnorken} hvor vi sammenligner personer som vi ved snorker mod en som ikke snorker.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{subfigure}{0.49\textwidth}
-\includegraphics[width=1\textwidth,trim = 1cm 1cm 1cm 1cm,clip]{amplitude-plot-snorken}
+\includegraphics[width=1\textwidth,trim = 0cm 1cm 1cm 1cm,clip]{amplitude-plot-snorken}
 \caption{Person der snorker}
 \label{fig:person-snorker}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
-\includegraphics[width=1\textwidth,trim = 1cm 1cm 1cm 1cm,clip]{amplitude-plot}
+\includegraphics[width=1\textwidth,trim = 0cm 1cm 1cm 1cm,clip]{amplitude-plot-ingen-snorken}
 \caption{Person der ikke snorker}
 \label{fig:person-ikke-snorker}
 \end{subfigure}
@@ -21,7 +21,7 @@ Dette problem kan ses på \cref{fig:snorke-vs-ikkesnorken} hvor vi sammenligner 
 
 Hvis man ser på grafen med snorken, \cref{fig:person-snorker}, kan man klart se at amplituden er mere uregulær i søvn perioden i forhold til grafen i \cref{fig:person-ikke-snorker}. 
 En simpel løsning på hvordan man kunne ignorere snorken i sandsynligheds estimeringen ville være at sætte amplitude threshold op på et højere niveau, hvilket baseret på graferne kunne f.eks. være 5000. 
-Threshold værdien er den amplitude hvor den betrages som ligegyldig idet at den ikke er høj nok, og kan derfor ses som et 0 når sandsynligheden udregnes. 
+Threshold værdien er den amplitude hvor den betragtes som ligegyldig idet at den ikke er høj nok, og kan derfor ses som et 0 når sandsynligheden udregnes. 
 Men dette skal være baseret på hvor højt personen snorker og skal derfor være dynamisk, hvilket kan gøre at denne løsning ikke er optimal. Derudover kan man ikke garantere at der ikke findes personer der snorker lige så højt som når de snakker.
 Andre metoder på at registrere søvn er derfor undersøgt.
 
