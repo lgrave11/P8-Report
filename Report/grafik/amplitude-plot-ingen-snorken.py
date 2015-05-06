@@ -4,9 +4,9 @@ import matplotlib.dates
 from matplotlib.dates import YearLocator, MonthLocator, DateFormatter
 
 def main():
-    f = open(r"snorken_amplitudes.txt", "r").readlines()
+    f = open(r"amplitude-data.txt", "r").readlines()
     lst = [(datetime.datetime.strptime(x.split("\t")[0].strip(), "%Y-%m-%d %H:%M:%S.%f"), x.split("\t")[1]) for x in f]
-    lst = [x for x in lst if x[0] >= datetime.datetime(2015, 4, 24, 19, 6, 14) and x[0] <= datetime.datetime(2015, 4, 25, 9, 0, 0)]
+    lst = [x for x in lst if x[0] >= datetime.datetime(2015, 4, 22, 19, 6, 14) and x[0] <= datetime.datetime(2015, 4, 23, 9, 0, 0)]
     lst2 = zip(*lst)
     format = matplotlib.dates.DateFormatter('%H:%M')
 
@@ -25,7 +25,7 @@ def main():
     ax.autoscale_view()
     ax.grid(True)
     fig.autofmt_xdate()
-    plt.savefig(r"amplitude-plot-snorken.pdf", dpi=400)
+    plt.savefig(r"amplitude-plot-ingen-snorken.pdf", dpi=400)
 
 if __name__ == '__main__':
     main()
