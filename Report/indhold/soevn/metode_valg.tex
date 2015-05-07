@@ -1,5 +1,5 @@
 For at kunne tage et valg omkring hvilket metoder der skal vælges gives et overblik over de metoder der er beskrevet i forskning.
-Disse valg skal evalueres ved hjælp af kriterier, og disse kriterier er baseret på hele idéen bag projektet idet at systemet skal kunne lave målinger uden at forstyrre og kunne lave præcise analyser baseret på denne data på en brugers telefon. 
+Disse valg skal evalueres ved hjælp af kriterier, og disse kriterier er baseret på hele idéen bag projektet da systemet skal kunne lave målinger uden at forstyrre og kunne lave præcise analyser baseret på denne data på en brugers telefon. 
 
 \begin{description}[style=nextline]
 \item[Undgå bruger intervention og måler søvn uden at forstyrre]
@@ -39,7 +39,7 @@ Som en ekstra note til denne tabel er præcisionen baseret ud fra en antaget sø
 Som det kan ses ud fra \cref{tab:opsummeringMetoder}, så har de forskellige metoder varierende styrker og svagheder, dog er Toss 'N' Turn's søvn længde estimering og Best Effort Sleep sådan set ligesat.
 I den proces det er at beslutte hvilke at gå videre med, er det første punkt at se på hvilke af metoderne vi har mulighed for at lave med det udstyr og de konkrete resourcer vi har til rådighed.
 Da polysomnografi kræver en ekspert og store mængder specialiseret udstyr, er denne ikke fornuftig at se videre på.
-ActiGraf kræver en wearable som dataindsamlings modul, hvilket vi ikke har, så derfor kigges der ikke videre på den, men hvis sådanne wearables var til rådighed, ville denne metode sandsynligvis give meget gode resultater.
+ActiGraf kræver en wearable som dataindsamlings modul, hvilket vi ikke har, så derfor kigges der ikke videre på den, men hvis sådanne wearables var til rådighed, ville denne metode kunne give meget gode resultater.
 
 En søvndagbog kunne godt være passende, dog er der det problem at det er subjektivt så patienten kan komme til at give ukorrekt information, hvilket vil virke forstyrrende for et program der skal finde trends.
 Derudover er der en risiko for at patienterne ikke udfylder deres søvn dagbog hvis de er i en depressions eller mani periode.
@@ -70,7 +70,11 @@ BES har dog også det problem at den kun kan beregne søvnlængden og ikke søvn
 Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alt, hvilket vil sige at hvis man skulle måle søvn kvalitet skulle man opsøge andre metoder.
 
 Da der er mange muligheder at vælge imellem og ikke meget tid til at lave noget, vælges en potentiel delvis løsning at arbejde med som et proof of concept, hvor så udviklingen af andre metoder kan forsættes senere.
-Valget falder på en implementering af Best Effort Sleep Model, da denne opfyldte vores kriterier bedst selvom den ikke måler søvnkvalitet.
+Valget falder på en implementering af Best Effort Sleep Model, da denne opfyldte vores kriterier godt selvom den ikke måler søvnkvalitet.
+Hvis der havde været mere tid til rådighed, ville valget med alt sandsynlighed være faldet på en implementering af Toss 'N' Turn, da denne som tidligere nævnt også har mulighed for at vurdere søvn kvaliteten.
+Det at kvalitets vurdering også kommer med vil kunne tilføje et ekstra lag til vurderingen af folks søvn, hvilket er meget vigtigt da det godt kan være man ligger i sin seng og forsøger at sove i omkring 8 timer, men hvis man ikke sover sammenhængende i mere end for eksempel 45 minutter, er det ikke et godt tegn.
+Dette ekstra vurderings element er meget vigtigt i den store sammenhæng, da det er essentiels i den proces det er at vurdere om en person har en depression. 
+\lars{forsøg på at løfte raporten udover vores fokus}
 
 \begin{comment}
 \subsection{Søvnanalyse i PsyLog}
