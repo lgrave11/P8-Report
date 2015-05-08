@@ -1,3 +1,13 @@
+Denne sektion diskuterer det proof of concept der blev lavet til søvn delen af projektet.
+Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdig system er at der er ikke nok tid til at gøre det helt færdigt. 
+Ydermere vil et helt færdigt systemet påkræve testning hos målgruppen, og dette er igen en besværlig proces som der ikke er tid nok til at udføre. 
+
+Denne sektion om proof of concept indebære valg af sensor data som er nødvendig, hvordan søvnestimering udføres på denne data, og hvordan søvn estimeringerne for de forskellige sensor kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
+
+% Manglende resourcer
+% Time constraints.
+% Ingen test mulig(Kræver tilladelser, og system ikke færdig)
+
 Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover eller ej.
 Metoden der tages udgangspunkt i er den metode som er beskrevet i \cref{sec:BES} altså Best Effort Sleep, men andre metoder kunne også have været brugt.
 Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og acceleration er de datatyper der tages udgangspunkt i.
@@ -11,7 +21,7 @@ Disse to data typer kombineres til en enkelt model der vurderer om man sover.
 For at forsøget blev foretaget på ens vis, så det indsamlede data er sammenligneligt valgte vi en forsøgsopstilling.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.3]{forsoegsopstilling}
+	\includegraphics[scale=0.3,trim = 0cm 0cm 5cm 10cm, clip]{forsoegsopstilling}
 	\caption{Forsøgsopstilling. Sovende person med telefonen på natbordet.}
 	\label{fig:forsoegopstillings}
 \end{figure}
