@@ -216,10 +216,21 @@ Dette har ulempen at det ikke ville oplyse om selve søvnperioderne men blot mæ
 Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kunne det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggregere søvn data på mere akkurat vis, forslag til dette kan læses i \cref{section:snorken}.
 
 \subsection{Visning}
+For at kunne vise brugeren af systemet hvordan deres søvn har været, skal der tilføjes nogle visningsmoduler.
+Disse visningsmoduler skal kunne give et overblik over hvordan man har sovet den seneste nat, men også hvordan man har sovet det seneste stykke tid.
+
+For at kunne udtrykke dette til brugeren er der først blevet lavet en graf der viser hvor sikker systemet er på at man har sover over en periode.
+Denne periode er sat til at være alt den data der er på telefonen så brugeren har overblik over ændringer i grafen.
+Disse ændringer kan derved indikere at der er sket en ændring i ens sindstilstand.
+Til at sørge for at grafen kan bruges til både at se hvordan man har sovet over en længere periode samt over en kort periode, har man den mulighed at man kan zoome på grafen, og derved se præcist hvor sikker systemet er på man har sover på et bestemt tidspunkt.
+Der er også lavet en graf for hvor sikker systemet ved hjælp af kun accelerometret er på at man sover, det samme gælder for lyd.
+
+Grafer er dog ikke altid lige nemme at forstå, derfor er der blevet lavet en tabel der viser hvor sikker systemet er på at man har sover over en periode.
+Denne tabel minder om den der blev vist i \cref{tab:aggdat}, dog uden $\_id$ kolonnen.
+Tabellen giver et nemt overblik for brugeren om hvornår man har sovet, samt hvor sikker systemet er på at man har sovet.
+Dog er det ikke så nemt for brugeren at se ens adfærdsændring i en sådan tabel, da det kræver at man kigger på meget data på en gang.
 
 % Giv eksempel på ikke aggregeret data.
 % Forklar forslag/løsning til aggregering af data.
 % Vis resultat derfor
 % Diskuter problemer? (e.g. snorken) evt. referer til snorken diskussion
-
-
