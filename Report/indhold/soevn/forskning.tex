@@ -62,10 +62,10 @@ For Toss 'N' Turn fremgangsmåden er tanken at man blot skal have sin smartphone
 Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på smartphonen i forvejen.
 Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteri stadie (opladning/ikke opladning), og skærmvisningstilstand.
 Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage, til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
-Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvn estimering er på 83.97 \%.
+Derudover har deres forskning vist at den gennemsnitlige præcision for daglig søvn estimering er på 83.97\%.
 Hvilket gør det til en oplagt mulighed at arbejde med.
 Deres algoritme fungere så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
-Hvis vi antager at den procent nøjagtighed de har på 84 \% er for en patient der sover 8 timer, vil dette betyde at søvnen estimeres med +- 76 minutter, hvilket er ganske meget når vi skal bestemme om en person sover for meget eller for lidt.
+Hvis vi antager at den procent nøjagtighed de har på 84\% er for en patient der sover 8 timer, vil dette betyde at søvnen estimeres med +- 76 minutter, hvilket er ganske meget når vi skal bestemme om en person sover for meget eller for lidt.
 76 minutter i den forkerte retning kan sagtens resultere i at en person der sover for lidt bliver vurderet til at sove tilstrækkeligt og vice versa
 
 En ulempe ved denne teknik er at den kræver en oplæringsperiode på minimum 3 dage for at få en lovende præcision, men er antaget at være et acceptabelt kompromis, da estimeringen så ville kunne fungere relativt præcist efterfølgende.
@@ -77,7 +77,7 @@ Det ville dog være bedre med en søvnestimeringsteknik der ikke nødvendigvis k
 \subsubsection{Best Effort Sleep Model}\label{sec:BES}
 Best Effort Sleep (BES) Model \citet{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde, meget lig Toss 'N' Turn's koncept.
 Disse målbare datakilder anskaffes på en måde så brugeren ikke behøver ændre sin søvn adfærd, som det fx er tilfældet på andre tilsvarende løsninger som fx JawBone eller FitBit der kræver at en wearable benyttes mens man sover.
-Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, da der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde, hvilket for en person der sover 8 timer svarer til 92 \% nøjagtighed.
+Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, da der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde, hvilket for en person der sover 8 timer svarer til 92\% nøjagtighed.
 Om denne unøjagtighed er acceptabel skal vurderes ud fra hvad informationen skal bruges til og hvilke kriterier der er til data.
 Ud over dette kan BES ikke bruges til at estimere kvaliteten af ens søvn.
 Med kvaliteten menes hvor mange gange man har været vågen i løbet af natten, til dette kræves involvering af brugeren, enten af de bruger en wearable eller at de interagerer med systemet.
