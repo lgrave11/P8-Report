@@ -1,38 +1,37 @@
 Denne sektion beskriver forskningen der undersøger forbindelsen mellem psykiske lidelser og fysisk aktivitet, dette er vigtigt for at danne et overblik over hvad der overhovedet kan gøres med fysisk aktivitet og til hvilke slags personer løsningen skal tilrettes.
 Endvidere diskuteres der hvilke sensorer der kan bruges til at måle fysisk aktivitet, såsom accelerometer, stepcounter og GPS.
-Ydermere diskuteres det proof of concept der implementeres for fysisk aktivitet og hvordan denne aggregres ind i håndtærbare blokke som kan vises til brugeren. 
+Ydermere diskuteres det proof of concept der implementeres for fysisk aktivitet og hvordan denne aggregeres. 
 
 I vores samtaler med eksperter indenfor psykiatri feltet \citep[Kapitel 1, Sektion 3 og 4]{misc:faellesrapp}, blev det klart at de mente fysisk aktivitet var vigtigt i behandling af psykiske lidelser.
 Det samme er sandt for fokusgruppe mødet hvor vi igen blev fortalt at fysisk aktivitet hjælper, \citep[Kapitel 1, Sektion 5]{misc:faellesrapp}.
-Dette understøttes også af mange kilder der har undersøgt en sammenhæng mellem fysisk aktivitet og symptomerne for depression bl.a. \citep{art:physDepSymptoms, Strawbridge15082002, Arredondo01072012} og er nået frem til at en sådan sammenhæng bestemt virker til at være reel.
+Dette understøttes også af mange kilder der har undersøgt en sammenhæng mellem fysisk aktivitet og symptomerne for depression bl.a. \citet{art:physDepSymptoms, Strawbridge15082002, Arredondo01072012} og er nået frem til at en sådan sammenhæng bestemt virker til at være reel.
 Selvom kilderne ikke direkte siger at nedsat fysisk aktivitet er et symptom på begyndende depression, så er den sammenhæng de når frem til mellem depressions symptomerne og fysisk aktivitet nok til, at vi godt kan vurdere nedsat fysisk aktivitet som et symptom, da det gør tilstedeværelsen af andre symptomer mere alvorlige.
 
 Derudover har vi fundet kilder der også indikerer at det kan gå den anden vej, hvor forøget fysisk aktivitet er et tegn på bedring for depressive patienter.
 Først har vi \citet{misc:healthReports} fra 1985, der siger at det ser ud til at være en sammenhæng ikke blot mellem fysisk aktivitet og depression, men også med angst, mentalt handikap og andre former for psykiske lidelser.
-Her var det muligt at finde nyere materiale der understøtter forbindelsen mellem fysisk aktivitet og depression samt angst.
+Her var det muligt at finde nyere materiale der understøtter forbindelsen mellem fysisk aktivitet og depression samt angst, hvilket er beskrevet herefter.
 
 I \citet{art:physMental} fra 2000 er der blevet set på en større mængde undersøgelser og de er nået frem til en række implikationer der kan være for klinisk behandling.
 Blandt disse implikationer er, at individer diagnosticeret med svær depression eller individer der har brug for psykologisk behandling viser de største forbedringer ved øget fysisk aktivitet.
 Derudover er der også en implikation der viser at fysisk aktivitet virker lige så effektivt som psykologisk terapi til at mindske effekten af depressions symptomer hos folk med mild eller moderat depression.
 
 Ifølge \citet{book:sportPsyc} er der fundet en forbindelse mellem fysisk aktivitet og forbedring i tilstanden hos mange patientgrupper, heriblandt personer med angst, depression og stress.
-Ydermere præsenterer de også et eksperiment de har lavet, hvor en række angst patienter testede effektiviteten af medicinsk behandling overfor en fysisk træningsplan og en kombination af disse.
-I det eksperiment nåede forskerne frem til, at selvom den medicinske behandling virkede bedre i starten, gav alle tre ca. samme resultat.
-Efterfølgende viste det sig også, at de folk der havde være en del af det fysiske aktiveringsprogram, havde en væsentlig mindre risiko for tilbagefald.
+Ydermere præsenterer de også et eksperiment, hvor en række angst patienter testede effektiviteten af medicinsk behandling overfor en fysisk træningsplan og en kombination af disse.
+Eksperimentet viste at selvom den medicinske behandling virkede bedre i starten, gav alle tre ca. samme resultat.
+Efterfølgende viste det sig også, at de folk der havde været en del af det fysiske aktiveringsprogram, havde en væsentlig mindre risiko for tilbagefald.
 
 Alle tre kilder sætter fokus på fysisk aktivitet som behandlingsmetode, \citet{art:physMental} og \citet{book:sportPsyc} har resultater der understøtter denne holdning hvorimod \citet{misc:healthReports} kun har formodninger om at det virker.
 
-Grundet disse resultater, virker det logisk at give folk mulighed for selv at overvåge deres egen fysiske aktivitet, hvilket fx kunne gøres via deres smartphone, da der er mange sensorer i en telefon der kan give information om dette.
+Grundet disse resultater, virker det logisk at give folk mulighed for selv at overvåge deres egen fysiske aktivitet, hvilket for eksempel kunne gøres via deres smartphone, da der er mange sensorer i en telefon der kan give information om dette.
 Denne egen ansvarlige overvågning af fysisk aktivitet kan ligge dele af ansvaret for behandling og forhindring af tilbagefald over på patienten selv og kan forhåbentlig forhindre en del indlæggelser.
-
-Hvis en patient bliver gjort opmærksom på at deres aktivitet falder har de mulighed for at reagere derpå.
+Idet at hvis en patient bliver gjort opmærksom på at deres aktivitet falder har de mulighed for at reagere før det er for sent.
 
 \subsection{Sensorer til Fysisk Aktivitet}
-I en smartphone er der mange sensorer som kan bruges til at få et indblik i den fysiske aktivitet hos telefonens ejer.
-Den primære sensor her er en stepcounter, som der findes standard i alle android telefoner med API version 19 eller derover men som også kan laves manuelt ved hjælp af accelerometret.
+I en smartphone er der mange sensorer, som kan bruges til at få et indblik i den fysiske aktivitet hos telefonens ejer.
+Den primære sensor her er en stepcounter, som der findes standard i alle android telefoner med API version 19 eller derover, men som også kan laves manuelt ved hjælp af accelerometret.
 Udover stepcounteren, som giver et fint indblik i hvor mange skridt man tager, kunne man også bruge GPS til at se på hvor langt man går.
-Derudover kan man også, for at være sikker på man har den rigtige person, bruge telefonens accelerometer data til at beregne gangarten \citep{4272626} og ud fra dette vurdere om det er telefonens ejer der har telefonen, eller om det er en anden person der har lånt den.
+Derudover kan man også, for at være sikker på man logger den rigtige person, bruge telefonens accelerometer data til at beregne gangarten \citep{4272626} og ud fra dette vurdere om det er telefonens ejer der har telefonen, eller om det er en anden person der har lånt den.
 Hvis det er en anden person der har telefonen, bør dennes aktivitet fjernes fra data der bruges for beregninger til fysisk aktivitet hos patienten.
 
-Hvis man føler der er for stor risiko for at telefonen ikke får det hele med, da det måske kunne være irriterende at have sin telefon med ud at løbe fx, kunne man gøre brug af andre former for måleudstyr.
-Eksempelvis kunne man her bruge smart earplugs eller et smart wristband, der begge har en række indsamlingsmetoder, som giver data der kan bruges til at indsamle data af samme type som data fra en smartphone.
+Hvis man føler der er for stor risiko for at telefonen ikke får det hele med, da det eksempelvis kan være irriterende at have sin telefon med ud at løbe kan man gøre brug af andre former for måleudstyr.
+Eksempelvis kan man her bruge smart earplugs eller et smart wristband, der begge har en række indsamlingsmetoder, som giver data der kan bruges til at indsamle data af samme type som fra en smartphone.
