@@ -2,23 +2,23 @@ Denne sektion diskuterer det proof of concept der blev lavet til søvn delen af 
 Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdig system er at der er ikke nok tid til at gøre det helt færdigt. 
 Ydermere vil et helt færdigt systemet påkræve testning hos målgruppen, og dette er igen en besværlig proces som der ikke er tid nok til at udføre. 
 
-Denne sektion om proof of concept indebære valg af sensor data som er nødvendig, hvordan søvnestimering udføres på denne data, og hvordan søvn estimeringerne for de forskellige sensor kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
+Denne sektion om proof of concept beskriver valg af sensor data som er nødvendigt, hvordan søvnestimering udføres på denne data, og hvordan søvn estimeringerne for de forskellige sensor kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
 
 % Manglende resourcer
 % Time constraints.
 % Ingen test mulig(Kræver tilladelser, og system ikke færdig)
 
 Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover eller ej.
-Metoden der tages udgangspunkt i er den metode som er beskrevet i \cref{sec:BES} altså Best Effort Sleep, men andre metoder kunne også have været brugt.
-Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og acceleration er de datatyper der tages udgangspunkt i.
-Disse to data typer kombineres til en enkelt model der vurderer om man sover.
+Metoden der tages udgangspunkt i er den metode som er beskrevet i Best Effort Sleep i \cref{sec:BES}, men andre metoder kunne også have været brugt.
+Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og acceleration er de datakilder der tages udgangspunkt i.
+Disse to datakilder kombineres til en enkelt model der skal kunne vurderer hvorvidt man sover.
 
 \subsection{Forsøgsopstilling}
 %Disposition:
 %Billede af opstilling
 %Bare tage med hjem og sove
 %Flere forsøg og systematisk tilgang kunne være brugt og skulle gøres hvis det ikke bare var proof of concept.
-For at forsøget blev foretaget på ens vis, så det indsamlede data er sammenligneligt valgte vi en forsøgsopstilling.
+For at forsøget fortages på ens vis, så det indsamlede data er sammenligneligt valgte vi en forsøgsopstilling.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5,trim = 0cm 0cm 5cm 10cm, clip]{forsoegsopstilling}
@@ -33,10 +33,10 @@ Indsamlingen af data foregik ved at vi installerede de fornødne moduler på ege
 Da dette er et proof of concept er dette tilstrækkeligt, men hvis man skulle udvikle en bedre egnet model skulle man være mere systematisk, hvor flere testpersoner med forskellige søvnvaner ville blive inddraget og hvor cross-validation eller lignende ville blive benyttet til at verificere ens model.
 
 \subsection{Sensor Data}
-Hoved ideen bag brugen af acceleration og amplitude data kan ses i Best Effort Sleep Model \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
+Hoved idéen bag brugen af acceleration og amplitude data kan ses i Best Effort Sleep Model i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
 
 For at have en bedre indsigt i hvordan vi kan bruge accelerations og amplitude data blev disse plottet over en dag inklusiv søvn, hvor man holdt log for hvornår der blev sovet.
-Dette resulterede i \cref{fig:accplot} og \cref{fig:amplplot}.
+Dette kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
 
 \begin{figure}[h]
 	\centering
@@ -51,7 +51,7 @@ Det viser sig at plottet fint indikerer når man er vågen, hvilket er forårsag
 Dog kan man ved stilstand ikke vide sig sikker på om det er fordi man sover, eller blot fordi man har lagt sin mobil fra sig.
 
 Ved stilstand i en længere periode kan det forsøges at estimere sandsynligheden for at denne stilstand er grundet at man sover, men derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
-Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle maksamplitude, således at man ikke indsamler personfølsomme oplysninger da man ikke kan genskabe en samtale men blot har maksamplitude lagret for hvert sekund.
+Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle maks amplitude, således at man ikke indsamler personfølsomme oplysninger da man ikke kan genskabe en samtale men blot har maks amplitude lagret for hvert sekund.
 
 \begin{figure}[h]
 	\centering
@@ -64,7 +64,7 @@ Idéen bag at bruge maksamplituden er at man larmer væsentligt mere når man er
 Dette passer fint med de loggede data plottet i \cref{fig:amplplot}.
 Dog har denne antagelse også begrænsninger.
 Eksempelvis kan det være at man er en stille person, snorker meget eller også kunne personen bo i et meget larmende område.
-Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kunne finde et mønster når man snorker til at styrke modellen, se \cref{section:snorken}.
+Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kunne finde et mønster når man snorker til at styrke modellen, hvilket vil blive diskuteret i \cref{section:snorken}.
 Derudover er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder og er noget der bør trænes til det enkelte individ for at opnå en model der passer til det enkelte individs personlighed.
 Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of concept kan man som en start bruge fastsatte statiske vægte.
 
@@ -77,19 +77,19 @@ Vi tillader os at tage det forbehold at det sikkert ikke er en metode der bør a
 
 Vores model går på en sliding window tilgang hvor den centrale del er at registrere stilstand ved acceleration og amplitude.
 \subsubsection{Stilstands Bestemmelse}
-Som udgangspunkt for vores udkast til en søvnestimeringsmodel determineres der hvornår der er stilstand.
+Som udgangspunkt for vores udkast til en søvnestimeringsmodel afgøres der hvornår der er stilstand.
 Dette gøres forskelligt for acceleration og amplitude data, men tager udgangspunkt i det loggede data.
 For at sikre enkelte spikes ikke påvirker resultatet anvendes et vægtet gennemsnit til at reducere støj.
 
 Hvis vi ser på \cref{fig:accplot}, der er et plot for accelerations data kan vi se stilstand for punkterne mellem 22:00 og 07:00.
 Øvelsen består i at have en metode der kan afgøre at disse punkter er i stilstand.
-Dette gøres ved at for et givent punkt at se om de 5 tidligere målinger ikke afviger for meget fra punktet i betragtning i x, y og z aksen.
+Dette gøres ved at for et givent punkt at se om de 5 tidligere målinger ikke afviger fra en given fastsat grænse fra punktet i betragtning i x, y og z aksen.
 Hvis der ikke er en sådan afvigelse bestemmes det at punktet i betragtning er i stilstand.
 Dette gøres for alle punkter og der afgøres for hvert af disse om de er i stilstand eller ej.
 Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeaccelerationen da denne ville måles konstant hvis telefonen ligger stille.
 
 Ved at betragte amplituden \cref{fig:amplplot} kan her ses stilstand fra lidt over 22:00 til omkring 07:00 med et enkelt spike ved 05:00.
-Det enkelte spike bliver takles af det vægtede gennemsnit.
+Det enkelte spike takles af det vægtede gennemsnit.
 Derudover kan stilstandsbestemmelsen gøres på en måde der ligner den for accelerationen.
 Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i.f.t. det givne punkt i betragtning ses der på om de alle ligger under et fastsat threshold.
 
@@ -117,12 +117,13 @@ Alle tre funktioner har til fælles at de er voksende, hvilket passer med vores 
 Den lineære funktion bygger på antagelsen at sandsynligheden for at man sover er kongruent med stilstands længden, hvilket vi ikke ønsker da vi så tillægger for stor vægt til korte stilstandsperioder.
 Af samme grund forkastes den konkave funktion også.
 
-Til sidst har vi den logistiske funktion der fint beskriver hvordan at ved længere stilstandsperioden er der en forøget hældning i funktionen indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver megen ekstra sandsynlighed for søvn men stadig lidt, dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
+Til sidst har vi den logistiske funktion der fint beskriver hvordan at ved længere stilstandsperioden er der en forøget hældning i funktionen indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver meget ekstra sandsynlighed for søvn men stadig lidt. 
+Dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
 I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, det kan være man har glemt mobilen hjemme mens man er på tur over en weekend, men hvis forudsætningen for at systemet fungerer er at man har mobilen i nærheden regnes den logistiske funktion som et godt redskab til et søvnestimat.
 
 Definitionen af den logistiske funktion er defineret som følger:
 \begin{equation}
-	f(t_{span}) = \frac{L}{1+e^{\,k\cdot(-t_{span} - t_{midtpunkt})}}
+	f(t_{span}) = \frac{L}{1+e^{\,-k\cdot(t_{span} - t_{midtpunkt})}}
 \end{equation} 
 hvor,
 \begin{itemize}
@@ -132,7 +133,7 @@ hvor,
 	\item[$L$] er kurvens maksimums værdi, hvilket for os eksempelvis kan være $1$ for 100\% sandsynlighed for søvn.
 \end{itemize}
 
-Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata. Det er måske også en god idé at ændre på stejlheden for kurven, altså k, baseret på hvilken kilde af data man bruger som f.eks. accelerometer eller lyd.
+Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata. Det kan også være en god idé at ændre på stejlheden for kurven, altså k, baseret på hvilken kilde af data man bruger som f.eks. accelerometer eller lyd.
 
 \subsection{Kombinering af modeller}\label{subsec:kombimodeller}
 Det er tiltænkt at hver sensor kan have en tilknyttet søvn estimerings model, hvilket i vores tilfælde er en søvn estimerings model for accelerometret og lyd fra mikrofonen.
@@ -148,30 +149,24 @@ For at illustrere dette bruges der et eksempel.
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|}
-\hline Tid & Sandsynlighed for model A & Sandsynlighed for model B \\ 
-\hline 02:30:00 & 	0.59     & \nv \\ 
-\hline 02:30:01 & 	\nv     & 0.31 \\ 
-\hline 02:30:02 & 	0.61    & \nv \\ 
-\hline 02:30:03 & 	0.61    & \nv \\ 
-\hline 02:30:04 & 	\nv     & 0.31 \\ 
+\begin{tabular}{|c|c|c|c|}
+\hline Tid & Sandsynlighed for model A & Sandsynlighed for model B & Resultat\\ 
+\hline 02:30:00 & 	0.59    & \nv  	& $\text{Vægt}_A * 0.59 + \text{Vægt}_B * 0.29$\\ 
+\hline 02:30:01 & 	\nv     & 0.29 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.29$\\ 
+\hline 02:30:02 & 	0.61    & \nv 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.31$\\ 
+\hline 02:30:03 & 	0.62    & \nv 	& $\text{Vægt}_A * 0.62 + \text{Vægt}_B * 0.31$\\ 
+\hline 02:30:04 & 	\nv     & 0.31 	& ...\\
 \hline 
 \end{tabular} 
-\caption{En tabel der illustrerer hvordan estimeringer kan se ud.}
+\caption{Tabel der illustrerer hvordan kombineringen fungerer. $\text{Vægt}_A$ og $\text{Vægt}_B$ er de fastsatte vægte for de to modeller.}
 \label{tab:combiModelsExample}
 \end{table}
 
-I \cref{tab:combiModelsExample} kan man se data på to forskellige modeller som illustrerer sandsynligheden for et tidspunkt at brugeren sover.
-
-Måden data kombineres på vises ved hjælp af dataen i tabellen.
-Det starter på den måde at der er to gennemløbere for A og B. 
-Disse to gennemløbere starter på første element i A og B. 
-I eksemplet vil gennemløberen for A starte ved 02:30:00 med værdien $0.59$ og for B vil den starte ved 02:30:01 med værdien $0.31$.
-Værdierne bruges så til at lave en kombinering ved hjælp af vægtninger for det to modeller. I eksemplet vil dette så betyde at kombinering vil se sådan her ud for de to førte rækker: $$\text{VægtningA} * 0.59 + \text{VægtningB} * 0.31$$
-Herefter ses der på tidspunktet, for at bestemme hvilken gennemløber der skal køres frem til det næste element og hvordan kombineringen skal gemmes.
-Hvis A's tidspunkt er mindst, gemmes kombinering med A's tidspunkt og A køres frem, hvis B's tidspunkt er mindst gemmes kombinering med B's tidspunkt og B køres frem, ellers køres begge frem da det betyder at de to tidspunkter er ens.
-I eksemplet vil dette betyde at A køres frem til 02:30:02 med værdien $0.61$, her kombineres værdierne $0.61$ og $0.31$ og under B's tidspunkt da den i dette tilfælde er mindst.
-Dette forsætter indtil der ikke er mere data tilbage.
+I \cref{tab:combiModelsExample} kan man se kombineringen af de to modeller.
+Måden den kombinerer sandsynligheder på er ved at den starter med to gennemløbere henholdsvis for A og B som starter på det første element som ikke er tom. 
+Så derfor i eksemplet vil A starte ved 02:30:00 med værdien $0.59$ og for B vil den starte ved 02:30:01 med værdien $0.29$. 
+Disse to værdier kombineres for det bagerste element med vægtningerne for de to modeller, hvorefter flyttes den bagerste gennemløber, og en ny kombinering foretages.
+Dette forsætter indtil der ikke er mere data tilbage i en af de to gennemløbere, hvorefter der ventes på ny data så begge gennemløbere igen har data at køre på.
 
 \subsection{Aggregering}\label{subsec:soevnaggre}
 Som demonsteret giver søvnestimeringsmetoden, der er vist som proof of concept, en estimering til en lang række tidspunkter.
@@ -182,22 +177,22 @@ For at få et bedre indblik i formen for data der skal aggregeres gives et eksem
 	\centering
 \begin{tabular}{|c|c|c|}
 	\hline {\_}id & prob & time \\ 
-	\hline 203754 & 0.0504 & 2015-04-26 01:41:42.446 \\ 
-	\hline 203755 & 0.0504 & 2015-04-25 01:41:43.375 \\ 
+	\hline 203754 & 0.050 & 2015-04-26 01:41:42.446 \\ 
+	\hline 203755 & 0.050 & 2015-04-25 01:41:43.375 \\ 
 	\hline ... & ... & ... \\ 
-	\hline 218777 & 0.918512105941772 & 2015-04-26 05:52:36.204 \\ 
-	\hline 218778 & 0.918542623519897 & 2015-04-26 05:52:37.203 \\ 
-	\hline 218779 & 0.0 & 2015-04-26 05:52:38.163 \\ 
+	\hline 218777 & 0.919 & 2015-04-26 05:52:36.204 \\ 
+	\hline 218778 & 0.919 & 2015-04-26 05:52:37.203 \\ 
+	\hline 218779 & 0.000 & 2015-04-26 05:52:38.163 \\ 
 	\hline 
 \end{tabular}
 \caption{Eksempel på søvn estimeringsdata der ikke er aggregeret.}\label{tab:noaggsoevndata}
 \end{table}
-Ved at se på data som i \cref{tab:noaggsoevndata} fremstår det hvordan at fra {\_}id 194596 til {\_}id 218778 er sandsynligheden for søvn, der ses i \textit{prob} kolonnen, monotont voksende.
+Ved at se på data som i \cref{tab:noaggsoevndata} fremstår det hvordan at fra {\_}id 203754 til {\_}id 218778 er sandsynligheden for søvn, der ses i \textit{prob} kolonnen, monotont voksende.
 Idéen derudfra er så at registrere sådanne monotoniforhold og aggregere data med hensyn til det.
-Dvs. at registrere intervaller hvor \textit{prob} er monotont voksende og hver af sådanne intervaller med tilpas stor sandsynlighed og tidslængde logge dette i den tilgængelige database fra PsyLog.
+Det vil sige at registrere intervaller hvor \textit{prob} er tilpas stor over længere tidsperiode, samt er monotont voksende.
 
-For at forkaste små intervaller valgtes det at intervaller kortere end 10 minutter og intervaller hvor sandsynligheden for søvn i slutningen af intervallet er under 10\% bliver forkastet.
-Dette kan være en fin løsning under antagelse af at man er rolig når man sover, og har da også vist gode resultater med nogle tests af personer med en meget rolig søvn. 
+Det blev besluttet at forkaste intervaller kortere end 10 minutter og hvor sandsynligheden for søvn i slutningen af intervallet er under 10\%.
+Dette kan være en fornuftig løsning under antagelse af at man er rolig når man sover, og har da også vist gode resultater med nogle tests af personer med en meget rolig søvn. 
 Eksempelvis med det viste data i \cref{tab:noaggsoevndata} ville dette blive aggregeret til en række som set i \cref{tab:aggdat}.
 
 \begin{table}[h]
@@ -215,17 +210,24 @@ Et alternativ kunne være at tage arealet af søvn estimeringsdata, og bruge are
 Dette har ulempen at det ikke ville oplyse om selve søvnperioderne men blot mængde af søvn per dag, derudover vil den stadig blive påvirket af snorken og andre støjfaktorer.
 Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kunne det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggregere søvn data på mere akkurat vis, forslag til dette kan læses i \cref{section:snorken}.
 
-\subsection{Visning}
+\subsection{Visualisering}\label{sec:pocVis}
 For at kunne vise brugeren af systemet hvordan deres søvn har været, skal der tilføjes nogle visningsmoduler.
 Disse visningsmoduler skal kunne give et overblik over hvordan man har sovet den seneste nat, men også hvordan man har sovet det seneste stykke tid.
 
-For at kunne udtrykke dette til brugeren er der først blevet lavet en graf der viser hvor sikker systemet er på at man har sover over en periode.
-Denne periode er sat til at være alt den data der er på telefonen så brugeren har overblik over ændringer i grafen.
+For at kunne udtrykke dette til brugeren er der først blevet lavet en graf der viser hvor sikker systemet er på at man har sovet over en periode.
+Denne periode er sat til at være alt data der er på telefonen så brugeren har overblik over ændringer i grafen.
 Disse ændringer kan derved indikere at der er sket en ændring i ens sindstilstand.
-Til at sørge for at grafen kan bruges til både at se hvordan man har sovet over en længere periode samt over en kort periode, har man den mulighed at man kan zoome på grafen, og derved se præcist hvor sikker systemet er på man har sover på et bestemt tidspunkt.
+Til at sørge for at grafen kan bruges til både at se hvordan man har sovet over en længere periode samt over en kort periode, har man den mulighed at man kan zoome på grafen, og derved se præcist hvor sikker systemet er på man har sovet på et bestemt tidspunkt.
 Der er også lavet en graf for hvor sikker systemet ved hjælp af kun accelerometret er på at man sover, det samme gælder for lyd.
+For at se hvordan graferne ser ud se \cref{fig:visningsgrafer}
 
-Grafer er dog ikke altid lige nemme at forstå, derfor er der blevet lavet en tabel der viser hvor sikker systemet er på at man har sover over en periode.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.1]{visningsgrafer}
+	\caption{Tre funktioner til estimering af sandsynlighed for søvn}\label{fig:visningsgrafer}
+\end{figure}
+
+Grafer er dog ikke altid lige nemme at forstå, derfor er der blevet lavet en tabel der viser hvor sikker systemet er på at man har sovet over en periode.
 Denne tabel minder om den der blev vist i \cref{tab:aggdat}, dog uden $\_id$ kolonnen.
 Tabellen giver et nemt overblik for brugeren om hvornår man har sovet, samt hvor sikker systemet er på at man har sovet.
 Dog er det ikke så nemt for brugeren at se ens adfærdsændring i en sådan tabel, da det kræver at man kigger på meget data på en gang.

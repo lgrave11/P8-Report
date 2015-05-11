@@ -1,8 +1,8 @@
 For at kunne tage et valg omkring hvilket metoder der skal vælges gives et overblik over de metoder der er beskrevet i forskning.
-Disse valg skal evalueres ved hjælp af kriterier, og disse kriterier er baseret på hele idéen bag projektet da systemet skal kunne lave målinger uden at forstyrre og kunne lave præcise analyser baseret på denne data på en brugers telefon. 
+Disse valg skal evalueres ved hjælp af kriterier, og disse kriterier er baseret på idéen bag projektet, som er at systemet skal kunne lave målinger på patientens telefon uden at forstyrre og kunne lave analyser baseret på disse målinger. 
 
 \begin{description}[style=nextline]
-\item[Undgå bruger intervention og måler søvn uden at forstyrre]
+\item[Undgå bruger intervention og måle søvn uden at forstyrre]
 Dette ses som det helt centrale kriterie for vores løsning.
 Grunden til dette er at vi er interesseret i at registrere søvn for personer der kan risikere at have en meget uforudsigelig søvn. Det kan være at patienten falder spontant i søvn på sofaen midt om dagen, og hvis personen som krav for at kunne monitorere søvn skal starte søvn modulet ville en sådan spontan søvn ikke blive registreret.
 Derudover blev der til fokusgruppe interviewet \citep[Kapitel 1, Sektion 5]{misc:faellesrapp} lagt stor vægt på at hvis en person er på vej imod en depression ville enhver form for ekstra arbejde være en byrde man ville springe over.
@@ -11,22 +11,23 @@ Et system der kræver manuel aktivering for hver søvn periode ville derfor ikke
 \item[Kunne bruges af brugere i deres eget hjem]
 Applikationen er tiltænkt som en personlig hjælper, hvor en patient kan holde øje med deres egen situation især i det habituelle niveau for at holde øje med tegn på forværring.
 Af denne grund er det centralt at systemet skal kunne bruges i eget hjem, og ikke være påkrævet hospitalsapparatur.
-Dette hænger også sammen med at man ved det habituelle niveau ikke er indlagt, men at man går hjemme, og løsningen er tiltænkt som en forebyggende applikation, hvorfor patienter i det habituelle niveau er i fokus.
+Dette hænger også sammen med at man ved det habituelle niveau ikke er indlagt, men at man går hjemme.
+Derudover er løsningen tiltænkt som en forebyggende applikation, hvorfor patienter i det habituelle niveau er i fokus.
 
 \item[Være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel]
-For at man skal kunne stole på vores system er det nødvendigt at det har en tilstrækkelig form for præcision, således at man ikke kommer med for mange forkerte estimater da man risikerer at patienten så ville undlade at bruge systemet. 
-Derudover hvis systemet er for upræcist har det ingen formål, da idéen er at det skal kunne monitorere søvnen i højere grad end hvad patienten selv har opfanget.
+For at man skal kunne stole på vores system er det nødvendigt at det er tilstrækkelig præcist, så præcist at man ikke kommer med for mange forkerte estimater da man risikerer at patienten så ville undlade at bruge systemet. 
+Derudover hvis systemet er for upræcist har det intet formål, da idéen er at det skal kunne monitorere søvnen i højere grad end patienten selv.
 \end{description}
 
 \subsection{Opsummering af Metoder}
 For at give et overblik over de forskellige metoder og teknikker opsummeres de i \cref{tab:opsummeringMetoder}.
-Som en ekstra note til denne tabel er præcisionen baseret ud fra en antaget søvnlængde på otte timer. 
+Som en ekstra bemærkning til denne tabel er præcisionen baseret ud fra en antaget søvnlængde på otte timer. 
 
 %tabellen skal rettes seriøst til, især quality delen skal være mere sammenlignelig
 \begin{table}[h]
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.5cm}|}
 \hline & Poly somnografi & ActiGrafi & Søvn Dagbog & Toss 'N' Turn & Best Effort Sleep  & Statistisk baseret\\ 
-\hline Præcision & N/A (dog meget præcis) & 95\%+ & Subjektivt & 84\% kvalitet, 92\% længde & 92\% & 68\%\\ 
+\hline Præcision & N/A (dog meget præcis) & 95\%+ & Subjektivt & 92\% & 92\% & 68\%\\ 
 \hline Behøver eksperter & Ja & Nej & Nej & Nej & Nej & Nej \\ 
 \hline Udstyr & Specialiseret udstyr & JawBone / FitBit & Ingen & Smartphone & Smartphone & Smart-phone \\ 
 \hline Bruger intervention	& I laboratorie og meget udstyr på patient	& Monter udstyr / læg under hovedpude & Manuel registrering  & Oplærings-periode, derefter begrænset & Begrænset & Læg telefon i seng \\ 
@@ -37,16 +38,16 @@ Som en ekstra note til denne tabel er præcisionen baseret ud fra en antaget sø
 \label{tab:opsummeringMetoder}
 \end{table}
 Som det kan ses ud fra \cref{tab:opsummeringMetoder}, så har de forskellige metoder varierende styrker og svagheder, dog er Toss 'N' Turn's søvn længde estimering og Best Effort Sleep sådan set ligesat.
-I den proces det er at beslutte hvilke at gå videre med, er det første punkt at se på hvilke af metoderne vi har mulighed for at lave med det udstyr og de konkrete resourcer vi har til rådighed.
+For at beslutte hvilke metoder der skal arbejdes videre med, skal vi se på hvilke af metoderne vi har mulighed for at lave med det udstyr og de konkrete ressourcer vi har til rådighed.
 Da polysomnografi kræver en ekspert og store mængder specialiseret udstyr, er denne ikke fornuftig at se videre på.
 ActiGraf kræver en wearable som dataindsamlings modul, hvilket vi ikke har, så derfor kigges der ikke videre på den, men hvis sådanne wearables var til rådighed, ville denne metode kunne give meget gode resultater.
 
 En søvndagbog kunne godt være passende, dog er der det problem at det er subjektivt så patienten kan komme til at give ukorrekt information, hvilket vil virke forstyrrende for et program der skal finde trends.
-Derudover er der en risiko for at patienterne ikke udfylder deres søvn dagbog hvis de er i en depressions eller mani periode.
+Derudover er der en risiko for at patienterne ikke udfylder deres søvn dagbog hvis de er i en depressions- eller maniperiode.
 
 Dette efterlader os med tre tilbageværende metoder, Toss 'N' Turn, Best Effort Sleep (BES) og statistisk baseret tilgang.
-Af disse har BES og Toss 'N' Turn bedst præcision, hvor BES kan køre stort set uden at involvere brugeren, hvorimod Toss 'N' Turn har brug for en oplærings periode efter hvilket punkt brugeren ikke skal involveres.
-Den statistisk baserede metoder kræver en lille smule involvering af brugeren hele tiden, så på det punkt er det en god middelvej, men den har væsentlig lavere nøjagtighed end de to andre.
+Af disse har BES og Toss 'N' Turn bedst præcision, hvor BES kan køre stort set uden at involvere brugeren, hvorimod Toss 'N' Turn har brug for en læringsperiode hvorefter brugeren ikke involveres længere.
+Den statistisk baserede metode kræver involvering af brugeren, hvilket er at telefonen skal ligge i patientens seng, på det punkt er det en god middelvej, men den har væsentlig lavere præcision end de to andre.
 
 Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep og den statistisk baseret metoder opfylder kriterierne.
 
@@ -62,52 +63,15 @@ Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep 
 \label{tab:soevnMetodeKriterier}
 \end{table}
 
-Udfra dette skal der så udvælges en metode der skal fokuseres på. 
+Ud fra dette skal der så udvælges en metode der skal fokuseres på. 
 Netop fordi vi gerne vil have så lidt krav til bruger intervention som muligt vil vi kraftigt foretrække en metode som ikke kræver noget af brugeren, hvilket kan være Best Effort Sleep (BES) metoden, dog kræver Toss 'N' Turn metoden ikke specielt meget bruger intervention. 
-Hvis BeS vælges har vi dog det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker og kombinerer de forskellige datakilder, så det skal vi selv genskabe. 
+Hvis BES vælges har vi dog det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker og kombinerer de forskellige datakilder, så det skal vi selv genskabe. 
 Dog ved vi ud fra artiklen at det er muligt at gøre, hvilket betyder at BES er et reelt valg. 
-BES har dog også det problem at den kun kan beregne søvnlængden og ikke søvn kvalitet, som mange mener også er ganske relevant da et af det beskrivende kriterier for at være i et depressions stadie er at ens søvn er ustabil eller af dårlig kvalitet. 
+BES har dog også det problem at den kun kan beregne søvnlængden og ikke søvn kvalitet, som mange mener også er ganske relevant da et af det beskrivende kriterier for at være i en depressions periode er at ens søvn er ustabil eller af dårlig kvalitet. 
 Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alt, hvilket vil sige at hvis man skulle måle søvn kvalitet skulle man opsøge andre metoder.
 
-Da der er mange muligheder at vælge imellem og ikke meget tid til at lave noget, vælges en potentiel delvis løsning at arbejde med som et proof of concept, hvor så udviklingen af andre metoder kan forsættes senere.
+Da der ikke er meget tid til at lave noget udtømmende, udvælges en metode at arbejde med som et proof of concept, hvor så udviklingen af andre metoder kan forsættes senere.
 Valget falder på en implementering af Best Effort Sleep Model, da denne opfyldte vores kriterier godt selvom den ikke måler søvnkvalitet.
 Hvis der havde været mere tid til rådighed, ville valget med alt sandsynlighed være faldet på en implementering af Toss 'N' Turn, da denne som tidligere nævnt også har mulighed for at vurdere søvn kvaliteten.
 Det at kvalitets vurdering også kommer med vil kunne tilføje et ekstra lag til vurderingen af folks søvn, hvilket er meget vigtigt da det godt kan være man ligger i sin seng og forsøger at sove i omkring 8 timer, men hvis man ikke sover sammenhængende i mere end for eksempel 45 minutter, er det ikke et godt tegn.
-Dette ekstra vurderings element er meget vigtigt i den store sammenhæng, da det er essentiels i den proces det er at vurdere om en person har en depression. 
-\lars{forsøg på at løfte raporten udover vores fokus}
-
-\begin{comment}
-\subsection{Søvnanalyse i PsyLog}
-\winde{Ikke sikker på at det her skal med her}
-\lars{Enig med Winde i at det nok ikke skal være her, hvis det skal, så nævn Toss 'N' Turn og skriv en del om sikkert}
-Da søvnmønstre er en god indikator på en persons helbred \lars{skal source til}, og i mange tilfælde også på den psykiske tilstand, er det meget relevant for det hjælpeværktøj der er under udvikling til personer med uni- og bipolar depression.
-I dette projekt er der et ønske om at selve dataindsamlingen kræver så lidt som muligt af brugeren, hvor det foretrukne er at brugeren bruger sin telefon og agerer i sin hverdag som de plejer.
-
-Netop fordi vi gerne vil have så lidt krav til brugeropførsel som muligt vil vi kraftigt foretrække en metode som ikke kræver noget af brugeren, hvilket kan være Best Effort Sleep (BES) Model eller noget lignende. 
-Dog har vi det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker de forskellige datakilder så det vil være noget vi selv skal forsøge at genskabe.
-Dog ved vi ud fra denne artikel at det er muligt at gøre, hvilket betyder at det er en reel mulighed.
-Der er også det problem, at denne fremgangsmåde kun kan beregne søvnlængden og ikke søvn kvalitet, som mange også mener er ganske relevant da et af de beskrivende kriterier for et depressions stadie er at ens søvn er ustabil eller af dårlig kvalitet.
-Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alle kriterier, hvilket vil sige at vi burde udforske andre mulighed for søvnestimering, dog kan BES stadig en meget valid mulighed for estimering af søvnlængde.
-
-Hvis vi derimod vil have søvn kvaliteten med skal vi over i en lidt mere bruger involverende fremgangsmåde.
-Her er der nogle hvor brugeren skal ligge sin telefon i sengen eller under hovedpuden, hvilket menes at kræve ganske lidt af brugeren og kan igen bare udføres gennem telefonen.
-I disse fremgangsmåder analyseres de bevægelser telefonen registrerer i sengen til at bestemme hvornår personen sover og kan også bruges til at bestemme de forskellige stadier af søvn ud fra viden om hvordan man bevæger sig i de forskellige faser.
-For denne fremgangsmåde har vi formået at finde pseudokode til en offentligt tilgængelig algoritme, så det at implementere en udgave af det der kan lave nogenlunde præcise analyser er en mulighed.
-Metoden er beskrevet i \cref{sec:statbased}
-Det at telefonen nu ligger i sengen og dermed bevæger sig, gør at den tidligere nævnte BES fremgangsmåde ikke giver særligt gode resultater, da den er kraftigt baseret på analyse af bevægelses data.
-Dog er selve algoritmen ikke beskrevet i særlig mange detaljer og pseudokoden efterlader mange huller.
-
-Et alternativ til at ligge sin telefon i sengen er brug af wearables, det vil sige måle enheder som brugeren skal have på mens de sover der så måler fra forskellige sensorer, som f.eks. accelerometer og temperatur.
-En del wearables behandler også deres data selv, så det eneste der kræves for at få dem som en del af vores system er en integration af dem som datakilde.
-Disse kræver at brugeren anskaffer sig ekstra udstyr for få den optimale behandling, så hvis det er noget der står for egen regning vil det muligvis give problemer.
-Dette er dog et mindre problem da sådan en enhed sandsynligvis vil blive givet til brugeren som en del af deres behandling, da prisen på det nok er væsentligt lavere end den hospitals indlæggelse som det forhåbentlig kan bruges til at undgå. 
-En anden fordel ved wearables er, at det vil tillade at bruge BES som validering da telefonen nu sandsynligvis ligger stille ved siden af sengen.
-Wearables giver selvfølgelig også adgang til andre former for målings data der kunne være brugbart for andre former for analyse, men der er en risiko for at det vil resultere i irritation for brugeren, da det at f.eks. gå med et armbånd hele tiden godt kunne gå hen at blive irriterende.
-
-Da der er mange muligheder at vælge imellem og ikke meget tid til at lave noget, vælges en potentiel løsning at arbejde med som et proof of concept, for så at overlade udviklingen af de andre til senere hold af udviklere.
-Valget falder på en implementering af Best Effort Sleep Model, da denne havde bedst dokumentation i forhold til hvor godt den opfyldte vores kriterier.
-
-%Grundet mangler i tilgængeligheden af information om både den statistisk baserede algoritme og BES, vælges det at arbejde videre med begge former for analyse.
-%BES vælges at forsøge implementeret selvom den ikke kan give en vurdering af søvn kvaliteten, da det er vores overbevisning at det er vigtigere at kende søvn længden eller søvn mængden, end det er ikke at have den information.
-%En anden fordel ved BES er også at den kan køres selvom patienten ikke gør noget ekstra eller hvis patient ikke har lyst til at gøre noget ekstra, hvilket godt kunne være tilfældet under en depression.
-\end{comment}
+Dette ekstra vurderings element er meget vigtigt i den store sammenhæng, da det er essentielt i den proces det er at vurdere om en person har en depression. 
