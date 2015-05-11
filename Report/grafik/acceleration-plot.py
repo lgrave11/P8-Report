@@ -16,7 +16,7 @@ def main():
     fig, ax = plt.subplots()
     ax.plot_date(dates, lst2[1], 'o-', color="red", markerfacecolor='red', markeredgecolor='red', markersize=2, label="Acceleration X", rasterized=True)
     plt.legend(["Acceleration X"])
-    plt.ylabel(r'$m/s^{2}$', rotation="horizontal")
+    plt.ylabel(r'Acceleration i $m/s^{2}$', rotation="vertical")
     plt.xlabel('Tidspunkt', rotation="horizontal")
     ax.xaxis.set_major_formatter(format)
     ax.autoscale_view()
