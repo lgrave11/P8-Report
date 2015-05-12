@@ -1,4 +1,36 @@
-\als{Hvad skal det her kapitel omhandle? Tænker når vi har en sektion om videre arbejde i både Søvn og Fysisk Aktivitet. Evt. adfærdsændringsregistrering?}
-\als{Her synes jeg vi kunne nævne hvordan fysisk aktivitet og søvn komplementere hinanden.
+Dette kapitel ...
+
+% Fysisk aktivitet og søvn komplement
+Idéen bag at dække både søvn og fysisk aktivitet er at dække hele døgnet, både når der soves og når man er vågen. 
+Hvis man kan dække hele dagen har vi mulighed for at logge patientens adfærd døgnet rundt.
+Arbejdet består så i at udnytte denne dækning af døgnet.
+Med den nuværende implementering er der udviklet moduler til at estimere antal skridt samt længden på søvn.
+Disse kan udvikles videre, men på et tidspunkt med nok videre arbejde vil man have nogle relativt akkurate moduler.
+
+% Ændring i adfærd.
+Opgaven går derefter på at registrere ændring i adfærd. 
+Registrering af ændring i adfærd er blevet understreget som helt centralt hvad angår forebyggelse for patienter med affektive lidelser \citep[Kapitel 1, Sektion 4]{misc:faellesrapp}.
+Det er imidlertid ikke blevet arbejdet på, da som forudsætning for at vi kan lave denne registrering af ændring i adfærd bliver vi nødt til at have akkurate analyse moduler.
+Det er derfor blevet udeladt, men er noget der skal blive arbejdet videre på når analyse modulerne har nået et tilpas modent stadie.
+
+Efter analyse modulerne er blevet tilpas modne, lyder opgaven også på at visualisere data.
+Det er tiltænkt at visualiseringerne skal være nemme at forstå og give et overblik over situationen, som også er nævnt af Jørgen Aagaard \citep[Kapitel 1, Sektion 4]{misc:faellesrapp}. 
+Derfor skal det undersøges hvordan man visualiserer data på en let-tilgængelig måde hvor de fleste kan forstå hvad der foregår. 
+Hvis det ikke er let at forstå risikerer vi at de tiltænkte brugere af systemet ikke vil kunne forstå den indsamlede information.
+På projektets nuværende stadie er dette ikke blevet undersøgt i detalje, som også kan læses om i \cref{sec:pocVis}, \cref{sec:soevnVisVidArb} og \cref{sec:aktivitetVis}. 
+Derfor hæfter vi os ved at visualisering er vigtigt for brug af systemet, og bør arbejdes videre med.
+
+% Data beholdning, aggregrering
+Derudover skal beholdning af data undersøges.
+Beholdning af data er et problem som ikke er blevet undersøgt endnu, altså om al data skal gemmes idet at hvis al data gemmes og der ikke udføres en form for aggregrering på det kan det komme til at give problemer.
+Eksempelvis kan det komme til at fylde meget plads på telefonen. På samme tid hvis man skal visualisere data kan det blive meget krævende for telefonen hvis der er mange data punkter, idet at de fleste graf biblioteker på Android har problemer med at visualisere meget data.
+Derfor skal der dannes et overblik over hvad der kan gøres med denne data, altså at reducere mængden af data uden at miste effekten og dette kunne f.eks. være at aggregere data over en længere tidsperiode og så kun gemme denne data ellers kan interval af målinger ændres så den bare indhenter meget mindre data.
+
+% Flals og Flinde sidder i et træ. Flasse og Flars kaster sten.
+
+% Konfigurationstabel, early warning system. Als er dum.
+
+\als{Her synes jeg vi kunne nævne hvordan fysisk aktivitet og søvn komplementerer hinanden.
 	Derudover mangler vi at se på ændring i adfærd.
-	Diskuter options i konfigurationstabel eksempelvis early warning system!}
+	Diskuter muligheder i konfigurationstabel eksemp
+	elvis early warning system!}
