@@ -13,8 +13,7 @@ Grundet dette anses søvn for en vigtig indikator på om man begynder at befinde
 
 Desuden har \citet{art:sleepCusMania} udført et eksperiment på en enkelt testperson der indikerede at søvnmangel kunne føre til maniperioder som så oftest blev efterfulgt af en depression når personen havde fået lidt søvn.
 Der er dog et par problemer med denne kilde, det første værende at den kun bruger en enkelt test person så det kunne være det bare var et særtilfælde og ikke et generelt træk.
-Det andet problem er at informationen er fra 1991, så den kunne godt være viden om forbindelsen mellem søvn og mani har ændret sig siden, men den er blevet citeret flere gange siden, men denne information understøttes af nyere artikler som f.eks. \citet{Riemann2001}.
-\ivan{men men hvad står der?}
+Det andet problem er at informationen er fra 1991, så den kunne godt være viden om forbindelsen mellem søvn og mani har ændret sig siden, men den er blevet citeret flere gange siden, men denne information understøttes af nyere artikler som f.eks. \citet{barbini1996sleep} der viser et tydeligt sammenhæng fra søvn til mani, men også fra mani til søvn.
 
 Underbyggende er søvn vigtig for mange andre ting end bare sindstilstand.
 Eksempelvis indikeres der at søvnmangel også kan føre til hjerteproblemer \citep{Mullington2009294,art:sleeplossHeart}, men også at det kan svække ens immunforsvar \citep{misc:sleepImmune}.
@@ -60,7 +59,8 @@ Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på sm
 Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteristadie (opladning/ikke opladning), og skærmvisningstilstand.
 Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
 Deres metode har en præcision for daglig søvnestimering på 92\% mens deres søvnkvalitetsestimering har en præcision på 84\%, hvilket gør det til en oplagt mulighed at arbejde med.
-Metoden fungerer så ved at foretage en række feature udtrækninger\ivan{hvad er det?}, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
+Metoden fungerer så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
+Feature utrækninger er basalt set hvor man udfra et dataset bygger deriverede værdier der har til hensigt at være informative og kan bruges til efterfølgende læring.
 
 Denne metode kræver en oplæringsperiode på minimum 3 dage for at opnå maksimal præcision.
 Derudover pålægger metoden ikke at man skal have sin smartphone placeret i sengen, hvorfor denne metode stiller knap så store krav til patienten.
@@ -96,7 +96,9 @@ Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenter
 \label{tab:vaegtninger}
 \end{table}
 
-Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen. \ivan{Forklar og diskuter}
+Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen. 
+Da den omtalte algoritme ikke er offentlig tilgængelig kan det være et problem at stole på de ovenstående koefficienter, da en efterfølgende udvikling af en algoritme højst sandsynlig ikke er helt tilsvarende den af \citet{6563918}.
+Dog hvis denne tilgang bruges kan man som start bruge de nævnte koefficienter og så efterfølgende tilpasse koefficienterne så de passer til ens specifikke implementation af algoritmen.
 Hvis præcisionen er meget vigtig vil man have en læringsperiode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde.
 Endvidere vil analysen også bedre kunne tilpasses individet, frem for at bruge koefficienterne i \cref{tab:vaegtninger}, der vil gøre analysen mere generel.
 
