@@ -88,6 +88,15 @@ For at sikre enkelte spikes ikke påvirker resultatet anvendes et vægtet gennem
 Hvis vi ser på \cref{fig:accplot}, der er et plot for accelerations data kan vi se stilstand for punkterne mellem 22:00 og 07:00.
 Øvelsen består i at have en metode der kan afgøre at disse punkter er i stilstand.
 Dette gøres ved at for et givent punkt at se om de 5 tidligere målinger ikke afviger fra en given fastsat grænse fra punktet i betragtning i x, y og z aksen.
+Pseudokode til at tjekke dette kan ses i \cref{lst:pseudoStationary}.
+\begin{lstlisting}[caption={Pseudo kode for at tjekke om et punkt er i stilstand.}, label={lst:pseudoStationary}]
+isStationary(accToConsider : AccelerationReading, previousPoints : Collection of AccelerationReadings) : boolean
+   foreach acc in previousPoints
+      if outOfThreshold(accToConsider, acc)
+         return false
+   return true
+\end{lstlisting}
+
 Hvis der ikke er en sådan afvigelse bestemmes det at punktet i betragtning er i stilstand.
 Dette gøres for alle punkter og der afgøres for hvert af disse om de er i stilstand eller ej.
 Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeaccelerationen da denne ville måles konstant hvis telefonen ligger stille.
