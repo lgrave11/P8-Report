@@ -97,7 +97,9 @@ Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenter
 \label{tab:vaegtninger}
 \end{table}
 
-Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen. \ivan{Forklar og diskuter}
+Disse koefficienter kan bruges af os til at springe en eventuel lærings periode over, dog kan dette gå ud over præcisionen. 
+Da den omtalte algoritme ikke er offentlig tilgængelig kan det være et problem at stole på de ovenstående koefficienter, da en efterfølgende udvikling af en algoritme højst sandsynlig ikke er helt tilsvarende den af \citet{6563918}.
+Dog hvis denne tilgang bruges kan man som start bruge de nævnte koefficienter og så efterfølgende tilpasse koefficienterne så de passer til ens specifikke implementation af algoritmen.
 Hvis præcisionen er meget vigtig vil man have en læringsperiode, hvor man får den objektive sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient værdier for hver kilde.
 Endvidere vil analysen også bedre kunne tilpasses individet, frem for at bruge koefficienterne i \cref{tab:vaegtninger}, der vil gøre analysen mere generel.
 
