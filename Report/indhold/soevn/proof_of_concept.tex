@@ -107,6 +107,9 @@ Derudover kan stilstandsbestemmelsen gøres på en måde der ligner den for acce
 Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i.f.t. det givne punkt i betragtning ses der på om de alle ligger under en fastsat tærskel.
 At se på 5 tidligere punkter er ikke en fastlagt værdi, men afhænger af samplingsfrekvensen, vi har for amplitude en samplingsfrekvens på 1 måling per sekund så tidshorisonten er på fem sekunder.
 At kigge blot fem sekunder tilbage kan være op til debat, og ved videre arbejde er det en parameter man bør justere for at opnå en højere præcision.
+Dog holder vi fast i at det er fornuftigt at kigge en tidsperiode tilbage i stedet for en fast mængde punkter.
+Dette sikrer at algoritmen også er fremtidssikret m.h.t. til dette, for ellers risikerer vi at nyt hardware har en højere samplingsfrekvens hvor at gå 5 punkter ikke ville fungere, men hvor en tidshorisont ville.
+
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
 \subsubsection{Søvn Estimering}
