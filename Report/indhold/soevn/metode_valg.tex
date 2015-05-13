@@ -14,9 +14,10 @@ Af denne grund er det centralt at systemet skal kunne bruges i eget hjem, og ikk
 Dette hænger også sammen med at man ved det habituelle niveau ikke er indlagt, men at man går hjemme.
 Derudover er løsningen tiltænkt som en forebyggende applikation, hvorfor patienter i det habituelle niveau er i fokus.
 
-\item[Kriterie \#3: Være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel]
+\item[Kriterie \#3: Være præcis]
 For at man skal kunne stole på vores system er det nødvendigt at det er tilstrækkelig præcist, så præcist at man ikke kommer med for mange forkerte estimater da man risikerer at patienten så ville undlade at bruge systemet. 
 Derudover hvis systemet er for upræcist har det intet formål, da idéen er at det skal kunne monitorere søvnen i højere grad end patienten selv.
+Til at forøge præcisionen af metoden vil måling af søvnforstyrrelser være en fordel at have for den valgte løsning, dog er dette ikke prioriteret særlig højt i forhold til andre ting, hvilket gør at det ikke er højst nødvendigt at kunne måle søvnforstyrrelser.
 \end{description}
 
 \subsection{Opsummering af Metoder}
@@ -51,13 +52,13 @@ Den statistisk baserede metode kræver involvering af brugeren, hvilket er at te
 
 Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep og den statistisk baseret metoder opfylder kriterierne.
 
-\begin{table}[h]
-\begin{tabular}{|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
-\hline ~ 						& Ingen ekstra udstyr 	& Brug i soveværelse 	& Undgår bruger intervention & Er præcis	& (Måler søvnforstyrrelser) \\ 
-\hline Toss 'N' Turn 		  	& \checkmark 			& \checkmark 			& 		 			 & \checkmark 	        & \checkmark \\ 
-\hline Best Effort Sleep 		& \checkmark 			& \checkmark 			& \checkmark 		 & \checkmark 			&  \\ 
-\hline Statistisk baseret 		& \checkmark 			& \checkmark 			& 		 			 & 		 				&  \\ 
-\hline 
+\begin{table}
+\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  ~ & \#1: Undgå bruger intervention og måle søvn uden at forstyrre & \#2: Kunne bruges af brugere i deres eget hjem & \#3: Være præcis \\ 
+	\hline Toss 'N' Turn &  & \checkmark & \checkmark \\ 
+	\hline Best Effort Sleep & \checkmark & \checkmark & \checkmark \\ 
+	\hline Statisktisk baseret &  & \checkmark &  \\ 
+	\hline 
 \end{tabular}
 \caption{Hvordan de 3 forskellige metoder overholder kriterierne.}
 \label{tab:soevnMetodeKriterier}
