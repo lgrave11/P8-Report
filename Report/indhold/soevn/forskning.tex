@@ -60,7 +60,8 @@ Teknikken tager udgangspunkt i en række sensorkilder der er tilgængelig på sm
 Disse værende accelerometer, mikrofon(maksamplitude), lyssensor, proximitysensor, kørende processer, batteristadie (opladning/ikke opladning), og skærmvisningstilstand.
 Ud fra disse sensorkilder og en søvndagbog der foretages i minimum tre dage til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
 Deres metode har en præcision for daglig søvnestimering på 92\% mens deres søvnkvalitetsestimering har en præcision på 84\%, hvilket gør det til en oplagt mulighed at arbejde med.
-Metoden fungerer så ved at foretage en række feature udtrækninger\ivan{hvad er det?}, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
+Metoden fungerer så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom exponential moving average, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
+Feature utrækninger er basalt set hvor man udfra et dataset bygger deriverede værdier der har til hensigt at være informative og kan bruges til efterfølgende læring.
 
 Denne metode kræver en oplæringsperiode på minimum 3 dage for at opnå maksimal præcision.
 Derudover pålægger metoden ikke at man skal have sin smartphone placeret i sengen, hvorfor denne metode stiller knap så store krav til patienten.
