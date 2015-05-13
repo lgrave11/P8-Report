@@ -1,15 +1,21 @@
 \subsection{Verificering}
-For den nuværende udgave af vores søvnestimerings algoritme har vi ikke noget ordentlig verificering af dens resultater.
-Det eneste vi har der kommer tæt på, er en ad hoc vurdering om hvilke søvnperioder algoritmen opdager i forhold til hvordan vi selv husker vi sov.
+For at vores proof of concept af søvnestimerings metoden kan blive anset som fungerende skal der ske en verificering af dens udregninger, men dette er ikke sket.
+Det eneste der er blevet gjort omkring verificering af dens resultater, er en ad hoc vurdering om hvilke søvnperioder metoden opdager i forhold til hvad der huskes.
 
-For at udføre verificering, er der brug for metode til at anskaffe kontroldata.
-Dette kunne være polysomnografi som er præsenteret i \cref{sec:polysomnografi}, men kan også være en hvilken som helst anden metode der er anset for at give en 100 \% nøjagtig søvnestimering.
-Det essentielle er bare at den giver et korrekt resultat for søvnlængde som vores algoritme kan sammenlignes med for at finde dens præcision.
-For kontrolmetoden vil det også være acceptabelt at den bryder med vores kerne-princip om en non-intrusive metode, da det er vores forståelse at dette er nødvendigt for at få 100 \% nøjagtighed på kontrolmetoden.
+For at udføre verificering, er der brug for metode vi ved som er akkurat der kan kontrollere at vores metode fungere som den skal.
+Dette kunne være polysomnografi, som er præsenteret i \cref{sec:polysomnografi}, men kan også være en hvilken som helst anden metode der er anset for at være meget nøjagtig.
+Det essentielle er bare at den giver et korrekt resultat for søvnlængde som vores metode kan sammenlignes med for at finde dens præcision.
+For kontrolmetoden vil det også være acceptabelt at den bryder med vores kerne-princip om en metode der ikke forstyrrer, da det er vores forståelse at dette er nødvendigt for at få en meget høj nøjagtighed.
 
-Under udførelsen af denne verifikationsproces kunne man forstille sig at ændre på forskellige værdier i systemet for at se hvilken effekt det havde på præcisionen.
-Kandidater til disse ændringer kunne være konstanterne for hvor mange målinger der skal ses tilbage for at bestemme stilhed eller ændre den til at se et tidsinterval tilbage, grænseværdien for hvor høj en sandsynlighed der skal til for at en periode vurderes til at være en søvnperiode eller middelværdien for vores logistiske funktion.
-Efter dette er gjort vil man sandsynlig have et indtryk af hvordan de forskellige konstanter påvirker vurderingen og man er forhåbentlig i stand til at komme med en konfiguration af disse der er tilpas høj nøjagtighed.
-Hvis ændring i diverse konstanter ikke er nok til at ramme tilfredsstillende præcision er det også muligt at udskifte hele sandsynligheds-beskrivelses-metoden ved bare at ændre på et enkelt kald.
-Dette gør det muligt at teste flere forskellige beskrivelses-metoder så man også her kan finde den metode der giver det bedste resultat.
-Dog er her nød til at være opmærksom på at man kan overfitte sin analyse til det givne dataset.
+Under udførelsen af denne verifikationsproces ville det give mening at at ændre på forskellige værdier i systemet for at se hvilken effekt det har på præcisionen.
+Kandidater til disse ændringer kunne være:
+\begin{itemize}
+	\item Konstanter for antal målinger der skal overvejes for at bestemme stilstand eller stilhed, og muligvis se på tidsintervaller istedet for målinger.
+	\item Grænseværdier for hvor sandsynligheden skal være før en periode vurderes til at være en søvnperiode
+	\item Middelværdien for den logistiske funktion, idet at dette vil ændre hvor lang tid det vil tage før sandsynligheden vil nå 50\%.
+\end{itemize} 
+
+Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen og så er man forhåbentlig i stand til at komme med en konfiguration af disse der er tilpas høj nøjagtighed.
+Hvis ændring i diverse konstanter ikke er tilfredsstillende kan man i stedet for erstatte metoden til at evaluere sandsynligheden for søvn, eller erstatte denne med en anden metode der ikke bruger sandsynlighed til at bestemme om en person sover.
+Dette gør det muligt at teste flere forskellige metoder så man også her kan finde den metode der giver det bedste resultat.
+Dog er man her nød til at være opmærksom på at man ikke tilpasser sin analyse for meget til det givne data sæt.
