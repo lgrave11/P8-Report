@@ -104,7 +104,9 @@ Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeacce
 Ved at betragte amplituden \cref{fig:amplplot} kan her ses stilstand fra lidt over 22:00 til omkring 07:00 med et enkelt spike ved 05:00.
 Det enkelte spike takles af det vægtede gennemsnit.
 Derudover kan stilstandsbestemmelsen gøres på en måde der ligner den for accelerationen.
-Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i.f.t. det givne punkt i betragtning ses der på om de alle ligger under et fastsat threshold.\ivan{Diskuter evt samplingsfrekvens}
+Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i.f.t. det givne punkt i betragtning ses der på om de alle ligger under en fastsat tærskel.
+At se på 5 tidligere punkter er ikke en fastlagt værdi, men afhænger af samplingsfrekvensen, vi har for amplitude en samplingsfrekvens på 1 måling per sekund så tidshorisonten er på fem sekunder.
+At kigge blot fem sekunder tilbage kan være op til debat, og ved videre arbejde er det en parameter man bør justere for at opnå en højere præcision.
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
 \subsubsection{Søvn Estimering}
