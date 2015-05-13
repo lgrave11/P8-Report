@@ -2,19 +2,19 @@ For at kunne tage et valg omkring hvilket metoder der skal vælges gives et over
 Disse valg skal evalueres ved hjælp af kriterier, og disse kriterier er baseret på idéen bag projektet, som er at systemet skal kunne lave målinger på patientens telefon uden at forstyrre og kunne lave analyser baseret på disse målinger. 
 
 \begin{description}[style=nextline]
-\item[Undgå bruger intervention og måle søvn uden at forstyrre]
+\item[Kriterie \#1: Undgå bruger intervention og måle søvn uden at forstyrre]
 Dette ses som det helt centrale kriterie for vores løsning.
 Grunden til dette er at vi er interesseret i at registrere søvn for personer der kan risikere at have en meget uforudsigelig søvn. Det kan være at patienten falder spontant i søvn på sofaen midt om dagen, og hvis personen som krav for at kunne monitorere søvn skal starte søvn modulet ville en sådan spontan søvn ikke blive registreret.
 Derudover blev der til fokusgruppe interviewet \citep[Kapitel 1, Sektion 5]{misc:faellesrapp} lagt stor vægt på at hvis en person er på vej imod en depression ville enhver form for ekstra arbejde være en byrde man ville springe over.
 Et system der kræver manuel aktivering for hver søvn periode ville derfor ikke være tilstrækkelig i sådanne scenarier, og er hvorfor et ikke forstyrrende system vægtes så højt.
 
-\item[Kunne bruges af brugere i deres eget hjem]
+\item[Kriterie \#2: Kunne bruges af brugere i deres eget hjem]
 Applikationen er tiltænkt som en personlig hjælper, hvor en patient kan holde øje med deres egen situation især i det habituelle niveau for at holde øje med tegn på forværring.
 Af denne grund er det centralt at systemet skal kunne bruges i eget hjem, og ikke være påkrævet hospitalsapparatur.
 Dette hænger også sammen med at man ved det habituelle niveau ikke er indlagt, men at man går hjemme.
 Derudover er løsningen tiltænkt som en forebyggende applikation, hvorfor patienter i det habituelle niveau er i fokus.
 
-\item[Være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel]
+\item[Kriterie \#3: Være præcis og hvis den kan måle søvnforstyrrelser er dette en fordel]
 For at man skal kunne stole på vores system er det nødvendigt at det er tilstrækkelig præcist, så præcist at man ikke kommer med for mange forkerte estimater da man risikerer at patienten så ville undlade at bruge systemet. 
 Derudover hvis systemet er for upræcist har det intet formål, da idéen er at det skal kunne monitorere søvnen i højere grad end patienten selv.
 \end{description}
@@ -26,7 +26,7 @@ Som en ekstra bemærkning til denne tabel er præcisionen baseret ud fra en anta
 %tabellen skal rettes seriøst til, især quality delen skal være mere sammenlignelig
 \begin{table}[h]
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.5cm}|}
-\hline & Poly somnografi & ActiGrafi & Søvn Dagbog & Toss 'N' Turn & Best Effort Sleep  & Statistisk baseret\\ 
+\hline & Poly somnografi & ActiGrafi & Søvn Dagbog & Toss 'N' Turn søvn længde estimering & Best Effort Sleep  & Statistisk baseret\\ 
 \hline Præcision & N/A (dog meget præcis) & 95\%+ & Subjektivt & 92\% & 92\% & 68\%\\ 
 \hline Behøver eksperter & Ja & Nej & Nej & Nej & Nej & Nej \\ 
 \hline Udstyr & Specialiseret udstyr & JawBone / FitBit & Ingen & Smartphone & Smartphone & Smart-phone \\ 
@@ -37,8 +37,8 @@ Som en ekstra bemærkning til denne tabel er præcisionen baseret ud fra en anta
 \caption{Opsummering af de forskellige metoder til søvnestimering.}
 \label{tab:opsummeringMetoder}
 \end{table}
-Som det kan ses ud fra \cref{tab:opsummeringMetoder}, så har de forskellige metoder varierende styrker og svagheder, dog er Toss 'N' Turn's søvn længde estimering og Best Effort Sleep sådan set ligesat.
-For at beslutte hvilke metoder der skal arbejdes videre med, skal vi se på hvilke af metoderne vi har mulighed for at lave med det udstyr og de konkrete ressourcer vi har til rådighed.
+Som det kan ses ud fra \cref{tab:opsummeringMetoder}, så har de forskellige metoder varierende styrker og svagheder, Toss 'N' Turn's søvn længde estimering og Best Effort Sleep har dog samme kvaliteter.
+For at beslutte hvilke metoder der skal arbejdes videre med, skal vi udover at forholde os til de opstillede kriterier også vurdere hvilke metoder vi har mulighed for at lave med det udstyr og de konkrete ressourcer vi har til rådighed.
 Da polysomnografi kræver en ekspert og store mængder specialiseret udstyr, er denne ikke fornuftig at se videre på.
 ActiGraf kræver en wearable som dataindsamlings modul, hvilket vi ikke har, så derfor kigges der ikke videre på den, men hvis sådanne wearables var til rådighed, ville denne metode kunne give meget gode resultater.
 
@@ -71,6 +71,8 @@ BES har dog også det problem at den kun kan beregne søvnlængden og ikke søvn
 Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alt, hvilket vil sige at hvis man skulle måle søvn kvalitet skulle man opsøge andre metoder.
 
 Da der ikke er meget tid til at lave noget udtømmende, udvælges en metode at arbejde med som et proof of concept, hvor så udviklingen af andre metoder kan forsættes senere.
+Vores design af platform sikrer en høj modularitet og fleksibilitet, hvorfor det ikke forekommer svært at ændre søvnestimeringsmetode på et senere stadie.
+
 Valget falder på en implementering af Best Effort Sleep Model, da denne opfyldte vores kriterier godt selvom den ikke måler søvnkvalitet.
 Hvis der havde været mere tid til rådighed, ville valget med alt sandsynlighed være faldet på en implementering af Toss 'N' Turn, da denne som tidligere nævnt også har mulighed for at vurdere søvn kvaliteten.
 Det at kvalitets vurdering også kommer med vil kunne tilføje et ekstra lag til vurderingen af folks søvn, hvilket er meget vigtigt da det godt kan være man ligger i sin seng og forsøger at sove i omkring 8 timer, men hvis man ikke sover sammenhængende i mere end for eksempel 45 minutter, er det ikke et godt tegn.

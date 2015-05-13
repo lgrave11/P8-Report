@@ -42,7 +42,7 @@ Dette kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
 	\centering
 	%\includegraphics[scale=0.5]{acc-placeholder}
 	\includegraphics[scale=0.75]{acceleration-plot}
-	\caption{Accelerationsplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.}\label{fig:accplot}
+	\caption{Accelerationsplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.  Et punkt svarer til en måleværdi.}\label{fig:accplot}
 \end{figure}
 
 Ses der på accelerometer data i \cref{fig:accplot} indikerer det tydeligt når telefonen har været i bevægelse og når telefonen ikke har været i bevægelse.
@@ -57,7 +57,7 @@ Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle mak
 	\centering
 	%\includegraphics[scale=0.5]{ampl-placeholder}
 	\includegraphics[scale=0.75]{amplitude-plot}
-	\caption{Amplitudeplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.}\label{fig:amplplot}
+	\caption{Amplitudeplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag. Et punkt svarer til en måleværdi.}\label{fig:amplplot}
 \end{figure}
 
 Idéen bag at bruge maksamplituden er at man larmer væsentligt mere når man er vågen end når man sover.
@@ -73,7 +73,7 @@ Ud fra observeret data etablerer vi nogle antagelser som vi går ud fra holder t
 Disse er at når man observerer en handling om det er acceleration eller amplitude, kan vi med stor sikkerhed sige at man ikke sover.
 Modsat ved stilstand er sandsynligheden for at man sover afhængigt af længden af stilstand.
 Dette får os til at lave en model der bygger på disse to antagelser, og er en model der er lavet til at skabe jordforbindelse.
-Vi tillader os at tage det forbehold at det sikkert ikke er en metode der bør anvendes i praksis, men kan alligevel bruges til at udforske nogle af udfordringerne ved søvnestimering.
+Vi tillader os at tage det forbehold at det sikkert ikke er en metode der bør anvendes i praksis, men kan alligevel bruges til at udforske nogle af udfordringerne ved søvnestimering.\ivan{Uddyb diskussion af jordforbindelse og udforskning}
 
 Vores model går på en sliding window tilgang hvor den centrale del er at registrere stilstand ved acceleration og amplitude.
 \subsubsection{Stilstands Bestemmelse}
@@ -87,11 +87,11 @@ Dette gøres ved at for et givent punkt at se om de 5 tidligere målinger ikke a
 Hvis der ikke er en sådan afvigelse bestemmes det at punktet i betragtning er i stilstand.
 Dette gøres for alle punkter og der afgøres for hvert af disse om de er i stilstand eller ej.
 Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeaccelerationen da denne ville måles konstant hvis telefonen ligger stille.
-
+\ivan{Evt overvej pseudokode}
 Ved at betragte amplituden \cref{fig:amplplot} kan her ses stilstand fra lidt over 22:00 til omkring 07:00 med et enkelt spike ved 05:00.
 Det enkelte spike takles af det vægtede gennemsnit.
 Derudover kan stilstandsbestemmelsen gøres på en måde der ligner den for accelerationen.
-Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i.f.t. det givne punkt i betragtning ses der på om de alle ligger under et fastsat threshold.
+Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i.f.t. det givne punkt i betragtning ses der på om de alle ligger under et fastsat threshold.\ivan{Diskuter evt samplingsfrekvens}
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
 \subsubsection{Søvn Estimering}
@@ -128,7 +128,7 @@ Definitionen af den logistiske funktion er defineret som følger:
 hvor,
 \begin{itemize}
 	\item[$t_{span}$] Tidsperiode siden starten på stilstandsperioden målt i timer.
-	\item[$t_{midtpunkt}$] er til hvilket stilstandslængde vi vil have sandsynligheden for søvn til at være 50\%, dette kan eksempelvis være $4$ timer.
+	\item[$t_{midtpunkt}$] er til hvilket stilstandslængde vi vil have sandsynligheden for søvn til at være 50\%, dette kan eksempelvis være $4$ timer.\ivan{Beskriv og begrund de 50\%}\als{Sådan lyder den logistiske funktion}
 	\item[$k$] er stejlheden for kurven.
 	\item[$L$] er kurvens maksimums værdi, hvilket for os eksempelvis kan være $1$ for 100\% sandsynlighed for søvn.
 \end{itemize}
