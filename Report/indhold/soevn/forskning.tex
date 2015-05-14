@@ -59,7 +59,6 @@ Teknikken tager udgangspunkt i en række sensor-kilder, der er tilgængelig på 
 Disse værende accelerometer, mikrofon(maks amplitude), lyssensor, proximitysensor, kørende processer, batteristadie (opladning/ikke opladning), og skærmvisningstilstand.
 Ud fra disse sensorkilder og en søvndagbog, der foretages i minimum tre dage til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
 Deres metode har en præcision for daglig søvnestimering på 92\% mens deres søvnkvalitetsestimering har en præcision på 84\%, hvilket gør det til en oplagt mulighed at arbejde med.
-\winde{Til den todo nedenuden, her lyder fint at have en nøjagtighed på 92\%}
 Metoden fungerer så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom Exponential Moving Average, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
 Feature udtrækninger er basalt set, hvor man ud fra et dataset bygger deriverede værdier, der har til hensigt, at være informative og kan bruges til efterfølgende læring.
 
@@ -69,8 +68,7 @@ Derudover pålægger metoden ikke at man skal have sin smartphone placeret i sen
 \subsubsection{Best Effort Sleep Model}\label{sec:BES}
 Best Effort Sleep (BES) Model \citet{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde, meget lig Toss 'N' Turns koncept.
 Disse målbare datakilder anskaffes på en måde så brugeren ikke behøver ændre sin søvnadfærd, som det for eksempel er tilfældet på andre tilsvarende løsninger som for eksempel JawBone eller FitBit, der kræver at en wearable benyttes mens man sover.
-Det at ingen af datakilderne er i direkte kontakt med brugeren går dog ud over præcisionen, da der er op mod 40 minutters unøjagtighed i estimeringen af søvnlængde, hvilket for en person der sover 8 timer svarer til 92\% nøjagtighed.
-\winde{Denne sætning lyder som om det er negativt at have en nøjagtighed på 92\% pga. den første del af sætningen}
+Metoden har en unøjagtighed på op til 40 minutter ved mht. søvnlængde, hvilket for en person der sover 8 timer svarer til 92\% præcision, hvilket ligesom Toss 'N' Turn er en acceptabel præcision.
 Ud over dette kan BES ikke bruges til at estimere kvaliteten af ens søvn.
 Med kvaliteten menes hvor mange gange man har været vågen i løbet af natten, til dette kræves involvering af brugeren, enten at de bruger en wearable eller at de interagerer med systemet.
 \winde{Hvis man kan måle på ens vejrtrækninger, og på den måde se ens søvnkvalitet, så er det ikke nødvndigt at involvere brugeren?}
