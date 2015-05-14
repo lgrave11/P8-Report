@@ -1,24 +1,24 @@
 \subsection{Verificering}
-Med søvnestimeringsmetoden udviklet som proof of concept er det nødvendigt at få verificeret at den har en tilfredsstillende præcision, hvilket er et af de primære kriterier nævnt i \cref{sec:metodevalg}.
-For at tjekke dette kan vi inddrage en mere sikker søvnestimerings metode såsom polysomnografi, hvilket ville være et oplagt valg da det er state of the art indenfor søvnestimering og er beskrevet i \cref{sec:polysomnografi}.
+Med søvnestimeringsmetoden udviklet som proof of concept, er det nødvendigt at få verificeret at den har en tilfredsstillende præcision, hvilket er et af de primære kriterier nævnt i \cref{sec:metodevalg}.
+For at tjekke dette kan vi inddrage en mere sikker søvnestimeringsmetode såsom polysomnografi, hvilket ville være et oplagt valg, da det er state of the art indenfor søvnestimering og er beskrevet i \cref{sec:polysomnografi}.
 
-Vi er dog ikke begrænset til polysomnografi, det vigtigste er at det er en metode der er så præcis som mulig, da den skal bruges som ground truth.
+Vi er dog ikke begrænset til polysomnografi, det vigtigste er at det er en metode, der er så præcis som mulig, da den skal bruges som den absolutte sandhed.
 Dette skal ses som en i testsammenhæng, så kriterier om at den skal være non-intrusive gælder ikke her.
 
-Fremgangsmåden til at teste om den udviklede estimeringsmetode er tilstrækkelig går så på at have en række personer sove hvor man både estimerer med brug af vores model og med brug af den valgte ground truth metode.
-På den måde vil man kunne indsamle resultater fra begge metoder og man kan sammenligne ens estimat med ground truth.
+Fremgangsmåden til at teste om den udviklede estimeringsmetode er tilstrækkelig går så på at have en af række personer, der sove hvor man både estimerer med brug af vores model og med brug af den valgte absolutte sandheds metode.
+På den måde vil man kunne indsamle resultater fra begge metoder og derved sammenligne ens estimat med den absolutte sandhed.
 
 I tilfælde af en ikke tilstrækkelig præcision kan der forsøges at justere på de forskellige værdier i systemet for at se hvilken effekt det har på præcisionen.
-Kandidater til disse ændringer kunne være:
+Kandidater til disse ændringer kan være:
 \begin{itemize}
-	\item Konstanter for antal målinger der skal overvejes for at bestemme stilstand eller stilhed, og muligvis se på tidsintervaller istedet for målinger.
-	\item Grænseværdier for hvor sandsynligheden skal være før en periode vurderes til at være en søvnperiode
+	\item Konstanter for antal målinger, der skal overvejes for at bestemme stilstand eller stilhed, og muligvis se på tidsintervaller i stedet for målinger.
+	\item Grænseværdier for hvor sandsynligheden skal være før en periode vurderes til at være en søvnperiode.
 	\item Middelværdien for den logistiske funktion, idet at dette vil ændre hvor lang tid det vil tage før sandsynligheden vil nå 50\%.
 \end{itemize} 
 
-Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen og så er man forhåbentlig i stand til at komme med en konfiguration af disse der har en tilpas høj nøjagtighed.
-Vi hæfter os ved at når man justerer på diverse parametre for modellen bør præcisionsestimatet ved disse ændringer foretages v.h.a. krydsvalidering for at undgå overfitting som beskrevet i \cref{sec:redskaber}.
+Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen, og så er man forhåbentlig i stand til at komme med en konfiguration af disse, der har en tilpas høj nøjagtighed.
+Vi hæfter os ved, at når man justerer på diverse parametre for modellen, bør præcisionsestimatet ved disse ændringer foretages ved hjælp af krydsvalidering for at undgå overfitting, som beskrevet i \cref{sec:redskaber}.
 
 I tilfælde af en ikke tilfredsstillende præcision, selvom man har justeret på disse parametre, bør man overveje at erstatte metoden med en anden.
-Sådanne metoder er undersøgt i \cref{sec:metodevalg} og man kan med fordel starte de deri nævnte.
-Vi har været forudsigende at fremtidssikre vores produkt sådan dette ikke skulle volde problemer grundet den modulare platform.
+Sådanne metoder er undersøgt i \cref{sec:metodevalg} og man kan med fordel starte med de deri nævnte.
+Vi har været forudsigende at fremtidssikre vores produkt, sådan at dette ikke skulle volde problemer grundet den modulære platform.
