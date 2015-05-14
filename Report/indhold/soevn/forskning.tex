@@ -107,7 +107,9 @@ Derudover er en fordel også at denne model er klar til at blive taget i brug me
 
 \subsubsection{Statistisk Baseret Tilgang}\label{sec:statbased}
 Den statiske baserede tilgang bliver præsenteret af \citet{misc:statbased}.
-Denne metode bygger på at telefonen ligger i patientens seng og er ud fra de bevægelser der sker, i stand til at bestemme om patienten sover eller ej. \winde{Skal man så først tænde appen når man går i seng? Eller skal telefonen ligge i ens seng hele tiden?}
+Denne metode bygger på at telefonen ligger i patientens seng og er ud fra de bevægelser der sker, i stand til at bestemme om patienten sover eller ej. 
+Metoden kræver at man starter app'en når man går i seng og kræver på den måde brugerinteraktion til dette også, udover at skulle placere telefonen i sengen.
+
 Metoden ser på accelerationsmålinger i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
 Til at nå frem til dette ser metoden på intensiteten af bevægelser for hver måling og sammenligner dette med en beregnet tærskelværdi.
 Hvis en defineret procent af målingerne overstiger den beregnede tærskelværdi, vurderes patienten til at være vågen, ellers estimeres det at patienten sover.
