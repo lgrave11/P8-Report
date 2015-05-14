@@ -1,18 +1,21 @@
 Denne sektion diskuterer det proof of concept der blev lavet til søvn delen af projektet.
-Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdig system er at der er ikke nok tid til at gøre det helt færdigt. 
+Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdigt system er at der er ikke nok tid til at gøre det helt færdigt. 
 Ydermere vil et helt færdigt systemet påkræve testning hos målgruppen, og dette er igen en besværlig proces som der ikke er tid nok til at udføre. 
 
-Denne sektion om proof of concept beskriver valg af sensor data som er nødvendigt, hvordan søvnestimering udføres på denne data, og hvordan søvn estimeringerne for de forskellige sensor kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
+Denne sektion om proof of concept beskriver valg af sensor data som er nødvendigt, hvordan søvnestimering udføres på denne data, og hvordan søvn estimeringerne for de forskellige sensorer kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
 
 % Manglende resourcer
 % Time constraints.
 % Ingen test mulig(Kræver tilladelser, og system ikke færdig)
 
 Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover eller ej.
-Metoden der tages udgangspunkt i er den metode som er beskrevet i Best Effort Sleep i \cref{sec:BES}, men andre metoder kunne også have været brugt.
-Der vil dog kun tages udgangspunkt i de sensorer der har fået givet en høj koefficient, som kan ses i \cref{tab:vaegtninger}, hvilket gør at amplitude og acceleration er de datakilder der tages udgangspunkt i.
-Disse to datakilder kombineres til en enkelt model der skal kunne vurderer hvorvidt man sover.
+Metoden er baseret på redskaberne beskrevet i \cref{sec:redskaber}, hvor vi som start ved dataindsamlingsmoduler ser på amplitude og acceleration.
+Grunden til at vi starter med disse to datakilder er at \citet{6563918} erfarede at det var de langt væsentligste datakilder, også beskrevet i \cref{sec:BES}.
 
+Disse to datakilder kombineres til en enkelt model der skal kunne vurderer hvorvidt man sover eller ej.
+Med mere tid vil de andre nævnte datakilder også blive fokuseret på.
+
+For at have en regelmæssig måde at indsamle data, der ligger til grund for implementationen af det efterfølgende søvnestimeringsmodul, er det nødvendigt at have forsøgsopstillingen beskrevet, hvorfor denne følger herefter.
 \subsection{Forsøgsopstilling}
 %Disposition:
 %Billede af opstilling
@@ -27,14 +30,14 @@ For at forsøget fortages på ens vis, så det indsamlede data er sammenlignelig
 \end{figure}
 
 Forsøgsopstillingen kan ses i \cref{fig:forsoegopstillings} der illustrerer hvordan telefonen ligger på natbordet og indsamler data.
-Idéen er at det eneste krav til indsamlingen er at den skal ligge på et bord i soveværelset når der soves, ellers står det en frit om man går med telefonen i lommen, ligger den på skrivebordet eller andet.
+Idéen er at det eneste krav til indsamlingen er at den skal ligge på et bord i soveværelset når der soves, ellers står det en frit om man går med telefonen i lommen, ligger den på skrivebordet eller andet. Dette valg er foretaget i henhold til vores kriterie om at udvikle et non-intrusive system.
 
 Indsamlingen af data foregik ved at vi installerede de fornødne moduler på egen telefon, og tog telefonen med hjem så data fra en eller flere dage kunne indsamles, hvor vi loggede når vi gik i seng og stod op, hvilket skulle bruges til at afgøre nøjagtigheden af vores estimat.
-Da dette er et proof of concept er dette tilstrækkeligt, men hvis man skulle udvikle en bedre egnet model skulle man være mere systematisk, hvor flere testpersoner med forskellige søvnvaner ville blive inddraget og hvor cross-validation eller lignende ville blive benyttet til at verificere ens model.
+
+Til at validere vores model har vi foreslået krydsvalidering beskrevet i \cref{sec:redskaber} og burde da også gøres med mere tid, men da dette er et proof of concept er den nuværende opstilling tilfredsstillende., 
+Ved videre arbejde bør en mere systematisk tilgang med den nævnte krydsvalidering benyttes og er beskrevet videre i \cref{sec:verisoevn}.
 
 \subsection{Sensor Data}
-Hoved idéen bag brugen af acceleration og amplitude data kan ses i Best Effort Sleep Model i \cref{sec:BES}, men den dækker ikke alle problemscenarier der kan være involveret i brugen af disse data.
-
 For at have en bedre indsigt i hvordan vi kan bruge accelerations og amplitude data blev disse plottet over en dag inklusiv søvn, hvor man holdt log for hvornår der blev sovet.
 Dette kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
 
@@ -51,7 +54,8 @@ Det viser sig at plottet fint indikerer når man er vågen, hvilket er forårsag
 Dog kan man ved stilstand ikke vide sig sikker på om det er fordi man sover, eller blot fordi man har lagt sin mobil fra sig.
 
 Ved stilstand i en længere periode kan det forsøges at estimere sandsynligheden for at denne stilstand er grundet at man sover, men derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
-Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle maks amplitude, således at man ikke indsamler personfølsomme oplysninger da man ikke kan genskabe en samtale men blot har maks amplitude lagret for hvert sekund.
+Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle maks amplitude.
+At vi kun måler maks amplitude sikrer at personfølsomme oplysninger ikke indsamles, da man ikke kan genskabe en samtale men blot har maks amplitude lagret for hvert sekund.
 
 \begin{figure}[h]
 	\centering
