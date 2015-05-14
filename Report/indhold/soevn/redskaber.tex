@@ -1,43 +1,43 @@
 %Noget meta fiks med hvilke redskaber og erfaringer vi kan tage med os til udvikling af løsning
-Med forskningen af søvn foretaget har vi fundet diverse redskaber der er værd at have i mente ved implementationen af en søvnestimeringsteknik.
-Gennem gangen af disse redskaber tjener det formål at skabe overblik over hvad man kan benytte i denne implementation.
+Med forskningen af søvn foretaget har vi fundet diverse redskaber, der er værd at have i mente ved implementationen af en søvnestimeringsmetode.
+Gennemgangen af disse redskaber tjener det formål at skabe overblik, over hvad man kan benytte i denne implementation.
 Metoderne bygger på erfaringer oplyst af kilderne, samt teknikker der bygger på egen erfaring, men regnes for brugbare i denne sammenhæng.
 
 \begin{description}[style=nextline]
 % PsyLog - herunder dataindsamlingsmoduler
 \item[PsyLog]
-PsyLog er en platform der er konstrueret til at være modulær og fleksibel.
-Til at understøtte denne funktionalitet tilbyder platformen et datacenter hvor moduler kan lagre data og læse data lagret fra andre moduler.
-De eneste krav til hvert modul er at de skal implementere en service som kan startes af platformen, og at de har lavet en JSON beskrivelse.
-JSON beskrivelsen kan indeholde tabeller til lagring af data, moduler de afhænger af, samt hvor ofte det givne modul skal køres.
-Hvis man har dette specificeret sørger PsyLog platformen for resten, dvs. start af modulet samt sikre lagerplads som modulet kan skrive til og læse fra.
-Derudover kan ens modul så indgå i en større software pakke, hvor andre moduler kan drage nytte af ens estimater.
+PsyLog er en platform, der er konstrueret til at være modulær og fleksibel.
+Til at understøtte denne funktionalitet tilbyder platformen et datacenter, hvor moduler kan lagre data og læse data lagret fra andre moduler.
+De eneste krav til hvert modul er, at de skal implementere en service, som kan startes af platformen, og at de har en JSON beskrivelse.
+JSON beskrivelsen indeholder tabeller til lagring af data, moduler de afhænger af, samt hvor ofte det givne modul skal køres.
+Hvis man har dette specificeret, sørger PsyLog platformen for resten, det vil sige start af modulet samt sikre lagerplads som modulet kan skrive til og læse fra.
+Derudover, kan ens modul så indgå i en større software pakke, hvor andre moduler kan drage nytte af ens estimater.
 
 \item[Dataindsamlingsmoduler]
 Som et led i udviklingen af PsyLog platformen er der blevet udviklet en række dataindsamlingsmoduler \citep{misc:faellesrapp}.
 I \cref{sec:metodevalg} har vi erfaret at fælles for metoderne er at de alle kigger på om telefonen er stationær og om der er stilhed. 
-Til stilhed kan vi benytte det allerede udviklede amplitude modul og til at se om en telefon er stationær kan vi benytte det allerede udviklede accelerations modul.
-Vi har altså dataindsamlingsmoduler til disse typer data allerede og kan med fordel benyttes i videre implementation.
-Derudover nævner hver kilde flere moduler der er specifikke for deres løsning, hvoraf flere er udviklet.
-PsyLog platformen har den fordel at den er fleksibel og modulær, hvilket gør at hvis man skulle mangle et dataindsamlingsmodul for en given datatype kan et sådant modul sikkert nemt udvikles og benyttes.
+Til stilhed kan vi benytte det allerede udviklede amplitude-modul, og til at se om en telefon er stationær kan vi benytte det allerede udviklede accelerationsmodul.
+Vi har altså dataindsamlingsmoduler til disse typer data allerede, og kan med fordel benytte dem i videre implementation.
+Derudover, nævner hver kilde flere moduler, der er specifikke for deres løsning, hvoraf flere er udviklet.
+PsyLog platformen har den fordel, at den er fleksibel og modulær, hvilket gør at hvis man skulle mangle et dataindsamlingsmodul for en given datatype kan et sådant modul sikkert nemt udvikles og benyttes.
 
 \item[Vægtet gennemsnit]
-Udfra \citet{6563918} blev der understreget hvorledes et vægtet gennemsnit kan benyttes.
+Ud fra \citet{6563918} blev der understreget hvorledes et vægtet gennemsnit kan benyttes.
 Idéen er at hver sensor kilde kan benyttes som en svag indikator på søvnlængde.
 Imidlertid bør man ikke stole på udelukkende en kilde, da den søvnlængde man estimerer kan variere meget ved forskellig brug af telefonen.
-For så at have et mere sikkert estimat for søvnlængde foretager man et såkaldt vægtet gennemsnit af hver estimat, hvor kilder der er mere sikre end andre får tillagt en større vægtning.
+For så at have et mere sikkert estimat for søvnlængde, foretager man et såkaldt vægtet gennemsnit af hver estimat, hvor kilder, der er mere sikre end andre får tillagt en større vægtning.
 
 \item[Eksponentielt glidende gennemsnit]
 Da man oplever støj på de forskellige sensorkilder kan man med fordel benytte et eksponentielt glidende gennemsnit.
 Basalt set er et eksponentielt glidende gennemsnit en måde at udjævne tilfældige udsving i en serie af punkter.
-Eksempelvis ved accelerations målinger oplever vi enkelte spikes pga. støj, og disse kan udjævnes v.h.a. det eksponentielle glidende gennemsnit.
+Eksempelvis ved accelerations målinger oplever vi enkelte spikes på grund af støj, og disse kan udjævnes ved hjælp af det eksponentielle glidende gennemsnit.
 
 \item[Krydsvalidering]
 Når man udvikler sin estimeringsmetode skal man have en teknik til at estimere om ens model er tilpas præcist.
-Problemet er at hvis man lærer på sit testdata og derefter tester på dette risikerer man hvad der kaldes for overfitting.
-Overfitting er hvor man tilpasser sin model så det virker på ens testdata, men ikke særligt godt på fremtidige dataset.
+Problemet er at hvis man lærer på sit testdata og derefter tester på dette, risikerer man hvad der kaldes for overfitting.
+Overfitting er hvor man tilpasser sin model så det virker godt på ens testdata, men ikke særligt godt på fremtidige dataset.
 Til at forhindre dette kan man foretage krydsvalidering
-Ved krydsvalidering opsplitter man sit dataset i en række delmængder, man foretager så analysen på en delmængde og validerer sin analyse på de andre dataset.
+Ved krydsvalidering opsplitter man sit dataset i en række delmængder, man foretager så analysen på en delmængde og validerer sin analyse på de resterende delmængder af dataset.
 For så at undgå overfitting afprøver man med forskellige partitioner af datasettet, og hvor ens præcision er estimeret som gennemsnittet af resultaterne af de dataset man tester på.
 
 % Stilstand

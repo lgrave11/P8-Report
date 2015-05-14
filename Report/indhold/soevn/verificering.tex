@@ -1,13 +1,14 @@
 \subsection{Verificering}
-For at vores proof of concept af søvnestimerings metoden kan blive anset som fungerende skal der ske en verificering af dens udregninger, men dette er ikke sket.
-Det eneste der er blevet gjort omkring verificering af dens resultater, er en ad hoc vurdering om hvilke søvnperioder metoden opdager i forhold til hvad der huskes.
+Med søvnestimeringsmetoden udviklet som proof of concept er det nødvendigt at få verificeret at den har en tilfredsstillende præcision, hvilket er et af de primære kriterier nævnt i \cref{sec:metodevalg}.
+For at tjekke dette kan vi inddrage en mere sikker søvnestimerings metode såsom polysomnografi, hvilket ville være et oplagt valg da det er state of the art indenfor søvnestimering og er beskrevet i \cref{sec:polysomnografi}.
 
-For at udføre verificering, er der brug for metode vi ved som er akkurat der kan kontrollere at vores metode fungere som den skal.
-Dette kunne være polysomnografi, som er præsenteret i \cref{sec:polysomnografi}, men kan også være en hvilken som helst anden metode der er anset for at være meget nøjagtig.
-Det essentielle er bare at den giver et korrekt resultat for søvnlængde som vores metode kan sammenlignes med for at finde dens præcision.
-For kontrolmetoden vil det også være acceptabelt at den bryder med vores kerne-princip om en metode der ikke forstyrrer, da det er vores forståelse at dette er nødvendigt for at få en meget høj nøjagtighed.
+Vi er dog ikke begrænset til polysomnografi, det vigtigste er at det er en metode der er så præcis som mulig, da den skal bruges som ground truth.
+Dette skal ses som en i testsammenhæng, så kriterier om at den skal være non-intrusive gælder ikke her.
 
-Under udførelsen af denne verifikationsproces ville det give mening at at ændre på forskellige værdier i systemet for at se hvilken effekt det har på præcisionen.
+Fremgangsmåden til at teste om den udviklede estimeringsmetode er tilstrækkelig går så på at have en række personer sove hvor man både estimerer med brug af vores model og med brug af den valgte ground truth metode.
+På den måde vil man kunne indsamle resultater fra begge metoder og man kan sammenligne ens estimat med ground truth.
+
+I tilfælde af en ikke tilstrækkelig præcision kan der forsøges at justere på de forskellige værdier i systemet for at se hvilken effekt det har på præcisionen.
 Kandidater til disse ændringer kunne være:
 \begin{itemize}
 	\item Konstanter for antal målinger der skal overvejes for at bestemme stilstand eller stilhed, og muligvis se på tidsintervaller istedet for målinger.
@@ -15,7 +16,9 @@ Kandidater til disse ændringer kunne være:
 	\item Middelværdien for den logistiske funktion, idet at dette vil ændre hvor lang tid det vil tage før sandsynligheden vil nå 50\%.
 \end{itemize} 
 
-Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen og så er man forhåbentlig i stand til at komme med en konfiguration af disse der er tilpas høj nøjagtighed.
-Hvis ændring i diverse konstanter ikke er tilfredsstillende kan man i stedet for erstatte metoden til at evaluere sandsynligheden for søvn, eller erstatte denne med en anden metode der ikke bruger sandsynlighed til at bestemme om en person sover.
-Dette gør det muligt at teste flere forskellige metoder så man også her kan finde den metode der giver det bedste resultat.
-Dog er man her nød til at være opmærksom på at man ikke tilpasser sin analyse for meget til det givne data sæt.
+Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen og så er man forhåbentlig i stand til at komme med en konfiguration af disse der har en tilpas høj nøjagtighed.
+Vi hæfter os ved at når man justerer på diverse parametre for modellen bør præcisionsestimatet ved disse ændringer foretages v.h.a. krydsvalidering for at undgå overfitting som beskrevet i \cref{sec:redskaber}.
+
+I tilfælde af en ikke tilfredsstillende præcision, selvom man har justeret på disse parametre, bør man overveje at erstatte metoden med en anden.
+Sådanne metoder er undersøgt i \cref{sec:metodevalg} og man kan med fordel starte de deri nævnte.
+Vi har været forudsigende at fremtidssikre vores produkt sådan dette ikke skulle volde problemer grundet den modulare platform.
