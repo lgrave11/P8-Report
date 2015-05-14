@@ -2,6 +2,17 @@ Denne sektion detaljerer forskellige ting som kunne arbejdes videre på ved akti
 Idet at der ikke har været en stor fokus på fysisk aktivitet, er det idéelt at arbejde videre på.
 
 \subsection{Fra Skridt til Aktivitet}
+Den nuværende funktionalitet til fysisk aktivitet indeholder kun en skridttæller.
+Eftersom skridttæller ikke beskriver hvilken form for aktivitet man udøver og derved ikke præcist kan fortælle hvor meget fysisk aktivitet der er blevet lavet, vil dette være en nødvendighed at for lavet.
+Hvordan man skal finde ud af hvilken form for aktivitet man laver ud fra skridttæller er endnu uvist, men med en kombination af accelerometer data vil dette muligvis være en mulighed.
+Dog skal detalje graden den fysiske aktivitet også bestemmes, er det okay blot at se forskel på løb og gang, eller er det nødvendigt at se hvilken form for løb eller gangart der udføres.
+Grunden til denne detalje grad er vigtig er fordi hvis man løber alt hvad man kan er det en anden form for aktivitet end hvis man løber sig en tur.
+
+Ved at kunne detektere hvilken form for fysisk aktivitet en personer udøver over en længere periode, vil det være muligt at danne et overblik over der ændringer i fysisk aktivitet.
+Denne ændring i fysisk aktivitet kan give et signal om ændring i sindstilstanden for personen.
+Dette kan gøre sig klart gældende ved personer med affektive lidelser, som nævnt i \citet[Kapitel 1, Sektion 4]{misc:faellesrapp}, da en ændring i deres sindstilstand kan betyde at de er ved at få en depression- eller maniperiode.
+
+\begin{comment}
 Den nuværende funktionalitet til fysisk aktivitet er kun en skridttæller, fra denne vil det næste logiske skridt være at lave noget der kan give et overblik over hvor meget fysisk aktivitet der har været ud fra antallet af skridt.
 Helt præcist hvordan dette skal gøres og vises er uvist, men der er en mulighed for at det skulle kombineres med accelerometer data til at afgøre om der er tale om løb, gang eller anden form for bevægelse.
 De forskellige gang typer skal så også fortolkes som forskellige form for aktivitet. 
@@ -9,8 +20,7 @@ Det ville også være nødvendigt at beslutte hvad for en enhed fysisk aktivitet
 
 Udover at beslutte hvordan fysisk aktivitet skal bestemmes skal man også beslutte sig for hvad det skal bruges til.
 I sammenhæng med det primære fokus vi har på affektive lidelser, vil et oplagt fokus være at se på ændringer i mængden af fysisk aktivitet, da det giver et signal om ændringer i sindstilstand for patienter med affektive lidelser, hvilket også blev nævnt i \citet[Kapitel 1, Sektion 4]{misc:faellesrapp}.
-
-\ivan{Lidt tyndt om opgørelse af aktivitet over tid, trendanalyse o.lign.}
+\end{comment}
 \subsection{Sammenhæng Mellem Søvn og Aktivitet}
 Som nævnt i starten af dette kapitel, har vi en teori om, at der kunne være en sammenhæng mellem folks søvnkvalitet og deres bevægelsesmønster.
 Teorien bør undersøges, både i den forstand at man skal undersøge om det er noget andre folk har overvejet, og undersøge om det er muligt at indsamle tilstrækkeligt data på en mobil enhed til at komme med noget brugbart omkring dette.
