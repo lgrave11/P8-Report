@@ -40,19 +40,20 @@ Som en ekstra bemærkning til denne tabel er præcisionen baseret ud fra en anta
 \caption{Opsummering af de forskellige metoder til søvnestimering.}
 \label{tab:opsummeringMetoder}
 \end{table}
+
 Som det kan ses ud fra \cref{tab:opsummeringMetoder}, så har de forskellige metoder varierende styrker og svagheder, Toss 'N' Turn's søvn længde estimering og Best Effort Sleep har dog samme kvaliteter.
-For at beslutte hvilke metoder der skal arbejdes videre med, skal vi udover at forholde os til de opstillede kriterier også vurdere hvilke metoder vi har mulighed for at lave med det udstyr og de konkrete ressourcer vi har til rådighed.
+For at beslutte hvilke metoder der skal arbejdes videre med, skal vi udover at forholde os til de opstillede kriterier, også vurdere hvilke metoder vi har mulighed for at lave, med det udstyr og de konkrete ressourcer vi har til rådighed.
 Da polysomnografi kræver en ekspert og store mængder specialiseret udstyr, er denne ikke fornuftig at se videre på.
 ActiGraf kræver en wearable som dataindsamlings modul, hvilket vi ikke har, så derfor kigges der ikke videre på den, men hvis sådanne wearables var til rådighed, ville denne metode kunne give meget gode resultater.
 
 En søvndagbog kunne godt være passende, dog er der det problem at det er subjektivt så patienten kan komme til at give ukorrekt information, hvilket vil virke forstyrrende for et program der skal finde trends.
-Derudover er der en risiko for at patienterne ikke udfylder deres søvn dagbog hvis de er i en depressions- eller maniperiode.
+Derudover, er der en risiko for at patienterne ikke udfylder deres søvndagbog hvis de er i en depressions- eller maniperiode.
 
-Dette efterlader os med tre tilbageværende metoder, Toss 'N' Turn, Best Effort Sleep (BES) og statistisk baseret tilgang.
+Dette efterlader os med tre tilbageværende metoder, Toss 'N' Turn, Best Effort Sleep (BES) og den statistisk baseret tilgang.
 Af disse har BES og Toss 'N' Turn bedst præcision, hvor BES kan køre stort set uden at involvere brugeren, hvorimod Toss 'N' Turn har brug for en læringsperiode hvorefter brugeren ikke involveres længere.
 Den statistisk baserede metode kræver involvering af brugeren, hvilket er at telefonen skal ligge i patientens seng, på det punkt er det en god middelvej, men den har væsentlig lavere præcision end de to andre.
 
-Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep og den statistisk baseret metoder opfylder kriterierne.
+Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep og den statistisk baseret metode opfylder kriterierne.
 
 \begin{table}
 \begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
@@ -67,16 +68,16 @@ Se \cref{tab:soevnMetodeKriterier} for hvordan Toss 'N' Turn, Best Effort Sleep 
 \end{table}
 
 Ud fra dette skal der så udvælges en metode der skal fokuseres på. 
-Netop fordi vi gerne vil have så lidt krav til bruger intervention som muligt vil vi kraftigt foretrække en metode som ikke kræver noget af brugeren, hvilket kan være Best Effort Sleep (BES) metoden, dog kræver Toss 'N' Turn metoden ikke specielt meget bruger intervention. 
-Hvis BES vælges har vi dog det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker og kombinerer de forskellige datakilder, så det skal vi selv genskabe. 
+Netop fordi vi gerne vil have så lidt krav til bruger intervention som muligt, vil vi kraftigt foretrække en metode som ikke kræver noget af brugeren, hvilket kan være Best Effort Sleep (BES) metoden, dog kræver hverken Toss 'N' Turn eller den statiske baseret metode specielt meget bruger intervention. 
+Hvis BES vælges har vi dog det problem at det ikke har været muligt for os at finde en præcis beskrivelse af hvordan BES fortolker og kombinerer de forskellige datakilder, så det skal vi selv genskabe. \winde{Synes det er lidt mærkeligt at vi bare uden videre begynder at snakke om BES, som om vi har valgt den}
 Dog ved vi ud fra artiklen at det er muligt at gøre, hvilket betyder at BES er et reelt valg. 
-BES har dog også det problem at den kun kan beregne søvnlængden og ikke søvn kvalitet, som mange mener også er ganske relevant da et af det beskrivende kriterier for at være i en depressions periode er at ens søvn er ustabil eller af dårlig kvalitet. 
-Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alt, hvilket vil sige at hvis man skulle måle søvn kvalitet skulle man opsøge andre metoder.
+BES har dog også det problem at den kun kan beregne søvnlængden og ikke søvn kvalitet, som mange mener også er ganske relevant for adfærdsændringer, da et af det beskrivende kriterier for at være i en depressions periode er at ens søvn er ustabil eller af dårlig kvalitet. 
+Manglen på denne egenskab gør at BES alene ikke er beskrivende nok til at dække alt, hvilket vil sige at hvis man skal måle søvn kvalitet skal man opsøge andre metoder.
 
-Da der ikke er meget tid til at lave noget udtømmende, udvælges en metode at arbejde med som et proof of concept, hvor så udviklingen af andre metoder kan forsættes senere.
+Da der ikke er meget tid til at lave noget udtømmende, udvælges en metode, der skal arbejdes på som et proof of concept, hvor så udviklingen af andre metoder kan forsættes senere.
 Vores design af platform sikrer en høj modularitet og fleksibilitet, hvorfor det ikke forekommer svært at ændre søvnestimeringsmetode på et senere stadie.
 
-Valget falder på en implementering af Best Effort Sleep Model, da denne opfyldte vores kriterier godt selvom den ikke måler søvnkvalitet.
-Hvis der havde været mere tid til rådighed, ville valget med alt sandsynlighed være faldet på en implementering af Toss 'N' Turn, da denne som tidligere nævnt også har mulighed for at vurdere søvn kvaliteten.
-Det at kvalitets vurdering også kommer med vil kunne tilføje et ekstra lag til vurderingen af folks søvn, hvilket er meget vigtigt da det godt kan være man ligger i sin seng og forsøger at sove i omkring 8 timer, men hvis man ikke sover sammenhængende i mere end for eksempel 45 minutter, er det ikke et godt tegn.
-Dette ekstra vurderings element er meget vigtigt i den store sammenhæng, da det er essentielt i den proces det er at vurdere om en person har en depression. 
+Valget falder på en implementering af Best Effort Sleep, da denne opfyldte vores kriterier godt selvom den ikke måler søvnkvalitet.
+Hvis der havde været mere tid til rådighed, ville valget med alt sandsynlighed være faldet på en implementering af Toss 'N' Turn, da denne som tidligere nævnt også har mulighed for at vurdere søvn kvaliteten. \winde{Den opfylder ikke alle kriterier, så hvorfor lige den her?}
+Det at kvalitetsvurderingen også kommer med vil kunne tilføje et ekstra lag til vurderingen af folks søvn, hvilket er meget vigtigt, da det godt kan være man ligger i sin seng og forsøger at sove i omkring 8 timer, men hvis man ikke sover sammenhængende i mere end for eksempel 45 minutter, er det ikke et godt tegn.
+Dette ekstra vurderingselement er meget vigtigt i den store sammenhæng, da det er essentielt i den proces det er at vurdere om en person har en depression. 
