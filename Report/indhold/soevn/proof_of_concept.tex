@@ -79,15 +79,20 @@ Modsat ved stilstand er sandsynligheden for at man sover afhængigt af længden 
 
 Dette får os til at lave en model der bygger på disse to antagelser, og er en model der er lavet til at skabe jordforbindelse.
 Med dette menes at vi udvikler en metode for at få bekræftigelse på at det kan lade sig gøre at få implementeret til en mobil med den valgte platform.
-Vi har ikke kunnet finde passende metoder der er offentligt tilgængeligt, hvorfor vi bliver nødt til at udvikle vores egen algoritme.
+Som nævnt har vi ikke kunnet finde passende metoder der er offentligt tilgængeligt, hvorfor vi bliver nødt til at udvikle vores egen algoritme.
 Vi tillader os at tage det forbehold at den udviklede model sikkert ikke er en metode der bør anvendes i praksis, men kan alligevel bruges til at udforske nogle af udfordringerne ved søvnestimering.
 Nogle af udfordringerne kan sikkert takles med inspiration fra de omtalte metoder som vi vil have i mente, men det er ikke utænkeligt at andre udfordringer dukker op.
 
 Vores model går på en sliding window tilgang hvor den centrale del er at registrere stilstand ved acceleration og amplitude.
+Konceptet om stilstand er taget fra \citet{6563918} angående Best Effort Model, og er hvilken model vores algoritme tager primært udgangspunkt i.
+Toss 'N' Turns tilgang hvor man ser på 10-minutters vinduer med data til at afgøre søvn eller ikke søvn er et alternativ.
+Dette alternativ blev dog valgt fra i første omgang, da stilstandsbestemmelsen vurderes mindre komplekst og egnede sig derfor bedre til en proof of concept løsning.
+Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.
+
 \subsubsection{Stilstands Bestemmelse}
 Som udgangspunkt for vores udkast til en søvnestimeringsmodel afgøres der hvornår der er stilstand.
 Dette gøres forskelligt for acceleration og amplitude data, men tager udgangspunkt i det loggede data.
-For at sikre enkelte spikes ikke påvirker resultatet anvendes et vægtet gennemsnit til at reducere støj.
+For at sikre enkelte spikes ikke påvirker resultatet anvendes et vægtet gennemsnit til at reducere støj, som er et af redskaberne nævnt i \cref{sec:redskaber}.
 
 Hvis vi ser på \cref{fig:accplot}, der er et plot for accelerations data kan vi se stilstand for punkterne mellem 22:00 og 07:00.
 Øvelsen består i at have en metode der kan afgøre at disse punkter er i stilstand.
@@ -113,7 +118,6 @@ At se på 5 tidligere punkter er ikke en fastlagt værdi, men afhænger af sampl
 At kigge blot fem sekunder tilbage kan være op til debat, og ved videre arbejde er det en parameter man bør justere for at opnå en højere præcision.
 Dog holder vi fast i at det er fornuftigt at kigge en tidsperiode tilbage i stedet for en fast mængde punkter.
 Dette sikrer at algoritmen også er fremtidssikret m.h.t. til dette, for ellers risikerer vi at nyt hardware har en højere samplingsfrekvens hvor at gå 5 punkter ikke ville fungere, men hvor en tidshorisont ville.
-
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
 \subsubsection{Søvn Estimering}
@@ -156,12 +160,13 @@ hvor,
 \end{itemize}
 
 Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata. Det kan også være en god idé at ændre på stejlheden for kurven, altså k, baseret på hvilken kilde af data man bruger som f.eks. accelerometer eller lyd.
+Desuden skal $t_{midtpunkt}$ værdi på 4 timer betragtes som et først bud der passede fint med det observerede data, men kan justeres.
 
 \subsection{Kombinering af modeller}\label{subsec:kombimodeller}
 Det er tiltænkt at hver sensor kan have en tilknyttet søvn estimerings model, hvilket i vores tilfælde er en søvn estimerings model for accelerometret og lyd fra mikrofonen.
 Imidlertid kan det være en fordel at have en samlet model der kombinerer resultaterne fundet for de enkelte modeller.
-En simpel metode at gøre dette på er ved hjælp af et vægtet gennemsnit, hvilket er en metode som \citet{6563918} også benytter.
-Det vægtede gennemsnit afviger fra et normalt vægtet gennemsnit da vi har data der ikke er optaget på samme tid og heller ikke data i samme mængder for de enkelte søvnestimerings moduler.
+En metode til dette er det vægtede gennemsnit og er et redskab vi har beskrevet i \cref{sec:redskaber}
+Vores implementering af det vægtede gennemsnit afviger fra et normalt vægtet gennemsnit da vi har data der ikke er optaget på samme tid og heller ikke data i samme mængder for de enkelte søvnestimerings moduler.
 På grund af dette hvis der er en mangel på en estimering til en given tid for et søvn estimerings modul, tages den forrige værdi til estimeringen.
 Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del, ligesom det gøres med estimeringerne for hvert modul.
 
@@ -191,7 +196,7 @@ Disse to værdier kombineres for det bagerste element med vægtningerne for de t
 Dette forsætter indtil der ikke er mere data tilbage i en af de to gennemløbere, hvorefter der ventes på ny data så begge gennemløbere igen har data at køre på.
 
 \subsection{Aggregering}\label{subsec:soevnaggre}
-Som demonsteret giver søvnestimeringsmetoden, der er vist som proof of concept, en estimering til en lang række tidspunkter.
+Som demonstreret giver søvnestimeringsmetoden, der er vist som proof of concept, en estimering til en lang række tidspunkter.
 Men for at give et ekstra redskab til at danne et overblik over disse estimeringer, kan der med fordel som proof of concept laves en aggregering af søvn estimerings data.
 
 For at få et bedre indblik i formen for data der skal aggregeres gives et eksempel i \cref{tab:noaggsoevndata}.
