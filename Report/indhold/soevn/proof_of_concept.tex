@@ -145,10 +145,10 @@ Definitionen af den logistiske funktion er defineret som følger:
 \end{equation} 
 hvor,
 \begin{itemize}
-	\item[$t_{span}$] Tidsperiode siden starten på stilstandsperioden målt i timer.
-	\item[$t_{midtpunkt}$] er til hvilket stilstandslængde vi vil have sandsynligheden for søvn til at være 50\%, dette kan eksempelvis være $4$ timer.\ivan{Beskriv og begrund de 50\%}\als{Sådan lyder den logistiske funktion}
-	\item[$k$] er stejlheden for kurven.
 	\item[$L$] er kurvens maksimums værdi, hvilket for os eksempelvis kan være $1$ for 100\% sandsynlighed for søvn.
+	\item[$k$] er stejlheden for kurven.
+	\item[$t_{span}$] Tidsperiode siden starten på stilstandsperioden målt i timer.
+	\item[$t_{midtpunkt}$] Er det tidspunkt hvor kurven når $L/2$, hvilket i figurens tilfælde er hvornår kurven når $0.5$ det vil sige ved 4 timer.
 \end{itemize}
 
 Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata. Det kan også være en god idé at ændre på stejlheden for kurven, altså k, baseret på hvilken kilde af data man bruger som f.eks. accelerometer eller lyd.
