@@ -1,0 +1,5 @@
+SELECT time, amplitude FROM dk_aau_cs_psylog_SOUND_amplitudes
+SELECT time, accX FROM dk_aau_cs_psylog_ACCELEROMETER_accelerations
+SELECT time, prob FROM dk_aau_cs_psylog_ACCELERATIONSLEEPANALYSIS_sleepcalc
+SELECT time, prob FROM dk_aau_cs_psylog_SOUNDSLEEPANALYSIS_sleepcalc
+SELECT time, prob FROM dk_aau_cs_psylog_SLEEPSTATIONARY_sleepcalc
