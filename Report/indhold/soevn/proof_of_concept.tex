@@ -67,12 +67,12 @@ At vi kun måler maks amplitude sikrer at personfølsomme oplysninger ikke indsa
 \end{figure}
 
 Idéen bag at bruge maks amplituden er at man larmer væsentligt mere når man er vågen end når man sover.
-Dette passer fint med de loggede data plottet i \cref{fig:amplplot}.
+Dette passer fint med de loggede data der er plottet i \cref{fig:amplplot}.
 Dog har denne antagelse også begrænsninger.
 Eksempelvis kan det være at man er en stille person, snorker meget eller også kan personen bo i et meget larmende område.
-Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kan finde et mønster når man snorker til at styrke modellen, hvilket vil blive diskuteret i \cref{section:snorken}.
+Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kan finde et mønster når man snorker til at styrke modellen, hvilket er diskuteret i \cref{section:snorken}.
 Derudover, er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder, og er noget der bør trænes til det enkelte individ, for at opnå en model der passer til individs personlighed.
-Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of concept kan man som en start bruge fastsatte statiske vægte.\winde{måske en kilde på her?}
+Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of concept kan man som en start bruge fastsatte statiske vægte, hvilket er diskuteret i \cref{subsec:sensorvaegtsoevn}.
 
 \subsection{Søvnestimerings model}
 Ud fra observeret data etablerer vi nogle antagelser som vi går ud fra også holder til fremtidigt data.
@@ -88,8 +88,8 @@ Nogle af udfordringerne kan sikkert takles med inspiration fra de omtalte metode
 Vores model går på en sliding window tilgang, hvor den centrale del er at registrere stilstand med acceleration og amplitude.
 Konceptet om stilstand er taget fra \citet{6563918} angående Best Effort Sleep, og er hvilken model vores metode tager primært udgangspunkt i.
 Toss 'N' Turns tilgang hvor man ser på 10-minutters vinduer med data til at afgøre søvn eller ikke søvn er et alternativ.
-Dette alternativ blev dog valgt fra i første omgang, da stilstandsbestemmelsen vurderes mindre komplekst og egnede sig derfor bedre til en proof of concept løsning.
-Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.\winde{Denne diskussion omkring TNT og BES, er lidt gentagelse?}
+Dette alternativ blev dog valgt fra i første omgang, som nævnt i \cref{subsec:summametoder}, da stilstandsbestemmelsen vurderedes mindre komplekst og egnede sig derfor bedre til en proof of concept løsning.
+Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.
 
 \subsubsection{Stilstands Bestemmelse}
 Som udgangspunkt for vores udkast til en søvnestimeringsmodel afgøres der hvornår der er stilstand.
@@ -260,8 +260,6 @@ Grafer er dog ikke altid lige nemme at forstå, derfor er der blevet lavet en ta
 Denne tabel minder om den der blev vist i \cref{tab:aggdat}, dog uden $\_id$ kolonnen.
 Tabellen giver et nemt overblik for brugeren om hvornår man har sovet, samt hvor sikker systemet er på at man har sovet.
 Dog er det ikke så nemt for brugeren at se ens adfærdsændring i en sådan tabel, da det kræver at man kigger på meget data på en gang.
-
-\als{Kan være vi skal justere figurerne så vi har "fortællingen" fra data til modeller til kombinering}
 % Giv eksempel på ikke aggregeret data.
 % Forklar forslag/løsning til aggregering af data.
 % Vis resultat derfor
