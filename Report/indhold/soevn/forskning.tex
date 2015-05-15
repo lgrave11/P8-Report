@@ -1,7 +1,6 @@
-Denne sektion beskriver hvad der vides akademisk om søvn og forbindelsen til psykiske lidelser, idet denne slags information er meget vigtig, hvis man vil vide hvad der er produktivt at arbejde med, og hvilke slags personer løsningen skal være tilrettet. 
-Sektionen diskuterer videre hvilke slags indsamlede data, der kan benyttes. 
-Dette er relevant, da det er godt at vide når man skal analysere videre på de metrikker. 
-Endvidere, diskuteres forskellige metoder til søvnestimering da disse skal sammenlignes og diskuteres videre.
+Det er vigtigt at at diskutere hvad der vides om søvn og forbindelsen til psykiske lidelser, hvis man vil vide hvad der er produktivt at arbejde med.
+Endvidere er det vigtigt at diskutere hvilken slags indsamlede data der kan benyttes, idet at det er godt at vide når man skal analysere videre på de metrikker.
+Endvidere, beskrives forskellige metoder til søvnestimering da disse skal sammenlignes og diskuteres videre.
 
 Det viser sig at en regelmæssig dagscyklus er særdeles vigtig for bipolare patienter.
 Eksempelvis kan mangel på søvn medføre større risiko for at gå ind i en depressions- eller maniperiode \citep{CPSP:CPSP1164}.
@@ -11,7 +10,7 @@ Ved depression er det sædvanligt at sove væsentligt længere end for den habit
 
 Grundet dette anses søvn for en vigtig indikator på om man begynder at befinde sig i en depressions- eller maniperiode, og bør undersøges nærmere til at determinere sådanne perioder.
 
-Desuden har \citet{art:sleepCusMania} udført et eksperiment på en enkelt testperson, der indikerede at søvnmangel kunne føre til maniperioder, som så oftest blev efterfulgt af en depression når personen havde fået lidt søvn.
+Desuden har \citet{art:sleepCusMania} udført et eksperiment, der indikerede at søvnmangel kunne føre til maniperioder, som så oftest blev efterfulgt af en depression når personen havde fået for lidt søvn.
 Der er dog et par problemer med denne kilde, det første værende at den kun bruger en enkelt test person så det kunne være det bare var et særtilfælde og ikke et generelt træk.
 Det andet problem er at informationen er fra 1991, så det kan godt være at andre har modbevist forbindelsen mellem søvn og mani.
 Artiklen er dog blevet citeret flere gange siden, og understøttes af nyere artikler som f.eks. \citet{barbini1996sleep}, der viser et tydeligt sammenhæng fra søvn til mani, men også fra mani til søvn.
@@ -19,7 +18,7 @@ Artiklen er dog blevet citeret flere gange siden, og understøttes af nyere arti
 Underbyggende er søvn vigtig for mange andre ting end bare sindstilstand.
 Eksempelvis indikeres der at søvnmangel også kan føre til hjerteproblemer \citep{Mullington2009294,art:sleeplossHeart}, men også at det kan svække ens immunforsvar \citep{misc:sleepImmune}.
 
-Derved kan vi sige at søvn er en vigtig faktor for forebyggelse af sygdomme og forøget livskvalitet, og derfor er der lagt et stor fokus på forskning inden for dette område.
+Derved kan vi sige at søvn er en vigtig faktor for forebyggelse af sygdomme og forøger livskvalitet, og derfor er der lagt et stor fokus på forskning inden for dette område.
 Som resultat af dette fokus er der en lang række søvnestimeringsmetoder, hvor de mest fremtrædende muligheder nævnes og vurderes som inspiration til vores egen løsning.
 
 \subsection{Metoder}
@@ -27,9 +26,10 @@ For at få inspiration til at kunne lave en løsning, kigges der på forskellige
 Med dette grundlag for at diskutere datakilder der er blevet benyttet beskrives metrikkerne efter de forskellige løsninger.
 
 \subsubsection{Polysomnografi}\label{sec:polysomnografi}
-Den måske mest akkurate søvnestimeringsmetode er polysomnografi, der er en metode der kombinerer et elektroencefalogram med målinger af muskel spænding og øjenbevægelse \citep{misc:polysomnografi,misc:polysomnography}.
+Den måske mest akkurate søvnestimeringsmetode er polysomnografi, som er en metode der kombinerer et elektroencefalogram med målinger af muskel spænding og øjenbevægelse \citep{misc:polysomnografi,misc:polysomnography}.
 Metoden kræver en stor mængde special udstyr og teknikere med specialiseret viden og erfaring til at montere udstyr og fortolke data.
-Derfor er denne metode upraktisk at udføre i en patients soveværelse.
+Denne metode er guld standarden når man vil vide hvornår og hvordan en person sover, og de fleste metoder sammenlignes med denne for at evaluere hvor akkurate nye metoder er. 
+Idet at den stiller store krav, er denne desværre upraktisk at udføre i en patients soveværelse.
 
 \subsubsection{AktiGrafi}
 Imidlertid findes der andre metoder, som er nemmere at benytte.
@@ -42,14 +42,10 @@ Af samme grund står muligheden åben for at bruge sådant udstyr i fremtiden, h
 Derudover er platformen opbygget til at være yderst fleksibel angående hvilke moduler kan benyttes, så skulle der ønskes at udvikle et modul der virker med FitBit og JawBone, er dette muligt.
 
 \subsubsection{Søvn Dagbog}
-I stedet for en objektiv løsning, kan man benytte patientens subjektive viden om deres søvn ved f.eks. at bruge en søvndagbog, hvori patienten svarer på en række spørgsmål om søvnen. 
+I stedet for en objektiv løsning, kan man benytte patientens subjektive viden om deres søvn ved for eksempel at bruge en søvndagbog, hvori patienten svarer på en række spørgsmål vedrørende deres søvn. 
 På den måde får patienten ansvaret for at svare på spørgsmål om deres søvn, hvilket gør at man kan følge søvnrytmens udvikling.
 Endvidere, er dette også værd at tage i betragtning, når man skal lære en ny model. 
-Et eksempel på dette kan ses i \citet{Min:2014:TNT:2556288.2557220}, hvor dagbogen bruges som den absolutte sandhed til at træne ens model.
-\begin{comment}
-Med ressourcerne for dette projekt er dette dog ikke valgt som primær fokus, da vi ønsker en metode der kan estimere søvn med mindst mulig bruger intervention, og hvor grundlaget for vurdering skal være ved hjælp af sensorer fremfor en subjektiv vurdering man alligevel har mulighed for i forvejen.
-Idéen om en "objektiv dagbog" er dermed også i tankerne her, og er hvorfor denne løsning ikke undersøges nærmere end at det kan bruges for læringsperioder for vores modeller.
-\end{comment}
+Et eksempel på dette kan ses i \citet{Min:2014:TNT:2556288.2557220}, hvor dagbogen bruges som den absolutte sandhed til at træne modellen.
 
 \subsubsection{Toss 'N' Turn}\label{sec:tossNturn}
 Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220}, og beskrivelsen bygger på forskningsresultaterne derfra.
@@ -59,7 +55,7 @@ Teknikken tager udgangspunkt i en række sensor-kilder, der er tilgængelig på 
 Disse værende accelerometer, mikrofon(maks amplitude), lyssensor, proximitysensor, kørende processer, batteristadie (opladning/ikke opladning), og skærmvisningstilstand.
 Ud fra disse sensorkilder og en søvndagbog, der foretages i minimum tre dage til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
 Deres metode har en præcision for daglig søvnestimering på 92\% mens deres søvnkvalitetsestimering har en præcision på 84\%, hvilket gør det til en oplagt mulighed at arbejde med.
-Metoden fungerer så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom Exponential Moving Average, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
+Metoden fungerer så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom eksponentielt flydende gennemsnit, Naive Bayes classifier og decision trees til at opnå den nøjagtighed.
 Feature udtrækninger er basalt set, hvor man ud fra et dataset bygger deriverede værdier, der har til hensigt, at være informative og kan bruges til efterfølgende læring.
 
 Denne metode kræver en oplæringsperiode på minimum 3 dage for at opnå maksimal præcision.
@@ -69,27 +65,27 @@ Derudover pålægger metoden ikke at man skal have sin smartphone placeret i sen
 Best Effort Sleep (BES) Model \citet{6563918} bruger en fremgangsmåde der udelukkende baseres på målbare data fra en smartphone til at estimere en brugers søvnlængde, meget lig Toss 'N' Turns koncept.
 Disse målbare datakilder anskaffes på en måde så brugeren ikke behøver ændre sin søvnadfærd, som det for eksempel er tilfældet på andre tilsvarende løsninger som for eksempel JawBone eller FitBit, der kræver at en wearable benyttes mens man sover.
 Metoden har en unøjagtighed på op til 40 minutter ved mht. søvnlængde, hvilket for en person der sover 8 timer svarer til 92\% præcision, hvilket ligesom Toss 'N' Turn er en acceptabel præcision.
-Ud over dette kan BES ikke bruges til at estimere kvaliteten af ens søvn.
+Ud over dette kan BES ikke bruges til at estimere kvaliteten af søvn.
 Med kvaliteten menes hvor få gange man har været vågen i løbet af natten.
 
-Fremgangsmåden fungerer godt som en backup løsning til en af de brugerinvolverende fremgangsmåder, da det der kendertegn dem, er af de ikke vil give pålidelige resultater hvis patienten ikke bruger dem korrekt.
+BES fungerer godt som en alternativ løsning til en af de brugerinvolverende fremgangsmåder, da det der kendertegner dem, er af de ikke vil give pålidelige resultater hvis patienten ikke bruger dem korrekt.
 I de tilfælde hvor BES og en brugerinvolverende løsning begge er tilstede, kan BES bruges til at validere data fra den brugerinvolverende løsning. 
 
 I BES bruges der seks forskellige datakilder til at estimere søvn.
-Grunden til det store antal datakilder er at ingen af dem er i direkte kontakt med brugeren og at de hver for sig ikke siger særlig meget men i kombination giver en udmærket estimering om brugeren sover.
+Dette er nødvendigt idet at ingen af dem er i direkte kontakt med brugeren og at de hver for sig ikke siger særlig meget, men i kombination giver en udmærket estimering om brugeren sover.
 Kilderne der bruges er meget tilsvarende dem der bruges i Toss 'N' Turn, hvor der her bruges lys, lyd, bevægelse (accelerometer), skærmlås, batteristatus og om den er slukket.
 Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtninger der kan ses i \cref{tab:vaegtninger}.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|}
-\hline Datakilde & Koefficient\\
-\hline Lys & 0.0415 \\ 
-\hline Lås & 0.0512 \\ 
-\hline Slukket & 0.0000 \\ 
-\hline Opladning & 0.0469 \\ 
-\hline Bevægelse & 0.5445 \\ 
-\hline Lyd & 0.3484 \\ 
+\hline Datakilde    & Koefficient\\
+\hline Lys          & 0.0415 \\ 
+\hline Lås          & 0.0512 \\ 
+\hline Slukket      & 0.0000 \\ 
+\hline Opladning    & 0.0469 \\ 
+\hline Bevægelse    & 0.5445 \\ 
+\hline Lyd          & 0.3484 \\ 
 \hline 
 \end{tabular}
 \caption{De forskellige vægtninger for hver datakilde.}
@@ -97,7 +93,7 @@ Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenter
 \end{table}
 
 Disse koefficienter kan bruges af os til at springe en eventuel læringsperiode over, dog kan dette gå ud over præcisionen. 
-Da den omtalte metode ikke er offentlig tilgængelig kan det være et problem at stole på de ovenstående koefficienter, da en efterfølgende udvikling af en metode højst sandsynlig ikke er helt tilsvarende den af \citet{6563918}.
+Da metoden de bruger til selve udregningen ikke er offentlig tilgængelig kan det være et problem at stole på de ovenstående koefficienter, da en efterfølgende udvikling af en metode højst sandsynlig ikke er helt tilsvarende den af \citet{6563918}.
 Dog hvis denne tilgang bruges, kan man som start bruge de nævnte koefficienter, og så efterfølgende tilpasse koefficienterne, så de passer til ens specifikke implementation af metoden.
 Hvis præcisionen er meget vigtig vil man have en læringsperiode, hvor man får den absolutte sandhed om søvnlængden ind, så man kan blive i stand til at finde de optimale koefficient-værdier for hver kilde.
 Endvidere, vil analysen også bedre kunne tilpasses individet, frem for at bruge koefficienterne i \cref{tab:vaegtninger}, der vil gøre analysen mere generel.
@@ -108,7 +104,7 @@ Derudover er en fordel også at denne model er klar til at blive taget i brug me
 \subsubsection{Statistisk Baseret Tilgang}\label{sec:statbased}
 Den statiske baserede tilgang bliver præsenteret af \citet{misc:statbased}.
 Denne metode bygger på at telefonen ligger i patientens seng og er ud fra de bevægelser der sker, i stand til at bestemme om patienten sover eller ej. 
-Metoden kræver at man starter app'en når man går i seng og kræver på den måde brugerinteraktion til dette også, udover at skulle placere telefonen i sengen.
+Metoden kræver at man starter app'en når man går i seng og kræver på den måde brugerinteraktion.
 
 Metoden ser på accelerationsmålinger i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
 Til at nå frem til dette ser metoden på intensiteten af bevægelser for hver måling og sammenligner dette med en beregnet tærskelværdi.
