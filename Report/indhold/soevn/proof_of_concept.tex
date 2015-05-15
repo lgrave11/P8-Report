@@ -13,10 +13,10 @@ Som et proof of concept er det blevet valgt at implementere en enkelt metode til
 Metoden er baseret på redskaberne beskrevet i \cref{sec:redskaber}, hvor der som start til dataindsamling ses på amplitude og acceleration.
 Grunden til at vi starter med disse to datakilder er fordi \citet{6563918} erfarede, at det er de langt væsentligste datakilder, hvilket også er beskrevet i \cref{sec:BES}.
 
-Disse to datakilder kombineres til en enkel model, der skal kunne vurderer hvorvidt man sover eller ej.
+Disse to datakilder kombineres til en enkel model, der skal kunne afgøre hvorvidt man sover eller ej.
 Med mere tid vil de andre nævnte datakilder også blive fokuseret på.
 
-For at have en regelmæssig måde at indsamle data, der ligger til grund for implementationen af det efterfølgende søvnestimeringsmetode, er det nødvendigt at have forsøgsopstillingen beskrevet, hvorfor denne følger herefter.
+For at have en regelmæssig måde at indsamle data, der ligger til grund for implementeringen af det efterfølgende søvnestimeringsmetode, er det nødvendigt at have forsøgsopstillingen beskrevet, hvorfor denne følger herefter.
 \subsection{Forsøgsopstilling}
 %Disposition:
 %Billede af opstilling
@@ -41,7 +41,7 @@ Til at validere vores model har vi foreslået krydsvalidering beskrevet i \cref{
 Ved videre arbejde bør en mere systematisk tilgang med den nævnte krydsvalidering benyttes, hvilket er beskrevet videre i \cref{sec:verisoevn}.
 
 \subsection{Sensor Data}
-For at have en bedre indsigt i hvordan vi kan bruge accelerations- og amplitude-data blev disse plottet over en dag inklusiv søvn, hvor man holdt log for hvornår der blev sovet.
+For at have en bedre indsigt i hvordan vi kan bruge accelerations- og amplitude-data blev disse plottet over en dag inklusiv søvn.
 Dette kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
 
 \begin{figure}[h]
@@ -123,10 +123,10 @@ Dog holder vi fast i at det er fornuftigt at kigge en tidsperiode tilbage i sted
 Dette sikrer at algoritmen også er fremtidssikret med hensyn til dette, for ellers risikerer vi at nyt hardware har en højere samplingsfrekvens hvor at gå 5 punkter ikke vil fungere, men hvor en tidshorisont vil.
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
+
 \subsubsection{Søvn Estimering}
 Resultatet af stilstandsbestemmelsen er en række punkter der hver især er klassificeret som stilstand eller ikke stilstand.
 Ud fra disse punkter kan der findes perioder med stilstand, og ud fra længden af hver af disse perioder tildeles punkterne en stigende sandsynlighed for søvn alt efter hvor langt fra starten af stilstandsperioden et af de givne punkter i perioden er.
-
 
 Spørgsmålet går så på hvorledes en funktion skal defineres for en sådan stigende sandsynlighed.
 Det skal være en funktion der repræsenterer hvor sikker man er på søvn ud fra længden af stilstand eksempelvis målt i timer.
@@ -248,8 +248,7 @@ For at kunne udtrykke dette til brugeren er der først blevet lavet en graf der 
 Denne periode er sat til at være alt data der er på telefonen så brugeren har overblik over ændringer i grafen.
 Disse ændringer kan derved indikere at der er sket en ændring i ens sindstilstand.
 Til at sørge for at grafen kan bruges til både at se hvordan man har sovet over en længere periode samt over en kort periode, har man den mulighed at man kan zoome på grafen, og derved se præcis hvor sikker systemet er på man har sovet på et bestemt tidspunkt.
-Der er også lavet en graf for hvor sikker systemet ved hjælp af kun acceleration er på at man sover, det samme gælder for lyd.
-For at se hvordan graferne ser ud se \cref{fig:visningsgrafer}
+Der er også lavet en graf for hvor sikker systemet ved hjælp af kun acceleration er på at man sover, det samme gælder for lyd, se \cref{fig:visningsgrafer}.
 
 \begin{figure}[h]
 	\centering
