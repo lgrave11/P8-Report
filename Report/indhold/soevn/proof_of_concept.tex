@@ -1,14 +1,15 @@
-Denne sektion diskuterer det proof of concept, der blev lavet til søvn delen af projektet.
+For at vise at det er muligt at lave noget med de metoder vi har lært, implementeres et proof of concept til søvndelen af projektet. 
+Denne implementering er beskrevet herunder.
 Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdigt system er, at der ikke er nok tid til at gøre det helt færdigt. 
-Ydermere, vil et helt færdigt system påkræve testning hos målgruppen, og dette er igen en besværlig proces, der ikke er tid nok til at udføre. 
+Ydermere, vil et helt færdigt system påkræve testning hos målgruppen, og dette er der ikke er tid nok til at udføre. 
 
-Denne sektion om proof of concept beskriver valg af sensor data, som er nødvendigt, hvordan søvnestimering udføres på denne data, og hvordan søvnestimeringerne for de forskellige sensorer kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
+Denne sektion om proof of concept beskriver valg af nødvendig sensor data, hvordan søvnestimering udføres på denne data, og hvordan søvnestimeringerne for de forskellige sensorer kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
 
 % Manglende resourcer
 % Time constraints.
 % Ingen test mulig(Kræver tilladelser, og system ikke færdig)
 
-Som et proof of concept er der valgt at implementere en enkelt metode til at detektere hvor vidt man sover eller ej.
+Som et proof of concept er det blevet valgt at implementere en enkelt metode til at afgøre hvorvidt man sover eller ej.
 Metoden er baseret på redskaberne beskrevet i \cref{sec:redskaber}, hvor der som start til dataindsamling ses på amplitude og acceleration.
 Grunden til at vi starter med disse to datakilder er fordi \citet{6563918} erfarede, at det er de langt væsentligste datakilder, hvilket også er beskrevet i \cref{sec:BES}.
 
