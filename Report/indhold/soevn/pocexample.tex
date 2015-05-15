@@ -78,12 +78,15 @@ Eksemplet der følges kan ses i \cref{fig:totalbanjo}.
 \end{figure}
 
 Der startes med de rå accelerations og amplitude data der kan ses i \cref{fig:rawaccplot} og \cref{fig:rawamplplot}.
-På dette dataset foretages en række metoder beskrevet ovenfor, hvilket inkluderer et glidende gennemsnit, stilstandsbestemmelse og anvendelse af den logistiske funktion.
+På dette dataset foretages de beskrevne metoder, hvilket inkluderer et glidende gennemsnit, stilstandsbestemmelse og anvendelse af den logistiske funktion.
+Vi kan allerede her observere at der har været en stilstand omkring kl. 23 til kl. 7 næste dag.
 
-Ud fra dette fås to separate søvnestimater, et fra accelerationsdata og et fra amplitudedata, og kan ses i \cref{fig:sleepcalcaccplot} og \cref{fig:sleepcalcamplplot}.
+Ud fra dette fås to separate søvnestimater, et fra accelerationsdata og et fra amplitudedata, og kan ses i \cref{fig:sleepcalcaccplot} og \cref{fig:sleepcalcamplplot}. Der kan observeres at søvnestimaterne følger stilstandsperioden fra omkring kl. 23 til kl. 7.
 
 Disse estimater mangler dog at blive kombineret, og gøres ved brug af det beskrevne vægtede gennemsnit.
-Som resultat deraf fås et estimat som kan ses i \cref{fig:sleepcalcombine}.
+Som resultat deraf fås et estimat, som kan ses i \cref{fig:sleepcalcombine}.
+Da dette estimat er et vægtet gennemsnit af de enkelte søvnestimater kan man også her observere at det ser ud til at der er blevet sovet fra omkring kl. 23 til kl. 7.
 
 Dette estimat er basis for aggregering som skal foretages til at registrere hvorfra og hvortil man har sovet, der er det endelige resultat af estimeringen.
 Dette resultat kan ses i \cref{fig:finalagg} og vurderer at ud fra det givne data er der sovet fra 23:26 til 07:00 næste dag.
+\als{Ret til de tider vi ender ud med at bruge}
