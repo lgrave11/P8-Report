@@ -9,7 +9,7 @@ Metoderne bygger på erfaringer oplyst af kilderne, samt teknikker der bygger p�
 PsyLog er en platform, der er konstrueret til at være modulær og fleksibel.
 Til at understøtte denne funktionalitet tilbyder platformen en database, hvor moduler kan lagre data og læse data lagret fra andre moduler.
 Det eneste krav til hvert modul er, at de skal implementere en service, som kan startes af platformen, og at de har en JSON beskrivelse.
-JSON beskrivelsen indeholder tabeller til lagring af data, moduler de afhænger af, samt om modulet skal skemalægges eller om den bare skal køre hele tiden.
+JSON beskrivelsen indeholder tabeller til lagring af data, moduler de afhænger af, samt om modulet skal skemalægges eller om det bare skal køre hele tiden.
 Hvis man har dette specificeret, sørger PsyLog platformen for resten, det vil sige start af modulet samt sikre lagerplads som modulet kan skrive til og læse fra.
 Derudover, kan ens modul så indgå i en større software pakke, hvor andre moduler kan drage nytte af ens estimater.
 
@@ -26,7 +26,7 @@ Metrikker for vores datatyper er hvad der er beskrevet i \cref{sec:metrikker}.
 Ud fra \citet{6563918} blev der understreget hvorledes et vægtet gennemsnit kan benyttes.
 Idéen er at hver sensor kilde kan benyttes som en svag indikator på søvnlængde.
 Imidlertid bør man ikke stole på udelukkende en kilde, da den søvnlængde man estimerer kan variere meget ved forskellig brug af telefonen.
-For så at have et mere sikkert estimat for søvnlængde, foretager man et såkaldt vægtet gennemsnit af hver estimat, hvor kilder, der er mere sikre end andre får tillagt en større vægtning.
+For så at have et mere sikkert estimat for søvnlængde, foretager man et såkaldt vægtet gennemsnit af hvert estimat, hvor kilder, der er mere sikre end andre får tillagt en større vægtning.
 
 \item[Eksponentielt glidende gennemsnit]
 Da man oplever støj på de forskellige sensorkilder kan man med fordel benytte et eksponentielt glidende gennemsnit.
@@ -34,12 +34,13 @@ Basalt set er et eksponentielt glidende gennemsnit en måde at udjævne tilfæld
 Eksempelvis ved accelerations målinger oplever vi enkelte spikes på grund af støj, og disse kan udjævnes ved hjælp af det eksponentielle glidende gennemsnit.
 
 \item[Krydsvalidering]
-Når man udvikler sin estimeringsmetode skal man have en teknik til at estimere om ens model er tilpas præcist.
+Når man udvikler sin estimeringsmetode skal man have en teknik til at estimere om ens model er tilpas præcis.
 Problemet er at hvis man lærer på sit testdata og derefter tester på dette, risikerer man hvad der kaldes for overfitting.
-Overfitting er hvor man tilpasser sin model så det virker godt på ens testdata, men ikke særligt godt på fremtidige dataset.
+Overfitting er hvor man tilpasser sin model så det virker godt på ens testdata, men ikke særligt godt på fremtidige datasæt.
 Til at forhindre dette kan man foretage krydsvalidering
-Ved krydsvalidering splitter man sit sin testdata op i en række delmængder, man foretager så analysen på en delmængde og validerer sin analyse på de resterende delmængder af dataset.
-For så at undgå overfitting afprøver man med forskellige partitioner af datasettet, og hvor ens præcision er estimeret som gennemsnittet af resultaterne af de dataset man tester på.
+Ved krydsvalidering splitter man sit testdata op i en række delmængder.
+Man foretager så analysen på en delmængde og validerer sin analyse på de resterende delmængder af datasæt.
+For så at undgå overfitting afprøver man med forskellige partitioner af datasættet, og hvor ens præcision er estimeret som gennemsnittet af resultaterne af de datasæt man tester på.
 
 % Stilstand
 % Chen et al og andre

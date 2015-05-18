@@ -3,17 +3,17 @@ Denne implementering er beskrevet herunder.
 Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdigt system er, at der ikke er nok tid til at gøre det helt færdigt. 
 Ydermere, vil et helt færdigt system påkræve testning hos målgruppen, og dette er der ikke er tid nok til at udføre. 
 
-Denne sektion om proof of concept beskriver valg af nødvendig sensor data, hvordan søvnestimering udføres på denne data, og hvordan søvnestimeringerne for de forskellige sensorer kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
+Denne sektion om proof of concept beskriver valg af nødvendig sensor data, hvordan søvnestimering udføres på data, og hvordan søvnestimeringerne for de forskellige sensorer kombineres og hvordan denne estimeringen skal aggregeres til individuelle perioder af søvn.
 
 % Manglende resourcer
 % Time constraints.
 % Ingen test mulig(Kræver tilladelser, og system ikke færdig)
 
-Som et proof of concept er det blevet valgt at implementere en enkelt metode til at afgøre hvorvidt man sover eller ej.
+Som et proof of concept er der blevet valgt at implementere en enkelt metode til at afgøre hvorvidt man sover eller ej.
 Metoden er baseret på redskaberne beskrevet i \cref{sec:redskaber}, hvor der som start til dataindsamling ses på amplitude og acceleration.
 Grunden til at vi starter med disse to datakilder er fordi \citet{6563918} erfarede, at det er de langt væsentligste datakilder, hvilket også er beskrevet i \cref{sec:BES}.
 
-Disse to datakilder kombineres til en enkel model, der skal kunne afgøre hvorvidt man sover eller ej.
+Disse to datakilder kombineres til en enkelt model, der skal kunne afgøre hvorvidt man sover eller ej.
 Med mere tid vil de andre nævnte datakilder også blive fokuseret på.
 
 For at have en regelmæssig måde at indsamle data, der ligger til grund for implementeringen af det efterfølgende søvnestimeringsmetode, er det nødvendigt at have forsøgsopstillingen beskrevet, hvorfor denne følger herefter.
@@ -72,7 +72,7 @@ Dette passer fint med de loggede data der er plottet i \cref{fig:amplplot}.
 Dog har denne antagelse også begrænsninger.
 Eksempelvis kan det være at man er en stille person, snorker meget eller også kan personen bo i et meget larmende område.
 Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kan finde et mønster når man snorker til at styrke modellen, hvilket er diskuteret i \cref{section:snorken}.
-Derudover, er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder, og er noget der bør trænes til det enkelte individ, for at opnå en model der passer til individs personlighed.
+Derudover, er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder, og er noget der bør trænes til det enkelte individ, for at opnå en model der passer til individets personlighed.
 Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of concept kan man som en start bruge fastsatte statiske vægte, hvilket er diskuteret i \cref{subsec:sensorvaegtsoevn}.
 
 \subsection{Søvnestimerings model}
@@ -88,7 +88,7 @@ Nogle af udfordringerne kan sikkert takles med inspiration fra de omtalte metode
 
 Vores model går på en sliding window tilgang, hvor den centrale del er at registrere stilstand med acceleration og amplitude.
 Konceptet om stilstand er taget fra \citet{6563918} angående Best Effort Sleep, og er hvilken model vores metode tager primært udgangspunkt i.
-Toss 'N' Turns tilgang hvor man ser på 10-minutters vinduer med data til at afgøre søvn eller ikke søvn er et alternativ.
+Toss 'N' Turns tilgang, hvor man ser på 10-minutters vinduer med data til at afgøre søvn eller ikke søvn er et alternativ.
 Dette alternativ blev dog valgt fra i første omgang, som nævnt i \cref{subsec:summametoder}, da stilstandsbestemmelsen vurderedes mindre komplekst og egnede sig derfor bedre til en proof of concept løsning.
 Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.
 
@@ -120,11 +120,11 @@ Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidlig
 At se på 5 tidligere punkter er ikke en fastlagt værdi, men afhænger af samplingsfrekvensen, vi har for amplitude en samplingsfrekvens på en måling per sekund så tidshorisonten er på fem sekunder.
 At kigge blot fem sekunder tilbage kan være op til debat, og ved videre arbejde er det en parameter man bør justere for at opnå en højere præcision.
 Dog holder vi fast i at det er fornuftigt at kigge en tidsperiode tilbage i stedet for en fast mængde punkter.
-Dette sikrer at algoritmen også er fremtidssikret med hensyn til dette, for ellers risikerer vi at nyt hardware har en højere samplingsfrekvens hvor at gå 5 punkter ikke vil fungere, men hvor en tidshorisont vil.
+Dette sikrer at algoritmen også er fremtidssikret med hensyn til dette, for ellers risikerer vi at nyt hardware har en højere samplingsfrekvens hvor at gå 5 punkter ikke ville fungere, men hvor en tidshorisont ville.
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
 
-\subsubsection{Søvn Estimering}
+\subsubsection{Søvnestimering}
 Resultatet af stilstandsbestemmelsen er en række punkter der hver især er klassificeret som stilstand eller ikke stilstand.
 Ud fra disse punkter kan der findes perioder med stilstand, og ud fra længden af hver af disse perioder tildeles punkterne en stigende sandsynlighed for søvn alt efter hvor langt fra starten af stilstandsperioden et af de givne punkter i perioden er.
 
@@ -132,6 +132,7 @@ Spørgsmålet går så på hvorledes en funktion skal defineres for en sådan st
 Det skal være en funktion der repræsenterer hvor sikker man er på søvn ud fra længden af stilstand eksempelvis målt i timer.
 En sådan funktion bør være lært ud fra ens empiri, så man kan løse opgaven som et regressionsproblem.
 Dette er et område der kan arbejdes videre med for at få en mere akkurat søvnestimeringsmetode og opfordres til at gøres med mere tid.
+\als{Evt nævn $r^2$}
 
 Dog for at få et udgangspunkt til diskussion af sådanne funktioner er der tre funktioner plottet i \cref{fig:trefunc}.
 \begin{figure}[h]
@@ -143,10 +144,11 @@ Dog for at få et udgangspunkt til diskussion af sådanne funktioner er der tre 
 \cref{fig:trefunc} viser tre forslag til en sådan funktion.
 Disse er den røde lineære funktion, den blå konkave funktion og den grønne logistiske funktion \citep{wiki:LogisticFunction}.
 Alle tre funktioner har til fælles at de er voksende, hvilket passer med vores antagelse af jo længere der har været stilstand jo større sandsynlighed er der for at man sover.
-Den lineære funktion bygger på antagelsen, at sandsynligheden for at man sover er kongruent med stilstandslængden, hvilket vi ikke ønsker da vi så tillægger for stor vægt til korte stilstandsperioder.
-Af samme grund forkastes den konkave funktion også.
+Den lineære funktion bygger på antagelsen, at sandsynligheden for at man sover er kongruent med stilstandslængden, hvilket vi ikke ønsker da vi så tillægger for stor vægt til korte stilstandsperioder. Imidlertid kan det godt være at den lineære og konkave funktion ville være bedre til at registrere korte søvnperioder midt om dagen.
+Dette kræver videre arbejde men som en start benyttes den logistiske funktion, men kan nemt udskiftes.
 
-Til sidst har vi den logistiske funktion, der fint beskriver hvordan at ved længere stilstandsperioder er der en forøget hældning i funktionen, indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver en meget forøget sandsynlighed for søvn. 
+
+Dn logistiske funktion beskriver hvordan at ved længere stilstandsperioder er der en forøget hældning i funktionen, indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver en meget forøget sandsynlighed for søvn. 
 Dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
 I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, da det kan være man har glemt sin telefon hjemme mens man er på tur over en weekend, men hvis forudsætningen for at systemet fungerer er at man har sin telefon i nærheden, regnes den logistiske funktion som et godt redskab til et søvnestimat.
 
@@ -164,7 +166,7 @@ hvor,
 
 Der kan argumenteres for en lavere værdi for $L$ så man maks kan blive 90\% sikker, men er noget der bør overvejes med mere træningsdata. 
 Det kan også være en god idé at ændre på stejlheden for kurven, altså k, baseret på hvilken kilde af data man bruger som f.eks. accelerometer eller lyd.
-Desuden skal $t_{midtpunkt}$ værdi på 4 timer betragtes som et først bud der passede fint med det observerede data, men kan justeres.
+Desuden skal $t_{midtpunkt}$ værdi på 4 timer betragtes som et første bud der passede fint med det observerede data, men kan justeres.
 
 \subsection{Kombinering af modeller}\label{subsec:kombimodeller}
 Det er tiltænkt at hver sensor kan have en tilknyttet søvnestimeringsmodel, hvilket i vores tilfælde er en søvnestimeringsmodel for accelerometret og en for amplituden.
@@ -188,6 +190,7 @@ Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del,
 \hline 02:30:04 & 	\nv     & 0.31 	& ...\\
 \hline 
 \end{tabular} 
+\als{Giv en række hvor begge har estimat}
 \caption{Tabel der illustrerer hvordan kombineringen fungerer. $\text{Vægt}_A$ og $\text{Vægt}_B$ er de fastsatte vægte for de to modeller.}
 \label{tab:combiModelsExample}
 \end{table}
@@ -202,7 +205,7 @@ Dette forsætter indtil der ikke er mere data tilbage i en af de to gennemløber
 Som demonstreret giver søvnestimeringsmetoden, der er vist som proof of concept, en estimering til en lang række tidspunkter.
 Men for at give et ekstra redskab til at danne et overblik over disse estimeringer, kan der med fordel som proof of concept laves en aggregering af søvnestimeringsdata.
 
-For at få et bedre indblik i formen for data der skal aggregeres gives et eksempel i \cref{tab:noaggsoevndata}.
+For at få et bedre indblik i formen af data der skal aggregeres gives et eksempel i \cref{tab:noaggsoevndata}.
 \begin{table}[h]
 	\centering
 \begin{tabular}{|c|c|c|}
@@ -219,7 +222,7 @@ For at få et bedre indblik i formen for data der skal aggregeres gives et eksem
 \end{table}
 Ved at se på data som i \cref{tab:noaggsoevndata} fremstår det hvordan at fra {\_}id 203754 til {\_}id 218778 er sandsynligheden for søvn, der ses i \textit{prob} kolonnen, monotont voksende.
 Idéen derudfra er så at registrere sådanne monotoniforhold og aggregere data med hensyn til det.
-Det vil sige at registrere intervaller hvor \textit{prob} er tilpas stor over længere tidsperiode, samt er monotont voksende.
+Det vil sige at registrere intervaller hvor \textit{prob} er tilpas stor over en længere tidsperiode, samt er monotont voksende.
 
 Det blev besluttet at forkaste intervaller kortere end 10 minutter og hvor sandsynligheden for søvn i slutningen af intervallet er under 10\%.
 Dette kan være en fornuftig løsning under antagelse af at man er rolig når man sover, og har da også vist gode resultater med nogle tests af personer med en meget rolig søvn. 
@@ -238,7 +241,7 @@ Eksempelvis med det viste data i \cref{tab:noaggsoevndata} vil dette blive aggre
 Vi har dog også fundet tilfælde hvor en aggregering ikke er akkurat, eksempelvis ved snorken fejler denne aggregering da den er for naiv, yderligere diskussion om hvad man kan gøre i stedet for kan læses i \cref{section:snorken}.
 Et alternativ kunne være at tage arealet af søvnestimeringsdata, og bruge arealet som estimat til hvor meget man har sovet per dag.
 Dette har ulempen at det ikke vil oplyse om selve søvnperioderne men blot mængde af søvn per dag, derudover vil den stadig blive påvirket af snorken og andre støjfaktorer.
-Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kan det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggregere søvndata på mere akkurat vis, forslag til dette kan læses i \cref{section:snorken}.
+Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kan det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggregere søvndata på mere akkurat vis. Forslag til dette kan læses i \cref{section:snorken}.
 
 \subsection{Visualisering}\label{sec:pocVis}
 For at kunne vise brugeren af systemet hvordan deres søvn har været, skal der tilføjes nogle visningsmoduler.
@@ -260,6 +263,7 @@ Grafer er dog ikke altid lige nemme at forstå, derfor er der blevet lavet en ta
 Denne tabel minder om den der blev vist i \cref{tab:aggdat}, dog uden $\_id$ kolonnen.
 Tabellen giver et nemt overblik for brugeren om hvornår man har sovet, samt hvor sikker systemet er på at man har sovet.
 Dog er det ikke så nemt for brugeren at se ens adfærdsændring i en sådan tabel, da det kræver at man kigger på meget data på en gang.
+Som alternativ kan der ses på et 'early warning modul', og er diskuteret i \cref{chap:bigdisc}.
 % Giv eksempel på ikke aggregeret data.
 % Forklar forslag/løsning til aggregering af data.
 % Vis resultat derfor
