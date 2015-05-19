@@ -198,7 +198,7 @@ Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del,
 \centering
 \begin{tabular}{|c|c|c|p{2.5cm}|}
 \hline Tid & Sandsynlighed for model A & Sandsynlighed for model B & Resultat\\ 
-\hline 02:30:00 & 	0.59    & \nv  	& $\text{Vægt}_A * 0.59 + \text{Vægt}_B * 0.29$\\ 
+\thickhline 02:30:00 & 	0.59    & \nv  	& $\text{Vægt}_A * 0.59 + \text{Vægt}_B * 0.29$\\ 
 \hline 02:30:01 & 	\nv     & 0.29 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.29$\\ 
 \hline 02:30:02 & 	0.61    & \nv 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.31$\\ 
 \hline 02:30:03 & 	0.62    & \nv 	& $\text{Vægt}_A * 0.62 + \text{Vægt}_B * 0.31$\\ 
@@ -225,7 +225,7 @@ For at få et bedre indblik i formen af data der skal aggregeres gives et eksemp
 	\centering
 \begin{tabular}{|c|c|c|}
 	\hline {\_}id & prob & time \\ 
-	\hline 203754 & 0.050 & 2015-04-26 01:41:42.446 \\ 
+	\thickhline 203754 & 0.050 & 2015-04-26 01:41:42.446 \\ 
 	\hline 203755 & 0.050 & 2015-04-25 01:41:43.375 \\ 
 	\hline ... & ... & ... \\ 
 	\hline 218777 & 0.919 & 2015-04-26 05:52:36.204 \\ 
@@ -247,7 +247,7 @@ Eksempelvis med det viste data i \cref{tab:noaggsoevndata} vil dette blive aggre
 	\centering
 \begin{tabular}{|c|c|c|c|}
 	\hline {\_}id & startdate & enddate & prob \\ 
-	\hline 1 & 2015-04-26 01:41:42.446 &  2015-04-26 05:52:37.203 & 0.919 \\ 
+	\thickhline 1 & 2015-04-26 01:41:42.446 &  2015-04-26 05:52:37.203 & 0.919 \\ 
 	\hline 
 \end{tabular} 
 \caption{Aggregering af data fra \cref{tab:noaggsoevndata}.}\label{tab:aggdat}
