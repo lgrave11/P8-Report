@@ -1,4 +1,4 @@
-For at vise at det er muligt at lave noget med de metoder vi har lært, implementeres et proof of concept til søvndelen af projektet. 
+Baseret på den viden der er blevet indsamlet, laves der er et proof of concept til søvndelen af projektet.
 Denne implementering er beskrevet herunder.
 Grunden til at der kun laves et proof of concept og ikke et fuldstændigt færdigt system er, at der ikke er nok tid til at gøre det helt færdigt. 
 Ydermere, vil et helt færdigt system påkræve testning hos målgruppen, og dette er der ikke er tid nok til at udføre. 
@@ -31,13 +31,13 @@ For at forsøget fortages på samme måde hver gang, så det indsamlede data er 
 \end{figure}
 
 Forsøgsopstillingen kan ses i \cref{fig:forsoegopstillings} der illustrerer hvordan telefonen ligger på natbordet og indsamler data.
-Idéen er at det eneste krav til indsamlingen er, at den skal ligge på et bord i soveværelset når der soves, ellers står det en frit om man går med telefonen i lommen, ligger den på skrivebordet eller andet. 
+Idéen er at det eneste krav til indsamlingen er, at den skal ligge på et bord i soveværelset når der soves, ellers står det en frit om man går med telefonen i lommen, lægger den på skrivebordet eller andet. 
 Dette valg er foretaget i henhold til vores kriterie om at udvikle et system der kan måle søvn uden at forstyrre.
 
 Indsamlingen af data foregik ved at vi installerede de fornødne moduler på egen telefon, Tog telefonen med hjem, så data fra en eller flere dage kunne indsamles.
 Vi loggede fra vi gik i seng til vi stod op, hvilket skulle bruges til at afgøre nøjagtigheden af vores estimat.
 
-Til at validere vores model har vi foreslået krydsvalidering beskrevet i \cref{sec:redskaber} og burde da også gøres med mere tid, men da dette er et proof of concept er den nuværende opstilling tilfredsstillende.
+Til at validere vores model har vi foreslået krydsvalidering beskrevet i \cref{sec:redskaber}, hvilket også bør gøres med mere tid, men da dette er et proof of concept er den nuværende opstilling tilfredsstillende.
 Ved videre arbejde bør en mere systematisk tilgang med den nævnte krydsvalidering benyttes, hvilket er beskrevet videre i \cref{sec:verisoevn}.
 
 \subsection{Sensor Data}
@@ -56,7 +56,8 @@ Dette skyldes at et accelerometer er god til at registrere bevægelse, da accele
 Det viser sig at plottet fint indikerer når man er vågen, hvilket er forårsaget af at testpersonen har gået med sin telefon i lommen.
 Dog kan man ved stilstand ikke vide sig sikker på om det er fordi man sover, eller blot fordi man har lagt sin telefon fra sig.
 
-Ved stilstand i en længere periode, kan det forsøges at estimere sandsynligheden for at denne stilstand er grundet at man sover, men derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
+Ved stilstand i en længere periode, kan man estimere sandsynligheden for at denne stilstand er at brugeren sover. 
+Derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
 Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle maks amplitude.
 At vi kun måler maks amplitude sikrer at personfølsomme oplysninger ikke indsamles, da man ikke kan genskabe en samtale, men blot har maks amplitude lagret for hvert sekund.
 
@@ -78,13 +79,11 @@ Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of 
 \subsection{Søvnestimerings model}
 Ud fra observeret data etablerer vi nogle antagelser som vi går ud fra også holder til fremtidigt data.
 Disse er at når man observerer en handling om det er acceleration eller amplitude, kan vi med stor sikkerhed sige at man ikke sover.
-Modsat ved stilstand er sandsynligheden for at man sover afhængigt af længden af stilstand.
+Modsat hænger sandsynligheden for at man sover sammen med længden af stilstand.
 
-Dette får os til at lave en model der bygger på disse to antagelser, og er en model der er lavet til at skabe jordforbindelse.
-Dette betyder at vi udvikler en metode, for at få bekræftigelse på, at det kan lade sig gøre at få implementeret til en telefon med den valgte platform.
+Dette får os til at lave en model der bygger på disse to antagelser, hvilket er gjort for at skabe jordforbindelse.
+Dette betyder at vi udvikler en metode, for at bekræfte at det kan blive implementeret til en telefon med den valgte platform.
 Som nævnt har vi ikke kunnet finde passende metoder, der er offentligt tilgængeligt, hvorfor vi bliver nødt til at udvikle vores egen metode.
-Vi tillader os at tage det forbehold at den udviklede model sikkert ikke er en metode der bør anvendes i praksis, men kan alligevel bruges til at udforske nogle af udfordringerne ved søvnestimering.
-Nogle af udfordringerne kan sikkert takles med inspiration fra de omtalte metoder som vi vil have i mente, men det er ikke utænkeligt at andre udfordringer dukker op.
 
 Vores model går på en sliding window tilgang, hvor den centrale del er at registrere stilstand med acceleration og amplitude.
 Konceptet om stilstand er taget fra \citet{6563918} angående Best Effort Sleep, og er hvilken model vores metode tager primært udgangspunkt i.
@@ -95,12 +94,20 @@ Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.
 \subsubsection{Stilstands Bestemmelse}
 Som udgangspunkt for vores udkast til en søvnestimeringsmodel afgøres der hvornår der er stilstand.
 Dette gøres forskelligt for acceleration og amplitude data, men tager udgangspunkt i det loggede data.
-For at sikre enkelte spikes ikke påvirker resultatet anvendes et vægtet gennemsnit til at reducere støj, som er et af redskaberne nævnt i \cref{sec:redskaber}.
+For at sikre at støj ikke påvirker resultatet kan der bruges forskellige strategier i brug. 
+For eksempel hvis man ændrer drastisk på hvor ofte mikrofonen optager amplitude til f.eks. at optage hvert tiende sekund, vil dette resultere i færre datapunkter og hvis dette gøres indfanges der mindre støj.
+Dog kan dette også håndteres på andre måder, for eksempel ved et glidende gennemsnit, nævnt i \cref{sec:redskaber}, udført på indsamlede data, men hvis man kan undgå at bearbejde data ved at indsamle mindre vil dette være en fordel.
+
+Vi valgte at gøre det ved hjælp af et glidende gennemsnit fordi hvis man ændrer på hvor ofte sensorerne indsamler data, vil det muligvis have en påvirkning på andre moduler.
+Derudover, hvis man skal indsamle færre datapunkter, er det vigtigt at vide hvor ofte man skal indsamle disse datapunkter for at undgå støj.
+Dette vil dog kræve at man udfører eksperimenter for at finde ud af hvor ofte man skal indsamle datapunkter.
+Dermed virkede det glidende gennemsnit til at være en simplere løsning til vores problem.
 
 Hvis vi ser på \cref{fig:accplot}, der er et plot for accelerationsdata, kan vi se stilstand for punkterne mellem 22:00 og 07:00.
 Øvelsen består i at have en metode der kan afgøre at disse punkter er i stilstand.
 Dette gøres ved at for et givent punkt at se om de 5 tidligere målinger ikke afviger fra en given fastsat grænse fra punktet i betragtning i x, y og z aksen.
 Pseudokode til at tjekke dette kan ses i \cref{lst:pseudoStationary}.
+
 \begin{lstlisting}[caption={Pseudo kode for at tjekke om et punkt er i stilstand.}, label={lst:pseudoStationary}]
 isStationary(accToConsider : AccelerationReading, previousPoints : Collection of AccelerationReadings) : boolean
    foreach acc in previousPoints
@@ -113,20 +120,29 @@ Hvis der ikke er en sådan afvigelse bestemmes det at punktet i betragtning er i
 Dette gøres for alle punkter og der afgøres for hvert af disse om de er i stilstand eller ej.
 Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeaccelerationen, da denne vil måles konstant hvis telefonen ligger stille.
 
-Ved at betragte amplituden \cref{fig:amplplot} kan her ses stilstand fra lidt over 22:00 til omkring 07:00 med et enkelt spike ved 05:00.
-Som nævnt før bliver dette spike taklet af det vægtede gennemsnit.
+Ved at betragte amplituden \cref{fig:amplplot} kan her ses stilstand fra lidt over 22:00 til omkring 07:00 med lidt støj omkring klokken 05:00.
+Som nævnt før bliver dette støj taklet af det glidende gennemsnit.
 Derudover kan stilstandsbestemmelsen gøres på en måde der ligner den for accelerationen.
 Der anvendes altså et sliding window, men i stedet for at se på om de 5 tidligere punkter afviger relativt i forhold til det givne punkt i betragtning ses der på om de alle ligger under en fastsat tærskel.
-At se på 5 tidligere punkter er ikke en fastlagt værdi, men afhænger af samplingsfrekvensen, vi har for amplitude en samplingsfrekvens på en måling per sekund så tidshorisonten er på fem sekunder.
+At se på 5 tidligere punkter er ikke en fastlagt værdi, men afhænger af indsamlingsfrekvensen, vi har for amplitude en indsamlingsfrekvens på en måling per sekund så tidshorisonten er på fem sekunder.
 At kigge blot fem sekunder tilbage kan være op til debat, og ved videre arbejde er det en parameter man bør justere for at opnå en højere præcision.
 Dog holder vi fast i at det er fornuftigt at kigge en tidsperiode tilbage i stedet for en fast mængde punkter.
-Dette sikrer at algoritmen også er fremtidssikret med hensyn til dette, for ellers risikerer vi at nyt hardware har en højere samplingsfrekvens hvor at gå 5 punkter ikke ville fungere, men hvor en tidshorisont ville.
+Dette sikrer at algoritmen også er fremtidssikret med hensyn til dette, for ellers risikerer vi at nyt hardware har en højere indsamlingsfrekvens hvor at gå 5 punkter ikke ville fungere, men hvor en tidshorisont ville.
+For at se indsamlingsfrekvensen på hardware se \cref{sec:metrikker}.
 
 Dermed har vi nogle simple måder at afgøre stilstand på og kan bruges til vores søvnestimering.
 
 \subsubsection{Søvnestimering}
 Resultatet af stilstandsbestemmelsen er en række punkter der hver især er klassificeret som stilstand eller ikke stilstand.
 Ud fra disse punkter kan der findes perioder med stilstand, og ud fra længden af hver af disse perioder tildeles punkterne en stigende sandsynlighed for søvn alt efter hvor langt fra starten af stilstandsperioden et af de givne punkter i perioden er.
+
+Spørgsmålet går så på at finde en strategi der kan estimere søvnperioder. 
+En mulig strategi ville være at finde starten og slutning af søvn og på den måde give en sandsynlighed for hvorvidt man sover.
+En anden mulig strategi vil være at finde mønstre der indikere at man sover, altså at identificere en søvnperiode, og derudfra finde en start og slutning af ens søvn.
+
+Vi har valgt at følge den første strategi fordi vores data tydeligt indikere hvornår man starter og stopper med at sove. 
+Derudover, hvis man skal identificere en søvnperiode kræver det at man har en generel måde at genkende søvnperioder for mange forskellige personer.
+Dette kan være problematisk, og derfor foretrækker vi den første strategi.
 
 Spørgsmålet går så på hvorledes en funktion skal defineres for en sådan stigende sandsynlighed.
 Det skal være en funktion der repræsenterer hvor sikker man er på søvn ud fra længden af stilstand eksempelvis målt i timer.
@@ -171,7 +187,7 @@ Desuden skal $t_{midtpunkt}$ værdi på 4 timer betragtes som et første bud der
 Det er tiltænkt at hver sensor kan have en tilknyttet søvnestimeringsmodel, hvilket i vores tilfælde er en søvnestimeringsmodel for accelerometret og en for amplituden.
 Imidlertid kan det være en fordel at have en samlet model der kombinerer resultaterne fundet for de enkelte modeller.
 En metode til dette er det vægtede gennemsnit og er et redskab vi har beskrevet i \cref{sec:redskaber}
-Vores implementering af det vægtede gennemsnit afviger fra et normalt vægtet gennemsnit da vi har data der ikke er optaget på samme tid og heller ikke data i samme mængder for de enkelte søvnestimeringsmoduler.
+Vores implementering af det vægtede gennemsnit afviger fra et normalt vægtet gennemsnit, idet at for de enkelte søvnestimeringsmoduler er der ikke blevet registreret data på samme tid eller i samme mængde.
 På grund af dette tager modulet højde for hvis der er mangel på en estimering til en given tid for et af søvnestimeringsmodulerne.
 Måden dette gøres er ved at tages den forrige værdi til estimeringen.
 Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del, på samme måde gøres med estimeringerne for hvert modul, for at illustrere dette bruges der et eksempel.

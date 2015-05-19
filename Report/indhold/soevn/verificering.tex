@@ -2,7 +2,7 @@
 Med søvnestimeringsmetoden udviklet som proof of concept, er det nødvendigt at få verificeret at den har en tilfredsstillende præcision, hvilket er et af de primære kriterier nævnt i \cref{sec:metodevalg}.
 For at tjekke dette kan vi inddrage en mere sikker søvnestimeringsmetode såsom polysomnografi, hvilket ville være et oplagt valg, da det er state of the art indenfor søvnestimering og er beskrevet i \cref{sec:polysomnografi}.
 
-Vi er dog ikke begrænset til polysomnografi, det vigtigste er at det er en metode, der er så præcis som mulig, da den skal bruges som den absolutte sandhed.
+Vi er dog ikke begrænset til polysomnografi, det vigtigste er at det er en metode, der er så præcis som mulig, da den skal bruges til at verificere resultatet.
 Dette skal ses i en testsammenhæng, så kriterier om at den skal være non-intrusive gælder ikke her.
 
 Fremgangsmåden til at teste om den udviklede estimeringsmetode er tilstrækkelig går så på at have en af række personer, der sove hvor man både estimerer med brug af vores model og med brug af den valgte absolutte sandheds metode.
@@ -17,8 +17,9 @@ Kandidater til disse ændringer kan være:
 \end{itemize} 
 
 Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen, og så er man forhåbentlig i stand til at komme med en konfiguration af disse, der har en tilpas høj nøjagtighed.
-Vi hæfter os ved, at når man justerer på diverse parametre for modellen, bør præcisionsestimatet ved disse ændringer foretages ved hjælp af krydsvalidering for at undgå overfitting, som beskrevet i \cref{sec:redskaber}.
+Vi hæfter os ved, at når man justerer på diverse parametre for modellen, bør præcisionsestimatet vurderes ved hjælp af krydsvalidering.
+Som nævnt i \cref{sec:redskaber}, er krydsvalidering en metode der bruges til at vurdere en model og hvordan den model vil fungere når den bruges på andre datasæt, idet at en model kan blive for tilpasset til ét præcist datasæt hvori problemet ligger i at modellen ikke vil fungere ved andre datasæt.
 
 I tilfælde af en ikke tilfredsstillende præcision, selvom man har justeret på disse parametre, bør man overveje at erstatte metoden med en anden.
 Sådanne metoder er undersøgt i \cref{sec:metodevalg} og man kan med fordel starte med de deri nævnte.
-Vi har været forudsigende at fremtidssikre vores produkt, sådan at dette ikke skulle volde problemer grundet den modulære platform.
+Vi har tilstræbt at fremtidssikre vores produkt, sådan at dette ikke skulle volde problemer grundet den modulære platform.

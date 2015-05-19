@@ -1,5 +1,6 @@
 \subsection{Snorken}\label{section:snorken}
-Snorken er en åbenlys faktor, der skal tages højde for når man skal opdage søvn ved hjælp af sensorer, idet at en af de primære sensorer, som bruges til at bestemme om en person sover er lyd.
+\ivan{Overvej placering af dette afnist, eller at forberede denne diskussion f.eks. i starten af kapitlet}
+Snorken er en åbenlys faktor, der skal tages højde for når man skal opdage søvn ved hjælp af sensorer, idet en af de primære sensorer, som bruges til at bestemme om en person sover er lyd.
 Hvis lyden gentagne gange optager snorken, vil den nuværende sandsynlighedsudregningen for denne sensor falde hver eneste gang snorken bliver optaget, og dette er helt klart et problem, som skal arbejdes videre på.
 
 Et eksempel kan ses i \cref{fig:snorke-vs-ikkesnorken} hvor vi sammenligner en person som vi ved snorker mod en som ikke snorker.
@@ -32,7 +33,7 @@ Ud fra artiklerne \citet{Dafna2013}, \citet{Calabrese20111101} og \citet{7051338
 De endte med et meget præcist system, som kunne adskille snorken og andre akustiske hændelser med ~98\% nøjagtighed.
 Denne metode kan tilpasses ind i vores system på den måde, at hvis snorken kan opdages har den ikke en negativ indflydelse, men derimod have en positiv indflydelse på sandsynlighedsberegningen af søvn. 
 De bruger lyd data og ikke bare amplituden, så det vil være nødvendigt at undersøge om systemet også kan fungere ved brug af amplitude.
-Alternativt kunne man beholde lyd data, men slette disse efter foretaget analyse.
+Grunden til at vi valgte at bruge amplituden, er at alt data gemmes og intet slettes, hvis løsningen ændres således at data analyseres løbende og slettes efterfølgende kan lyd data godt bruges, hvilket gør at vi undgår problemet med privatlivets fred.
 
 \citet{Calabrese20111101} foreslår et system, der skal bruges til diagnosticering af søvnapnø ved hjælp af optaget lyd.
 Dog blev der kun implementeret en prototype af systemet og den er derfor ikke blevet evalueret ordenligt endnu. 
