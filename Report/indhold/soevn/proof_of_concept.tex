@@ -26,15 +26,15 @@ For at forsøget fortages på samme måde hver gang, så det indsamlede data er 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5,trim = 0cm 0cm 5cm 10cm, clip]{forsoegsopstilling}
-	\caption{Forsøgsopstilling. Sovende person med telefonen på natbordet.}
+	\caption{Forsøgsopstilling. Sovende person med smartphonen på natbordet.}
 	\label{fig:forsoegopstillings}
 \end{figure}
 
-Forsøgsopstillingen kan ses i \cref{fig:forsoegopstillings} der illustrerer hvordan telefonen ligger på natbordet og indsamler data.
-Idéen er at det eneste krav til indsamlingen er, at den skal ligge på et bord i soveværelset når der soves, ellers står det en frit om man går med telefonen i lommen, lægger den på skrivebordet eller andet. 
+Forsøgsopstillingen kan ses i \cref{fig:forsoegopstillings} der illustrerer hvordan smartphonen ligger på natbordet og indsamler data.
+Idéen er at det eneste krav til indsamlingen er, at den skal ligge på et bord i soveværelset når der soves, ellers står det en frit om man går med smartphonen i lommen, lægger den på skrivebordet eller andet. 
 Dette valg er foretaget i henhold til vores kriterie om at udvikle et system der kan måle søvn uden at forstyrre.
 
-Indsamlingen af data foregik ved at vi installerede de fornødne moduler på egen telefon, Tog telefonen med hjem, så data fra en eller flere dage kunne indsamles.
+Indsamlingen af data foregik ved at vi installerede de fornødne moduler på egen smartphone, Tog smartphonen med hjem, så data fra en eller flere dage kunne indsamles.
 Vi loggede fra vi gik i seng til vi stod op, hvilket skulle bruges til at afgøre nøjagtigheden af vores estimat.
 
 Til at validere vores model har vi foreslået krydsvalidering beskrevet i \cref{sec:redskaber}, hvilket også bør gøres med mere tid, men da dette er et proof of concept er den nuværende opstilling tilfredsstillende.
@@ -51,13 +51,13 @@ Dette kan ses i \cref{fig:accplot} og \cref{fig:amplplot}.
 	\caption{Accelerationsplot, hvor der blev sovet fra ca. 22:00 til 07:00 næste dag.  Et punkt svarer til en måleværdi.}\label{fig:accplot}
 \end{figure}
 
-Ses der på accelerationsdata i \cref{fig:accplot} indikerer det tydeligt når telefonen har været i bevægelse og når telefonen ikke har været i bevægelse.
+Ses der på accelerationsdata i \cref{fig:accplot} indikerer det tydeligt når smartphonen har været i bevægelse og når smartphonen ikke har været i bevægelse.
 Dette skyldes at et accelerometer er god til at registrere bevægelse, da acceleration er ændring i hastighed.
-Det viser sig at plottet fint indikerer når man er vågen, hvilket er forårsaget af at testpersonen har gået med sin telefon i lommen.
-Dog kan man ved stilstand ikke vide sig sikker på om det er fordi man sover, eller blot fordi man har lagt sin telefon fra sig.
+Det viser sig at plottet fint indikerer når man er vågen, hvilket er forårsaget af at testpersonen har gået med sin smartphone i lommen.
+Dog kan man ved stilstand ikke vide sig sikker på om det er fordi man sover, eller blot fordi man har lagt sin smartphone fra sig.
 
 Ved stilstand i en længere periode, kan man estimere sandsynligheden for at denne stilstand er at brugeren sover. 
-Derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have telefonen i lommen.
+Derudover kan andre sensor inputs hjælpe til at klargøre denne tvivl, der ikke er begrænset til at man skal have smartphonen i lommen.
 Et eksempel på en sådan kilde er mikrofonen, som vi kan bruge til at måle maks amplitude.
 At vi kun måler maks amplitude sikrer at personfølsomme oplysninger ikke indsamles, da man ikke kan genskabe en samtale, men blot har maks amplitude lagret for hvert sekund.
 
@@ -82,7 +82,7 @@ Disse er at når man observerer en handling om det er acceleration eller amplitu
 Modsat hænger sandsynligheden for at man sover sammen med længden af stilstand.
 
 Dette får os til at lave en model der bygger på disse to antagelser, hvilket er gjort for at skabe jordforbindelse.
-Dette betyder at vi udvikler en metode, for at bekræfte at det kan blive implementeret til en telefon med den valgte platform.
+Dette betyder at vi udvikler en metode, for at bekræfte at det kan blive implementeret til en smartphonen med den valgte platform.
 Som nævnt har vi ikke kunnet finde passende metoder, der er offentligt tilgængeligt, hvorfor vi bliver nødt til at udvikle vores egen metode.
 
 Vores model går på en sliding window tilgang, hvor den centrale del er at registrere stilstand med acceleration og amplitude.
@@ -91,7 +91,7 @@ Toss 'N' Turns tilgang, hvor man ser på 10-minutters vinduer med data til at af
 Dette alternativ blev dog valgt fra i første omgang, som nævnt i \cref{subsec:summametoder}, da stilstandsbestemmelsen vurderedes mindre komplekst og egnede sig derfor bedre til en proof of concept løsning.
 Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.
 
-\subsubsection{Stilstands Bestemmelse}
+\subsubsection{Stilstands-bestemmelse}
 Som udgangspunkt for vores udkast til en søvnestimeringsmodel afgøres der hvornår der er stilstand.
 Dette gøres forskelligt for acceleration og amplitude data, men tager udgangspunkt i det loggede data.
 For at sikre at støj ikke påvirker resultatet kan der bruges forskellige strategier i brug. 
@@ -118,7 +118,7 @@ isStationary(accToConsider : AccelerationReading, previousPoints : Collection of
 
 Hvis der ikke er en sådan afvigelse bestemmes det at punktet i betragtning er i stilstand.
 Dette gøres for alle punkter og der afgøres for hvert af disse om de er i stilstand eller ej.
-Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeaccelerationen, da denne vil måles konstant hvis telefonen ligger stille.
+Ved at gøre det på denne måde er man robust overfor påvirkning af tyngdeaccelerationen, da denne vil måles konstant hvis smartphonen ligger stille.
 
 Ved at betragte amplituden \cref{fig:amplplot} kan her ses stilstand fra lidt over 22:00 til omkring 07:00 med lidt støj omkring klokken 05:00.
 Som nævnt før bliver dette støj taklet af det glidende gennemsnit.
@@ -165,7 +165,7 @@ Dette kræver videre arbejde men som en start benyttes den logistiske funktion, 
 
 Dn logistiske funktion beskriver hvordan at ved længere stilstandsperioder er der en forøget hældning i funktionen, indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver en meget forøget sandsynlighed for søvn. 
 Dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
-I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, da det kan være man har glemt sin telefon hjemme mens man er på tur over en weekend, men hvis forudsætningen for at systemet fungerer er at man har sin telefon i nærheden, regnes den logistiske funktion som et godt redskab til et søvnestimat.
+I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, da det kan være man har glemt sin smartphone hjemme mens man er på tur over en weekend, men hvis forudsætningen for at systemet fungerer er at man har sin smartphone i nærheden, regnes den logistiske funktion som et godt redskab til et søvnestimat.
 
 Definitionen af den logistiske funktion er defineret som følger:
 \begin{equation}
@@ -263,7 +263,7 @@ For at kunne vise brugeren af systemet hvordan deres søvn har været, skal der 
 Disse visningsmoduler skal kunne give et overblik over hvordan man har sovet den seneste nat, men også hvordan man har sovet det seneste stykke tid.
 
 For at kunne udtrykke dette til brugeren er der først blevet lavet en graf der viser hvor sikker systemet er på at man har sovet over en periode.
-Denne periode er sat til at være alt data der er på telefonen så brugeren har overblik over ændringer i grafen.
+Denne periode er sat til at være alt data der er på smartphonen så brugeren har overblik over ændringer i grafen.
 Disse ændringer kan derved indikere at der er sket en ændring i ens sindstilstand.
 Til at sørge for at grafen kan bruges til både at se hvordan man har sovet over en længere periode samt over en kort periode, har man den mulighed at man kan zoome på grafen, og derved se præcis hvor sikker systemet er på man har sovet på et bestemt tidspunkt.
 Der er også lavet en graf for hvor sikker systemet ved hjælp af kun acceleration er på at man sover, det samme gælder for lyd, se \cref{fig:visningsgrafer}.

@@ -15,8 +15,8 @@ Derudover, kan ens modul så indgå i en større software pakke, hvor andre modu
 
 \item[Dataindsamlingsmoduler]
 Som et led i udviklingen af PsyLog platformen er der blevet udviklet en række dataindsamlingsmoduler \citep{misc:faellesrapp}.
-I \cref{sec:metodevalg} har vi erfaret at fælles for metoderne er at de alle kigger på om telefonen er stationær og om der er stilhed. 
-Til stilhed kan vi benytte det allerede udviklede amplitude-modul, og til at se om en telefon er stationær kan vi benytte det allerede udviklede accelerationsmodul.
+I \cref{sec:metodevalg} har vi erfaret at fælles for metoderne er at de alle kigger på om smartphonen er stationær og om der er stilhed. 
+Til stilhed kan vi benytte det allerede udviklede amplitude-modul, og til at se om en smartphone er stationær kan vi benytte det allerede udviklede accelerationsmodul.
 Vi har altså dataindsamlingsmoduler til disse typer data allerede, og kan med fordel benytte dem i videre implementering.
 Derudover, nævner hver kilde flere moduler, der er specifikke for deres løsning, hvoraf flere er udviklet.
 PsyLog platformen har den fordel, at den er fleksibel og modulær, hvilket gør at hvis man skulle mangle et dataindsamlingsmodul for en given datatype kan et sådant modul sikkert nemt udvikles og benyttes.
@@ -25,7 +25,7 @@ Metrikker for vores datatyper er hvad der er beskrevet i \cref{sec:metrikker}.
 \item[Vægtet gennemsnit]
 Ud fra \citet{6563918} blev der understreget hvorledes et vægtet gennemsnit kan benyttes.
 Idéen er at hver sensor kilde kan benyttes som en svag indikator på søvnlængde.
-Imidlertid bør man ikke stole på udelukkende en kilde, da den søvnlængde man estimerer kan variere meget ved forskellig brug af telefonen.
+Imidlertid bør man ikke stole på udelukkende en kilde, da den søvnlængde man estimerer kan variere meget ved forskellig brug af smartphonen.
 For så at have et mere sikkert estimat for søvnlængde, foretager man et såkaldt vægtet gennemsnit af hvert estimat, hvor kilder, der er mere sikre end andre får tillagt en større vægtning.
 
 \item[Eksponentielt glidende gennemsnit]
