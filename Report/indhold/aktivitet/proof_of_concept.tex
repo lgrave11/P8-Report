@@ -4,7 +4,13 @@ Det er dog vigtigt at selvom vi ikke bruger meget tid på denne del, understrege
 
 Metoden der bruges til at måle fysisk aktivitet blev valgt til at være skridttælleren, da den tilnærmer sig fysisk aktivitet, idet at hvis man bevæger sig meget vil ens skridttæller afspejle dette.
 Da skridttælleren regnes for en lavthængende frugt ses der blot på denne løsning, men med videre arbejde kan andre løsninger udforskes.
-Et eksempel på dette kunne være at dobbelt integrere accelerationsmålinger til at få et andet mål for fysisk aktivitet.\als{Uddyb dette i videre arbejde, og referer dertil.}
+
+Et eksempel på dette kunne være at dobbelt integrere accelerationsmålinger til at få et andet mål for fysisk aktivitet.
+Ved at dobbelt integrere acceleration fås et mål for strækning, og på den måde kan det regnes for fysisk aktivitet.
+Fordelen ved at bruge en sådan løsning fremfor GPS for eksempel, ville være at det højst sandsynligt er billigere i strøm, samt at man ikke behøver gå en tur for at det registreres. Aktiviteter der foretages på samme spot vil dermed også kunne registreres.
+Det er modsat skridttælleren ikke begrænset til en bestemt type bevægelse, og ses derfor som en klar fordel.
+Imidlertid er skridttælleren allerede tilråd i Android, og er derfor brugt som en første tilgang.
+Tilgangen med at dobbelt integrere regnes dog ikke for værende meget sværere at implementere, og bør derfor arbejdes videre på med mere udviklingstid.
 
 Eftersom skridttælleren bruges, er det eneste, der skal gøres for at indsamle data, at lave et sensor modul.
 Sensor modulet skal derved kun bruge den indbyggede skridttæller i Android telefoner.
@@ -29,5 +35,3 @@ Dette gør det nemmere for brugerne at danne et overblik over hvordan deres adf�
 	\caption{Visualisering af skridttæller.}
 	\label{fig:skridttaeller}
 \end{figure}
-
-\als{Til Ivan: Vi er usikre på om der skal skrives noget om verificering her. Det er en indbygget skridttæller fra Android vi bruger. Derudover har vi svært ved at kunne finde den absolutte sandhed for hvor fysisk aktiv man er.}

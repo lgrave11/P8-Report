@@ -72,7 +72,7 @@ Idéen bag at bruge maks amplituden er at man larmer væsentligt mere når man e
 Dette passer fint med de loggede data der er plottet i \cref{fig:amplplot}.
 Dog har denne antagelse også begrænsninger.
 Eksempelvis kan det være at man er en stille person, snorker meget eller også kan personen bo i et meget larmende område.
-Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kan finde et mønster når man snorker til at styrke modellen, hvilket er diskuteret i \cref{section:snorken}.
+Alligevel regner vi med at amplituden stadig kan bruges, da man så muligvis kan finde et mønster når man snorker til at styrke modellen, hvilket er tidligere diskuteret i \cref{section:snorken}.
 Derudover, er det så et spørgsmål om hvor stor vægt man skal tillægge de enkelte sensorkilder, og er noget der bør trænes til det enkelte individ, for at opnå en model der passer til individets personlighed.
 Hvordan dette gøres bør overvejes ved videreudvikling, men til dette proof of concept kan man som en start bruge fastsatte statiske vægte, hvilket er diskuteret i \cref{subsec:sensorvaegtsoevn}.
 
@@ -253,7 +253,7 @@ Eksempelvis med det viste data i \cref{tab:noaggsoevndata} vil dette blive aggre
 \caption{Aggregering af data fra \cref{tab:noaggsoevndata}.}\label{tab:aggdat}
 \end{table}
 
-Vi har dog også fundet tilfælde hvor en aggregering ikke er akkurat, eksempelvis ved snorken fejler denne aggregering da den er for naiv, yderligere diskussion om hvad man kan gøre i stedet for kan læses i \cref{section:snorken}.
+Vi har dog også fundet tilfælde hvor en aggregering ikke er akkurat, eksempelvis ved snorken fejler denne aggregering da den er for naiv, yderligere diskussion om hvad man kan gøre i stedet for er beskrevet tidligere i \cref{section:snorken}.
 Et alternativ kunne være at tage arealet af søvnestimeringsdata, og bruge arealet som estimat til hvor meget man har sovet per dag.
 Dette har ulempen at det ikke vil oplyse om selve søvnperioderne men blot mængde af søvn per dag, derudover vil den stadig blive påvirket af snorken og andre støjfaktorer.
 Vi hæfter os ved at denne aggregeringsmetode er ment som et proof of concept og med ekstra ressourcer kan det være fornuftigt at se på andre aggregeringsmetoder og inddrage fundne snorken estimeringer til at kunne aggregere søvndata på mere akkurat vis. Forslag til dette kan læses i \cref{section:snorken}.
