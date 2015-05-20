@@ -5,7 +5,7 @@ Acceleration måles i $\frac{m}{s^2}$ med et interval på $215-230 ms$.
 Det vil sige at acceleration måles som ændring i hastighed per tid.
 
 Amplituden måles som maks amplituden over en tidsperiode af $1000ms$.
-Enheden er en arbitrær enhed der varierer fra telefon til telefon, men svarer til en skala fra $0-100\%$ elektrisk spænding, der kan måles på den indbyggede mikrofon, konverteret til en 16 bits integer værdi.
+Enheden er en arbitrær enhed der varierer fra smartphone til smartphone, men svarer til en skala fra $0-100\%$ elektrisk spænding, der kan måles på den indbyggede mikrofon, konverteret til en 16 bits integer værdi.
 
 Lys måles i Lux i et interval på $215-230 ms$.
 
@@ -15,15 +15,15 @@ Det samme gælder for opladning/stoppet opladning, samt tændt/slukket.
 For at få et bedre overblik over de omtalte metrikker se \cref{tab:metrikker}.
 
 \begin{table}[h]
-\begin{tabular}{|c|c|c|}
-	\hline Datatype & Enhed & Interval \\ 
-	\hline Acceleration & $\frac{m}{s^2}$ & $215-230ms$ \\ 
+\begin{tabular}{c?c|c}
+	 Datatype & Enhed & Interval \\ 
+	\thickhline Acceleration & $\frac{m}{s^2}$ & $215-230ms$ \\ 
 	\hline Amplitude & Afhængig af mikrofon & $1000ms$ \\ 
 	\hline Lysstyrke & Lux & $215-230ms$ \\ 
 	\hline Låst/låst op & Bolsk værdi & På begivenhedsbasis \\ 
 	\hline Opladning/ikke opladning & Bolsk værdi & På begivenhedsbasis \\ 
 	\hline Tændt/slukket & Bolsk værdi & På begivenhedsbasis \\ 
-	\hline 
+	
 \end{tabular}
 \caption{Overblik over metrikker}\label{tab:metrikker} 
 \end{table}

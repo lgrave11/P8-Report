@@ -78,15 +78,15 @@ Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenter
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|}
-\hline Datakilde    & Koefficient\\
-\hline Lys          & 0.0415 \\ 
+\begin{tabular}{c?c}
+ Datakilde    & Koefficient\\
+\thickhline Lys          & 0.0415 \\ 
 \hline Lås          & 0.0512 \\ 
 \hline Slukket      & 0.0000 \\ 
 \hline Opladning    & 0.0469 \\ 
 \hline Bevægelse    & 0.5445 \\ 
 \hline Lyd          & 0.3484 \\ 
-\hline 
+
 \end{tabular}
 \caption{De forskellige vægtninger for hver datakilde.}
 \label{tab:vaegtninger}
@@ -103,7 +103,7 @@ Derudover er en fordel også at denne model er klar til at blive taget i brug me
 
 \subsubsection{Statistisk Baseret Tilgang}\label{sec:statbased}
 Den statiske baserede tilgang bliver præsenteret af \citet{misc:statbased}.
-Denne metode bygger på at telefonen ligger i patientens seng, og er ud fra de bevægelser der sker, i stand til at bestemme om patienten sover eller ej. 
+Denne metode bygger på at smartphonen ligger i patientens seng, og er ud fra de bevægelser der sker, i stand til at bestemme om patienten sover eller ej. 
 Metoden kræver at man starter app'en når man går i seng, og kræver på den måde brugerinteraktion.
 
 Metoden ser på accelerationsmålinger i sæt af fire minutter, og bestemmer for hver periode om patienten sover eller ej.
