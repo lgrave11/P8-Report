@@ -35,7 +35,7 @@ Idéen er at det eneste krav til indsamlingen er, at den skal ligge på et bord 
 Dette valg er foretaget i henhold til vores kriterie om at udvikle et system der kan måle søvn uden at forstyrre.
 
 Indsamlingen af data foregik ved at vi installerede de fornødne moduler på egen smartphone, Tog smartphonen med hjem, så data fra en eller flere dage kunne indsamles.
-Vi loggede fra vi gik i seng til vi stod op, hvilket skulle bruges til at afgøre nøjagtigheden af vores estimat.
+Vi loggede fra vi to hjem en dag til vi mødte op den næste dag, hvilket skulle bruges til at afgøre nøjagtigheden af vores estimat.
 
 Til at validere vores model har vi foreslået krydsvalidering beskrevet i \cref{sec:redskaber}, hvilket også bør gøres med mere tid, men da dette er et proof of concept er den nuværende opstilling tilfredsstillende.
 Ved videre arbejde bør en mere systematisk tilgang med den nævnte krydsvalidering benyttes, hvilket er beskrevet videre i \cref{sec:verisoevn}.
@@ -94,7 +94,7 @@ Med mere tid kunne Toss 'N' Turn tilgangen blive forsøgt implementeret.
 \subsubsection{Stilstands-bestemmelse}
 Som udgangspunkt for vores udkast til en søvnestimeringsmodel afgøres der hvornår der er stilstand.
 Dette gøres forskelligt for acceleration og amplitude data, men tager udgangspunkt i det loggede data.
-For at sikre at støj ikke påvirker resultatet kan der bruges forskellige strategier i brug. 
+For at sikre at støj ikke påvirker resultatet kan der tages forskellige strategier i brug. 
 For eksempel hvis man ændrer drastisk på hvor ofte mikrofonen optager amplitude til f.eks. at optage hvert tiende sekund, vil dette resultere i færre datapunkter og hvis dette gøres indfanges der mindre støj.
 Dog kan dette også håndteres på andre måder, for eksempel ved et glidende gennemsnit, nævnt i \cref{sec:redskaber}, udført på indsamlede data, men hvis man kan undgå at bearbejde data ved at indsamle mindre vil dette være en fordel.
 
@@ -163,7 +163,7 @@ Den lineære funktion bygger på antagelsen, at sandsynligheden for at man sover
 Dette kræver videre arbejde men som en start benyttes den logistiske funktion, men kan nemt udskiftes.
 
 
-Dn logistiske funktion beskriver hvordan at ved længere stilstandsperioder er der en forøget hældning i funktionen, indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver en meget forøget sandsynlighed for søvn. 
+Den logistiske funktion beskriver hvordan at ved længere stilstandsperioder er der en forøget hældning i funktionen, indtil vi nærmer os lange stilstandsperioder hvor ekstra tid ikke giver en meget forøget sandsynlighed for søvn. 
 Dette kan ses da den logistiske funktion vi har plottet går asymptotisk mod 1, svarende til 100\% sikkerhed for søvn.
 I realiteten kan vi aldrig være 100\% sikker på søvn ved lang stilstand, da det kan være man har glemt sin smartphone hjemme mens man er på tur over en weekend, men hvis forudsætningen for at systemet fungerer er at man har sin smartphone i nærheden, regnes den logistiske funktion som et godt redskab til et søvnestimat.
 
