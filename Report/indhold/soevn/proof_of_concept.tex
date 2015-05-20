@@ -200,12 +200,12 @@ Man kan forestille sig en lynlås hvor der skiftes mellem takkerne fra hver del,
 \hline Tid & Sandsynlighed for model A & Sandsynlighed for model B & Resultat\\ 
 \thickhline 02:30:00 & 	0.59    & \nv  	& $\text{Vægt}_A * 0.59 + \text{Vægt}_B * 0.29$\\ 
 \hline 02:30:01 & 	\nv     & 0.29 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.29$\\ 
-\hline 02:30:02 & 	0.61    & \nv 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.31$\\ 
-\hline 02:30:03 & 	0.62    & \nv 	& $\text{Vægt}_A * 0.62 + \text{Vægt}_B * 0.31$\\ 
-\hline 02:30:04 & 	\nv     & 0.31 	& ...\\
+\hline 02:30:02 & 	0.61    & \nv 	& $\text{Vægt}_A * 0.61 + \text{Vægt}_B * 0.30$\\
+\hline 02:30:03 & 	0.62    & 0.30 	& $\text{Vægt}_A * 0.62 + \text{Vægt}_B * 0.30$\\ 
+\hline 02:30:04 & 	0.63    & \nv 	& $\text{Vægt}_A * 0.63 + \text{Vægt}_B * 0.31$\\ 
+\hline 02:30:05 & 	\nv     & 0.31 	& ...\\
 \hline 
 \end{tabular} 
-\als{Giv en række hvor begge har estimat}
 \caption{Tabel der illustrerer hvordan kombineringen fungerer. $\text{Vægt}_A$ og $\text{Vægt}_B$ er de fastsatte vægte for de to modeller.}
 \label{tab:combiModelsExample}
 \end{table}
