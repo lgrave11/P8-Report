@@ -1,3 +1,5 @@
+\ivan{Hvad er et redskab?}
+\winde{Ivans rettelser her til!}
 %Noget meta fiks med hvilke redskaber og erfaringer vi kan tage med os til udvikling af løsning
 Med forskningen af søvn foretaget har vi fundet diverse redskaber, der er værd at have i mente ved implementeringen af en søvnestimeringsmetode.
 Gennemgangen af disse redskaber tjener det formål at skabe overblik, over hvad man kan benytte i denne implementering.
@@ -5,7 +7,7 @@ Metoderne bygger på erfaringer oplyst af kilderne, samt teknikker der bygger p�
 
 \begin{description}[style=nextline]
 % PsyLog - herunder dataindsamlingsmoduler
-\item[PsyLog]
+\item[PsyLog]\ivan{Overvej at lave et separat afsnit med Psylog og Dataindsamlingsmoduler}
 PsyLog er en platform, der er konstrueret til at være modulær og fleksibel.
 Til at understøtte denne funktionalitet tilbyder platformen en database, hvor moduler kan lagre data og læse data lagret fra andre moduler.
 Det eneste krav til hvert modul er, at de skal implementere en service, som kan startes af platformen, og at de har en JSON beskrivelse.
@@ -13,7 +15,7 @@ JSON beskrivelsen indeholder tabeller til lagring af data, moduler de afhænger 
 Hvis man har dette specificeret, sørger PsyLog platformen for resten, det vil sige start af modulet samt sikre lagerplads som modulet kan skrive til og læse fra.
 Derudover, kan ens modul så indgå i en større software pakke, hvor andre moduler kan drage nytte af ens estimater.
 
-\item[Dataindsamlingsmoduler]
+\item[Dataindsamlingsmoduler]\ivan{Overvej at lave et separat afsnit med Psylog og Dataindsamlingsmoduler}
 Som et led i udviklingen af PsyLog platformen er der blevet udviklet en række dataindsamlingsmoduler \citep{misc:faellesrapp}.
 I \cref{sec:metodevalg} har vi erfaret at fælles for metoderne er at de alle kigger på om smartphonen er stationær og om der er stilhed. 
 Til stilhed kan vi benytte det allerede udviklede amplitude-modul, og til at se om en smartphone er stationær kan vi benytte det allerede udviklede accelerationsmodul.
