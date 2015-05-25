@@ -5,15 +5,15 @@ For at tjekke dette kan vi inddrage en mere sikker søvnestimeringsmetode såsom
 Vi er dog ikke begrænset til polisomnografi, det vigtigste er at det er en metode, der er så præcis som mulig, da den skal bruges til at verificere resultatet.
 Dette skal ses i en testsammenhæng, så kriterier om at den skal være non-intrusive gælder ikke her.
 
-Fremgangsmåden til at teste om den udviklede estimeringsmetode er tilstrækkelig går så på at have en af række personer, der sove hvor man både estimerer med brug af vores model og med brug af den valgte absolutte sandheds metode.
+Fremgangsmåden til at teste om den udviklede estimeringsmetode er tilstrækkelig går så på at have en af række personer, der sover hvor man både estimerer med brug af vores model og med brug af den valgte absolutte sandheds metode.
 På den måde vil man kunne indsamle resultater fra begge metoder og derved sammenligne ens estimat med den absolutte sandhed.
 
-I tilfælde af en ikke tilstrækkelig præcision kan der forsøges at justere på de forskellige værdier i systemet for at se hvilken effekt det har på præcisionen.
+I tilfælde af en utilstrækkelig præcision kan de forskellige værdier i systemet justeres for at se hvilken effekt det har på præcisionen.
 Kandidater til disse ændringer kan være:
 \begin{itemize}
 	\item Konstanter for antal målinger, der skal overvejes for at bestemme stilstand eller stilhed, og muligvis se på tidsintervaller i stedet for målinger.
-	\item Grænseværdier for hvor sandsynligheden skal være før en periode vurderes til at være en søvnperiode.
-	\item Middelværdien for den logistiske funktion, idet at dette vil ændre hvor lang tid det vil tage før sandsynligheden vil nå 50\%.
+	\item Grænseværdier før en periode vurderes til at være en søvnperiode.
+	\item Middelværdien for den logistiske funktion, da det vil ændre hvor lang tid det vil tage før sandsynligheden når 50\%.
 \end{itemize} 
 
 Hvis dette gøres vil man få et indtryk af hvordan de konstanter påvirker vurderingen, og så er man forhåbentlig i stand til at komme med en konfiguration af disse, der har en tilpas høj nøjagtighed.

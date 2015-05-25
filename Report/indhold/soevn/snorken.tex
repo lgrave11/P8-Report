@@ -28,21 +28,21 @@ Andre metoder på at registrere søvn er derfor undersøgt.
 
 Ud fra artiklerne \citet{Dafna2013}, \citet{Calabrese20111101} og \citet{7051338} dannes der et grundlag for hvordan snorken kan registreres.
 
-\citet{Dafna2013} gør brug af et system til at inddele snorken og andre akustiske hændelser gennem et søvnforløb ved brug af lyd data, der blev optaget med en mikrofon ved en polisomnigrafisk undersøgelse. 
+\citet{Dafna2013} gør brug af et system til at inddele snorken og andre akustiske hændelser gennem et søvnforløb ved brug af lyddata, der blev optaget med en mikrofon ved en polisomnigrafisk undersøgelse. 
 De endte med et meget præcist system, som kunne adskille snorken og andre akustiske hændelser med ~98\% nøjagtighed.
 
 \citet{Calabrese20111101} foreslår et system, der skal bruges til diagnosticering af søvnapnø ved hjælp af optaget lyd.
 Dog blev der kun implementeret en prototype af systemet og den er derfor ikke blevet evalueret ordenligt endnu. 
-Idéen er at man bruger analyser såsom 'Fast Fourier Transform' og 'Power Spectrum' til at finde tidspunkter, hvor personen har snorket baseret på optaget lyd. 
+Idéen er at man bruger transformationer såsom 'Fast Fourier Transform' og 'Power Spectrum' til at finde tidspunkter, hvor personen har snorket baseret på optaget lyd. 
 
 \citet{7051338} udvikler et system, der kan registrer snorken ud fra lydoptagelser.
 Denne metode bruger machine learning til at udvikle en model der detektere hvornår folk sover.
 Metoden der er udviklet gør brug af en \textit{K}-Nearest Neighbour classifier.
-I modsætning til \citet{Calabrese20111101}, fokuseres der på at registre snorken, hvilket også kvalificerer denne metode som en oplagt kandidat til videre udforskning.
+I modsætning til \citet{Calabrese20111101}, fokuseres der på at registrere snorken, hvilket også kvalificerer denne metode som en oplagt kandidat til videre udforskning.
 
-Ved disse metoder benyttes lyd data og ikke bare amplituden, så det vil være nødvendigt at undersøge om systemet også kan fungere ved brug af amplitude.
+Ved disse metoder benyttes lyddata og ikke bare amplituden, så det vil være nødvendigt at undersøge om systemet også kan fungere ved brug af amplitude.
 Grunden til at vi bruger amplituden, er at alt data gemmes og intet slettes. 
-Hvis løsningen ændres således at data analyseres løbende og slettes efterfølgende kan lyd data godt bruges, hvilket gør at vi undgår problemet med privatlivets fred.
+Hvis løsningen ændres således at data analyseres løbende og slettes efterfølgende kan lyddata godt bruges, hvilket gør at vi undgår problemet med privatlivets fred.
 
 Metoderne betragtes relevante til at styrke ens model, da snorken er en tydelig indikator på at man sover, fremfor blot at blive betragtet som støj.
-I den efterfølgende beskrevet proof of concept løsning er disse metoder dog ikke blevet benyttet, men kan med fordel betrages ved videre arbejde.
+I den efterfølgende beskrevet proof of concept løsning er disse metoder dog ikke blevet benyttet, men kan med fordel betragtes ved videre arbejde.
