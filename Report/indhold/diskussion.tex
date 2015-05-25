@@ -1,9 +1,14 @@
 Søvn- og fysisk aktivitets-moduler er blevet præsenteret, og en diskussion om videre arbejde ved hver af disse kan læses i henholdsvis \cref{sec:videre-arbejde} og \cref{sec:videre-arbejde-fa}.
-Imidlertid er der en række udfordringer som er fælles for hele løsningen og kræver opmærksomhed.
-Dette omhandler, hvordan registrering af fysisk aktivitet og søvn kan komplementere hinanden, ændring i adfærd,  videre arbejde angående visualisering samt plads og performance problemer, hvorfor dette beskrives herefter.
+Imidlertid er der en række udfordringer som er fælles for hele løsningen der kræver opmærksomhed, og lyder som følger:
+\begin{itemize}
+	\item Hvordan kan registrering af fysisk aktivitet og søvn komplementere hinanden?
+	\item Ændring i adfærd.
+	\item Videre arbejde angående visualisering.
+	\item Plads og performance problemer.
+\end{itemize}
 
 % Fysisk aktivitet og søvn komplement
-Idéen bag at dække både søvn og fysisk aktivitet er at dække hele døgnet, både når der soves og når man er vågen. 
+Idéen ved at have søvn og fysisk aktivitet er at dække både når der soves og når man er vågen.
 Hvis man kan dække hele dagen har vi mulighed for at logge patientens adfærd døgnet rundt.
 Arbejdet består så i at udnytte denne dækning af døgnet.
 Med den nuværende implementering er der udviklet moduler til at estimere antal skridt samt længden på søvn.
@@ -11,26 +16,26 @@ Disse kan udvikles videre, men på et tidspunkt med nok videre arbejde vil man h
 
 % Ændring i adfærd.
 Opgaven går derefter på at registrere ændring i adfærd. 
-Registrering af ændring i adfærd er blevet understreget som helt centralt hvad angår forebyggelse for patienter med affektive lidelser \citep[Kapitel 1, Sektion 4]{misc:faellesrapp} \lars{check om denne passer}.
+Registrering af ændring i adfærd er blevet understreget som helt centralt hvad angår forebyggelse for patienter med affektive lidelser \citep[Kapitel 1, Sektion 4]{misc:faellesrapp}.
 En idé til systemet er at implementere et 'early warning modul', altså at personer med affektive lidelser vil bruge systemet og de vil blive notificeret om ændring i adfærd, hvorefter de så kan reagere derpå. 
 Registrering af ændring i adfærd er imidlertid ikke blevet arbejdet på, da som forudsætning for at vi kan lave denne registrering bliver vi nødt til at have akkurate analysemoduler.
 Det er derfor blevet udeladt, men er noget der skal blive arbejdet videre på når analysemodulerne har nået et tilpas modent stadie.
 
 % visualisering
 Efter analysemodulerne er blevet tilpas modne, lyder opgaven også på at visualisere data.
-Det er tiltænkt at visualiseringerne skal være nemme at forstå og give et overblik over situationen, som også er nævnt af Jørgen Aagaard \citep[Kapitel 1, Sektion 4]{misc:faellesrapp} \lars{check om denne passer}. 
+Det er tiltænkt at visualiseringerne skal være nemme at forstå og give et overblik over situationen, som også er nævnt af Jørgen Aagaard \citep[Kapitel 1, Sektion 4]{misc:faellesrapp}. 
 Derfor skal det undersøges hvordan man visualiserer data på en let-tilgængelig måde, hvor de fleste kan forstå hvad der foregår. 
 Hvis det ikke er let at forstå, risikerer vi at de tiltænkte brugere af systemet ikke vil kunne forstå den indsamlede information.
 På projektets nuværende stadie er dette ikke blevet undersøgt i detalje, som også kan læses om i \cref{sec:pocVis}, \cref{sec:soevnVisVidArb} og \cref{sec:aktivitetVis}. 
-Derfor hæfter vi os ved at visualisering er vigtigt for brug af systemet, og bør arbejdes videre med.
+Derfor hæfter vi os ved at visualisering er vigtigt for brug af systemet, hvilket bør arbejdes videre med.
 
 % Data beholdning, aggregrering, komprimering
-Idet at visualisering skal undersøges før systemet kan ses som komplet, er det også vigtigt at se på hvordan data opbevares idet at dette kan give problemer når det kommer til visualisering. 
+Idet visualisering skal undersøges før systemet kan ses som komplet, er det også vigtigt at se på hvordan data opbevares idet at dette kan give problemer når det kommer til visualisering. 
 Eksempelvis ved visualisering af store mængder data, kan dette give performance problemer, hvor man udsætter brugeren for en urimelig lang ventetid før visualiseringen kan præsenteres. 
 Den store mængde af data kan også forårsage plads problemer. 
 Af den grund er lagring i skyen samt aggregering og komprimering af data nødvendigt at undersøge.
 Platformen er udviklet til at være modulær og fleksibel, hvorfor denne modificering ikke regnes for et større problem at udvikle.
 Dermed er det ikke sagt, at det ikke vil være tidskrævende at udvikle, men platformen regnes for ikke at ville spænde ben for en sådan løsning.
-Pladsforbrug er også set på som del af et eksperiment til PsyLog systemet, der skal undersøge hvor meget plads ikke komprimeret og ikke aggregeret data ville fylde, se \citet[Kapitel 4, Sektion 6]{misc:faellesrapp} \lars{check om denne passer} for flere detaljer vedrørende dette.
+Pladsforbrug er også set på som del af et eksperiment til PsyLog systemet, der skal undersøge hvor meget plads ikke komprimeret og ikke aggregeret data ville fylde, se \citet[Kapitel 3, Sektion 4]{misc:faellesrapp} for flere detaljer vedrørende dette.
 
 Alt dette understreger at der er udfordringer man skal have i mente, og bør løses ved videre arbejde.

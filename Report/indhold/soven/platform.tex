@@ -1,0 +1,18 @@
+Som et led i arbejdet blev der udviklet en platform kaldet PsyLog \citep{misc:faellesrapp}, som moduler kan hægte sig på.
+Platformen er nyttig, da den tilbyder en række dataindsamlingsmoduler samt lagerplads, som ens modul kan benytte sig af.
+Derudover, kan ens modul indgå i en større software pakke, hvor andre moduler kan drage nytte af ens estimater.
+
+PsyLog er en platform, der er konstrueret til at være modulær og fleksibel.
+Til at understøtte denne funktionalitet tilbyder platformen en database, hvor moduler kan lagre data og læse data lagret fra andre moduler.
+Det eneste krav til hvert modul er, at de skal implementere en service, som kan startes af platformen, og at de har en JSON beskrivelse.
+JSON beskrivelsen indeholder tabeller til lagring af data, moduler de afhænger af, samt om modulet skal skemalægges eller om det bare skal køre hele tiden.
+Hvis man har dette specificeret, sørger PsyLog platformen for resten, det vil sige start af modulet samt sikre lagerplads som modulet kan skrive til og læse fra.
+
+\subsection{Dataindsamlingsmoduler}
+Som et led i udviklingen af PsyLog platformen er der blevet udviklet en række dataindsamlingsmoduler \citep{misc:faellesrapp}.
+I \cref{sec:metodevalg} har vi erfaret at fælles for metoderne er at de alle kigger på om smartphonen er stationær og om der er stilhed. 
+Til stilhed kan vi benytte det allerede udviklede amplitude-modul, og til at se om en smartphone er stationær kan vi benytte det allerede udviklede accelerationsmodul.
+Vi har altså dataindsamlingsmoduler til disse typer data allerede, og kan med fordel benytte dem i videre implementering.
+Derudover, nævner hver kilde flere moduler, der er specifikke for deres løsning, hvoraf flere er udviklet.
+PsyLog platformen har den fordel, at den er fleksibel og modulær, hvilket gør at hvis man skulle mangle et dataindsamlingsmodul for en given datatype kan et sådant modul sikkert nemt udvikles og benyttes.
+Metrikker for vores datatyper er hvad der er beskrevet i \cref{sec:metrikker}.

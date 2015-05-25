@@ -1,29 +1,9 @@
-\ivan{Hvad er et redskab?}
-\winde{Ivans rettelser her til!}
-%Noget meta fiks med hvilke redskaber og erfaringer vi kan tage med os til udvikling af løsning
 Med forskningen af søvn foretaget har vi fundet diverse redskaber, der er værd at have i mente ved implementeringen af en søvnestimeringsmetode.
+Et redskab skal forstås som teori der kan være nyttigt i udviklingen eller verificeringen af søvnestimeringsmetoden.
 Gennemgangen af disse redskaber tjener det formål at skabe overblik, over hvad man kan benytte i denne implementering.
 Metoderne bygger på erfaringer oplyst af kilderne, samt teknikker der bygger på egen erfaring, men regnes for brugbare i denne sammenhæng.
 
 \begin{description}[style=nextline]
-% PsyLog - herunder dataindsamlingsmoduler
-\item[PsyLog]\ivan{Overvej at lave et separat afsnit med Psylog og Dataindsamlingsmoduler}
-PsyLog er en platform, der er konstrueret til at være modulær og fleksibel.
-Til at understøtte denne funktionalitet tilbyder platformen en database, hvor moduler kan lagre data og læse data lagret fra andre moduler.
-Det eneste krav til hvert modul er, at de skal implementere en service, som kan startes af platformen, og at de har en JSON beskrivelse.
-JSON beskrivelsen indeholder tabeller til lagring af data, moduler de afhænger af, samt om modulet skal skemalægges eller om det bare skal køre hele tiden.
-Hvis man har dette specificeret, sørger PsyLog platformen for resten, det vil sige start af modulet samt sikre lagerplads som modulet kan skrive til og læse fra.
-Derudover, kan ens modul så indgå i en større software pakke, hvor andre moduler kan drage nytte af ens estimater.
-
-\item[Dataindsamlingsmoduler]\ivan{Overvej at lave et separat afsnit med Psylog og Dataindsamlingsmoduler}
-Som et led i udviklingen af PsyLog platformen er der blevet udviklet en række dataindsamlingsmoduler \citep{misc:faellesrapp}.
-I \cref{sec:metodevalg} har vi erfaret at fælles for metoderne er at de alle kigger på om smartphonen er stationær og om der er stilhed. 
-Til stilhed kan vi benytte det allerede udviklede amplitude-modul, og til at se om en smartphone er stationær kan vi benytte det allerede udviklede accelerationsmodul.
-Vi har altså dataindsamlingsmoduler til disse typer data allerede, og kan med fordel benytte dem i videre implementering.
-Derudover, nævner hver kilde flere moduler, der er specifikke for deres løsning, hvoraf flere er udviklet.
-PsyLog platformen har den fordel, at den er fleksibel og modulær, hvilket gør at hvis man skulle mangle et dataindsamlingsmodul for en given datatype kan et sådant modul sikkert nemt udvikles og benyttes.
-Metrikker for vores datatyper er hvad der er beskrevet i \cref{sec:metrikker}.
-
 \item[Vægtet gennemsnit]
 Ud fra \citet{6563918} blev der understreget hvorledes et vægtet gennemsnit kan benyttes.
 Idéen er at hver sensor kilde kan benyttes som en svag indikator på søvnlængde.
@@ -37,7 +17,7 @@ Eksempelvis ved accelerations målinger oplever vi enkelte spikes på grund af s
 
 \item[Krydsvalidering]
 Når man udvikler sin estimeringsmetode skal man have en teknik til at estimere om ens model er tilpas præcis.
-Problemet er at hvis man lærer på sit testdata og derefter tester på dette, risikerer man hvad der kaldes for overfitting.
+Problemet er at hvis man træner sin model på ens testdata og derefter tester på dette, risikerer man hvad der kaldes for overfitting.
 Overfitting er hvor man tilpasser sin model så det virker godt på ens testdata, men ikke særligt godt på fremtidige datasæt.
 Til at forhindre dette kan man foretage krydsvalidering
 Ved krydsvalidering splitter man sit testdata op i en række delmængder.
