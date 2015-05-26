@@ -18,6 +18,7 @@
 \input{setup/hyphenations.tex}% 
 \input{setup/macros.tex}% my new macros
 
+\addbibresource{Bibliography.bib}
 
 \begin{document}
 %frontmatter
@@ -93,9 +94,7 @@
 \chapter{Konklusion}
 \input{indhold/konklusion}
 
-\bibliographystyle{unsrtnat}
-\bibliography{Bibliography}
-\label{bib:mybiblio}
+\printbibliography[heading=bibintoc]
 
 \appendix
 \input{appendiks/kode}

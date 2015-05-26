@@ -30,9 +30,7 @@
 % Notice that you can manually change the input
 % encoding of your files by selecting "save as"
 % an select the desired input encoding. 
-\usepackage[utf8x]{inputenc}			% Character encoding
-\usepackage{ucs}						% Extended character encoding
-\usepackage{t1enc}						% More character encoding	
+\usepackage[utf8]{inputenc}			% Character encoding
 %\usepackage[utf8]{inputenc}
 % Make latex understand and use the typographic
 % rules of the language used in the document.
@@ -68,7 +66,9 @@
   labelfont=bf % bold label (e.g., Figure 3.2) font
 }
 \usepackage{pdfpages}
-\usepackage[numbers, sort&compress]{natbib}
+\usepackage[natbib=true, style=numeric, backend=bibtex, sorting=none,maxbibnames=99]{biblatex}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburllcpenalty}{7000}
 % Make the standard latex tables look so much better
 \usepackage{array,booktabs}
 % Enable the use of frames around, e.g., theorems

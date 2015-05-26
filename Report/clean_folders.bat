@@ -6,7 +6,6 @@ del /s *.dvi
 del /s *.lof
 del /s *.lot
 del /s *.bit
-del /s *.idx
 del /s *.glo
 del /s *.bbl
 del /s *.ilg
@@ -19,3 +18,5 @@ del /s *.thm
 del /s *.pre
 del /s *.bak
 del /s *.tdo
+del master.run.xml
+del master-blx.bib
