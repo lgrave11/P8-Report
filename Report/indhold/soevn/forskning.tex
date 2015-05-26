@@ -53,7 +53,7 @@ Følgende fremgangsmåde er præsenteret i \citet{Min:2014:TNT:2556288.2557220},
 For Toss 'N' Turn fremgangsmåden er tanken, at man blot skal have sin smartphone i sit soveværelse, for at den kan estimere ens søvnstarttidspunkt, vækketidspunkt og søvnlængde.
 Teknikken tager udgangspunkt i en række sensor-kilder, der er tilgængelig på smartphonen i forvejen.
 Disse værende accelerometer, mikrofon(maks amplitude), lyssensor, proximitysensor, kørende processer, batteristadie (opladning/ikke opladning) og skærmvisningstilstand.
-Ud fra disse sensorkilder og en søvndagbog, der foretages i minimum tre dage til at lære en søvnestimeringsmodel, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
+Ud fra disse sensorkilder og en søvndagbog, der foretages i minimum tre dage til at lære en søvn\-estimerings\-model, kan de opnå en præcision med søvnlængde Mean Error (ME) på under 1 time.
 Deres metode har en præcision for daglig søvnestimering på 92\% mens deres søvnkvalitetsestimering har en præcision på 84\%, hvilket gør det til en oplagt mulighed at arbejde med.
 Metoden fungerer så ved at foretage en række feature udtrækninger, og så bruge teknikker såsom eksponentielt glidende gennemsnit, Naive Bayes classifier og decision trees til at opnå den fornødne nøjagtighed.
 Feature udtrækninger er basalt set, hvor man ud fra et datasæt bygger deriverede værdier, der har til hensigt, at være informative og kan bruges til efterfølgende læring.
@@ -72,7 +72,7 @@ BES fungerer godt som en alternativ løsning til en af de brugerinvolverende fre
 I de tilfælde hvor BES og en brugerinvolverende løsning begge er tilstede, kan BES bruges til at validere data fra den brugerinvolverende løsning. 
 
 I BES bruges der seks forskellige datakilder til at estimere søvn.
-Dette er nødvendigt, idet ingen af dem er i direkte kontakt med brugeren, og at de hver for sig ikke siger særlig meget, men i kombination giver en udmærket indikation af om brugeren sover eller ej.
+Dette er nød\-vendigt, idet ingen af dem er i direkte kontakt med brugeren, og at de hver for sig ikke siger særlig meget, men i kombination giver en udmærket indikation af om brugeren sover eller ej.
 Kilderne der bruges er meget tilsvarende dem der bruges i Toss 'N' Turn, hvor der her bruges lys, lyd, bevægelse (accelerometer), skærmlås, batteristatus og om den er slukket.
 Målinger fra disse datakilder skal vægtes forskelligt, og ud fra eksperimenterne udført af \citet{6563918}, nåede de frem til følgende vægtninger der kan ses i \cref{tab:vaegtninger}.
 
